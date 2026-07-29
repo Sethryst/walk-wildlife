@@ -185,9 +185,18 @@
         <p>Add your project URL and publishable/anon key to <code>supabase-config.js</code>, then run the included SQL schema. Until then, everything remains local.</p>
       </section>
       <form id="magicLinkForm" class="online-panel hidden">
-        <label>Email for a magic link <input id="onlineEmail" type="email" autocomplete="email" required placeholder="you@example.com" /></label>
-        <button class="primary-button wide-button" type="submit">Email me a sign-in link</button>
-      </form>
+  <label>Email
+    <input id="onlineEmail" type="email" autocomplete="email" required placeholder="you@example.com" />
+  </label>
+
+  <label>Password
+    <input id="onlinePassword" type="password" autocomplete="current-password" required />
+  </label>
+
+  <button class="primary-button wide-button" type="submit">
+    Continue
+  </button>
+</form>
       <form id="usernameForm" class="online-panel hidden">
   <p>Choose the public name friends will search for. It is the only identity shown on the leaderboard.</p>
   <label>Username <input id="usernameInput" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" required placeholder="e.g., trailfriend" /></label>

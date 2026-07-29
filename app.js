@@ -549,11 +549,36 @@ async function renderOnline() {
 }
 async function sendMagicLink(event) {
   event.preventDefault();
+
   if (!onlineConfigured()) return;
+
   const email = el('onlineEmail').value.trim();
-  const { error } = await state.online.client.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.href.split('#')[0] } });
-  if (error) { toast(error.message); return; }
-  toast('Check your email for the sign-in link.');
+  const password = el('onlinePassword').value;
+
+  // Try logging in first
+  let { error } = await state.online.client.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  // If login failed because the user doesn't exist,
+  // create a new account instead.
+  if (error && error.message.toLowerCase().includes('invalid login')) {
+    const result = await state.online.client.auth.signUp({
+      email,
+      password
+    });
+
+    error = result.error;
+  }
+
+  if (error) {
+    toast(error.message);
+    return;
+  }
+
+  await setupOnline();
+  await renderOnline();
 }
 async function createOnlineProfile(event) {
   event.preventDefault();
