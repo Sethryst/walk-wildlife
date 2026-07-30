@@ -169,6 +169,31 @@
         <p class="sheet-kicker">MILESTONES</p>
         <div class="badge-list" id="badgeList"></div>
       </section>
+      <section class="geofence-settings">
+        <p class="sheet-kicker">PROXIMITY ALERTS &amp; GEOFENCING</p>
+        <div class="setting-row">
+          <div>
+            <strong>Geofence Notifications</strong>
+            <small>Alert when near places during a walk</small>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="geofenceToggle" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div id="geofenceOptionsContainer" class="geofence-options">
+          <label class="setting-label">Alert radius
+            <select id="geofenceRadiusSelect" aria-label="Geofence alert radius">
+              <option value="30">30 meters (close)</option>
+              <option value="50" selected>50 meters (recommended)</option>
+              <option value="75">75 meters</option>
+              <option value="100">100 meters (wide)</option>
+            </select>
+          </label>
+          <div class="setting-label">Categories to trigger alerts for</div>
+          <div class="poi-chips geofence-category-chips" id="geofenceCategoryChips" role="group" aria-label="Geofence place categories"></div>
+        </div>
+      </section>
       <section class="online-teaser">
         <div><strong id="onlineTeaserTitle">Stay local by default</strong><p id="onlineTeaserText">Optional online mode shares only aggregate points and miles with friends—never routes, observations, photos, or notes.</p></div>
         <button class="secondary-button" id="goOnlineButton">Go Online</button>

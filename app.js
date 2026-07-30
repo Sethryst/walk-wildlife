@@ -20,6 +20,12 @@ const CITIES = {
     center: { lat: 36.8508, lng: -76.2859 },
     zoom: 14,
     dataFile: './data/norfolk-poi.json'
+  },
+  newyork: {
+    name: 'New York, NY',
+    center: { lat: 40.73088, lng: -73.99759 },
+    zoom: 13,
+    dataFile: './data/newyork-poi.json'
   }
 };
 
@@ -27,14 +33,21 @@ const DEFAULT_PROFILE = {
   id: 'local-user', totalPoints: 0, walksCompleted: 0, milesTotal: 0,
   sitesDiscovered: {}, observationsLogged: 0, streakDays: 0, lastWalkDate: null
 };
-const DEFAULT_SETTINGS = { id: 'app-settings', activeCity: 'vienna', lastSyncedAt: null };
+const GEOFENCE_CATEGORIES = [
+  ['library', '📚 Libraries'], ['park', '🌳 Parks'], ['public_art', '🎨 Public Art'],
+  ['recreation_center', '🏢 Recreation Centers'], ['water_access', '🌊 Water Access'], ['history', '✦ History Sites']
+];
+const DEFAULT_SETTINGS = {
+  id: 'app-settings', activeCity: 'vienna', lastSyncedAt: null,
+  enableGeofencing: true, geofenceCategories: ['library', 'park', 'public_art', 'recreation_center', 'water_access', 'history'], defaultGeofenceRadiusMeters: 50
+};
 
 const state = {
   map: null, userMarker: null, routeLine: null, draftMarker: null, currentPosition: null,
   activeWalk: null, watchId: null, timerId: null, prompted: new Set(), currentSite: null,
   draftObservationLocation: null, archiveFilter: 'all', modalOpen: null, activeCity: 'vienna',
   profile: { ...DEFAULT_PROFILE }, settings: { ...DEFAULT_SETTINGS }, historyLayer: null, observationLayer: null, poiLayer: null, trailLayer: null,
-  cityPois: { vienna: [], norfolk: [] }, trailSegments: { vienna: [], norfolk: [] }, poiCategories: new Set(), parkAmenities: new Set(),
+  cityPois: { vienna: [], norfolk: [], newyork: [] }, trailSegments: { vienna: [], norfolk: [], newyork: [] }, poiCategories: new Set(), parkAmenities: new Set(),
   online: { client: null, session: null, remoteProfile: null, candidate: null, leaderboard: [], incoming: [] }
 };
 
@@ -259,7 +272,18 @@ function renderUserLocation(point, pan = false) {
   if (pan) state.map.panTo([point.lat, point.lng]);
 }
 function checkGeofences(point) {
-  const nearby = citySites().find((site) => !state.prompted.has(`${state.activeCity}:${site.id}`) && distanceMeters(point, site) <= site.radius);
+  const settings = state.settings || {};
+  if (settings.enableGeofencing === false) return;
+  const enabledCategories = new Set(settings.geofenceCategories || GEOFENCE_CATEGORIES.map(([id]) => id));
+  const defaultRadius = settings.defaultGeofenceRadiusMeters || 50;
+  const pois = state.cityPois[state.activeCity] || [];
+  const nearby = pois.find((poi) => {
+    const category = poi.category || 'history';
+    if (!enabledCategories.has(category)) return false;
+    if (state.prompted.has(`${state.activeCity}:${poi.id}`)) return false;
+    const effectiveRadius = poi.radius || defaultRadius;
+    return distanceMeters(point, poi) <= effectiveRadius;
+  });
   if (nearby && !state.modalOpen) showHistory(nearby, distanceMeters(point, nearby));
 }
 function addWalkPoint(point) {
@@ -436,6 +460,13 @@ function openArchive(filter = 'all') {
 }
 
 function badge(name, earned, detail) { return `<span class="badge ${earned ? 'earned' : ''}" title="${escapeHtml(detail)}">${earned ? '✓ ' : ''}${escapeHtml(name)}</span>`; }
+function renderGeofenceCategoryChips() {
+  const selected = new Set(state.settings.geofenceCategories || GEOFENCE_CATEGORIES.map(([id]) => id));
+  const chipsEl = el('geofenceCategoryChips');
+  if (chipsEl) {
+    chipsEl.innerHTML = GEOFENCE_CATEGORIES.map(([id, label]) => `<button type="button" class="poi-chip ${selected.has(id) ? 'active' : ''}" data-geofence-category="${id}">${label}</button>`).join('');
+  }
+}
 function renderProfile() {
   const profile = state.profile; const cityDiscoveries = sitesForProfile(profile).length; const totalCitySites = citySites().length;
   el('profilePoints').textContent = Math.round(profile.totalPoints).toLocaleString();
@@ -453,6 +484,10 @@ function renderProfile() {
   const select = el('citySelect');
   select.innerHTML = Object.entries(CITIES).map(([id, item]) => `<option value="${id}">${escapeHtml(item.name)}${id === 'norfolk' ? ' (prototype)' : ''}</option>`).join('');
   select.value = state.activeCity;
+  if (el('geofenceToggle')) el('geofenceToggle').checked = state.settings.enableGeofencing !== false;
+  if (el('geofenceOptionsContainer')) el('geofenceOptionsContainer').classList.toggle('hidden', state.settings.enableGeofencing === false);
+  if (el('geofenceRadiusSelect')) el('geofenceRadiusSelect').value = String(state.settings.defaultGeofenceRadiusMeters || 50);
+  renderGeofenceCategoryChips();
   const onlineName = state.online.remoteProfile?.username;
   el('onlineTeaserTitle').textContent = onlineName ? `Online as @${onlineName}` : 'Stay local by default';
   el('onlineTeaserText').textContent = onlineName ? `Last aggregate sync: ${state.settings.lastSyncedAt ? shortDate(state.settings.lastSyncedAt) : 'not yet'}. Routes, observations, photos, and notes remain local.` : 'Optional online mode shares only aggregate points and miles with friends—never routes, observations, photos, or notes.';
@@ -766,6 +801,30 @@ el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
     const bounds = state.trailLayer.getBounds();
     if (bounds.isValid()) state.map.fitBounds(bounds, { padding: [28, 28] });
   });
+  if (el('geofenceToggle')) {
+    el('geofenceToggle').addEventListener('change', async (event) => {
+      state.settings.enableGeofencing = event.target.checked;
+      await db.put('settings', state.settings);
+      renderProfile();
+    });
+  }
+  if (el('geofenceRadiusSelect')) {
+    el('geofenceRadiusSelect').addEventListener('change', async (event) => {
+      state.settings.defaultGeofenceRadiusMeters = Number(event.target.value) || 50;
+      await db.put('settings', state.settings);
+    });
+  }
+  if (el('geofenceCategoryChips')) {
+    el('geofenceCategoryChips').addEventListener('click', async (event) => {
+      const button = event.target.closest('[data-geofence-category]'); if (!button) return;
+      const id = button.dataset.geofenceCategory;
+      const categories = new Set(state.settings.geofenceCategories || GEOFENCE_CATEGORIES.map(([c]) => c));
+      categories.has(id) ? categories.delete(id) : categories.add(id);
+      state.settings.geofenceCategories = [...categories];
+      await db.put('settings', state.settings);
+      renderGeofenceCategoryChips();
+    });
+  }
 }
 
 async function init() {
