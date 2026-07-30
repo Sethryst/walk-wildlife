@@ -13,57 +13,13 @@ const CITIES = {
     name: 'Vienna, VA',
     center: { lat: 38.9013, lng: -77.2652 },
     zoom: 15,
-    sites: [
-      {
-        id: 'freeman-store', name: 'Freeman Store & Museum', lat: 38.9033616, lng: -77.2650446, radius: 90,
-        description: 'Built in 1859 as the Lydecker Store, this building later served as a Civil War hospital and as offices for both Union and Confederate armies. It is now Vienna’s volunteer-run store and museum.',
-        source: 'https://www.viennava.gov/About/History'
-      },
-      {
-        id: 'vienna-depot', name: 'Vienna Train Depot & Caboose', lat: 38.90244, lng: -77.26411, radius: 85,
-        description: 'The Vienna Depot served the town for 109 years on the Alexandria, Loudoun & Hampshire Railroad and its successor, the W&OD Railway, until rail service ended in 1968.',
-        source: 'https://www.viennava.gov/About/History'
-      },
-      {
-        id: 'little-library', name: 'Historic Little Library', lat: 38.90102, lng: -77.26431, radius: 75,
-        description: 'This small former library building is maintained by Historic Vienna, Inc. It connects today’s readers to the town’s civic and cultural history.',
-        source: 'https://www.fairfaxcounty.gov/library/branches/patrick-henry/'
-      },
-      {
-        id: 'first-baptist', name: 'First Baptist Church of Vienna', lat: 38.90445, lng: -77.26592, radius: 85,
-        description: 'The former First Baptist Church is among Vienna’s recognized historic places. Its story is part of the town’s enduring Black community and post-Civil War heritage.',
-        source: 'https://www.viennava.gov/About/History'
-      }
-    ]
+    dataFile: './data/vienna-poi.json'
   },
   norfolk: {
     name: 'Norfolk, VA',
     center: { lat: 36.8508, lng: -76.2859 },
     zoom: 14,
-    // These are deliberately generic prototype stops, not historical assertions.
-    // Validate every coordinate and interpretation with Norfolk partners before release.
-    sites: [
-      {
-        id: 'norfolk-downtown-prototype', name: 'Downtown story stop (prototype)', lat: 36.8506, lng: -76.2892, radius: 90,
-        description: 'Unverified demonstration location for testing the multi-city prompt experience. Replace with a partner-reviewed Norfolk story and exact coordinates before public use.',
-        source: null, unverified: true
-      },
-      {
-        id: 'norfolk-waterfront-prototype', name: 'Waterfront story stop (prototype)', lat: 36.8466, lng: -76.2920, radius: 90,
-        description: 'Unverified demonstration location near the waterfront. It is not an interpretation of a historic site and must be replaced with reviewed content before public use.',
-        source: null, unverified: true
-      },
-      {
-        id: 'norfolk-freemason-prototype', name: 'Freemason district story stop (prototype)', lat: 36.8564, lng: -76.2942, radius: 90,
-        description: 'Unverified demonstration location for the Norfolk rollout. A local historical partner should supply its final narrative, attribution, and access guidance.',
-        source: null, unverified: true
-      },
-      {
-        id: 'norfolk-ghent-prototype', name: 'Ghent story stop (prototype)', lat: 36.8613, lng: -76.2881, radius: 90,
-        description: 'Unverified demonstration location for testing city switching. Do not rely on this as historic, safety, or accessibility guidance.',
-        source: null, unverified: true
-      }
-    ]
+    dataFile: './data/norfolk-poi.json'
   }
 };
 
@@ -78,7 +34,7 @@ const state = {
   activeWalk: null, watchId: null, timerId: null, prompted: new Set(), currentSite: null,
   draftObservationLocation: null, archiveFilter: 'all', modalOpen: null, activeCity: 'vienna',
   profile: { ...DEFAULT_PROFILE }, settings: { ...DEFAULT_SETTINGS }, historyLayer: null, observationLayer: null, poiLayer: null, trailLayer: null,
-  norfolkPois: [], trailSegments: [], poiCategories: new Set(), parkAmenities: new Set(),
+  cityPois: { vienna: [], norfolk: [] }, trailSegments: { vienna: [], norfolk: [] }, poiCategories: new Set(), parkAmenities: new Set(),
   online: { client: null, session: null, remoteProfile: null, candidate: null, leaderboard: [], incoming: [] }
 };
 
@@ -121,25 +77,30 @@ const POI_CATEGORIES = [
 const PARK_AMENITIES = [['basketball', 'Basketball'], ['tennis', 'Tennis'], ['playground', 'Playground'], ['dog_park', 'Dog park'], ['splash_pad', 'Splash pad'], ['disc_golf', 'Disc golf'], ['skate_park', 'Skate park'], ['restrooms', 'Restrooms']];
 const POI_ICONS = { park: '🌳', public_art: '🎨', recreation_center: '🏢', water_access: '🌊', trail: '🥾', library: '📚' };
 
-async function loadNorfolkPois() {
-  const saved = await db.all('points_of_interest');
-  const metadata = await db.get('poi_metadata', 'norfolk-seed');
-  if (!metadata || metadata.version !== '2026-07-27-v1' || !saved.length) {
-    const response = await fetch('./data/norfolk-poi.json');
-    if (!response.ok) throw new Error('Norfolk POI seed could not be loaded.');
-    const seed = await response.json();
-    await Promise.all(seed.pointsOfInterest.map((item) => db.put('points_of_interest', item)));
-    await db.put('poi_metadata', { id: 'norfolk-seed', version: seed.metadata.version, attribution: seed.metadata.attribution, trailSegments: seed.trailSegments || [] });
-    state.norfolkPois = seed.pointsOfInterest;
-    state.trailSegments = seed.trailSegments || [];
+async function loadCityData(cityId) {
+  const config = CITIES[cityId];
+  const saved = (await db.all('points_of_interest')).filter((poi) => poi.city === cityId);
+  const metadata = await db.get('poi_metadata', `${cityId}-seed`);
+  const response = await fetch(config.dataFile);
+  if (!response.ok) throw new Error(`${config.name} places data could not be loaded.`);
+  const seed = await response.json();
+  if (!metadata || metadata.version !== seed.metadata.version || !saved.length) {
+    const items = seed.pointsOfInterest.map((item) => ({ ...item, city: cityId }));
+    await Promise.all(items.map((item) => db.put('points_of_interest', item)));
+    await db.put('poi_metadata', { id: `${cityId}-seed`, version: seed.metadata.version, attribution: seed.metadata.attribution, trailSegments: seed.trailSegments || [] });
+    state.cityPois[cityId] = items;
+    state.trailSegments[cityId] = seed.trailSegments || [];
   } else {
-    state.norfolkPois = saved;
-    state.trailSegments = metadata.trailSegments || [];
+    state.cityPois[cityId] = saved;
+    state.trailSegments[cityId] = metadata.trailSegments || [];
   }
+}
+async function loadAllCityData() {
+  await Promise.all(Object.keys(CITIES).map((cityId) => loadCityData(cityId).catch((error) => console.error(error))));
 }
 
 function city() { return CITIES[state.activeCity]; }
-function citySites() { return city().sites; }
+function citySites() { return (state.cityPois[state.activeCity] || []).filter((poi) => poi.radius); }
 function uid(prefix) { return `${prefix}-${Date.now()}-${Math.random().toString(16).slice(2)}`; }
 function distanceMeters(a, b) {
   const r = 6371e3, rad = Math.PI / 180;
@@ -218,7 +179,8 @@ async function updateProfile(mutator) {
 }
 
 function renderPoiFilters() {
-  el('poiCategoryFilters').innerHTML = POI_CATEGORIES.filter(([id]) => state.norfolkPois.some((poi) => poi.category === id)).map(([id, label]) => `<button class="poi-chip ${state.poiCategories.has(id) ? 'active' : ''}" data-poi-category="${id}">${label}</button>`).join('');
+  const pois = state.cityPois[state.activeCity] || [];
+  el('poiCategoryFilters').innerHTML = POI_CATEGORIES.filter(([id]) => pois.some((poi) => poi.category === id)).map(([id, label]) => `<button class="poi-chip ${state.poiCategories.has(id) ? 'active' : ''}" data-poi-category="${id}">${label}</button>`).join('');
   el('parkAmenityFilters').innerHTML = PARK_AMENITIES.map(([id, label]) => `<button class="poi-chip ${state.parkAmenities.has(id) ? 'active' : ''}" data-park-amenity="${id}">${label}</button>`).join('');
 }
 function poiMatchesFilters(poi) {
@@ -238,12 +200,13 @@ function renderNorfolkPois() {
   });
   if (!state.poiCategories.size || state.poiCategories.has('trail')) state.trailSegments.forEach((segment) => segment.coordinates.forEach((coordinates) => L.polyline(coordinates.map(([lng, lat]) => [lat, lng]), { color: '#2d7259', weight: 5, opacity: .82 }).bindTooltip('Elizabeth River Trail').addTo(state.trailLayer)));
 }
-function renderNorfolkExplorer() {
-  const visible = state.activeCity === 'norfolk';
-  el('poiExplorer').classList.toggle('hidden', !visible);
-  el('norfolkAttribution').classList.toggle('hidden', !visible);
-  if (visible) renderPoiFilters();
-  el('trailFeatureButton').classList.toggle('hidden', !visible || !state.trailSegments.length);
+function renderCityExplorer() {
+  const pois = state.cityPois[state.activeCity] || [];
+  const hasExplorerContent = pois.some((poi) => poi.category);
+  el('poiExplorer').classList.toggle('hidden', !hasExplorerContent);
+  el('norfolkAttribution').classList.toggle('hidden', state.activeCity !== 'norfolk');
+  if (hasExplorerContent) renderPoiFilters();
+  el('trailFeatureButton').classList.toggle('hidden', !(state.trailSegments[state.activeCity] || []).length);
 }
 function initMap() {
   const active = city();
@@ -271,7 +234,7 @@ async function refreshCityMap(recenter = false) {
   if (recenter) state.map.setView([active.center.lat, active.center.lng], active.zoom);
   el('activeCityLabel').textContent = active.name;
   el('map').setAttribute('aria-label', `Map of ${active.name} historical places`);
-  renderNorfolkExplorer(); renderNorfolkPois();
+  renderCityExplorer(); renderCityPois();
   renderProfile();
 }
 async function switchCity(nextCity, recenter = true) {
@@ -802,8 +765,7 @@ el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
 }
 
 async function init() {
-  try { await db.open(); await loadLocalState(); await loadNorfolkPois(); } catch (error) { console.error(error); toast('Local storage or Norfolk places could not open in this browser.'); return; }
-  initMap();
+try { await db.open(); await loadLocalState(); await loadAllCityData(); } catch (error) { console.error(error); toast('Local storage or places data could not open in this browser.'); return; }  initMap();
 try { initEvents(); } catch (error) { console.error('initEvents failed:', error); }
   await refreshCityMap(false); await renderRecent();
   try {
