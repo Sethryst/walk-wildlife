@@ -181,29 +181,6 @@
       <h2 id="onlineTitle">Friends, not tracking.</h2>
       <p class="privacy-boundary">Online mode can sync only total points, miles, and number of sites discovered. Your routes, journal, nature notes, and photos stay on this device.</p>
       <section id="onlineSetupPanel" class="online-panel hidden">
-        <section class="sheet hidden" id="accountSheet" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
-      <button class="close-sheet" data-close-sheet aria-label="Close">×</button>
-      <span class="sheet-kicker">ACCOUNT SETTINGS</span>
-      <h2 id="accountTitle">Manage your account</h2>
-      <form id="accountUsernameForm" class="online-panel">
-        <label>Username <input id="accountUsernameInput" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" required /></label>
-        <button class="secondary-button" type="submit">Update username</button>
-      </form>
-      <form id="accountPhoneForm" class="online-panel">
-        <label>Phone <input id="accountPhoneInput" type="tel" placeholder="e.g., 5551234567" /></label>
-        <button class="secondary-button" type="submit">Update phone</button>
-      </form>
-      <form id="accountEmailForm" class="online-panel">
-        <label>Email <input id="accountEmailInput" type="email" required /></label>
-        <button class="secondary-button" type="submit">Update email</button>
-        <p class="sheet-intro">Changing your email may ask you to confirm via a link sent to the new address.</p>
-      </form>
-      <form id="accountPasswordForm" class="online-panel">
-        <label>New password <input id="accountPasswordInput" type="password" autocomplete="new-password" required minlength="6" /></label>
-        <button class="secondary-button" type="submit">Update password</button>
-      </form>
-    </section>
-      <section id="onlineSetupPanel" class="online-panel hidden">
         <strong>Connect a Supabase project first</strong>
         <p>Add your project URL and publishable/anon key to <code>supabase-config.js</code>, then run the included SQL schema. Until then, everything remains local.</p>
       </section>
@@ -241,6 +218,29 @@
         <div id="friendSearchResult" class="friend-result hidden"></div>
         <section id="incomingRequests" class="requests-section hidden"><p class="sheet-kicker">REQUESTS</p><div id="incomingRequestsList"></div></section>
       </section>
+    </section>
+
+    <section class="sheet hidden" id="accountSheet" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+      <button class="close-sheet" data-close-sheet aria-label="Close">×</button>
+      <span class="sheet-kicker">ACCOUNT SETTINGS</span>
+      <h2 id="accountTitle">Manage your account</h2>
+      <form id="accountUsernameForm" class="online-panel">
+        <label>Username <input id="accountUsernameInput" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" required /></label>
+        <button class="secondary-button" type="submit">Update username</button>
+      </form>
+      <form id="accountPhoneForm" class="online-panel">
+        <label>Phone <input id="accountPhoneInput" type="tel" placeholder="e.g., 5551234567" /></label>
+        <button class="secondary-button" type="submit">Update phone</button>
+      </form>
+      <form id="accountEmailForm" class="online-panel">
+        <label>Email <input id="accountEmailInput" type="email" required /></label>
+        <button class="secondary-button" type="submit">Update email</button>
+        <p class="sheet-intro">Changing your email may ask you to confirm via a link sent to the new address.</p>
+      </form>
+      <form id="accountPasswordForm" class="online-panel">
+        <label>New password <input id="accountPasswordInput" type="password" autocomplete="new-password" required minlength="6" /></label>
+        <button class="secondary-button" type="submit">Update password</button>
+      </form>
     </section>
 
     <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
