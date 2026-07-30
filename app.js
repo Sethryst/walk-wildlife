@@ -26,6 +26,12 @@ const CITIES = {
     center: { lat: 40.73088, lng: -73.99759 },
     zoom: 13,
     dataFile: './data/newyork-poi.json'
+  },
+  pgcounty: {
+    name: "Prince George's County, MD",
+    center: { lat: 38.8315, lng: -76.8465 },
+    zoom: 11,
+    dataFile: './data/pgcounty-poi.json'
   }
 };
 
