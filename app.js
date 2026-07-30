@@ -556,7 +556,7 @@ async function signIn() {
   const { error } = await state.online.client.auth.signInWithPassword({ email, password });
   if (error) { toast(error.message); return; }
 
-  await setupOnline();
+  await loadRemoteProfile();
   await renderOnline();
 }
 
@@ -570,7 +570,7 @@ async function signUp() {
   if (error) { toast(error.message); return; }
   if (!data.session) { toast('Account created — check your email to confirm before continuing.'); return; }
 
-  await setupOnline();
+  await loadRemoteProfile();
   await renderOnline();
 }
 async function createOnlineProfile(event) {
