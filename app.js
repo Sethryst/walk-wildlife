@@ -32,6 +32,12 @@ const CITIES = {
     center: { lat: 38.8315, lng: -76.8465 },
     zoom: 11,
     dataFile: './data/pgcounty-poi.json'
+  },
+  dc: {
+    name: 'Washington, DC',
+    center: { lat: 38.8951, lng: -77.0364 },
+    zoom: 13,
+    dataFile: './data/dc-poi.json'
   }
 };
 
@@ -42,11 +48,12 @@ const DEFAULT_PROFILE = {
 const GEOFENCE_CATEGORIES = [
   ['library', '📚 Libraries'], ['park', '🌳 Parks'], ['public_art', '🎨 Public Art'],
   ['recreation_center', '🏢 Recreation Centers'], ['water_access', '🌊 Water Access'],
-  ['community_garden', '🌱 Community Gardens'], ['history', '✦ History Sites']
+  ['community_garden', '🌱 Community Gardens'], ['history', '✦ History Sites'],
+  ['wifi', '📶 Free Wi-Fi']
 ];
 const DEFAULT_SETTINGS = {
   id: 'app-settings', activeCity: 'vienna', lastSyncedAt: null,
-  enableGeofencing: true, geofenceCategories: ['library', 'park', 'public_art', 'recreation_center', 'water_access', 'history', 'community_garden'], defaultGeofenceRadiusMeters: 50
+  enableGeofencing: true, geofenceCategories: ['library', 'park', 'public_art', 'recreation_center', 'water_access', 'history', 'community_garden', 'wifi'], defaultGeofenceRadiusMeters: 50
 };
 
 const state = {
@@ -93,10 +100,11 @@ const db = (() => {
 const POI_CATEGORIES = [
   ['park', '🌳 Parks'], ['public_art', '🎨 Public Art'], ['recreation_center', '🏢 Recreation Centers'],
   ['water_access', '🌊 Water Access'], ['trail', '🥾 Trails'], ['library', '📚 Libraries'],
-  ['community_garden', '🌱 Community Gardens'], ['history', '✦ History Sites']
+  ['community_garden', '🌱 Community Gardens'], ['history', '✦ History Sites'],
+  ['wifi', '📶 Free Wi-Fi']
 ];
 const PARK_AMENITIES = [['basketball', 'Basketball'], ['tennis', 'Tennis'], ['playground', 'Playground'], ['dog_park', 'Dog park'], ['splash_pad', 'Splash pad'], ['disc_golf', 'Disc golf'], ['skate_park', 'Skate park'], ['restrooms', 'Restrooms']];
-const POI_ICONS = { park: '🌳', public_art: '🎨', recreation_center: '🏢', water_access: '🌊', trail: '🥾', library: '📚', community_garden: '🌱', history: '✦' };
+const POI_ICONS = { park: '🌳', public_art: '🎨', recreation_center: '🏢', water_access: '🌊', trail: '🥾', library: '📚', community_garden: '🌱', history: '✦', wifi: '📶' };
 
 async function loadCityData(cityId) {
   const config = CITIES[cityId];
