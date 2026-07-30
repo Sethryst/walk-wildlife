@@ -139,11 +139,15 @@ function normalizePoiTags(poi) {
   if (poi.amenities) poi.amenities.forEach((amenity) => { if (!tags.includes(amenity)) tags.push(amenity); });
   // Source data sometimes marks a site historic only in `subcategory` (e.g.
   // Norfolk's "HISTORICAL" library subcategory) without a top-level `history`
-  // tag. Fold that in rather than dropping it silently. This is intentionally
-  // conservative — it does NOT infer `history` from name/description
-  // keywords like "Memorial" or "Monument"; those are real data gaps the
-  // audit script flags for a human to confirm and retag upstream.
+  // tag. Fold that in rather than dropping it silently.
   if (poi.subcategory && /histor/i.test(poi.subcategory) && !tags.includes('history')) tags.push('history');
+  // NYC Parks' "Historical Signs" dataset: every record's own name/source
+  // says "— Historical Sign" / "Historical Signs (borough)" — this is the
+  // source's own label for what the record IS, not a name-keyword guess like
+  // "Memorial"/"Monument" (which stay in the audit script for a human to
+  // confirm). Only ~128/2266 had a `history` tag from import; the rest were
+  // tagged solely by their physical park/location category.
+  if (/historical sign/i.test(`${poi.name || ''} ${poi.source || ''}`) && !tags.includes('history')) tags.push('history');
   return tags;
 }
 function inferHistorySubtype(poi) {

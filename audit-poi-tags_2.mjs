@@ -2,9 +2,16 @@
 /**
  * audit-poi-tags.mjs
  *
- * Flags POI entries whose name/description hints at a category that isn't
- * reflected in their tags — the root cause of "parks showing up as history
- * sites." Run against a city's raw dataFile JSON before it ships.
+ * 1. Flags POI entries whose name/description hints at a category that isn't
+ *    reflected in their tags — the root cause of "parks showing up as history
+ *    sites." Mirrors the app's two auto-tag rules (subcategory containing
+ *    "HISTOR", and name/source containing "Historical Sign") so it only
+ *    flags genuine gaps a human needs to resolve, not ones the app already
+ *    fixes on load.
+ * 2. Flags coordinate clusters where many differently-named POIs share one
+ *    exact lat/lng — a signature of a batch-geocoding fallback, and the
+ *    likely explanation when signs turn up plotted in a river/water body
+ *    instead of their real location.
  *
  * Usage:
  *   node audit-poi-tags.mjs ./data/norfolk-poi.json
@@ -35,6 +42,8 @@ function normalizeTags(poi) {
   const tags = new Set(poi.tags || []);
   if (poi.category) tags.add(poi.category);
   (poi.amenities || []).forEach((amenity) => tags.add(amenity));
+  if (poi.subcategory && /histor/i.test(poi.subcategory)) tags.add('history');
+  if (/historical sign/i.test(`${poi.name || ''} ${poi.source || ''}`)) tags.add('history');
   return tags;
 }
 
@@ -44,6 +53,19 @@ function suggestSubtype(text) {
   if (/cemetery/i.test(text)) return 'cemetery';
   if (/librar|building|hall|house|church/i.test(text)) return 'landmark';
   return 'marker';
+}
+
+function auditCoordinateClusters(pois, minClusterSize = 4) {
+  const byCoord = new Map();
+  pois.forEach((poi) => {
+    if (!Number.isFinite(poi.lat) || !Number.isFinite(poi.lng)) return;
+    const key = `${poi.lat},${poi.lng}`;
+    if (!byCoord.has(key)) byCoord.set(key, []);
+    byCoord.get(key).push(poi);
+  });
+  return [...byCoord.entries()]
+    .filter(([, members]) => members.length >= minClusterSize)
+    .sort((a, b) => b[1].length - a[1].length);
 }
 
 function auditFile(path) {
@@ -76,11 +98,19 @@ function auditFile(path) {
     }
   });
 
-  console.log(`\n${path} — ${pois.length} POIs, ${issues.length} flagged`);
+  console.log(`\n${path} — ${pois.length} POIs, ${issues.length} tag issues flagged`);
   issues.forEach((issue) => {
     console.log(`  [${issue.kind}] ${issue.id || '(no id)'} "${issue.name}" — has: [${issue.have.join(', ')}] suggest: [${issue.suggest.join(', ')}]${issue.note || ''}`);
   });
-  return issues.length;
+
+  const clusters = auditCoordinateClusters(pois);
+  console.log(`\n${path} — ${clusters.length} shared-coordinate clusters (4+ differently-named POIs at one exact lat/lng)`);
+  console.log('  These are the likely cause of points plotting in rivers/water — check each against the real GPS location of its members.');
+  clusters.forEach(([coord, members]) => {
+    console.log(`  [${coord}] ${members.length} POIs share this point, e.g.: ${members.slice(0, 3).map((m) => `"${m.name}"`).join(', ')}${members.length > 3 ? ', ...' : ''}`);
+  });
+
+  return issues.length + clusters.length;
 }
 
 const files = process.argv.slice(2);
