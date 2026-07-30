@@ -803,7 +803,8 @@ el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
 
 async function init() {
   try { await db.open(); await loadLocalState(); await loadNorfolkPois(); } catch (error) { console.error(error); toast('Local storage or Norfolk places could not open in this browser.'); return; }
-  initMap(); initEvents();
+  initMap();
+try { initEvents(); } catch (error) { console.error('initEvents failed:', error); }
   await refreshCityMap(false); await renderRecent();
   try {
     await setupOnline();
