@@ -188,17 +188,21 @@ function poiMatchesFilters(poi) {
   const amenityMatches = !state.parkAmenities.size || (poi.category === 'park' && [...state.parkAmenities].every((amenity) => poi.amenities.includes(amenity)));
   return categoryMatches && amenityMatches;
 }
-function renderNorfolkPois() {
+function renderCityPois() {
   if (!state.poiLayer) return;
   state.poiLayer.clearLayers(); state.trailLayer.clearLayers();
-  if (state.activeCity !== 'norfolk') return;
-  state.norfolkPois.filter(poiMatchesFilters).forEach((poi) => {
+  const pois = state.cityPois[state.activeCity] || [];
+  pois.filter(poiMatchesFilters).forEach((poi) => {
+    if (poi.radius && poi.category === 'history') return;
     const icon = L.divIcon({ className: '', html: `<div class="poi-marker ${poi.category}">${POI_ICONS[poi.category] || '•'}</div>`, iconSize: [27, 27], iconAnchor: [13, 13] });
-    const details = [poi.description, poi.address, poi.amenities.length ? `Amenities: ${poi.amenities.map((item) => item.replaceAll('_', ' ')).join(', ')}` : null].filter(Boolean).map(escapeHtml).join('<br>');
+    const details = [poi.description, poi.address, poi.amenities?.length ? `Amenities: ${poi.amenities.map((item) => item.replaceAll('_', ' ')).join(', ')}` : null].filter(Boolean).map(escapeHtml).join('<br>');
     const link = poi.link ? `<br><a href="${escapeHtml(poi.link)}" target="_blank" rel="noreferrer">Learn more ↗</a>` : '';
     L.marker([poi.lat, poi.lng], { icon, title: poi.name }).bindPopup(`<strong>${escapeHtml(poi.name)}</strong>${details ? `<br><span>${details}</span>` : ''}${link}`).addTo(state.poiLayer);
   });
-  if (!state.poiCategories.size || state.poiCategories.has('trail')) state.trailSegments.forEach((segment) => segment.coordinates.forEach((coordinates) => L.polyline(coordinates.map(([lng, lat]) => [lat, lng]), { color: '#2d7259', weight: 5, opacity: .82 }).bindTooltip('Elizabeth River Trail').addTo(state.trailLayer)));
+  const segments = state.trailSegments[state.activeCity] || [];
+  if (!state.poiCategories.size || state.poiCategories.has('trail')) {
+    segments.forEach((segment) => segment.coordinates.forEach((coordinates) => L.polyline(coordinates.map(([lng, lat]) => [lat, lng]), { color: '#2d7259', weight: 5, opacity: .82 }).bindTooltip('Elizabeth River Trail').addTo(state.trailLayer)));
+  }
 }
 function renderCityExplorer() {
   const pois = state.cityPois[state.activeCity] || [];
@@ -216,14 +220,14 @@ function initMap() {
   state.historyLayer = L.layerGroup().addTo(state.map);
   state.observationLayer = L.layerGroup().addTo(state.map);
   state.poiLayer = L.layerGroup().addTo(state.map);
-  state.trailLayer = L.layerGroup().addTo(state.map);
+  state.trailLayer = L.featureGroup().addTo(state.map);
   state.map.on('click', (event) => openObservation({ lat: event.latlng.lat, lng: event.latlng.lng }));
 }
 async function refreshCityMap(recenter = false) {
   const active = city();
   state.historyLayer.clearLayers(); state.observationLayer.clearLayers(); state.prompted.clear();
   const historyIcon = L.divIcon({ className: '', html: '<div class="historic-marker"><span>✦</span></div>', iconSize: [31, 31], iconAnchor: [15, 30] });
-  active.sites.forEach((site) => {
+  citySites().forEach((site) => {
     const marker = L.marker([site.lat, site.lng], { icon: historyIcon, title: site.name }).addTo(state.historyLayer);
     marker.bindTooltip(site.unverified ? `${site.name} — unverified` : site.name, { direction: 'top', offset: [0, -25] });
     marker.on('click', () => showHistory(site, distanceMeters(state.currentPosition || active.center, site)));
@@ -749,15 +753,15 @@ el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
     const button = event.target.closest('[data-poi-category]'); if (!button) return;
     const id = button.dataset.poiCategory;
     state.poiCategories.has(id) ? state.poiCategories.delete(id) : state.poiCategories.add(id);
-    renderPoiFilters(); renderNorfolkPois();
+    renderPoiFilters(); renderCityPois();
   });
   el('parkAmenityFilters').addEventListener('click', (event) => {
     const button = event.target.closest('[data-park-amenity]'); if (!button) return;
     const id = button.dataset.parkAmenity;
     state.parkAmenities.has(id) ? state.parkAmenities.delete(id) : state.parkAmenities.add(id);
-    renderPoiFilters(); renderNorfolkPois();
+    renderPoiFilters(); renderCityPois();
   });
-  el('clearPoiFiltersButton').addEventListener('click', () => { state.poiCategories.clear(); state.parkAmenities.clear(); renderPoiFilters(); renderNorfolkPois(); });
+  el('clearPoiFiltersButton').addEventListener('click', () => { state.poiCategories.clear(); state.parkAmenities.clear(); renderPoiFilters(); renderCityPois(); });
   el('trailFeatureButton').addEventListener('click', () => {
     const bounds = state.trailLayer.getBounds();
     if (bounds.isValid()) state.map.fitBounds(bounds, { padding: [28, 28] });
