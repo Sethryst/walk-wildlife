@@ -198,7 +198,18 @@ function city() { return CITIES[state.activeCity]; }
 // A "history site" is any POI actually tagged `history` — NOT any POI that
 // happens to have a geofence radius (every POI gets a default radius via
 // migratePoi, so that check was matching parks, libraries, etc. too).
+// Used for the history map layer/demo only — NOT the profile progress stat,
+// see cityDiscoverableSites() below for that.
 function citySites() { return (state.cityPois[state.activeCity] || []).filter((poi) => poiTags(poi).includes('history')); }
+// The profile "X/Y sites" stat and the Explorer badge track discovery across
+// every enabled geofence category (parks, libraries, art, etc.) — that's what
+// checkGeofences() actually awards, not just history sites. Mirrors its
+// eligibility check so the denominator always matches what's collectible.
+function cityDiscoverableSites() {
+  const pois = state.cityPois[state.activeCity] || [];
+  const enabledCategories = new Set(state.settings?.geofenceCategories || GEOFENCE_CATEGORIES.map(([id]) => id));
+  return pois.filter((poi) => poiTags(poi).some((tag) => enabledCategories.has(tag)));
+}
 function withinRenderBounds(poi) {
   if (!state.map) return true;
   try { return state.map.getBounds().pad(0.6).contains([poi.lat, poi.lng]); } catch { return true; }
@@ -613,7 +624,7 @@ function renderGeofenceCategoryChips() {
   }
 }
 function renderProfile() {
-  const profile = state.profile; const cityDiscoveries = sitesForProfile(profile).length; const totalCitySites = citySites().length;
+  const profile = state.profile; const cityDiscoveries = sitesForProfile(profile).length; const totalCitySites = cityDiscoverableSites().length;
   el('profilePoints').textContent = Math.round(profile.totalPoints).toLocaleString();
   el('profileStats').innerHTML = [
     [profile.walksCompleted, 'Walks completed'], [profile.milesTotal.toFixed(1), 'Miles total'],
@@ -621,7 +632,7 @@ function renderProfile() {
   ].map(([value, label]) => `<div class="profile-stat"><strong>${value}</strong><span>${label}</span></div>`).join('');
   el('badgeList').innerHTML = [
     badge('First Steps', profile.walksCompleted >= 1, 'Complete one walk.'),
-    badge('Explorer', totalCitySites > 0 && cityDiscoveries >= totalCitySites, `Discover every history stop in ${cityLabel(state.activeCity)}.`),
+    badge('Explorer', totalCitySites > 0 && cityDiscoveries >= totalCitySites, `Discover every stop in ${cityLabel(state.activeCity)}.`),
     badge('Century Club', profile.totalPoints >= 100, 'Earn 100 total trail points.'),
     badge('Naturalist', profile.observationsLogged >= 10, 'Log 10 nature observations.')
   ].join('');
