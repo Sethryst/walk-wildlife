@@ -547,35 +547,28 @@ async function renderOnline() {
   el('onlineStatusText').textContent = state.settings.lastSyncedAt ? `Last synced ${shortDate(state.settings.lastSyncedAt)}` : 'Online — aggregate stats ready to sync';
   await refreshFriends();
 }
-async function sendMagicLink(event) {
-  event.preventDefault();
-
+async function signIn() {
   if (!onlineConfigured()) return;
-
   const email = el('onlineEmail').value.trim();
   const password = el('onlinePassword').value;
+  if (!email || !password) { toast('Enter your email and password.'); return; }
 
-  // Try logging in first
-  let { error } = await state.online.client.auth.signInWithPassword({
-    email,
-    password
-  });
+  const { error } = await state.online.client.auth.signInWithPassword({ email, password });
+  if (error) { toast(error.message); return; }
 
-  // If login failed because the user doesn't exist,
-  // create a new account instead.
-  if (error && error.message.toLowerCase().includes('invalid login')) {
-    const result = await state.online.client.auth.signUp({
-      email,
-      password
-    });
+  await setupOnline();
+  await renderOnline();
+}
 
-    error = result.error;
-  }
+async function signUp() {
+  if (!onlineConfigured()) return;
+  const email = el('onlineEmail').value.trim();
+  const password = el('onlinePassword').value;
+  if (!email || !password) { toast('Enter your email and password.'); return; }
 
-  if (error) {
-    toast(error.message);
-    return;
-  }
+  const { data, error } = await state.online.client.auth.signUp({ email, password });
+  if (error) { toast(error.message); return; }
+  if (!data.session) { toast('Account created — check your email to confirm before continuing.'); return; }
 
   await setupOnline();
   await renderOnline();
@@ -714,7 +707,9 @@ function initEvents() {
   document.querySelectorAll('.filter-button').forEach((button) => button.addEventListener('click', () => openArchive(button.dataset.filter)));
   el('citySelect').addEventListener('change', (event) => switchCity(event.target.value));
   el('goOnlineButton').addEventListener('click', openOnline);
-  el('magicLinkForm').addEventListener('submit', sendMagicLink); el('usernameForm').addEventListener('submit', createOnlineProfile);
+  el('signInButton').addEventListener('click', signIn);
+el('signUpButton').addEventListener('click', signUp);
+el('usernameForm').addEventListener('submit', createOnlineProfile);
   el('syncNowButton').addEventListener('click', async () => { try { await syncProfile(); await renderOnline(); toast('Aggregate stats synced.'); } catch (error) { toast(error.message || 'Could not sync right now.'); } });
   el('refreshFriendsButton').addEventListener('click', refreshFriends); el('friendSearchForm').addEventListener('submit', findFriend);
   el('incomingRequestsList').addEventListener('click', (event) => { const button = event.target.closest('[data-accept-id]'); if (button) acceptFriend(button.dataset.acceptId); });
