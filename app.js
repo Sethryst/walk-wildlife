@@ -10,36 +10,48 @@ const MAX_WALK_SPEED_MPS = 15;
 
 const CITIES = {
   vienna: {
-    name: 'Vienna, VA',
+    name: 'Vienna',
+    state: 'VA',
     center: { lat: 38.9013, lng: -77.2652 },
     zoom: 15,
     dataFile: './data/vienna-poi.json'
   },
   norfolk: {
-    name: 'Norfolk, VA',
+    name: 'Norfolk',
+    state: 'VA',
     center: { lat: 36.8508, lng: -76.2859 },
     zoom: 14,
     dataFile: './data/norfolk-poi.json'
   },
   newyork: {
-    name: 'New York, NY',
+    name: 'New York',
+    state: 'NY',
     center: { lat: 40.73088, lng: -73.99759 },
     zoom: 13,
     dataFile: './data/newyork-poi.json'
   },
   pgcounty: {
-    name: "Prince George's County, MD",
+    name: "Prince George's County",
+    state: 'MD',
     center: { lat: 38.8315, lng: -76.8465 },
     zoom: 11,
     dataFile: './data/pgcounty-poi.json'
   },
   dc: {
-    name: 'Washington, DC',
+    name: 'Washington',
+    state: 'DC',
     center: { lat: 38.8951, lng: -77.0364 },
     zoom: 13,
     dataFile: './data/dc-poi.json'
   }
 };
+
+function cityLabel(cityId) {
+  const config = CITIES[cityId];
+  if (!config) return '';
+  const suffix = cityId === 'norfolk' ? ' (prototype)' : '';
+  return `${config.name}, ${config.state}${suffix}`;
+}
 
 const DEFAULT_PROFILE = {
   id: 'local-user', totalPoints: 0, walksCompleted: 0, milesTotal: 0,
@@ -59,9 +71,9 @@ const DEFAULT_SETTINGS = {
 const state = {
   map: null, userMarker: null, routeLine: null, draftMarker: null, currentPosition: null,
   activeWalk: null, watchId: null, timerId: null, prompted: new Set(), currentSite: null,
-  draftObservationLocation: null, archiveFilter: 'all', modalOpen: null, activeCity: 'vienna',
+  draftObservationLocation: null, archiveFilter: 'all', activeView: 'map', modalOpen: null, activeCity: 'vienna',
   profile: { ...DEFAULT_PROFILE }, settings: { ...DEFAULT_SETTINGS }, historyLayer: null, observationLayer: null, poiLayer: null, trailLayer: null,
-  cityPois: { vienna: [], norfolk: [], newyork: [] }, trailSegments: { vienna: [], norfolk: [], newyork: [] }, poiCategories: new Set(), parkAmenities: new Set(),
+  cityPois: {}, trailSegments: {}, poiTags: new Set(),
   online: { client: null, session: null, remoteProfile: null, candidate: null, leaderboard: [], incoming: [] }
 };
 
@@ -97,30 +109,49 @@ const db = (() => {
   return { open, put, get, all, clearAll };
 })();
 
-const POI_CATEGORIES = [
+const POI_TAGS = [
   ['park', '🌳 Parks'], ['public_art', '🎨 Public Art'], ['recreation_center', '🏢 Recreation Centers'],
   ['water_access', '🌊 Water Access'], ['trail', '🥾 Trails'], ['library', '📚 Libraries'],
   ['community_garden', '🌱 Community Gardens'], ['history', '✦ History Sites'],
-  ['wifi', '📶 Free Wi-Fi']
+  ['wifi', '📶 Free Wi-Fi'], ['basketball', 'Basketball'], ['tennis', 'Tennis'],
+  ['playground', 'Playground'], ['dog_park', 'Dog park'], ['splash_pad', 'Splash pad'],
+  ['disc_golf', 'Disc golf'], ['skate_park', 'Skate park'], ['restrooms', 'Restrooms']
 ];
-const PARK_AMENITIES = [['basketball', 'Basketball'], ['tennis', 'Tennis'], ['playground', 'Playground'], ['dog_park', 'Dog park'], ['splash_pad', 'Splash pad'], ['disc_golf', 'Disc golf'], ['skate_park', 'Skate park'], ['restrooms', 'Restrooms']];
+const TAG_LABELS = Object.fromEntries(POI_TAGS);
+const POI_TAG_PRIORITY = ['history', 'park', 'public_art', 'recreation_center', 'water_access', 'trail', 'library', 'community_garden', 'wifi'];
 const POI_ICONS = { park: '🌳', public_art: '🎨', recreation_center: '🏢', water_access: '🌊', trail: '🥾', library: '📚', community_garden: '🌱', history: '✦', wifi: '📶' };
+
+function normalizePoiTags(poi) {
+  const tags = [...(poi.tags || [])];
+  if (poi.category && !tags.includes(poi.category)) tags.push(poi.category);
+  if (poi.amenities) poi.amenities.forEach((amenity) => { if (!tags.includes(amenity)) tags.push(amenity); });
+  return tags;
+}
+function poiTags(poi) { return normalizePoiTags(poi); }
+function primaryPoiTag(poi) {
+  const tags = poiTags(poi);
+  return POI_TAG_PRIORITY.find((tag) => tags.includes(tag)) || tags[0] || 'history';
+}
+function migratePoi(poi, cityId) {
+  const config = CITIES[cityId];
+  return { ...poi, city: cityId, tags: normalizePoiTags(poi), radius: poi.radius || config?.defaultGeofenceRadiusMeters || 50 };
+}
 
 async function loadCityData(cityId) {
   const config = CITIES[cityId];
   const saved = (await db.all('points_of_interest')).filter((poi) => poi.city === cityId);
   const metadata = await db.get('poi_metadata', `${cityId}-seed`);
   const response = await fetch(config.dataFile);
-  if (!response.ok) throw new Error(`${config.name} places data could not be loaded.`);
+  if (!response.ok) throw new Error(`${cityLabel(cityId)} places data could not be loaded.`);
   const seed = await response.json();
   if (!metadata || metadata.version !== seed.metadata.version || !saved.length) {
-    const items = seed.pointsOfInterest.map((item) => ({ ...item, city: cityId }));
-    await Promise.all(items.map((item) => db.put('points_of_interest', item)));
+    const newPois = seed.pointsOfInterest.map((poi) => migratePoi(poi, cityId));
+    await Promise.all(newPois.map((item) => db.put('points_of_interest', item)));
     await db.put('poi_metadata', { id: `${cityId}-seed`, version: seed.metadata.version, attribution: seed.metadata.attribution, trailSegments: seed.trailSegments || [] });
-    state.cityPois[cityId] = items;
+    state.cityPois[cityId] = newPois;
     state.trailSegments[cityId] = seed.trailSegments || [];
   } else {
-    state.cityPois[cityId] = saved;
+    state.cityPois[cityId] = saved.map((poi) => migratePoi(poi, cityId));
     state.trailSegments[cityId] = metadata.trailSegments || [];
   }
 }
@@ -207,39 +238,65 @@ async function updateProfile(mutator) {
   return result;
 }
 
-function renderPoiFilters() {
+function renderPoiTagFilters() {
   const pois = state.cityPois[state.activeCity] || [];
-  el('poiCategoryFilters').innerHTML = POI_CATEGORIES.filter(([id]) => pois.some((poi) => poi.category === id)).map(([id, label]) => `<button class="poi-chip ${state.poiCategories.has(id) ? 'active' : ''}" data-poi-category="${id}">${label}</button>`).join('');
-  el('parkAmenityFilters').innerHTML = PARK_AMENITIES.map(([id, label]) => `<button class="poi-chip ${state.parkAmenities.has(id) ? 'active' : ''}" data-park-amenity="${id}">${label}</button>`).join('');
+  const availableTags = new Set(pois.flatMap((poi) => poiTags(poi)));
+  el('poiTagFilters').innerHTML = POI_TAGS
+    .filter(([id]) => availableTags.has(id))
+    .map(([id, label]) => `<button type="button" class="poi-chip ${state.poiTags.has(id) ? 'active' : ''}" data-poi-tag="${id}">${label}</button>`)
+    .join('');
+  updateFiltersBadge();
+}
+function updateFiltersBadge() {
+  const badge = el('filtersBadge');
+  if (!badge) return;
+  badge.textContent = state.poiTags.size ? String(state.poiTags.size) : '';
+  badge.classList.toggle('hidden', !state.poiTags.size);
 }
 function poiMatchesFilters(poi) {
-  const categoryMatches = !state.poiCategories.size || state.poiCategories.has(poi.category);
-  const amenityMatches = !state.parkAmenities.size || (poi.category === 'park' && [...state.parkAmenities].every((amenity) => poi.amenities.includes(amenity)));
-  return categoryMatches && amenityMatches;
+  if (!state.poiTags.size) return true;
+  const tags = poiTags(poi);
+  return [...state.poiTags].some((tag) => tags.includes(tag));
 }
 function renderCityPois() {
   if (!state.poiLayer) return;
   state.poiLayer.clearLayers(); state.trailLayer.clearLayers();
   const pois = state.cityPois[state.activeCity] || [];
   pois.filter(poiMatchesFilters).forEach((poi) => {
-    if (poi.radius && poi.category === 'history') return;
-    const icon = L.divIcon({ className: '', html: `<div class="poi-marker ${poi.category}">${POI_ICONS[poi.category] || '•'}</div>`, iconSize: [27, 27], iconAnchor: [13, 13] });
-    const details = [poi.description, poi.address, poi.amenities?.length ? `Amenities: ${poi.amenities.map((item) => item.replaceAll('_', ' ')).join(', ')}` : null].filter(Boolean).map(escapeHtml).join('<br>');
+    const markerTag = primaryPoiTag(poi);
+    if (poi.radius && poiTags(poi).includes('history')) return;
+    const icon = L.divIcon({ className: '', html: `<div class="poi-marker ${markerTag}">${POI_ICONS[markerTag] || '•'}</div>`, iconSize: [27, 27], iconAnchor: [13, 13] });
+    const tagLabels = poiTags(poi).map((tag) => TAG_LABELS[tag] || tag.replaceAll('_', ' ')).join(', ');
+    const details = [poi.description, poi.address, tagLabels ? `Tags: ${tagLabels}` : null].filter(Boolean).map(escapeHtml).join('<br>');
     const link = poi.link ? `<br><a href="${escapeHtml(poi.link)}" target="_blank" rel="noreferrer">Learn more ↗</a>` : '';
     L.marker([poi.lat, poi.lng], { icon, title: poi.name }).bindPopup(`<strong>${escapeHtml(poi.name)}</strong>${details ? `<br><span>${details}</span>` : ''}${link}`).addTo(state.poiLayer);
   });
   const segments = state.trailSegments[state.activeCity] || [];
-  if (!state.poiCategories.size || state.poiCategories.has('trail')) {
+  if (!state.poiTags.size || state.poiTags.has('trail')) {
     segments.forEach((segment) => segment.coordinates.forEach((coordinates) => L.polyline(coordinates.map(([lng, lat]) => [lat, lng]), { color: '#2d7259', weight: 5, opacity: .82 }).bindTooltip('Elizabeth River Trail').addTo(state.trailLayer)));
   }
 }
 function renderCityExplorer() {
-  const pois = state.cityPois[state.activeCity] || [];
-  const hasExplorerContent = pois.some((poi) => poi.category);
-  el('poiExplorer').classList.toggle('hidden', !hasExplorerContent);
   el('norfolkAttribution').classList.toggle('hidden', state.activeCity !== 'norfolk');
-  if (hasExplorerContent) renderPoiFilters();
   el('trailFeatureButton').classList.toggle('hidden', !(state.trailSegments[state.activeCity] || []).length);
+  updateFiltersBadge();
+}
+function openFiltersSheet() {
+  renderPoiTagFilters();
+  openSheet('filtersSheet');
+}
+function showView(view) {
+  state.activeView = view;
+  el('mapView').classList.toggle('hidden', view !== 'map');
+  el('profileView').classList.toggle('hidden', view !== 'profile');
+  document.querySelectorAll('.nav-item').forEach((item) => item.classList.toggle('active', item.dataset.view === view));
+  if (view === 'profile') {
+    renderProfile();
+    renderArchive();
+  } else if (state.map) {
+    state.map.invalidateSize();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 function initMap() {
   const active = city();
@@ -265,8 +322,8 @@ async function refreshCityMap(recenter = false) {
   const observations = await db.all('observations');
   observations.filter((observation) => localObservationCity(observation) === state.activeCity).forEach(addObservationMarker);
   if (recenter) state.map.setView([active.center.lat, active.center.lng], active.zoom);
-  el('activeCityLabel').textContent = active.name;
-  el('map').setAttribute('aria-label', `Map of ${active.name} historical places`);
+  el('activeCityLabel').textContent = cityLabel(state.activeCity);
+  el('map').setAttribute('aria-label', `Map of ${cityLabel(state.activeCity)} historical places`);
   renderCityExplorer(); renderCityPois();
   renderProfile();
 }
@@ -274,10 +331,11 @@ async function switchCity(nextCity, recenter = true) {
   if (!CITIES[nextCity]) return;
   if (state.activeWalk) { el('citySelect').value = state.activeCity; toast('Finish the current walk before switching cities.'); return; }
   state.activeCity = nextCity; state.settings.activeCity = nextCity;
+  state.poiTags.clear();
   await db.put('settings', state.settings);
   await refreshCityMap(recenter);
-  setStatus(`${city().name} ready for a walk`);
-  toast(`Now exploring ${city().name}.`);
+  setStatus(`${cityLabel(nextCity)} ready for a walk`);
+  toast(`Now exploring ${cityLabel(nextCity)}.`);
 }
 
 function renderUserLocation(point, pan = false) {
@@ -294,8 +352,8 @@ function checkGeofences(point) {
   const defaultRadius = settings.defaultGeofenceRadiusMeters || 50;
   const pois = state.cityPois[state.activeCity] || [];
   const nearby = pois.find((poi) => {
-    const category = poi.category || 'history';
-    if (!enabledCategories.has(category)) return false;
+    const tags = poiTags(poi);
+    if (!tags.some((tag) => enabledCategories.has(tag))) return false;
     if (state.prompted.has(`${state.activeCity}:${poi.id}`)) return false;
     const effectiveRadius = poi.radius || defaultRadius;
     return distanceMeters(point, poi) <= effectiveRadius;
@@ -371,14 +429,13 @@ async function stopWalk() {
   const award = await updateProfile((profile) => { const score = calculateWalkAward(finished, profile); profile.totalPoints += score.total; profile.walksCompleted += 1; profile.milesTotal += score.miles; if (score.firstWalkToday) { profile.streakDays = score.nextStreak; profile.lastWalkDate = score.date; } return score; });
   finished.pointsAwarded = award.total; await db.put('walks', finished); state.activeWalk = null;
   el('walkButton').textContent = 'Start walk'; el('walkButton').classList.remove('walking'); const pauseButton = el('pauseWalkButton'); if (pauseButton) pauseButton.classList.add('hidden');
-  setStatus('Walk saved locally'); toast(`Walk saved - +${award.total} points.`); renderRecent(); openJournal(finished.id);
+  setStatus('Walk saved locally'); toast(`Walk saved - +${award.total} points.`); renderArchive(); openJournal(finished.id);
 }
 function openSheet(id) { state.modalOpen = id; el('modalBackdrop').classList.remove('hidden'); el(id).classList.remove('hidden'); }
 function closeSheets() {
   state.modalOpen = null;
   el('modalBackdrop').classList.add('hidden');
   document.querySelectorAll('.sheet').forEach((sheet) => sheet.classList.add('hidden'));
-  document.querySelectorAll('.nav-item').forEach((item) => item.classList.toggle('active', item.dataset.view === 'map'));
   if (state.draftMarker) { state.draftMarker.remove(); state.draftMarker = null; }
 }
 function showHistory(site, distance) {
@@ -406,7 +463,7 @@ async function saveHistoryMoment() {
     note: site.unverified ? 'Prototype historic-place prompt saved. Content is unverified.' : 'Historic-place prompt saved during a walk.',
     siteId: site.id, city: cityId, pointsAwarded: award.points, createdAt: new Date().toISOString(), location: { lat: site.lat, lng: site.lng }
   });
-  closeSheets(); toast(award.firstDiscovery ? `New history site — +${award.points} points.` : 'History moment saved to your local archive.'); renderRecent();
+  closeSheets(); toast(award.firstDiscovery ? `New history site — +${award.points} points.` : 'History moment saved to your local archive.'); renderArchive();
 }
 
 function openObservation(location) {
@@ -415,7 +472,7 @@ function openObservation(location) {
   if (state.draftMarker) state.draftMarker.remove();
   const icon = L.divIcon({ className: '', html: '<div class="wildlife-marker"></div>', iconSize: [18, 18], iconAnchor: [9, 9] });
   state.draftMarker = L.marker([loc.lat, loc.lng], { icon }).addTo(state.map);
-  el('observationLocation').textContent = `Pinned at ${loc.lat.toFixed(4)}, ${loc.lng.toFixed(4)} in ${city().name}. Move it by closing this form and tapping a new spot on the map.`;
+  el('observationLocation').textContent = `Pinned at ${loc.lat.toFixed(4)}, ${loc.lng.toFixed(4)} in ${cityLabel(state.activeCity)}. Move it by closing this form and tapping a new spot on the map.`;
   el('observationForm').reset(); el('photoName').textContent = 'Optional, stored only on this device';
   openSheet('observationSheet');
 }
@@ -427,7 +484,7 @@ async function saveObservation(event) {
   const observation = { id: uid('observation'), type: 'observation', city: state.activeCity, species: el('speciesInput').value.trim(), note: el('observationNote').value.trim(), photo, location: state.draftObservationLocation, createdAt: new Date().toISOString(), pointsAwarded: POINTS_PER_OBSERVATION };
   await db.put('observations', observation);
   await updateProfile((profile) => { profile.totalPoints += POINTS_PER_OBSERVATION; profile.observationsLogged += 1; return POINTS_PER_OBSERVATION; });
-  addObservationMarker(observation); closeSheets(); toast(`Observation saved — +${POINTS_PER_OBSERVATION} points.`); renderRecent();
+  addObservationMarker(observation); closeSheets(); toast(`Observation saved — +${POINTS_PER_OBSERVATION} points.`); renderArchive();
 }
 function addObservationMarker(observation) {
   const icon = L.divIcon({ className: '', html: '<div class="wildlife-marker"></div>', iconSize: [18, 18], iconAnchor: [9, 9] });
@@ -443,7 +500,7 @@ async function saveJournal(event) {
   const walkId = event.currentTarget.dataset.walkId;
   const moment = { id: uid('moment'), type: 'journal', title: mood, note: note || 'A reflection saved after a walk.', createdAt: new Date().toISOString(), walkId: walkId || null, city: state.activeCity };
   await db.put('moments', moment);
-  closeSheets(); toast('Reflection saved locally.'); renderRecent();
+  closeSheets(); toast('Reflection saved locally.'); renderArchive();
 }
 
 function momentCard(item) {
@@ -459,20 +516,16 @@ async function allArchiveItems() {
   const [walks, observations, moments] = await Promise.all([db.all('walks'), db.all('observations'), db.all('moments')]);
   return [...walks.map((walk) => ({ ...walk, type: 'walk', createdAt: walk.startedAt })), ...observations, ...moments].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 }
-async function renderRecent() {
-  const items = await allArchiveItems(); const container = el('recentList');
-  container.innerHTML = items.length ? items.slice(0, 3).map(momentCard).join('') : '<div class="empty-state">Your saved walks, reflections, and nature observations will appear here. Everything stays on this device.</div>';
-}
 async function renderArchive() {
   let items = await allArchiveItems();
   if (state.archiveFilter === 'walk') items = items.filter((item) => item.type === 'walk' || item.type === 'journal');
   if (state.archiveFilter === 'observation') items = items.filter((item) => item.type === 'observation');
   el('archiveList').innerHTML = items.length ? items.map(momentCard).join('') : '<div class="empty-state">No matching moments yet. Start a walk or add an observation from the map.</div>';
 }
-function openArchive(filter = 'all') {
+function setArchiveFilter(filter = 'all') {
   state.archiveFilter = filter;
-  document.querySelectorAll('.filter-button').forEach((button) => button.classList.toggle('active', button.dataset.filter === filter));
-  renderArchive(); openSheet('archiveSheet');
+  document.querySelectorAll('.archive-filter .filter-button').forEach((button) => button.classList.toggle('active', button.dataset.filter === filter));
+  renderArchive();
 }
 
 function badge(name, earned, detail) { return `<span class="badge ${earned ? 'earned' : ''}" title="${escapeHtml(detail)}">${earned ? '✓ ' : ''}${escapeHtml(name)}</span>`; }
@@ -488,17 +541,25 @@ function renderProfile() {
   el('profilePoints').textContent = Math.round(profile.totalPoints).toLocaleString();
   el('profileStats').innerHTML = [
     [profile.walksCompleted, 'Walks completed'], [profile.milesTotal.toFixed(1), 'Miles total'],
-    [`${cityDiscoveries}/${totalCitySites}`, `${city().name.split(',')[0]} sites`], [profile.observationsLogged, 'Observations'], [profile.streakDays, 'Day streak']
+    [`${cityDiscoveries}/${totalCitySites}`, `${CITIES[state.activeCity].name} sites`], [profile.observationsLogged, 'Observations'], [profile.streakDays, 'Day streak']
   ].map(([value, label]) => `<div class="profile-stat"><strong>${value}</strong><span>${label}</span></div>`).join('');
   el('badgeList').innerHTML = [
     badge('First Steps', profile.walksCompleted >= 1, 'Complete one walk.'),
-    badge('Explorer', totalCitySites > 0 && cityDiscoveries >= totalCitySites, `Discover every history stop in ${city().name}.`),
+    badge('Explorer', totalCitySites > 0 && cityDiscoveries >= totalCitySites, `Discover every history stop in ${cityLabel(state.activeCity)}.`),
     badge('Century Club', profile.totalPoints >= 100, 'Earn 100 total trail points.'),
     badge('Naturalist', profile.observationsLogged >= 10, 'Log 10 nature observations.')
   ].join('');
   el('profileNextMilestone').textContent = profile.walksCompleted < 1 ? 'Complete a walk to earn First Steps.' : profile.totalPoints < 100 ? `${Math.max(0, 100 - Math.round(profile.totalPoints))} points to Century Club.` : 'Your local trail story is growing.';
   const select = el('citySelect');
-  select.innerHTML = Object.entries(CITIES).map(([id, item]) => `<option value="${id}">${escapeHtml(item.name)}${id === 'norfolk' ? ' (prototype)' : ''}</option>`).join('');
+  const grouped = {};
+  Object.entries(CITIES).forEach(([id, item]) => {
+    if (!grouped[item.state]) grouped[item.state] = [];
+    grouped[item.state].push([id, item]);
+  });
+  select.innerHTML = Object.entries(grouped)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([stateCode, cities]) => `<optgroup label="${escapeHtml(stateCode)}">${cities.map(([id]) => `<option value="${id}">${escapeHtml(cityLabel(id))}</option>`).join('')}</optgroup>`)
+    .join('');
   select.value = state.activeCity;
   if (el('geofenceToggle')) el('geofenceToggle').checked = state.settings.enableGeofencing !== false;
   if (el('geofenceOptionsContainer')) el('geofenceOptionsContainer').classList.toggle('hidden', state.settings.enableGeofencing === false);
@@ -508,7 +569,7 @@ function renderProfile() {
   el('onlineTeaserTitle').textContent = onlineName ? `Online as @${onlineName}` : 'Stay local by default';
   el('onlineTeaserText').textContent = onlineName ? `Last aggregate sync: ${state.settings.lastSyncedAt ? shortDate(state.settings.lastSyncedAt) : 'not yet'}. Routes, observations, photos, and notes remain local.` : 'Optional online mode shares only aggregate points and miles with friends—never routes, observations, photos, or notes.';
 }
-function openProfile() { renderProfile(); openSheet('profileSheet'); }
+function openProfile() { showView('profile'); }
 
 function onlineConfig() { return window.WALK_WILDLIFE_SUPABASE || {}; }
 function onlineConfigured() {
@@ -744,7 +805,7 @@ async function importJournal(event) {
     await Promise.all([...backup.walks.map((item) => db.put('walks', item)), ...backup.observations.map((item) => db.put('observations', item)), ...backup.moments.map((item) => db.put('moments', item))]);
     state.profile = normalizeProfile(backup.profile || await createMigratedProfile()); state.settings = { ...DEFAULT_SETTINGS, ...(backup.settings || {}) };
     if (!CITIES[state.settings.activeCity]) state.settings.activeCity = 'vienna'; state.activeCity = state.settings.activeCity;
-    await Promise.all([db.put('profile', state.profile), db.put('settings', state.settings)]); closeSheets(); await refreshCityMap(true); await renderRecent(); toast('Journal backup restored.');
+    await Promise.all([db.put('profile', state.profile), db.put('settings', state.settings)]); closeSheets(); await refreshCityMap(true); await renderArchive(); toast('Journal backup restored.');
   } catch (error) { toast(error.message || 'That backup could not be restored.'); }
 }
 async function openWalkDetail(id) {
@@ -766,13 +827,14 @@ function initEvents() {
   el('journalButton').addEventListener('click', () => openJournal());
   el('demoButton').addEventListener('click', () => { const site = citySites()[0]; state.map.flyTo([site.lat, site.lng], Math.max(city().zoom + 2, 16)); setTimeout(() => showHistory(site, 28), 350); });
   el('settingsButton').addEventListener('click', () => openSheet('infoSheet'));
-  el('showAllButton').addEventListener('click', () => openArchive());
+  el('profileJournalButton').addEventListener('click', () => openJournal());
+  el('filtersButton').addEventListener('click', openFiltersSheet);
   el('dismissHistoryButton').addEventListener('click', closeSheets); el('saveHistoryMomentButton').addEventListener('click', saveHistoryMoment);
   el('observationForm').addEventListener('submit', saveObservation); el('journalForm').addEventListener('submit', saveJournal);
   el('photoInput').addEventListener('change', (event) => { el('photoName').textContent = event.target.files[0]?.name || 'Optional, stored only on this device'; });
   document.querySelectorAll('[data-close-sheet]').forEach((button) => button.addEventListener('click', closeSheets));
   el('modalBackdrop').addEventListener('click', closeSheets);
-  document.querySelectorAll('.filter-button').forEach((button) => button.addEventListener('click', () => openArchive(button.dataset.filter)));
+  document.querySelectorAll('.archive-filter .filter-button').forEach((button) => button.addEventListener('click', () => setArchiveFilter(button.dataset.filter)));
   el('citySelect').addEventListener('change', (event) => switchCity(event.target.value));
   el('goOnlineButton').addEventListener('click', openOnline);
   el('signInButton').addEventListener('click', signIn);
@@ -787,32 +849,25 @@ el('accountEmailForm').addEventListener('submit', updateAccountEmail);
 el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
   el('incomingRequestsList').addEventListener('click', (event) => { const button = event.target.closest('[data-accept-id]'); if (button) acceptFriend(button.dataset.acceptId); });
   document.querySelectorAll('.nav-item').forEach((button) => button.addEventListener('click', () => {
-    document.querySelectorAll('.nav-item').forEach((item) => item.classList.toggle('active', item === button));
-    if (button.dataset.view === 'journal') openJournal();
-    else if (button.dataset.view === 'archive') openArchive();
-    else if (button.dataset.view === 'profile') openProfile();
-    else { closeSheets(); state.map.invalidateSize(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    closeSheets();
+    if (button.dataset.view === 'profile') openProfile();
+    else showView('map');
   }));
   el('clearDataButton').addEventListener('click', async () => {
     if (!confirm("Clear every locally saved walk, reflection, observation, and profile score on this device? This can't be undone.")) return;
     await db.clearAll();
     state.profile = normalizeProfile(DEFAULT_PROFILE); state.settings = { ...DEFAULT_SETTINGS }; state.activeCity = 'vienna';
     await Promise.all([db.put('profile', state.profile), db.put('settings', state.settings)]);
-    closeSheets(); await refreshCityMap(true); renderRecent(); toast('Local journal data and points cleared.');
+    closeSheets(); await refreshCityMap(true); renderArchive(); toast('Local journal data and points cleared.');
   });
-  el('poiCategoryFilters').addEventListener('click', (event) => {
-    const button = event.target.closest('[data-poi-category]'); if (!button) return;
-    const id = button.dataset.poiCategory;
-    state.poiCategories.has(id) ? state.poiCategories.delete(id) : state.poiCategories.add(id);
-    renderPoiFilters(); renderCityPois();
+  el('poiTagFilters').addEventListener('click', (event) => {
+    const button = event.target.closest('[data-poi-tag]'); if (!button) return;
+    const id = button.dataset.poiTag;
+    state.poiTags.has(id) ? state.poiTags.delete(id) : state.poiTags.add(id);
+    renderPoiTagFilters();
   });
-  el('parkAmenityFilters').addEventListener('click', (event) => {
-    const button = event.target.closest('[data-park-amenity]'); if (!button) return;
-    const id = button.dataset.parkAmenity;
-    state.parkAmenities.has(id) ? state.parkAmenities.delete(id) : state.parkAmenities.add(id);
-    renderPoiFilters(); renderCityPois();
-  });
-  el('clearPoiFiltersButton').addEventListener('click', () => { state.poiCategories.clear(); state.parkAmenities.clear(); renderPoiFilters(); renderCityPois(); });
+  el('clearPoiFiltersButton').addEventListener('click', () => { state.poiTags.clear(); renderPoiTagFilters(); renderCityPois(); });
+  el('applyFiltersButton').addEventListener('click', () => { renderCityPois(); closeSheets(); });
   el('trailFeatureButton').addEventListener('click', () => {
     const bounds = state.trailLayer.getBounds();
     if (bounds.isValid()) state.map.fitBounds(bounds, { padding: [28, 28] });
@@ -846,7 +901,7 @@ el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
 async function init() {
 try { await db.open(); await loadLocalState(); await loadAllCityData(); } catch (error) { console.error(error); toast('Local storage or places data could not open in this browser.'); return; }  initMap();
 try { initEvents(); } catch (error) { console.error('initEvents failed:', error); }
-  await refreshCityMap(false); await renderRecent();
+  await refreshCityMap(false); await renderArchive();
   try {
     await setupOnline();
     if (state.online.session && !state.online.remoteProfile?.username) {

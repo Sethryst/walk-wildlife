@@ -22,12 +22,10 @@ OUTPUT = "./data/newyork-poi.json"
 CATEGORY_RULES = [
     # Water Access - check first (very distinctive)
     ("water_access", [
-        "beach", "pier", "harbor", "marina", "boat", "bay", "waterfront",
-        "esplanade", "sound", "cove", "inlet", "wharf", "riverwalk",
-        "riverside", "reservoir", "pond", "lake", "creek", "shore"
+        "beach ", "pier", "harbor", "marina", "boat", "bay", "waterfront",
+        "esplanade", "cove", "inlet", "wharf", "riverwalk", "reservoir"
     ], [
-        "beach", "waterfront", "pier", "harbor", "marina", "esplanade",
-        "lakeside", "riverside", "shoreline"
+        "waterfront", "pier", "harbor", "marina", "esplanade", "shoreline"
     ]),
 
     # Recreation Centers / Sports Facilities
@@ -75,17 +73,32 @@ CATEGORY_RULES = [
 ]
 
 
-def classify(name: str, description: str) -> str:
+def classify(name: str, description: str) -> list[str]:
     name_lower = name.lower()
     desc_lower = description.lower()
 
-    for category, name_keywords, desc_keywords in CATEGORY_RULES:
-        if any(kw in name_lower for kw in name_keywords):
-            return category
-        if any(kw in desc_lower for kw in desc_keywords):
-            return category
+    tags = set()
+    
+    # Water access exclusions
+    is_false_water = False
+    for false_term in ["coney island", "staten island", "roosevelt island", "city island", "randall's island", "riverside drive", "shore road", "beach channel drive", "water street"]:
+        if false_term in name_lower:
+            is_false_water = True
 
-    return "history"
+    for category, name_keywords, desc_keywords in CATEGORY_RULES:
+        if category == 'water_access' and is_false_water:
+             if not any(kw in name_lower for kw in ["pier ", "marina", "beach "]):
+                 continue
+                 
+        if any(kw in name_lower for kw in name_keywords):
+            tags.add(category)
+        elif any(kw in desc_lower for kw in desc_keywords):
+            tags.add(category)
+
+    if not tags:
+        tags.add("history")
+
+    return list(tags)
 
 
 def main():
@@ -98,17 +111,33 @@ def main():
     for poi in pois:
         name = poi.get("name", "")
         desc = poi.get("description", "")
-        category = classify(name, desc)
-        poi["category"] = category
-        counts[category] = counts.get(category, 0) + 1
+        
+        # We classify into multiple tags now
+        tags = classify(name, desc)
+        
+        # Migrate old 'category' field to 'tags'
+        if 'category' in poi:
+             del poi['category']
+             
+        # Map amenities to tags as well
+        if 'amenities' in poi:
+             for amenity in poi['amenities']:
+                  if amenity not in tags:
+                       tags.append(amenity)
+             del poi['amenities']
+             
+        poi["tags"] = tags
+        
+        for t in tags:
+            counts[t] = counts.get(t, 0) + 1
 
     data["metadata"]["categoryCounts"] = counts
-    data["metadata"]["version"] = "2026-07-29-v3"
+    data["metadata"]["version"] = "2026-07-30-v4"
 
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print(f"Done! Categorized {len(pois)} NYC Parks historical signs:")
+    print(f"Done! Categorized {len(pois)} NYC Parks historical signs with tags:")
     for cat, count in sorted(counts.items(), key=lambda x: -x[1]):
         print(f"  {cat:20s}: {count:>5}")
 

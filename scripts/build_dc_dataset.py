@@ -4,7 +4,7 @@ import os
 INPUT_DIR = "data/dc-raw"
 OUTPUT_FILE = "data/dc-poi.json"
 
-def process_geojson(filename, category, name_field='NAME', desc_fields=None, filter_func=None):
+def process_geojson(filename, tags, name_field='NAME', desc_fields=None, filter_func=None):
     filepath = os.path.join(INPUT_DIR, filename)
     if not os.path.exists(filepath):
          print(f"Skipping {filename}: File not found")
@@ -59,19 +59,20 @@ def process_geojson(filename, category, name_field='NAME', desc_fields=None, fil
                     desc_parts.append(str(props[df]).strip())
         description = " - ".join(desc_parts) if desc_parts else "Washington, DC"
         
+        tag_list = list(tags) if isinstance(tags, (list, tuple)) else [tags]
+        primary_tag = tag_list[0]
         object_id = props.get('OBJECTID') or props.get('id') or name.replace(' ', '-').lower()
-        poi_id = f"dc-{category}-{object_id}"
-        
+        poi_id = f"dc-{primary_tag}-{object_id}"
+
         pois.append({
             "id": poi_id,
             "name": name,
             "lat": lat,
             "lng": lon,
-            "category": category,
+            "tags": tag_list,
             "radius": 50,
             "description": description,
             "source": f"Open Data DC ({filename})",
-            "amenities": [],
             "link": "",
             "unverified": False
         })
@@ -81,53 +82,12 @@ def process_geojson(filename, category, name_field='NAME', desc_fields=None, fil
 def main():
     all_pois = []
     
-    # Process Parks
-    all_pois.extend(process_geojson(
-        'parks.geojson', 
-        'park', 
-        name_field='NAME', 
-        desc_fields=['WEB_URL', 'ADDRESS']
-    ))
-    
-    # Process Trails (Heritage Trail Signs)
-    all_pois.extend(process_geojson(
-        'trails.geojson', 
-        'trail', 
-        name_field='SIGN_NAME', 
-        desc_fields=['NEIGHBORHOOD']
-    ))
-    
-    # Process Museums
-    all_pois.extend(process_geojson(
-        'museums.geojson', 
-        'history', 
-        name_field='NAME', 
-        desc_fields=['ADDRESS', 'WEB_URL']
-    ))
-    
-    # Process Public Art / Memorials
-    all_pois.extend(process_geojson(
-        'public_art.geojson', 
-        'public_art', 
-        name_field='NAME', 
-        desc_fields=['ARTIST', 'YEAR_INSTALLED', 'ADDRESS']
-    ))
-    
-    # Process Boundary Stones
-    all_pois.extend(process_geojson(
-        'boundary_stones.geojson', 
-        'history', 
-        name_field='NAME', 
-        desc_fields=['CONDITION']
-    ))
-    
-    # Process WiFi if it exists (user might drop it in manually)
-    all_pois.extend(process_geojson(
-        'wifi.geojson',
-        'wifi',
-        name_field='NAME',
-        desc_fields=['ADDRESS']
-    ))
+    all_pois.extend(process_geojson('parks.geojson', ['park'], name_field='NAME', desc_fields=['WEB_URL', 'ADDRESS']))
+    all_pois.extend(process_geojson('trails.geojson', ['trail'], name_field='SIGN_NAME', desc_fields=['NEIGHBORHOOD']))
+    all_pois.extend(process_geojson('museums.geojson', ['history'], name_field='NAME', desc_fields=['ADDRESS', 'WEB_URL']))
+    all_pois.extend(process_geojson('public_art.geojson', ['public_art'], name_field='NAME', desc_fields=['ARTIST', 'YEAR_INSTALLED', 'ADDRESS']))
+    all_pois.extend(process_geojson('boundary_stones.geojson', ['history'], name_field='NAME', desc_fields=['CONDITION']))
+    all_pois.extend(process_geojson('wifi.geojson', ['wifi'], name_field='NAME', desc_fields=['ADDRESS']))
 
     # Basic deduplication by ID just in case
     unique_pois = []
@@ -157,9 +117,10 @@ def main():
     
     counts = {}
     for poi in unique_pois:
-        counts[poi['category']] = counts.get(poi['category'], 0) + 1
-    for cat, count in counts.items():
-        print(f"  {cat}: {count}")
+        for tag in poi['tags']:
+            counts[tag] = counts.get(tag, 0) + 1
+    for tag, count in sorted(counts.items()):
+        print(f"  {tag}: {count}")
 
 if __name__ == "__main__":
     main()

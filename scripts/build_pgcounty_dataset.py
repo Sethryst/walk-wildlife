@@ -34,7 +34,7 @@ def get_wgs84(feature):
         
     return None, None
 
-def process_file(filename, category, name_field='NAME', desc_field=None):
+def process_file(filename, tags, name_field='NAME', desc_field=None):
     filepath = os.path.join(INPUT_DIR, filename)
     if not os.path.exists(filepath):
         print(f"Skipping {filename}: Not found")
@@ -72,26 +72,27 @@ def process_file(filename, category, name_field='NAME', desc_field=None):
             
         description = " - ".join(desc_parts)
 
+        tag_list = list(tags) if isinstance(tags, (list, tuple)) else [tags]
+
         # Basic ID generation
-        poi_id = f"pg-{category}-{attrs.get('OBJECTID', name.replace(' ', '-').lower())}"
-        
+        primary_tag = tag_list[0]
+        poi_id = f"pg-{primary_tag}-{attrs.get('OBJECTID', name.replace(' ', '-').lower())}"
+
         poi = {
             "id": poi_id,
             "name": name,
             "lat": lat,
             "lng": lon,
-            "category": category,
+            "tags": tag_list,
             "radius": 50,
             "description": description,
             "source": f"PG County Open Data ({filename})",
-            "amenities": [],
             "link": "",
             "unverified": False
         }
-        
-        # Map specific amenities based on category/file
-        if filename == 'Playgrounds.json':
-            poi['amenities'].append('playground')
+
+        if filename == 'Playgrounds.json' and 'playground' not in poi['tags']:
+            poi['tags'].append('playground')
             
         pois.append(poi)
         
@@ -100,20 +101,11 @@ def process_file(filename, category, name_field='NAME', desc_field=None):
 def main():
     all_pois = []
     
-    # Process Libraries
-    all_pois.extend(process_file("Libraries.json", "library"))
-    
-    # Process Community Centers -> recreation_center
-    all_pois.extend(process_file("Community Centers.json", "recreation_center", name_field="PARKNAME"))
-    
-    # Process Picnic Areas -> park
-    all_pois.extend(process_file("Picnic Areas.json", "park", desc_field="CATEGORY"))
-    
-    # Process Playgrounds -> park
-    all_pois.extend(process_file("Playgrounds.json", "park", name_field="PARKNAME"))
-    
-    # Process Attractions -> history
-    all_pois.extend(process_file("Attractions.json", "history", desc_field="TYPE"))
+    all_pois.extend(process_file("Libraries.json", ["library"]))
+    all_pois.extend(process_file("Community Centers.json", ["recreation_center"], name_field="PARKNAME"))
+    all_pois.extend(process_file("Picnic Areas.json", ["park"], desc_field="CATEGORY"))
+    all_pois.extend(process_file("Playgrounds.json", ["park", "playground"], name_field="PARKNAME"))
+    all_pois.extend(process_file("Attractions.json", ["history"], desc_field="TYPE"))
 
     metadata = {
         "version": "2026-07-30",
@@ -135,9 +127,10 @@ def main():
     
     counts = {}
     for poi in all_pois:
-        counts[poi['category']] = counts.get(poi['category'], 0) + 1
-    for cat, count in counts.items():
-        print(f"  {cat}: {count}")
+        for tag in poi['tags']:
+            counts[tag] = counts.get(tag, 0) + 1
+    for tag, count in sorted(counts.items()):
+        print(f"  {tag}: {count}")
 
 if __name__ == "__main__":
     main()
