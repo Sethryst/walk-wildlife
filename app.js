@@ -112,22 +112,57 @@ const db = (() => {
 const POI_TAGS = [
   ['park', '🌳 Parks'], ['public_art', '🎨 Public Art'], ['recreation_center', '🏢 Recreation Centers'],
   ['water_access', '🌊 Water Access'], ['trail', '🥾 Trails'], ['library', '📚 Libraries'],
-  ['community_garden', '🌱 Community Gardens'], ['history', '✦ History Sites'],
+  ['community_garden', '🌱 Community Gardens'], ['history', '🏛 History Sites'],
+  ['history_landmark', '🏛 Landmarks'], ['history_monument', '🗿 Monuments'], ['history_museum', '🖼 Museums'],
+  ['history_cemetery', '🪦 Cemeteries'], ['history_marker', '📜 Historical Markers'],
   ['wifi', '📶 Free Wi-Fi'], ['basketball', 'Basketball'], ['tennis', 'Tennis'],
   ['playground', 'Playground'], ['dog_park', 'Dog park'], ['splash_pad', 'Splash pad'],
   ['disc_golf', 'Disc golf'], ['skate_park', 'Skate park'], ['restrooms', 'Restrooms']
 ];
 const TAG_LABELS = Object.fromEntries(POI_TAGS);
 const POI_TAG_PRIORITY = ['history', 'park', 'public_art', 'recreation_center', 'water_access', 'trail', 'library', 'community_garden', 'wifi'];
-const POI_ICONS = { park: '🌳', public_art: '🎨', recreation_center: '🏢', water_access: '🌊', trail: '🥾', library: '📚', community_garden: '🌱', history: '✦', wifi: '📶' };
+const POI_ICONS = { park: '🌳', public_art: '🎨', recreation_center: '🏢', water_access: '🌊', trail: '🥾', library: '📚', community_garden: '🌱', history: '🏛', wifi: '📶' };
+// History sites are split into subtypes so the filter sheet isn't one catch-all
+// "History" bucket — each gets its own chip and its own pin glyph.
+const HISTORY_SUBTYPES = {
+  landmark: { label: 'Landmarks', icon: '🏛' },
+  monument: { label: 'Monuments', icon: '🗿' },
+  museum: { label: 'Museums', icon: '🖼' },
+  cemetery: { label: 'Cemeteries', icon: '🪦' },
+  marker: { label: 'Historical Markers', icon: '📜' } // default/fallback subtype
+};
+function debounce(fn, wait) { let timer; return (...args) => { clearTimeout(timer); timer = setTimeout(() => fn(...args), wait); }; }
 
 function normalizePoiTags(poi) {
   const tags = [...(poi.tags || [])];
   if (poi.category && !tags.includes(poi.category)) tags.push(poi.category);
   if (poi.amenities) poi.amenities.forEach((amenity) => { if (!tags.includes(amenity)) tags.push(amenity); });
+  // Source data sometimes marks a site historic only in `subcategory` (e.g.
+  // Norfolk's "HISTORICAL" library subcategory) without a top-level `history`
+  // tag. Fold that in rather than dropping it silently. This is intentionally
+  // conservative — it does NOT infer `history` from name/description
+  // keywords like "Memorial" or "Monument"; those are real data gaps the
+  // audit script flags for a human to confirm and retag upstream.
+  if (poi.subcategory && /histor/i.test(poi.subcategory) && !tags.includes('history')) tags.push('history');
   return tags;
 }
-function poiTags(poi) { return normalizePoiTags(poi); }
+function inferHistorySubtype(poi) {
+  if (poi.historySubtype && HISTORY_SUBTYPES[poi.historySubtype]) return poi.historySubtype;
+  const text = `${poi.subcategory || ''} ${poi.name || ''} ${poi.description || ''}`;
+  if (/museum/i.test(text)) return 'museum';
+  if (/monument/i.test(text)) return 'monument';
+  if (/cemetery/i.test(text)) return 'cemetery';
+  if (/librar|building|hall|house|church/i.test(text)) return 'landmark';
+  return 'marker';
+}
+function poiTags(poi) {
+  const tags = normalizePoiTags(poi);
+  if (tags.includes('history')) {
+    const subtypeTag = `history_${inferHistorySubtype(poi)}`;
+    if (!tags.includes(subtypeTag)) tags.push(subtypeTag);
+  }
+  return tags;
+}
 function primaryPoiTag(poi) {
   const tags = poiTags(poi);
   return POI_TAG_PRIORITY.find((tag) => tags.includes(tag)) || tags[0] || 'history';
@@ -160,7 +195,14 @@ async function loadAllCityData() {
 }
 
 function city() { return CITIES[state.activeCity]; }
-function citySites() { return (state.cityPois[state.activeCity] || []).filter((poi) => poi.radius); }
+// A "history site" is any POI actually tagged `history` — NOT any POI that
+// happens to have a geofence radius (every POI gets a default radius via
+// migratePoi, so that check was matching parks, libraries, etc. too).
+function citySites() { return (state.cityPois[state.activeCity] || []).filter((poi) => poiTags(poi).includes('history')); }
+function withinRenderBounds(poi) {
+  if (!state.map) return true;
+  try { return state.map.getBounds().pad(0.6).contains([poi.lat, poi.lng]); } catch { return true; }
+}
 function uid(prefix) { return `${prefix}-${Date.now()}-${Math.random().toString(16).slice(2)}`; }
 function distanceMeters(a, b) {
   const r = 6371e3, rad = Math.PI / 180;
@@ -262,19 +304,49 @@ function renderCityPois() {
   if (!state.poiLayer) return;
   state.poiLayer.clearLayers(); state.trailLayer.clearLayers();
   const pois = state.cityPois[state.activeCity] || [];
-  pois.filter(poiMatchesFilters).forEach((poi) => {
-    const markerTag = primaryPoiTag(poi);
-    if (poi.radius && poiTags(poi).includes('history')) return;
-    const icon = L.divIcon({ className: '', html: `<div class="poi-marker ${markerTag}">${POI_ICONS[markerTag] || '•'}</div>`, iconSize: [27, 27], iconAnchor: [13, 13] });
-    const tagLabels = poiTags(poi).map((tag) => TAG_LABELS[tag] || tag.replaceAll('_', ' ')).join(', ');
-    const details = [poi.description, poi.address, tagLabels ? `Tags: ${tagLabels}` : null].filter(Boolean).map(escapeHtml).join('<br>');
-    const link = poi.link ? `<br><a href="${escapeHtml(poi.link)}" target="_blank" rel="noreferrer">Learn more ↗</a>` : '';
-    L.marker([poi.lat, poi.lng], { icon, title: poi.name }).bindPopup(`<strong>${escapeHtml(poi.name)}</strong>${details ? `<br><span>${details}</span>` : ''}${link}`).addTo(state.poiLayer);
-  });
+  const markers = pois
+    .filter((poi) => !poiTags(poi).includes('history'))
+    .filter(poiMatchesFilters)
+    .filter(withinRenderBounds)
+    .map((poi) => {
+      const markerTag = primaryPoiTag(poi);
+      const icon = L.divIcon({ className: '', html: `<div class="poi-marker ${markerTag}">${POI_ICONS[markerTag] || '•'}</div>`, iconSize: [27, 27], iconAnchor: [13, 13] });
+      const tagLabels = poiTags(poi).map((tag) => TAG_LABELS[tag] || tag.replaceAll('_', ' ')).join(', ');
+      const details = [poi.description, poi.address, tagLabels ? `Tags: ${tagLabels}` : null].filter(Boolean).map(escapeHtml).join('<br>');
+      const link = poi.link ? `<br><a href="${escapeHtml(poi.link)}" target="_blank" rel="noreferrer">Learn more ↗</a>` : '';
+      return L.marker([poi.lat, poi.lng], { icon, title: poi.name }).bindPopup(`<strong>${escapeHtml(poi.name)}</strong>${details ? `<br><span>${details}</span>` : ''}${link}`);
+    });
+  if (state.poiLayer.addLayers) state.poiLayer.addLayers(markers); else markers.forEach((marker) => marker.addTo(state.poiLayer));
   const segments = state.trailSegments[state.activeCity] || [];
   if (!state.poiTags.size || state.poiTags.has('trail')) {
     segments.forEach((segment) => segment.coordinates.forEach((coordinates) => L.polyline(coordinates.map(([lng, lat]) => [lat, lng]), { color: '#2d7259', weight: 5, opacity: .82 }).bindTooltip('Elizabeth River Trail').addTo(state.trailLayer)));
   }
+  renderHistorySites();
+}
+function renderHistorySites() {
+  if (!state.historyLayer) return;
+  state.historyLayer.clearLayers();
+  if (state.historyRadiusLayer) state.historyRadiusLayer.clearLayers();
+  const active = city();
+  const sites = citySites().filter(poiMatchesFilters).filter(withinRenderBounds);
+  const markers = sites.map((site) => {
+    const subtype = inferHistorySubtype(site);
+    const glyph = HISTORY_SUBTYPES[subtype]?.icon || '🏛';
+    const historyIcon = L.divIcon({
+      className: '',
+      html: `<div class="historic-pin${site.unverified ? ' unverified' : ''}"><span class="pin-body"><span class="pin-icon">${glyph}</span></span></div>`,
+      iconSize: [32, 40], iconAnchor: [16, 38]
+    });
+    const marker = L.marker([site.lat, site.lng], { icon: historyIcon, title: site.name });
+    const subtypeLabel = HISTORY_SUBTYPES[subtype]?.label;
+    marker.bindTooltip(site.unverified ? `${site.name} — unverified` : `${site.name}${subtypeLabel ? ` · ${subtypeLabel}` : ''}`, { direction: 'top', offset: [0, -32] });
+    marker.on('click', () => showHistory(site, distanceMeters(state.currentPosition || active.center, site)));
+    if (state.historyRadiusLayer) {
+      L.circle([site.lat, site.lng], { radius: site.radius, stroke: true, weight: 1, color: site.unverified ? '#d4932f' : '#2d7259', opacity: .38, fillColor: site.unverified ? '#d4932f' : '#2d7259', fillOpacity: .06, interactive: false }).addTo(state.historyRadiusLayer);
+    }
+    return marker;
+  });
+  if (state.historyLayer.addLayers) state.historyLayer.addLayers(markers); else markers.forEach((marker) => marker.addTo(state.historyLayer));
 }
 function renderCityExplorer() {
   el('norfolkAttribution').classList.toggle('hidden', state.activeCity !== 'norfolk');
@@ -303,22 +375,26 @@ function initMap() {
   state.map = L.map('map', { zoomControl: false, attributionControl: true }).setView([active.center.lat, active.center.lng], active.zoom);
   L.control.zoom({ position: 'bottomright' }).addTo(state.map);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap contributors', crossOrigin: true }).addTo(state.map);
-  state.historyLayer = L.layerGroup().addTo(state.map);
+  state.historyRadiusLayer = L.layerGroup().addTo(state.map);
+  const clusterOptions = (badgeClass) => ({
+    chunkedLoading: true, // progressive loading: adds markers in batches off the main thread
+    maxClusterRadius: 55,
+    disableClusteringAtZoom: 17, // split back into individual pins once zoomed in
+    iconCreateFunction: (cluster) => L.divIcon({ className: '', html: `<div class="cluster-badge ${badgeClass}">${cluster.getChildCount()}</div>`, iconSize: [36, 36] })
+  });
+  state.historyLayer = (typeof L.markerClusterGroup === 'function' ? L.markerClusterGroup(clusterOptions('history-cluster')) : L.layerGroup()).addTo(state.map);
   state.observationLayer = L.layerGroup().addTo(state.map);
-  state.poiLayer = L.layerGroup().addTo(state.map);
+  state.poiLayer = (typeof L.markerClusterGroup === 'function' ? L.markerClusterGroup(clusterOptions('poi-cluster')) : L.layerGroup()).addTo(state.map);
   state.trailLayer = L.featureGroup().addTo(state.map);
   state.map.on('click', (event) => openObservation({ lat: event.latlng.lat, lng: event.latlng.lng }));
+  // Viewport windowing: only build markers for what's on/near screen, recomputed
+  // after panning/zooming settles. Stands in for server-side bbox filtering
+  // until the backend described in the recommendations exists.
+  state.map.on('moveend zoomend', debounce(() => renderCityPois(), 200));
 }
 async function refreshCityMap(recenter = false) {
   const active = city();
-  state.historyLayer.clearLayers(); state.observationLayer.clearLayers(); state.prompted.clear();
-  const historyIcon = L.divIcon({ className: '', html: '<div class="historic-marker"><span>✦</span></div>', iconSize: [31, 31], iconAnchor: [15, 30] });
-  citySites().forEach((site) => {
-    const marker = L.marker([site.lat, site.lng], { icon: historyIcon, title: site.name }).addTo(state.historyLayer);
-    marker.bindTooltip(site.unverified ? `${site.name} — unverified` : site.name, { direction: 'top', offset: [0, -25] });
-    marker.on('click', () => showHistory(site, distanceMeters(state.currentPosition || active.center, site)));
-    L.circle([site.lat, site.lng], { radius: site.radius, stroke: true, weight: 1, color: site.unverified ? '#d4932f' : '#dd765c', opacity: .38, fillColor: site.unverified ? '#d4932f' : '#dd765c', fillOpacity: .06, interactive: false }).addTo(state.historyLayer);
-  });
+  state.observationLayer.clearLayers(); state.prompted.clear();
   const observations = await db.all('observations');
   observations.filter((observation) => localObservationCity(observation) === state.activeCity).forEach(addObservationMarker);
   if (recenter) state.map.setView([active.center.lat, active.center.lng], active.zoom);

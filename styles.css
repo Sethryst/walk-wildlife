@@ -44,9 +44,8 @@ h2 { font-family: Georgia, "Times New Roman", serif; font-size: 25px; letter-spa
 .trail-feature { align-items: center; background: #e7f1e8; border: 1px solid #b9d0b5; border-radius: 12px; color: var(--pine); display: flex; gap: 9px; margin: 14px 0 0; padding: 10px; text-align: left; width: 100%; }
 .map-key { background: rgba(255, 253, 250, .9); border-radius: 6px; bottom: 13px; color: var(--muted); font-size: 10px; left: 13px; padding: 6px 8px; position: absolute; z-index: 500; }
 .key-history { color: var(--coral); font-size: 14px; }.key-wildlife { color: var(--moss); font-size: 14px; margin-left: 5px; }
-.historic-marker { align-items: center; background: var(--coral); border: 3px solid #fff8ee; border-radius: 50% 50% 50% 6px; box-shadow: 0 3px 8px rgba(77, 44, 36, .32); color: white; display: flex; font-size: 14px; font-weight: 900; height: 31px; justify-content: center; transform: rotate(-45deg); width: 31px; }
-.historic-marker > span { transform: rotate(45deg); }.wildlife-marker { background: var(--moss); border: 3px solid #fffdf7; border-radius: 50%; box-shadow: 0 2px 8px rgba(23, 60, 53, .27); height: 18px; width: 18px; }.user-marker { background: #2476b7; border: 4px solid #fff; border-radius: 50%; box-shadow: 0 1px 7px rgba(16, 75, 120, .42); height: 18px; width: 18px; }
-.poi-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }.poi-chip { background: var(--paper); border: 1px solid #d9ddd0; border-radius: 99px; color: var(--muted); font-size: 11px; font-weight: 800; padding: 7px 10px; }.poi-chip.active { background: #dfeac9; border-color: #aabe89; color: var(--pine); }.poi-marker { align-items: center; border: 2px solid #fffdf7; border-radius: 50%; box-shadow: 0 2px 7px rgba(23,60,53,.24); color: #fff; display: flex; font-size: 13px; font-weight: 900; height: 27px; justify-content: center; width: 27px; }.poi-marker.park { background: #4b7657; }.poi-marker.public_art { background: #a45c7b; }.poi-marker.recreation_center { background: #376b9b; }.poi-marker.water_access { background: #3487ab; }.poi-marker.library { background: #86613d; }.poi-marker.trail { background: #8f7135; }.poi-marker.community_garden { background: #5a9e4f; }.poi-marker.history { background: #7a4e9e; }.poi-marker.wifi { background: #d48e28; }.trail-feature strong, .trail-feature small { display: block; }.trail-feature small { color: var(--muted); font-size: 10px; margin-top: 2px; }
+.wildlife-marker { background: var(--moss); border: 3px solid #fffdf7; border-radius: 50%; box-shadow: 0 2px 8px rgba(23, 60, 53, .27); height: 18px; width: 18px; }.user-marker { background: #2476b7; border: 4px solid #fff; border-radius: 50%; box-shadow: 0 1px 7px rgba(16, 75, 120, .42); height: 18px; width: 18px; }
+.poi-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }.poi-chip { background: var(--paper); border: 1px solid #d9ddd0; border-radius: 99px; color: var(--muted); font-size: 11px; font-weight: 800; padding: 7px 10px; }.poi-chip.active { background: #dfeac9; border-color: #aabe89; color: var(--pine); }.poi-marker { align-items: center; border: 2px solid #fffdf7; border-radius: 50%; box-shadow: 0 2px 7px rgba(23,60,53,.24); color: #fff; display: flex; font-size: 13px; font-weight: 900; height: 27px; justify-content: center; width: 27px; }.poi-marker.park { background: #4b7657; }.poi-marker.public_art { background: #a45c7b; }.poi-marker.recreation_center { background: #376b9b; }.poi-marker.water_access { background: #3487ab; }.poi-marker.library { background: #86613d; }.poi-marker.trail { background: #8f7135; }.poi-marker.community_garden { background: #5a9e4f; }.poi-marker.wifi { background: #d48e28; }.trail-feature strong, .trail-feature small { display: block; }.trail-feature small { color: var(--muted); font-size: 10px; margin-top: 2px; }
 .walk-strip { align-items: center; background: var(--pine); border-radius: 17px; color: #fffdf6; display: flex; gap: 15px; justify-content: space-between; margin: 14px 0; padding: 13px 14px; }
 .walk-stats { display: grid; flex: 1; grid-template-columns: repeat(3, 1fr); gap: 7px; }.walk-stats div { border-right: 1px solid rgba(255,255,255,.17); padding-right: 5px; }.walk-stats div:last-child { border: 0; }.stat-value { display: block; font-size: 14px; font-variant-numeric: tabular-nums; font-weight: 750; }.stat-label { color: rgba(255,255,255,.62); display: block; font-size: 9px; margin-top: 2px; text-transform: uppercase; }
 .primary-button, .secondary-button { border: 0; border-radius: 11px; font-size: 13px; font-weight: 800; min-height: 42px; padding: 10px 14px; }.primary-button { background: var(--leaf); color: var(--pine); }.primary-button.walking { background: #f9cec3; color: #7a2c23; }.secondary-button { background: #edf0e1; color: var(--pine); }.wide-button { width: 100%; }
@@ -78,3 +77,29 @@ form { display: grid; gap: 14px; }form label, fieldset legend { color: var(--pin
 .setting-label select { background: #fffefa; border: 1px solid #d8ddd1; border-radius: 9px; color: var(--ink); padding: 9px; }
 .geofence-category-chips { margin-top: 4px; }
 
+
+/* Historic-site pin: replaces the old flat .historic-marker star.
+   Teardrop pin with a landmark glyph; teal (--pine/--pine-2) for
+   verified sites, dashed amber (--sun) for unverified/prototype entries. */
+.historic-pin { width: 32px; height: 40px; position: relative; }
+.historic-pin .pin-body {
+  position: absolute; left: 1px; top: 0; width: 28px; height: 28px;
+  border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+  background: linear-gradient(135deg, var(--pine-2), var(--pine));
+  border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
+  display: flex; align-items: center; justify-content: center;
+}
+.historic-pin .pin-icon { transform: rotate(45deg); font-size: 14px; line-height: 1; }
+.historic-pin.unverified .pin-body {
+  background: linear-gradient(135deg, var(--sun), #a8691c);
+  border-style: dashed;
+}
+/* Cluster badges for grouped markers at low zoom */
+.cluster-badge {
+  width: 100%; height: 100%; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 800; font-size: 13px;
+  border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+}
+.cluster-badge.history-cluster { background: rgba(45, 114, 89, .92); }
+.cluster-badge.poi-cluster { background: rgba(23, 60, 53, .85); }
