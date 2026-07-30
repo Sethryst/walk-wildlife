@@ -34,7 +34,8 @@
       "address": "6700 E TANNERS CREEK DRIVE",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6077/Barron-F-Black-Branch"
+      "link": "https://www.norfolk.gov/6077/Barron-F-Black-Branch",
+      "radius": 50
     },
     {
       "id": "norfolk-library-121",
@@ -50,7 +51,8 @@
       "address": "879 E  PRINCESS ANNE ROAD",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6078/Blyden-Branch"
+      "link": "https://www.norfolk.gov/6078/Blyden-Branch",
+      "radius": 50
     },
     {
       "id": "norfolk-library-120",
@@ -65,7 +67,8 @@
       "description": "441-1968",
       "address": "555 E LIBERTY STREET",
       "source": "Libraries_latlng.csv",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-library-128",
@@ -81,7 +84,8 @@
       "address": "5900 E VIRGINIA BEACH BOULEVARD",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6080/Janaf-Branch-Library"
+      "link": "https://www.norfolk.gov/6080/Janaf-Branch-Library",
+      "radius": 50
     },
     {
       "id": "norfolk-library-122",
@@ -95,7 +99,8 @@
       "address": "1425 NORCHESTER AVENUE",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6081/Jordan-Newby-Anchor-Branch-at-Broad-Cree"
+      "link": "https://www.norfolk.gov/6081/Jordan-Newby-Anchor-Branch-at-Broad-Cree",
+      "radius": 50
     },
     {
       "id": "norfolk-library-130",
@@ -111,7 +116,8 @@
       "address": "1610 CROMWELL DRIVE",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6082/Lafayette-Branch"
+      "link": "https://www.norfolk.gov/6082/Lafayette-Branch",
+      "radius": 50
     },
     {
       "id": "norfolk-library-132",
@@ -127,7 +133,8 @@
       "address": "6525 HAMPTON BOULEVARD",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6083/Larchmont-Branch"
+      "link": "https://www.norfolk.gov/6083/Larchmont-Branch",
+      "radius": 50
     },
     {
       "id": "norfolk-library-133",
@@ -143,7 +150,8 @@
       "address": "7853 TARPON PLACE",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6084/Little-Creek-Branch"
+      "link": "https://www.norfolk.gov/6084/Little-Creek-Branch",
+      "radius": 50
     },
     {
       "id": "norfolk-library-141",
@@ -159,7 +167,8 @@
       "address": "111 W OCEAN VIEW AVENUE",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6085/Mary-D-Pretlow-Anchor-Branch"
+      "link": "https://www.norfolk.gov/6085/Mary-D-Pretlow-Anchor-Branch",
+      "radius": 50
     },
     {
       "id": "norfolk-library-637",
@@ -172,7 +181,8 @@
       "description": null,
       "address": "961 PARK AVENUE",
       "source": "Libraries_latlng.csv",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-library-143",
@@ -188,7 +198,8 @@
       "address": "620 W 29TH STREET",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6086/Park-Place-Library"
+      "link": "https://www.norfolk.gov/6086/Park-Place-Library",
+      "radius": 50
     },
     {
       "id": "norfolk-library-208",
@@ -201,7 +212,8 @@
       "description": null,
       "address": "2350 BERKLEY AVENUE EX",
       "source": "Libraries_latlng.csv",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-library-129",
@@ -215,7 +227,8 @@
       "address": "235 E PLUME STREET",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6079/Downtown-Branch-at-Slover"
+      "link": "https://www.norfolk.gov/6079/Downtown-Branch-at-Slover",
+      "radius": 50
     },
     {
       "id": "norfolk-library-155",
@@ -231,7 +244,8 @@
       "address": "1368 DEBREE AVENUE",
       "source": "Libraries_latlng.csv",
       "geometry": "point",
-      "link": "https://www.norfolk.gov/6088/Van-Wyck-Branch"
+      "link": "https://www.norfolk.gov/6088/Van-Wyck-Branch",
+      "radius": 50
     },
     {
       "id": "norfolk-park-15",
@@ -246,7 +260,8 @@
       "description": null,
       "address": "1430 37th Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-14",
@@ -262,7 +277,8 @@
       "description": null,
       "address": "841 38th Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-24",
@@ -275,7 +291,8 @@
       "description": "Complete June 2018",
       "address": "44th Street and Colley Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-81",
@@ -292,7 +309,8 @@
       "description": null,
       "address": "1701 Alsace Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-13",
@@ -305,7 +323,8 @@
       "description": null,
       "address": "1936 Norview Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-58",
@@ -318,7 +337,8 @@
       "description": null,
       "address": "1058 North Shore Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-12",
@@ -334,7 +354,8 @@
       "description": "basketball court is very small slab of concrete",
       "address": "5416 Ashby Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-10",
@@ -351,7 +372,8 @@
       "description": null,
       "address": "5860 Townley Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-94",
@@ -367,7 +389,8 @@
       "description": null,
       "address": "7721 Azalea Garden Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-9",
@@ -382,7 +405,8 @@
       "description": "3 batting cages",
       "address": "1147 Pineridge Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-95",
@@ -397,7 +421,8 @@
       "description": null,
       "address": "3000 Danna Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-8",
@@ -415,7 +440,8 @@
       "description": "ampitheater, nature trail,",
       "address": "1136 Vista Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-170",
@@ -431,7 +457,8 @@
       "description": "Pergola area with benches, walking trails",
       "address": "3rd-5th Bay Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-96",
@@ -444,7 +471,8 @@
       "description": "large concrete play area",
       "address": "1434 E Bayview Boulevard",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-7",
@@ -457,7 +485,8 @@
       "description": null,
       "address": "350 Beechwood Place",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-125",
@@ -470,7 +499,8 @@
       "description": null,
       "address": "1530 Cypress Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-157",
@@ -483,7 +513,8 @@
       "description": "No Fence",
       "address": "500 Culpepper Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-72",
@@ -500,7 +531,8 @@
       "description": null,
       "address": "706 Walker Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-155",
@@ -515,7 +547,8 @@
       "description": "Butterfly Garden",
       "address": "5209 Bluestone Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-97",
@@ -530,7 +563,8 @@
       "description": null,
       "address": "1111 Park Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-151",
@@ -543,7 +577,8 @@
       "description": null,
       "address": "1100, 1200 Botetourt Gardens",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-152",
@@ -556,7 +591,8 @@
       "description": null,
       "address": "600, 700, 800 Botetourt Gardens",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-163",
@@ -569,7 +605,8 @@
       "description": "No Fence",
       "address": "1306 Corprew Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-1379",
@@ -582,7 +619,8 @@
       "description": null,
       "address": "2701 E Princess Anne Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-140",
@@ -595,7 +633,8 @@
       "description": "Asphalt trail throughout, sculpture gardens, benches",
       "address": "3000 E Virginia Beach Boulevard",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-147",
@@ -608,7 +647,8 @@
       "description": null,
       "address": "1600 Saint Julian Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-164",
@@ -621,7 +661,8 @@
       "description": "No Fence · Also considered Cambridge Park (neighborhood passive park)",
       "address": "6125 Carroll Place",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-165",
@@ -634,7 +675,8 @@
       "description": "also known as Cambridge Crescent dog park",
       "address": "6125 Carroll Place",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-169",
@@ -650,7 +692,8 @@
       "description": null,
       "address": "501 C Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-4",
@@ -667,7 +710,8 @@
       "description": null,
       "address": "1130 Leake Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-70",
@@ -680,7 +724,8 @@
       "description": null,
       "address": "2400 Berkley Avenue Extended",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-52",
@@ -693,7 +738,8 @@
       "description": "canoe/kayak launch",
       "address": "800 Little Bay Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-150",
@@ -706,7 +752,8 @@
       "description": null,
       "address": "239 E Princess Anne Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-132",
@@ -721,7 +768,8 @@
       "description": null,
       "address": "2915 Westminster Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-122",
@@ -736,7 +784,8 @@
       "description": "running track, concrete play surface",
       "address": "2445 Palmyra Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-138",
@@ -749,7 +798,8 @@
       "description": null,
       "address": "3300 Colonial Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-167",
@@ -764,7 +814,8 @@
       "description": "dog park (lighted)  ,  asphalt trail",
       "address": "3901 Llewellyn Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-166",
@@ -779,7 +830,8 @@
       "description": "Fenced",
       "address": "405 Delaware Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-23",
@@ -796,7 +848,8 @@
       "description": "beach access",
       "address": "700 E Ocean View Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-121",
@@ -812,7 +865,8 @@
       "description": null,
       "address": "1025 Widgeon Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-22",
@@ -827,7 +881,8 @@
       "description": null,
       "address": "435 Craig Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-66",
@@ -840,7 +895,8 @@
       "description": "concrete play surface",
       "address": "7920 Tidewater Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-21",
@@ -856,7 +912,8 @@
       "description": null,
       "address": "1401 Melon Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-172",
@@ -871,7 +928,8 @@
       "description": "Fenced,   astroturf",
       "address": "416 Granby Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-120",
@@ -886,7 +944,8 @@
       "description": "Temporary Campostella Elementary until new school constructed @ 1106 Campostella Road",
       "address": "2600 E Princess Anne Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-42",
@@ -903,7 +962,8 @@
       "description": "beach access",
       "address": "9520 20th Bay Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-119",
@@ -919,7 +979,8 @@
       "description": null,
       "address": "6045 Curlew Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-145",
@@ -932,7 +993,8 @@
       "description": null,
       "address": "238 E Princess Anne Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-131",
@@ -947,7 +1009,8 @@
       "description": null,
       "address": "1132 Wade Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-1380",
@@ -960,7 +1023,8 @@
       "description": null,
       "address": "249 W York Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-20",
@@ -976,7 +1040,8 @@
       "description": null,
       "address": "915 Orapax Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-1377",
@@ -989,7 +1054,8 @@
       "description": null,
       "address": "6107 Sewells Point Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-2184",
@@ -1002,7 +1068,8 @@
       "description": null,
       "address": "114 W Charlotte Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-64",
@@ -1015,7 +1082,8 @@
       "description": null,
       "address": "8100 Granby Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-137",
@@ -1030,7 +1098,8 @@
       "description": null,
       "address": "1000 Botetourt Gardens",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-139",
@@ -1043,7 +1112,8 @@
       "description": null,
       "address": "255 College Cross",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-1378",
@@ -1058,7 +1128,8 @@
       "description": null,
       "address": "501 Dumore Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-19",
@@ -1071,7 +1142,8 @@
       "description": "pagoda, water garden",
       "address": "265 W Tazwell Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-118",
@@ -1087,7 +1159,8 @@
       "description": null,
       "address": "200 Shirley Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-30",
@@ -1100,7 +1173,8 @@
       "description": "No Fence · Also listed as Gleneagles park NPP",
       "address": "1201 Daniel Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-54",
@@ -1115,7 +1189,8 @@
       "description": null,
       "address": "8100 Evergreen Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-18",
@@ -1128,7 +1203,8 @@
       "description": null,
       "address": "1305 Maltby Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-61",
@@ -1144,7 +1220,8 @@
       "description": null,
       "address": "7101 Newport Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-62",
@@ -1159,7 +1236,8 @@
       "description": null,
       "address": "7101 Granby Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-1381",
@@ -1172,7 +1250,8 @@
       "description": null,
       "address": "500-700 Block Graydon Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-17",
@@ -1185,7 +1264,8 @@
       "description": null,
       "address": "1400 Block Graydon Place",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-16",
@@ -1198,7 +1278,8 @@
       "description": null,
       "address": "930 Greenway Park",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-168",
@@ -1211,7 +1292,8 @@
       "description": "No Fence · Also listed as Hague park NPP",
       "address": "700 W Brambleton Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-33",
@@ -1224,7 +1306,8 @@
       "description": "1 stadium",
       "address": "150 Park Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-159",
@@ -1237,7 +1320,8 @@
       "description": "1 kayak launch",
       "address": "1235 Water Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-3",
@@ -1250,7 +1334,8 @@
       "description": "1 boat ramp",
       "address": "300 Delaware Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-146",
@@ -1263,7 +1348,8 @@
       "description": null,
       "address": "1200 Tidewater Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-56",
@@ -1278,7 +1364,8 @@
       "description": null,
       "address": "7637 North Shore Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-82",
@@ -1296,7 +1383,8 @@
       "description": "indoor pool",
       "address": "830 Goff Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-32",
@@ -1309,7 +1397,8 @@
       "description": "concrete slab present",
       "address": "555 Austin Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-130",
@@ -1326,7 +1415,8 @@
       "description": null,
       "address": "976 Ingleside Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-117",
@@ -1342,7 +1432,8 @@
       "description": null,
       "address": "1300 Marshall Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-124",
@@ -1357,7 +1448,8 @@
       "description": null,
       "address": "730 Spotswood Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-129",
@@ -1373,7 +1465,8 @@
       "description": null,
       "address": "520 W 29th Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-5",
@@ -1386,7 +1479,8 @@
       "description": "Elizabeth River Trail asphalt path runs through",
       "address": "1220 Azalea Court",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-156",
@@ -1399,7 +1493,8 @@
       "description": null,
       "address": "352 San Antonio Boulevard",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-1780",
@@ -1412,7 +1507,8 @@
       "description": null,
       "address": "731 Sedgewick Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-85",
@@ -1427,7 +1523,8 @@
       "description": "Fenced",
       "address": "1270 Lafayette Boulevard",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-143",
@@ -1446,7 +1543,8 @@
       "description": "Asphalt walking paths,",
       "address": "3500 Granby Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-84",
@@ -1461,7 +1559,8 @@
       "description": null,
       "address": "1270 Lafayette Boulevard",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-89",
@@ -1474,7 +1573,8 @@
       "description": null,
       "address": "9510 Chesapeake Boulevard",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-116",
@@ -1489,7 +1589,8 @@
       "description": null,
       "address": "1380 Kempsville Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-176",
@@ -1502,7 +1603,8 @@
       "description": "Completed April 2018",
       "address": "4275 Heutte Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-31",
@@ -1520,7 +1622,8 @@
       "description": "Athletics office, canoe launch, rowing center, music and dance center, horshoe pits · 2 football fields are placed on baseball fields during season",
       "address": "1612 Willow Wood Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-162",
@@ -1538,7 +1641,8 @@
       "description": null,
       "address": "1251 W 42nd St",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-1778",
@@ -1551,7 +1655,8 @@
       "description": null,
       "address": "4301 Powhatan Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-128",
@@ -1566,7 +1671,8 @@
       "description": null,
       "address": "1167 Bolling Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-115",
@@ -1583,7 +1689,8 @@
       "description": null,
       "address": "7600 Halprin Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-1779",
@@ -1596,7 +1703,8 @@
       "description": null,
       "address": "1913 Winn Lane",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-160",
@@ -1609,7 +1717,8 @@
       "description": "Built October 2017",
       "address": "279 LaValette Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-114",
@@ -1625,7 +1734,8 @@
       "description": null,
       "address": "2700 Ludlow Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-171",
@@ -1640,7 +1750,8 @@
       "description": null,
       "address": "62862 Northampton Boulevard",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-113",
@@ -1655,7 +1766,8 @@
       "description": null,
       "address": "7900 Tarpon Place",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-136",
@@ -1668,7 +1780,8 @@
       "description": null,
       "address": "404 E Plume Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-112",
@@ -1683,7 +1796,8 @@
       "description": null,
       "address": "3700 Bowdens Ferry Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-73",
@@ -1696,7 +1810,8 @@
       "description": null,
       "address": "500 Lancaster Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-99",
@@ -1712,7 +1827,8 @@
       "description": "Fenced",
       "address": "176 Maple Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-173",
@@ -1728,7 +1844,8 @@
       "description": null,
       "address": "176 Maple Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-29",
@@ -1741,7 +1858,8 @@
       "description": "viewing garden",
       "address": "701 Church Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-111",
@@ -1756,7 +1874,8 @@
       "description": null,
       "address": "322 Shirley Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-57",
@@ -1771,7 +1890,8 @@
       "description": "School demolished 2016 -  New Park has Dog Park, half bball court, playground",
       "address": "7620 Shirland Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-174",
@@ -1789,7 +1909,8 @@
       "description": "Walking Track",
       "address": "8809 Monitor Way",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-135",
@@ -1802,7 +1923,8 @@
       "description": null,
       "address": "2724 Park Crescent",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-28",
@@ -1815,7 +1937,8 @@
       "description": null,
       "address": "8230 Mona Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-142",
@@ -1830,7 +1953,8 @@
       "description": null,
       "address": "9635 Mason Creek Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-27",
@@ -1846,7 +1970,8 @@
       "description": null,
       "address": "8075 West Glen Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-26",
@@ -1862,7 +1987,8 @@
       "description": null,
       "address": "2608 Gosnold Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-37",
@@ -1875,7 +2001,8 @@
       "description": "Wooden footbridge over marsh, walking path",
       "address": "6125 Myrtle Park",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-90",
@@ -1888,7 +2015,8 @@
       "description": null,
       "address": "6700 Azalea Garden Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-60",
@@ -1906,7 +2034,8 @@
       "description": null,
       "address": "7300 Newport Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-25",
@@ -1921,7 +2050,8 @@
       "description": "concrete slab, no bball hoops",
       "address": "2651 Bartin Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-59",
@@ -1934,7 +2064,8 @@
       "description": null,
       "address": "451 North Shore Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-68",
@@ -1949,7 +2080,8 @@
       "description": null,
       "address": "180 E Evans Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-44",
@@ -1968,7 +2100,8 @@
       "description": "1/2 mile hiking trail, indoor pool, Northside Skate Park",
       "address": "8401 Tidewater Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-109",
@@ -1986,7 +2119,8 @@
       "description": "ADA inclusive Splash Pad",
       "address": "6401 Chesapeake Boulevard",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-108",
@@ -2001,7 +2135,8 @@
       "description": null,
       "address": "6501 Chesapeake Boulevard",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-110",
@@ -2017,7 +2152,8 @@
       "description": null,
       "address": "6325 Sewells Point Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-43",
@@ -2033,7 +2169,8 @@
       "description": null,
       "address": "3501 Oakmont Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-67",
@@ -2046,7 +2183,8 @@
       "description": null,
       "address": "900 Ashbury Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-106",
@@ -2063,7 +2201,8 @@
       "description": null,
       "address": "9501 Mason Creek Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-88",
@@ -2078,7 +2217,8 @@
       "description": null,
       "address": "9548 Norfolk Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-51",
@@ -2093,7 +2233,8 @@
       "description": "beach access, large band shell",
       "address": "120 W Ocean View Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-107",
@@ -2109,7 +2250,8 @@
       "description": null,
       "address": "600 Dudley Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-1781",
@@ -2122,7 +2264,8 @@
       "description": null,
       "address": "2616 Marlboro Ave",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-86",
@@ -2135,7 +2278,8 @@
       "description": null,
       "address": "300, 400, 500 Blks Olney Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-100",
@@ -2148,7 +2292,8 @@
       "description": "asphalt play area",
       "address": "543 E Olney Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-41",
@@ -2161,7 +2306,8 @@
       "description": "walking trails, benches , educational signage",
       "address": "1001 W Brambleton Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-40",
@@ -2174,7 +2320,8 @@
       "description": null,
       "address": "435 E Plume Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-1",
@@ -2190,7 +2337,8 @@
       "description": null,
       "address": "913 Pollard Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-105",
@@ -2205,7 +2353,8 @@
       "description": null,
       "address": "5523 Pebble Lane",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-39",
@@ -2222,7 +2371,8 @@
       "description": "Kayak launch (needs repaired)",
       "address": "101 N Military Highway",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-153",
@@ -2235,7 +2385,8 @@
       "description": null,
       "address": "5400, 5500, 5600 Poplar Hall Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-161",
@@ -2251,7 +2402,8 @@
       "description": null,
       "address": "1450 Kempsville Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-38",
@@ -2266,7 +2418,8 @@
       "description": "sand volleyball court",
       "address": "635 Raleigh Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-141",
@@ -2281,7 +2434,8 @@
       "description": null,
       "address": "935 Redgate Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-77",
@@ -2294,7 +2448,8 @@
       "description": null,
       "address": "401 Reservoir Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-577",
@@ -2307,7 +2462,8 @@
       "description": null,
       "address": "2700 E Princess Anne Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-36",
@@ -2322,7 +2478,8 @@
       "description": null,
       "address": "5392 Roslyn Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-35",
@@ -2338,7 +2495,8 @@
       "description": null,
       "address": "6050 Newport Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-74",
@@ -2351,7 +2509,8 @@
       "description": null,
       "address": "1000 E Indian River Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-65",
@@ -2366,7 +2525,8 @@
       "description": null,
       "address": "598 Summers Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-104",
@@ -2383,7 +2543,8 @@
       "description": "2 half courts on side of full court bball",
       "address": "1330 Branch Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-78",
@@ -2399,7 +2560,8 @@
       "description": null,
       "address": "610 May Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-53",
@@ -2414,7 +2576,8 @@
       "description": "beach access",
       "address": "324 W Ocean View Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-123",
@@ -2429,7 +2592,8 @@
       "description": null,
       "address": "2861 E Princess Anne Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-55",
@@ -2445,7 +2609,8 @@
       "description": null,
       "address": "7928 Hampton Boulevard",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-127",
@@ -2462,7 +2627,8 @@
       "description": null,
       "address": "3035 Sherwood Forest Lane",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-34",
@@ -2480,7 +2646,8 @@
       "description": "walking path with fitness stations, sand volleyball, horshoes, bocce, Splash Pad",
       "address": "2400 Shoop Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-71",
@@ -2493,7 +2660,8 @@
       "description": null,
       "address": "324 South Main Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-69",
@@ -2508,7 +2676,8 @@
       "description": null,
       "address": "2300 Berkley Avenue Extended",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-75",
@@ -2521,7 +2690,8 @@
       "description": null,
       "address": "1106 Campostella Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-6",
@@ -2537,7 +2707,8 @@
       "description": "Outdoor pool",
       "address": "903 South Main Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-91",
@@ -2552,7 +2723,8 @@
       "description": "Fenced",
       "address": "1300 Stockley Gardens",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-92",
@@ -2565,7 +2737,8 @@
       "description": null,
       "address": "1200 1400 Stockley Gardens",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-93",
@@ -2578,7 +2751,8 @@
       "description": null,
       "address": "600 700 800 Stockley Gardens",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-134",
@@ -2591,7 +2765,8 @@
       "description": "seasonal color garden",
       "address": "3126 South Stone Bridge Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-50",
@@ -2604,7 +2779,8 @@
       "description": "seasonal color garden",
       "address": "601 W Olney Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-83",
@@ -2620,7 +2796,8 @@
       "description": null,
       "address": "446 Virginia Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-63",
@@ -2637,7 +2814,8 @@
       "description": null,
       "address": "310 Thole Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-175",
@@ -2650,7 +2828,8 @@
       "description": null,
       "address": "947 Sutton Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-98",
@@ -2665,7 +2844,8 @@
       "description": "Fenced",
       "address": "2717 Tait Terrace",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-133",
@@ -2678,7 +2858,8 @@
       "description": null,
       "address": "6700 E Tanners Creek Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-103",
@@ -2695,7 +2876,8 @@
       "description": null,
       "address": "1335 Longdale Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-126",
@@ -2708,7 +2890,8 @@
       "description": null,
       "address": "2080 Tarrallton Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-154",
@@ -2726,7 +2909,8 @@
       "description": "Dirt BMX track",
       "address": "2080 Tarrallton Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-79",
@@ -2742,7 +2926,8 @@
       "description": null,
       "address": "1045 E Brambleton Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-49",
@@ -2757,7 +2942,8 @@
       "description": "computer lab, kilns for cermanics",
       "address": "7545 Diven Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-76",
@@ -2772,7 +2958,8 @@
       "description": null,
       "address": "201 Waterside Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-48",
@@ -2785,7 +2972,8 @@
       "description": null,
       "address": "5801 Upper Brandon Place",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-158",
@@ -2800,7 +2988,8 @@
       "description": "1 hiking trail, 1 boat ramp",
       "address": "3500 Granby Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-148",
@@ -2813,7 +3002,8 @@
       "description": null,
       "address": "700 E Olney Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-144",
@@ -2826,7 +3016,8 @@
       "description": null,
       "address": "238 E Princess Anne Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-47",
@@ -2841,7 +3032,8 @@
       "description": null,
       "address": "1424 Westover Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-102",
@@ -2856,7 +3048,8 @@
       "description": null,
       "address": "1122 W Princess Anne Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-80",
@@ -2872,7 +3065,8 @@
       "description": null,
       "address": "1511 Willow Wood Drive",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-2",
@@ -2887,7 +3081,8 @@
       "description": "2 boat ramps",
       "address": "1275 Bayville Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-101",
@@ -2903,7 +3098,8 @@
       "description": null,
       "address": "9500 4th View Street",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-11",
@@ -2916,7 +3112,8 @@
       "description": "No Fence",
       "address": "3400 Norway Place",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-46",
@@ -2929,7 +3126,8 @@
       "description": "viewing garden, wooden boardwalk",
       "address": "235 Brooke Avenue",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-park-45",
@@ -2942,7 +3140,8 @@
       "description": null,
       "address": "900 W Princess Anne Road",
       "source": "Parks_-_City_of_Norfolk.geojson",
-      "geometry": "polygon"
+      "geometry": "polygon",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-ygqe~si9j_rki7",
@@ -2956,7 +3155,8 @@
       "address": "739 Granby St.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://neonnfk.com/public-art/27-beecycles/"
+      "link": "https://neonnfk.com/public-art/27-beecycles/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-qki4_p3y5~ynkg",
@@ -2970,7 +3170,8 @@
       "address": "631 West 35th Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/35t8/31/12h-street-corridor/"
+      "link": "https://norfolkarts.net/artwork/35t8/31/12h-street-corridor/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-tr7s~5sbd-947m",
@@ -2984,7 +3185,8 @@
       "address": "7300 Newport Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/six-poot-fractal-tree/"
+      "link": "https://norfolkarts.net/artwork/six-poot-fractal-tree/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-nzuw.qcbk.unde",
@@ -2998,7 +3200,8 @@
       "address": "2608 Gosnold Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/place-in-time/"
+      "link": "https://norfolkarts.net/artwork/place-in-time/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-bqjc_ibhp_aa59",
@@ -3012,7 +3215,8 @@
       "address": "700 East Ocean View Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/across-the-bay/"
+      "link": "https://norfolkarts.net/artwork/across-the-bay/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-93s6-md4i.r9id",
@@ -3026,7 +3230,8 @@
       "address": "3500 Granby Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/all-things-within-all-things/"
+      "link": "https://norfolkarts.net/artwork/all-things-within-all-things/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-syak.smjj_4skn",
@@ -3040,7 +3245,8 @@
       "address": "1 Memorial Place",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://chrysler.emuseum.com/objects/18840/anchor?ctx=22e1511c-8881-4d08-8ed1-afa96728ddb8&idx=0"
+      "link": "https://chrysler.emuseum.com/objects/18840/anchor?ctx=22e1511c-8881-4d08-8ed1-afa96728ddb8&idx=0",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-y2qv_nc8d-igqj",
@@ -3054,7 +3260,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-zp65.xq2d~4za5",
@@ -3068,7 +3275,8 @@
       "address": "1 Waterside Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/armed-forces-memorial/"
+      "link": "https://norfolkarts.net/artwork/armed-forces-memorial/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-dc6z.eyed_y6mg",
@@ -3082,7 +3290,8 @@
       "address": "700 Henry St. and Church St.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/ascension-to-a-higher-state-of-being-2/"
+      "link": "https://norfolkarts.net/artwork/ascension-to-a-higher-state-of-being-2/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-tq36-hmub.ihp7",
@@ -3096,7 +3305,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-etr3-uac4~8tur",
@@ -3110,7 +3320,8 @@
       "address": "110 West Main",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://www.downtownnorfolk.org/go/town-point-garage"
+      "link": "https://www.downtownnorfolk.org/go/town-point-garage",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-dmkg-m3uc~fu8j",
@@ -3124,7 +3335,8 @@
       "address": "1 Memorial Place",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://chrysler.emuseum.com/objects/12384/big-six?ctx=f3ff7935-74a8-4d27-afaa-0362679ffb36&idx=0"
+      "link": "https://chrysler.emuseum.com/objects/12384/big-six?ctx=f3ff7935-74a8-4d27-afaa-0362679ffb36&idx=0",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-4tv6~kgbv-k3ng",
@@ -3138,7 +3350,8 @@
       "address": "350 Government Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/birds-of-every-feather/"
+      "link": "https://norfolkarts.net/artwork/birds-of-every-feather/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-dr94.7vvc.vrp4",
@@ -3152,7 +3365,8 @@
       "address": "600 East Ocean View Avenue",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/bit-by-bit/"
+      "link": "https://norfolkarts.net/artwork/bit-by-bit/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-ubr9~g7rd-8qm2",
@@ -3166,7 +3380,8 @@
       "address": "801 Boush St.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://neonnfk.com/public-art/bloom/"
+      "link": "https://neonnfk.com/public-art/bloom/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-cyf5_pek2~eqbd",
@@ -3180,7 +3395,8 @@
       "address": "300 Plume Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/book-migration-2/"
+      "link": "https://norfolkarts.net/artwork/book-migration-2/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-6cgy-g7mz_jxak",
@@ -3194,7 +3410,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-u8i5.nv8x_9igi",
@@ -3208,7 +3425,8 @@
       "address": "Military Highway at I-264",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/ebb-flow/"
+      "link": "https://norfolkarts.net/artwork/ebb-flow/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-k9qq_bmu5-hmqd",
@@ -3222,7 +3440,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-zqfe~gmbp_cuet",
@@ -3236,7 +3455,8 @@
       "address": "201 East Brambleton Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/celebration/"
+      "link": "https://norfolkarts.net/artwork/celebration/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-7ivk.rg74~nihd",
@@ -3250,7 +3470,8 @@
       "address": "768 Granby Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/cementiscope/"
+      "link": "https://norfolkarts.net/artwork/cementiscope/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-d3hz~p5qx~ri32",
@@ -3264,7 +3485,8 @@
       "address": "1 Waterside Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://www.downtownnorfolk.org/go/town-point-park"
+      "link": "https://www.downtownnorfolk.org/go/town-point-park",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-rw6h-ncfy_t2rx",
@@ -3278,7 +3500,8 @@
       "address": "208 E Main St Norfolk, VA 23510",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/clouds-removed/"
+      "link": "https://norfolkarts.net/artwork/clouds-removed/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-jrtb-rmve~dgbx",
@@ -3292,7 +3515,8 @@
       "address": "100 West Ocean View Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/across-the-bay/"
+      "link": "https://norfolkarts.net/artwork/across-the-bay/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-hswb-uxfv-jia5",
@@ -3306,7 +3530,8 @@
       "address": "238 E Princess Anne Rd, Norfolk, VA 23510",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/norfolk-confederate-soldier/"
+      "link": "https://norfolkarts.net/artwork/norfolk-confederate-soldier/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-mbe5~bjfc~tc37",
@@ -3320,7 +3545,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-ur3i-sb5x_494e",
@@ -3334,7 +3560,8 @@
       "address": "100 West Ocean View Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/watch-a-video-of-the-dedication-10-30-21/"
+      "link": "https://norfolkarts.net/watch-a-video-of-the-dedication-10-30-21/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-y2t7_dysr-mc79",
@@ -3348,7 +3575,8 @@
       "address": "235 E. Plume Street 23510",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://www.sloverlibrary.com/"
+      "link": "http://www.sloverlibrary.com/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-wsby.zgqt-btm6",
@@ -3362,7 +3590,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-gn5k.4su4.6uye",
@@ -3376,7 +3605,8 @@
       "address": "2413 E Ocean View Blvd",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/bay-oaks-park-coming-2021/"
+      "link": "https://norfolkarts.net/artwork/bay-oaks-park-coming-2021/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-enhw-qs7n-jb2m",
@@ -3390,7 +3620,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-snkd~6w74-cfmw",
@@ -3404,7 +3635,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-49j5.7z42~qewf",
@@ -3418,7 +3650,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-whq9_mv3w.rfm9",
@@ -3432,7 +3665,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-ppu7~9tph.kppw",
@@ -3446,7 +3680,8 @@
       "address": "Newtown Rd. (at Curlew Dr.), Norfolk, VA 23502",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/easton-trees-as-seen-from-the-train-at-the-end-of-the-line/"
+      "link": "https://norfolkarts.net/artwork/easton-trees-as-seen-from-the-train-at-the-end-of-the-line/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-kxjp_q4cj-66xa",
@@ -3460,7 +3695,8 @@
       "address": "208 E. Plume Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://www.sloverlibrary.com/"
+      "link": "http://www.sloverlibrary.com/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-hkv7~5qjx.5xi9",
@@ -3474,7 +3710,8 @@
       "address": "50 Martin's Lane",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/elizabeth-river-festival/"
+      "link": "https://norfolkarts.net/artwork/elizabeth-river-festival/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-5hzy-xvg4~xmv3",
@@ -3488,7 +3725,8 @@
       "address": "Palmyra Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/enchanted-garden/"
+      "link": "https://norfolkarts.net/artwork/enchanted-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-wyfm_wnvp_fszy",
@@ -3502,7 +3740,8 @@
       "address": "500 City Hall Ave.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/eyes/"
+      "link": "https://norfolkarts.net/artwork/eyes/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-7ytu-5333-z7ew",
@@ -3516,7 +3755,8 @@
       "address": "208 E. Plume Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://www.sloverlibrary.com/"
+      "link": "http://www.sloverlibrary.com/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-vbj9-q57v~irdp",
@@ -3530,7 +3770,8 @@
       "address": "130  Bank St.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/fathoms-of-freedom/"
+      "link": "https://norfolkarts.net/artwork/fathoms-of-freedom/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-yhhm-hnnk.rqmn",
@@ -3544,7 +3785,8 @@
       "address": "1211 W 43rd Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/community-responders/"
+      "link": "https://norfolkarts.net/artwork/community-responders/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-ps6s-cvzs-r39f",
@@ -3558,7 +3800,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-c8fw_6xn2-3ce7",
@@ -3572,7 +3815,8 @@
       "address": "1 Memorial Place",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://chrysler.emuseum.com/objects/24701/floor-kite-xii?ctx=d235675a-d0ad-40fc-8538-dc093443b07a&idx=1"
+      "link": "https://chrysler.emuseum.com/objects/24701/floor-kite-xii?ctx=d235675a-d0ad-40fc-8538-dc093443b07a&idx=1",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-vfcr~ddje-v4b7",
@@ -3586,7 +3830,8 @@
       "address": "215 West York Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/flyway/"
+      "link": "https://norfolkarts.net/artwork/flyway/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-wbak-73k8.4dc5",
@@ -3600,7 +3845,8 @@
       "address": "York Street at Brambleton",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/freemason-composition-in-primary/"
+      "link": "https://norfolkarts.net/artwork/freemason-composition-in-primary/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-xag8-emxn~tsry",
@@ -3614,7 +3860,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-jz9y.wmqw~ti46",
@@ -3628,7 +3875,8 @@
       "address": "89 West Liberty Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/fun-in-the-sun/"
+      "link": "https://norfolkarts.net/artwork/fun-in-the-sun/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-2xr6_6unj.8rsz",
@@ -3642,7 +3890,8 @@
       "address": "700 E. Olney Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/garden-of-dreams/"
+      "link": "https://norfolkarts.net/artwork/garden-of-dreams/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-qpex-xbyq-mbwh",
@@ -3656,7 +3905,8 @@
       "address": "730 Granby Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/gateway-towers/"
+      "link": "https://norfolkarts.net/artwork/gateway-towers/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-cdyx.6sgj~fuib",
@@ -3670,7 +3920,8 @@
       "address": "198 Bank Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/general-douglas-macarthur/"
+      "link": "https://norfolkarts.net/artwork/general-douglas-macarthur/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-9nd5.5s52-r5yq",
@@ -3684,7 +3935,8 @@
       "address": "198 Bank Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://www.macarthurmemorial.org/"
+      "link": "http://www.macarthurmemorial.org/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-7p7g~wtta~c5aw",
@@ -3698,7 +3950,8 @@
       "address": "1122 West Princess Anne Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://www.npsk12.com/domain/1417"
+      "link": "https://www.npsk12.com/domain/1417",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-y2i4-b8fd~gn5q",
@@ -3712,7 +3965,8 @@
       "address": "Brambleton and Colley Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/getting-on-your-optic-nerve/"
+      "link": "https://norfolkarts.net/artwork/getting-on-your-optic-nerve/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-utib~j9hc.x97a",
@@ -3726,7 +3980,8 @@
       "address": "724 Granby St.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://neonnfk.com/public-art/glimpse/"
+      "link": "https://neonnfk.com/public-art/glimpse/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-stm6_86kb-e52t",
@@ -3740,7 +3995,8 @@
       "address": "161 West Freemason Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/good-fortune-garage-2/"
+      "link": "https://norfolkarts.net/artwork/good-fortune-garage-2/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-v66c_a9uf-pjin",
@@ -3754,7 +4010,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-itam~wjet.jxuz",
@@ -3768,7 +4025,8 @@
       "address": "1251 W. 42nd St.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/guiding-sails/"
+      "link": "https://norfolkarts.net/artwork/guiding-sails/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-8rkh.p622-f4ki",
@@ -3782,7 +4040,8 @@
       "address": "300 Monticello Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/hampton-roads/"
+      "link": "https://norfolkarts.net/artwork/hampton-roads/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-k8uy_ntjb~9jte",
@@ -3796,7 +4055,8 @@
       "address": "208 E Plume St 23510",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://www.sloverlibrary.com/"
+      "link": "http://www.sloverlibrary.com/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-826n-h9ej-jz9w",
@@ -3810,7 +4070,8 @@
       "address": "1 Memorial Place",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://chrysler.emuseum.com/objects/57727/homage-to-man-ray?ctx=20876190-6fbb-4c01-9c1c-2960a2f13a2f&idx=0"
+      "link": "https://chrysler.emuseum.com/objects/57727/homage-to-man-ray?ctx=20876190-6fbb-4c01-9c1c-2960a2f13a2f&idx=0",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-zhu4.8cen~upf2",
@@ -3824,7 +4085,8 @@
       "address": "1 Waterside Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/homecoming/"
+      "link": "https://norfolkarts.net/artwork/homecoming/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-5nye.miev~q5a8",
@@ -3838,7 +4100,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-4j3m_dzzm.n9ca",
@@ -3852,7 +4115,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/intertwine-2/"
+      "link": "https://norfolkarts.net/artwork/intertwine-2/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-gukt_s8jj.366c",
@@ -3866,7 +4130,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-a29q.neth~b9p8",
@@ -3880,7 +4145,8 @@
       "address": "128 W Olney Rd",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://neonnfk.com/public-art/labor-of-love/"
+      "link": "http://neonnfk.com/public-art/labor-of-love/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-qp3i~w3eb~p4i5",
@@ -3894,7 +4160,8 @@
       "address": "1 Commercial Plaza",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/leading-edge/"
+      "link": "https://norfolkarts.net/artwork/leading-edge/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-rjtp-zkhf~j9jw",
@@ -3908,7 +4175,8 @@
       "address": "2700 Princess Anne Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/life-drawing-phoenix/"
+      "link": "https://norfolkarts.net/artwork/life-drawing-phoenix/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-fcpi~cweb-3krm",
@@ -3922,7 +4190,8 @@
       "address": "1106 Campostella Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/life-drawing-the-tiny-kingdom/"
+      "link": "https://norfolkarts.net/artwork/life-drawing-the-tiny-kingdom/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-aqsn-f8z8.jeg3",
@@ -3936,7 +4205,8 @@
       "address": "101 West Main Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://www.downtownnorfolk.org/go/undetermined-line"
+      "link": "https://www.downtownnorfolk.org/go/undetermined-line",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-zyt3_q6d9_7x6z",
@@ -3950,7 +4220,8 @@
       "address": "6700 East Tanners Creek Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/literature-progression/"
+      "link": "https://norfolkarts.net/artwork/literature-progression/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-jipx-b7px-9wip",
@@ -3964,7 +4235,8 @@
       "address": "217 Grace St.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://neonnfk.com/public-art/lunar-bathing/"
+      "link": "http://neonnfk.com/public-art/lunar-bathing/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-kjsw_668p.8gaw",
@@ -3978,7 +4250,8 @@
       "address": "208 E Main Street, 23510",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/public-art/"
+      "link": "https://norfolkarts.net/public-art/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-id4k.uxix_qg7n",
@@ -3992,7 +4265,8 @@
       "address": "Church St at Brambleton Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://www.downtownnorfolk.org/go/martin-luther-king-jr-memorial"
+      "link": "https://www.downtownnorfolk.org/go/martin-luther-king-jr-memorial",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-hf4j-cv3c.4sgf",
@@ -4006,7 +4280,8 @@
       "address": "301 E City Hall Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/metalmatisse/"
+      "link": "https://norfolkarts.net/artwork/metalmatisse/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-4r42~cfn3_rpum",
@@ -4020,7 +4295,8 @@
       "address": "7920 Tidewater Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/metamorphosis/"
+      "link": "https://norfolkarts.net/artwork/metamorphosis/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-aqkm~wcps-38hf",
@@ -4034,7 +4310,8 @@
       "address": "Magazine Lane",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://neonnfk.com/public-art/modern-day-hieroglyphics/"
+      "link": "http://neonnfk.com/public-art/modern-day-hieroglyphics/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-4gmm.5vnm-qz67",
@@ -4048,7 +4325,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-v5vu_ftqk.7xms",
@@ -4062,7 +4340,8 @@
       "address": "114 W Brambleton Avenue",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://neonnfk.com/public-art/new-energy-of-norfolk/"
+      "link": "http://neonnfk.com/public-art/new-energy-of-norfolk/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-4cb4.mihq_r5bm",
@@ -4076,7 +4355,8 @@
       "address": "711 Granby Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/nfk-arts/"
+      "link": "https://norfolkarts.net/artwork/nfk-arts/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-8kg8-js8x~bpb3",
@@ -4090,7 +4370,8 @@
       "address": "300 Monticelllo Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/about-norfolk-public-art/"
+      "link": "https://norfolkarts.net/about-norfolk-public-art/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-gvek~h47m.xi27",
@@ -4104,7 +4385,8 @@
       "address": "135 West Plume Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/norfolk-attractions/"
+      "link": "https://norfolkarts.net/artwork/norfolk-attractions/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-ucma-ts9j-345j",
@@ -4118,7 +4400,8 @@
       "address": "E Brambleton Ave. (btwn Park Ave. & Interstate 264), Norfolk, VA 23504",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/excellence-courage/"
+      "link": "https://norfolkarts.net/artwork/excellence-courage/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-3p24-i9wt-7iys",
@@ -4132,7 +4415,8 @@
       "address": "509 E. 18th Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/open-up-the-doors/"
+      "link": "https://norfolkarts.net/artwork/open-up-the-doors/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-vzzk~z4z2.5szv",
@@ -4146,7 +4430,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-pwsw_mm2y.2zki",
@@ -4160,7 +4445,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-94sk-8gsa.yjc5",
@@ -4174,7 +4460,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-7cr4.82g7.zv7z",
@@ -4188,7 +4475,8 @@
       "address": "Park Ave near Holt Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/play-ball/"
+      "link": "https://norfolkarts.net/artwork/play-ball/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-7rwy_ft2y.k322",
@@ -4202,7 +4490,8 @@
       "address": "810 Union Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/police-memorial-bell/"
+      "link": "https://norfolkarts.net/artwork/police-memorial-bell/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-nt3r~iwry.ymps",
@@ -4216,7 +4505,8 @@
       "address": "Monticello and Charlotte",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/porous/"
+      "link": "https://norfolkarts.net/artwork/porous/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-w7ti_q5s4.eref",
@@ -4230,7 +4520,8 @@
       "address": "Ingleside and Mississippi Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/portrait-of-a-neighborhood/"
+      "link": "https://norfolkarts.net/artwork/portrait-of-a-neighborhood/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-hjvb.q4iq.hb9v",
@@ -4244,7 +4535,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-quc4_pyqr.r4ck",
@@ -4258,7 +4550,8 @@
       "address": "746 Granby Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://neonnfk.com/public-art/razzle-dazzle/"
+      "link": "http://neonnfk.com/public-art/razzle-dazzle/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-ysgs-5dj6~djvx",
@@ -4272,7 +4565,8 @@
       "address": "238 East Princess Anne Blvd.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://www.norfolksocietyforcemeteryconservation.org/"
+      "link": "https://www.norfolksocietyforcemeteryconservation.org/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-5qvf~jmj6.gycc",
@@ -4286,7 +4580,8 @@
       "address": "Raleigh and Claremont Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/chelsea-elizabeth-river-trail/"
+      "link": "https://norfolkarts.net/artwork/chelsea-elizabeth-river-trail/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-eivz.2nzr.xfzi",
@@ -4300,7 +4595,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-ahdi~dx32~tr65",
@@ -4314,7 +4610,8 @@
       "address": "600 Granby Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/ripples/"
+      "link": "https://norfolkarts.net/artwork/ripples/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-9cr3.xteu_95mv",
@@ -4328,7 +4625,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-zp6g~9h7f_8imj",
@@ -4342,7 +4640,8 @@
       "address": "Park Ave near Holt Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/15896/"
+      "link": "https://norfolkarts.net/artwork/15896/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-vzze-yyzr-8tvr",
@@ -4356,7 +4655,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-duux-jj5j~weuh",
@@ -4370,7 +4670,8 @@
       "address": "520 E Main Street Suite B 23510",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/public-art/"
+      "link": "https://norfolkarts.net/public-art/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-fj57.xi45~uhnk",
@@ -4384,7 +4685,8 @@
       "address": "238 E. Princess Anne Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://www.norfolksocietyforcemeteryconservation.org/"
+      "link": "https://www.norfolksocietyforcemeteryconservation.org/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-zbu2-d7n4-8fhh",
@@ -4398,7 +4700,8 @@
       "address": "280 Park Ave.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/harboring-histories/"
+      "link": "https://norfolkarts.net/artwork/harboring-histories/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-57re.r9x4~j277",
@@ -4412,7 +4715,8 @@
       "address": "441 Bank Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/shore-lines/"
+      "link": "https://norfolkarts.net/artwork/shore-lines/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-mrpk~nupy.u5y3",
@@ -4426,7 +4730,8 @@
       "address": "230 East Main Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/sign-of-the-times/"
+      "link": "https://norfolkarts.net/artwork/sign-of-the-times/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-tyy2~whak~iazt",
@@ -4440,7 +4745,8 @@
       "address": "280 Park Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/harboring-histories/"
+      "link": "https://norfolkarts.net/artwork/harboring-histories/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-rir4~ftx4-zkst",
@@ -4454,7 +4760,8 @@
       "address": "8400 Tidewater Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/skate-trees-and-leaf-benches/"
+      "link": "https://norfolkarts.net/artwork/skate-trees-and-leaf-benches/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-efe3.wwmx-g8b9",
@@ -4468,7 +4775,8 @@
       "address": "819 Granby",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://neonnfk.com/public-art/space-explorations/"
+      "link": "http://neonnfk.com/public-art/space-explorations/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-xac8.bpx5-tv3z",
@@ -4482,7 +4790,8 @@
       "address": "215 St. Pauls Blvd",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://dc.lib.odu.edu/cdm/singleitem/collection/oduphotos/id/12010/rec/20"
+      "link": "http://dc.lib.odu.edu/cdm/singleitem/collection/oduphotos/id/12010/rec/20",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-gr8b.rr63-dhtf",
@@ -4496,7 +4805,8 @@
       "address": "1750 Campostella Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/splasher-of-the-healing-water/"
+      "link": "https://norfolkarts.net/artwork/splasher-of-the-healing-water/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-y7x2~ysjm.gr6n",
@@ -4510,7 +4820,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-442h-5xc3.y3c5",
@@ -4524,7 +4835,8 @@
       "address": "280 Park Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/harboring-histories/"
+      "link": "https://norfolkarts.net/artwork/harboring-histories/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-r76x~9aqb.tgur",
@@ -4538,7 +4850,8 @@
       "address": "6380 Sewells Point Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/storyteller/"
+      "link": "https://norfolkarts.net/artwork/storyteller/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-xv3u.8t3v.ze7a",
@@ -4552,7 +4865,8 @@
       "address": "401 Granby St.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/summer-in-the-city/"
+      "link": "https://norfolkarts.net/artwork/summer-in-the-city/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-tfrj-27f2.2dau",
@@ -4566,7 +4880,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-87nh.gy7c_5bxd",
@@ -4580,7 +4895,8 @@
       "address": "520 East Main Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/symbols-of-peace/"
+      "link": "https://norfolkarts.net/artwork/symbols-of-peace/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-d2gs_6jp5-69zv",
@@ -4594,7 +4910,8 @@
       "address": "208 East Plume Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://www.sloverlibrary.com/"
+      "link": "http://www.sloverlibrary.com/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-yzes-hs4r_4nbe",
@@ -4608,7 +4925,8 @@
       "address": "150 Park Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/the-fighters/"
+      "link": "https://norfolkarts.net/artwork/the-fighters/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-bxc6-77jg.de9j",
@@ -4622,7 +4940,8 @@
       "address": "810 Union Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/flame-of-liberty/"
+      "link": "https://norfolkarts.net/artwork/flame-of-liberty/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-kgtj_6kev-itut",
@@ -4636,7 +4955,8 @@
       "address": "6525 Hampton Blvd.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artists/deedee-morrison/"
+      "link": "https://norfolkarts.net/artists/deedee-morrison/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-ezdu.3h6g_ezdb",
@@ -4650,7 +4970,8 @@
       "address": "1 Waterside Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/lone-sailor/"
+      "link": "https://norfolkarts.net/artwork/lone-sailor/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-qyam-b7pn~zs5t",
@@ -4664,7 +4985,8 @@
       "address": "Azalea Garden Road and Norview Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/airport-artwork/"
+      "link": "https://norfolkarts.net/artwork/airport-artwork/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-hgu9_wi92~x6hv",
@@ -4678,7 +5000,8 @@
       "address": "150 Park Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/the-pitch/"
+      "link": "https://norfolkarts.net/artwork/the-pitch/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-cyjj~cwri.b6me",
@@ -4692,7 +5015,8 @@
       "address": "W. Ocean View Ave.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/uss-intrepid-propeller/"
+      "link": "https://norfolkarts.net/artwork/uss-intrepid-propeller/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-34zh.5cqw.qjzy",
@@ -4706,7 +5030,8 @@
       "address": "5585 Sabre Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/the-real-superheroes/"
+      "link": "https://norfolkarts.net/artwork/the-real-superheroes/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-s6ez_6n7g.9qpw",
@@ -4720,7 +5045,8 @@
       "address": "Monticello Avenue near Charlotte and Freemason streets near the Wells Fargo Center.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/tide-o-scope/"
+      "link": "https://norfolkarts.net/artwork/tide-o-scope/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-b5c5-62ye_85vv",
@@ -4734,7 +5060,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-2wax~hcpw-ajpx",
@@ -4748,7 +5075,8 @@
       "address": "1 Memorial Place",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://www.downtownnorfolk.org/go/torchbearers"
+      "link": "https://www.downtownnorfolk.org/go/torchbearers",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-5e4k.pa3c.5rky",
@@ -4762,7 +5090,8 @@
       "address": "777 Waterside Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/regatta-tower-of-lights/"
+      "link": "https://norfolkarts.net/artwork/regatta-tower-of-lights/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-h2ne.i9wh.fbuh",
@@ -4776,7 +5105,8 @@
       "address": "7607 Evelyn T. Butts Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/traverse/"
+      "link": "https://norfolkarts.net/artwork/traverse/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-44nq~nkve~bnam",
@@ -4790,7 +5120,8 @@
       "address": "7300 Newport Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/fractal-tree/"
+      "link": "https://norfolkarts.net/artwork/fractal-tree/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-f4xu~fqay~eixu",
@@ -4804,7 +5135,8 @@
       "address": "606 W 29th Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/tree-of-life-2/"
+      "link": "https://norfolkarts.net/artwork/tree-of-life-2/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-cfge-jy27~iwh9",
@@ -4818,7 +5150,8 @@
       "address": "Military Highway at I-264",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/trillium-patch/"
+      "link": "https://norfolkarts.net/artwork/trillium-patch/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-8sdh-5ucz-gqt6",
@@ -4832,7 +5165,8 @@
       "address": "142 W. Olney Rd.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/upper-blush/"
+      "link": "https://norfolkarts.net/artwork/upper-blush/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-2q32-4yd7~pekb",
@@ -4846,7 +5180,8 @@
       "address": "1 Waterside Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/uss-antietam-anchor/"
+      "link": "https://norfolkarts.net/artwork/uss-antietam-anchor/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-v3av~x6bi.26cj",
@@ -4860,7 +5195,8 @@
       "address": "1 Waterside Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/uss-norfolk-bell/"
+      "link": "https://norfolkarts.net/artwork/uss-norfolk-bell/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-8cs4_upgn.bmnk",
@@ -4874,7 +5210,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-gvkz.9a4p.6mh8",
@@ -4888,7 +5225,8 @@
       "address": "1122 West Princess Anne Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artists/cornelia-justice/"
+      "link": "https://norfolkarts.net/artists/cornelia-justice/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-3vd7_aykr_6fpw",
@@ -4902,7 +5240,8 @@
       "address": "7347 Granby Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/wards-corner-gateway/"
+      "link": "https://norfolkarts.net/artwork/wards-corner-gateway/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-59in-hk53-m5e5",
@@ -4916,7 +5255,8 @@
       "address": "1 Waterside Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/12160/"
+      "link": "https://norfolkarts.net/artwork/12160/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-3big~egna_vkgb",
@@ -4930,7 +5270,8 @@
       "address": "999 Waterside Drive",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/humpbacks-off-the-virginia-coast/"
+      "link": "https://norfolkarts.net/artwork/humpbacks-off-the-virginia-coast/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-wrvm.33hx.7dhc",
@@ -4944,7 +5285,8 @@
       "address": "700 E Olney Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/teens-with-a-purpose/"
+      "link": "https://norfolkarts.net/artwork/teens-with-a-purpose/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-g6ch.j6yw.svwb",
@@ -4958,7 +5300,8 @@
       "address": "724 Granby St.",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://neonnfk.com/public-art/widows-walk/"
+      "link": "http://neonnfk.com/public-art/widows-walk/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-mzfu-cf5p~26hc",
@@ -4972,7 +5315,8 @@
       "address": "Ballentine Blvd at I-264",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/16175/"
+      "link": "https://norfolkarts.net/artwork/16175/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-y7a7.r3zw.riwu",
@@ -4986,7 +5330,8 @@
       "address": "112  West City Hall Ave",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/wind-waves/"
+      "link": "https://norfolkarts.net/artwork/wind-waves/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-23jm.kwb6.7ktj",
@@ -5000,7 +5345,8 @@
       "address": "6700 Azalea Garden Road",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/"
+      "link": "https://norfolkbotanicalgarden.org/explore/art-in-the-garden/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-i78m~ss7t~khae",
@@ -5014,7 +5360,8 @@
       "address": "208 East Plume Street",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "http://www.sloverlibrary.com/"
+      "link": "http://www.sloverlibrary.com/",
+      "radius": 50
     },
     {
       "id": "norfolk-public-art-row-2uza.h9vg_ssdq",
@@ -5028,7 +5375,8 @@
       "address": "804 Whitaker Lane",
       "source": "Public_Art_20260727.geojson",
       "geometry": "point",
-      "link": "https://norfolkarts.net/artwork/be-active/"
+      "link": "https://norfolkarts.net/artwork/be-active/",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-50",
@@ -5042,7 +5390,8 @@
       "address": "8613 Willow Terrace",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Bayview-Recreation-Center-31"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Bayview-Recreation-Center-31",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-51",
@@ -5056,7 +5405,8 @@
       "address": "121 W. Liberty Street",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Berkley-Community-Center-44"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Berkley-Community-Center-44",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-67",
@@ -5070,7 +5420,8 @@
       "address": "800 Little Bay Avenue",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Captains-Quarters-Recreation-Center-54"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Captains-Quarters-Recreation-Center-54",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-54",
@@ -5084,7 +5435,8 @@
       "address": "8044 Tidewater Drive",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Crossroads-Recreation-Center-55"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Crossroads-Recreation-Center-55",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-56",
@@ -5098,7 +5450,8 @@
       "address": "9520 E. 20th Bay Street",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/East-Ocean-View-Community-Center-56"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/East-Ocean-View-Community-Center-56",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-57",
@@ -5112,7 +5465,8 @@
       "address": "1014 Kemspville Road",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Fairlawn-Recreation-Center-57"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Fairlawn-Recreation-Center-57",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-72",
@@ -5126,7 +5480,8 @@
       "address": "830 Goff Street",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Huntersville-Community-Center-43"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Huntersville-Community-Center-43",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-23",
@@ -5140,7 +5495,8 @@
       "address": "960 Ingleside Road",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Ingleside-Gymnasium-91"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Ingleside-Gymnasium-91",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-59",
@@ -5154,7 +5510,8 @@
       "address": "948 Ingleside Road",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Ingleside-Recreation-Center-59"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Ingleside-Recreation-Center-59",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-198",
@@ -5168,7 +5525,8 @@
       "address": "1600 Willow Wood Drive",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Lakewood-Dance-and-Music-Center-84"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Lakewood-Dance-and-Music-Center-84",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-199",
@@ -5182,7 +5540,8 @@
       "address": "1612 Willow Wood Drive",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Lakewood-Athletic-Office-164"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Lakewood-Athletic-Office-164",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-204",
@@ -5196,7 +5555,8 @@
       "address": "1251 W 42nd Street",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Lamberts-Point-Community-Center-60"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Lamberts-Point-Community-Center-60",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-197",
@@ -5210,7 +5570,8 @@
       "address": "7300 Newport Avenue",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Norfolk-Fitness--Wellness-Center-146"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Norfolk-Fitness--Wellness-Center-146",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-62",
@@ -5224,7 +5585,8 @@
       "address": "8400 Tidewater Drive",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Northside-Indoor-Swimming-Pool-79"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Northside-Indoor-Swimming-Pool-79",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-203",
@@ -5238,7 +5600,8 @@
       "address": "6380 Sewells Point Road",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Norview-Community-Center-41"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Norview-Community-Center-41",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-73",
@@ -5252,7 +5615,8 @@
       "address": "606 West 29th Street",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Park-Place-Community-Center-42"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Park-Place-Community-Center-42",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-63",
@@ -5266,7 +5630,8 @@
       "address": "4537 Little John Drive",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Sherwood-Forest-Community-Center-62"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Sherwood-Forest-Community-Center-62",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-22",
@@ -5280,7 +5645,8 @@
       "address": "1750 Campostella Road",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Southside-Aquatics-Center-Indoor-Swimmin-83"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Southside-Aquatics-Center-Indoor-Swimmin-83",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-69",
@@ -5294,7 +5660,8 @@
       "address": "925 S. Main Street",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Southside-Senior-Center-90"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Southside-Senior-Center-90",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-64",
@@ -5308,7 +5675,8 @@
       "address": "2100 Tarrallton Drive",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Tarrallton-Community-Center-63"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Tarrallton-Community-Center-63",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-156",
@@ -5322,7 +5690,8 @@
       "address": "180 Evans Street",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Therapeutic-Recreation-Center-87"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Therapeutic-Recreation-Center-87",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-65",
@@ -5336,7 +5705,8 @@
       "address": "7545 Diven Street",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Titustown-Recreation--Visual-Arts-Center-86"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Titustown-Recreation--Visual-Arts-Center-86",
+      "radius": 50
     },
     {
       "id": "norfolk-recreation-center-201",
@@ -5350,7 +5720,8 @@
       "address": "700 E Olney Road",
       "source": "Recreation_Centers_-_City_of_Norfolk.geojson",
       "geometry": "point",
-      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Vivian-C-Mason-Teen-Center-88"
+      "link": "http://www.norfolk.gov/Facilities/Facility/Details/Vivian-C-Mason-Teen-Center-88",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-8",
@@ -5363,7 +5734,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-44",
@@ -5376,7 +5748,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-45",
@@ -5389,7 +5762,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-46",
@@ -5402,7 +5776,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-7",
@@ -5415,7 +5790,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-47",
@@ -5428,7 +5804,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-48",
@@ -5441,7 +5818,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-6",
@@ -5454,7 +5832,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-49",
@@ -5467,7 +5846,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-5",
@@ -5480,7 +5860,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-4",
@@ -5493,7 +5874,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-12",
@@ -5506,7 +5888,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-51",
@@ -5519,7 +5902,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-3",
@@ -5532,7 +5916,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-2",
@@ -5545,7 +5930,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-50",
@@ -5558,7 +5944,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-52",
@@ -5571,7 +5958,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-55",
@@ -5584,7 +5972,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-56",
@@ -5597,7 +5986,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-53",
@@ -5610,7 +6000,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-10",
@@ -5623,7 +6014,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-45",
@@ -5638,7 +6030,8 @@
       "description": "Kayak / Canoe · Planned · ADA Accessible · Dock Access - Roll-in entry",
       "address": "4400 Colley Ave",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-40",
@@ -5651,7 +6044,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-11",
@@ -5664,7 +6058,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-41",
@@ -5677,7 +6072,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-9",
@@ -5690,7 +6086,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-42",
@@ -5703,7 +6100,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-43",
@@ -5716,7 +6114,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-21",
@@ -5729,7 +6128,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-39",
@@ -5745,7 +6145,8 @@
       "description": "Kayak / Canoe · Existing · Dock Access",
       "address": "1136 Vista Street",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-1",
@@ -5758,7 +6159,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-19",
@@ -5771,7 +6173,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-16",
@@ -5784,7 +6187,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-17",
@@ -5797,7 +6201,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-14",
@@ -5810,7 +6215,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-3",
@@ -5826,7 +6232,8 @@
       "description": "Kayak / Canoe · Existing · Beach Access",
       "address": "800 Little Bay Avenue",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-22",
@@ -5839,7 +6246,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-23",
@@ -5852,7 +6260,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-24",
@@ -5865,7 +6274,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-25",
@@ -5878,7 +6288,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-26",
@@ -5891,7 +6302,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-27",
@@ -5904,7 +6316,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-28",
@@ -5917,7 +6330,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-1",
@@ -5933,7 +6347,8 @@
       "description": "Kayak / Canoe · Existing · Beach Access",
       "address": "700 E Ocean View Avenue",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-54",
@@ -5946,7 +6361,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-28",
@@ -5962,7 +6378,8 @@
       "description": "Kayak / Canoe · Existing · Beach Access",
       "address": "9520 20th Bay Street",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-15",
@@ -5977,7 +6394,8 @@
       "description": "Kayak / Canoe · Existing · Dock Access",
       "address": "2971 Kimball Loop",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-15",
@@ -5990,7 +6408,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-30",
@@ -6003,7 +6422,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-16",
@@ -6019,7 +6439,8 @@
       "description": "Kayak / Canoe · Existing · Dock Access",
       "address": "1235 Water Street",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-35",
@@ -6035,7 +6456,8 @@
       "description": "Boat Launch · Existing · Dock Access",
       "address": "300 Delaware Avenue",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-13",
@@ -6048,7 +6470,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-51",
@@ -6064,7 +6487,8 @@
       "description": "Boat Launch · Existing · No gas powered boats allowed · Dock Access",
       "address": "4200 Heutte Drive",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-40",
@@ -6080,7 +6504,8 @@
       "description": "Kayak / Canoe · Existing · Dock Access",
       "address": "1612 Willow Wood Drive",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-36",
@@ -6096,7 +6521,8 @@
       "description": "Kayak / Canoe · Existing · ADA Accessible · Dock Access - Roll-in entry",
       "address": "279 LaValette Avenue",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-4",
@@ -6112,7 +6538,8 @@
       "description": "Kayak / Canoe · Existing · Beach Access",
       "address": "120 W Ocean View Avenue",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-32",
@@ -6125,7 +6552,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-33",
@@ -6138,7 +6566,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-34",
@@ -6151,7 +6580,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-35",
@@ -6164,7 +6594,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-52",
@@ -6180,7 +6611,8 @@
       "description": "Kayak / Canoe · Existing · ADA Accessible · Dock Access - Roll-in entry",
       "address": "1001 W Brambleton Avenue",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-14",
@@ -6196,7 +6628,8 @@
       "description": "Kayak / Canoe · Needs Repaired · Dock Access",
       "address": "101 N Military Highway",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-50",
@@ -6212,7 +6645,8 @@
       "description": "Kayak / Canoe · Existing · Beach Access",
       "address": "324 W Ocean View Avenue",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-36",
@@ -6225,7 +6659,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-37",
@@ -6238,7 +6673,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-38",
@@ -6251,7 +6687,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-39",
@@ -6264,7 +6701,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-31",
@@ -6277,7 +6715,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-29",
@@ -6290,7 +6729,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-18",
@@ -6303,7 +6743,8 @@
       "description": "pedestrian",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-17",
@@ -6318,7 +6759,8 @@
       "description": "Kayak / Canoe · Existing · Dock Access",
       "address": "201 Waterside Drive",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-beach-access-20",
@@ -6331,7 +6773,8 @@
       "description": "vehicular",
       "address": null,
       "source": "Beach_Access_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     },
     {
       "id": "norfolk-boat-ramp-2",
@@ -6347,7 +6790,8 @@
       "description": "Boat Launch · Existing · Dock Access",
       "address": "1275 Bayville Street",
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
-      "geometry": "point"
+      "geometry": "point",
+      "radius": 50
     }
   ],
   "trailSegments": []
