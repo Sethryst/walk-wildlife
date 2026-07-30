@@ -576,7 +576,7 @@ async function signUp() {
 async function createOnlineProfile(event) {
   event.preventDefault();
   if (!onlineConfigured()) return;
-  const username = el('onlineUsername').value.trim();
+  const username = el('usernameInput').value.trim();
   if (!username) { toast('Enter a username.'); return; }
   const phone = el('phoneInput').value.trim();
   const payload = {
