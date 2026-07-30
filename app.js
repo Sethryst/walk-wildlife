@@ -605,6 +605,14 @@ function renderLeaderboard() {
   const callLink = person.phone ? `<a class="call-link" href="tel:${escapeHtml(person.phone)}" aria-label="Call ${escapeHtml(person.username)}">📞</a>` : '';
   return `<div class="leaderboard-row"><span class="leaderboard-rank">${index + 1}</span><div class="leaderboard-person"><strong>${isOnline ? '🟢 ' : ''}${escapeHtml(person.username)}${person.id === state.online.session?.user.id ? ' (you)' : ''}</strong><span>${Number(person.miles_total || 0).toFixed(1)} miles · ${person.sites_discovered || 0} sites</span></div>${callLink}<span class="leaderboard-points">${person.total_points || 0}</span></div>`;
 }).join('') : '<div class="empty-state">Add a friend by username to begin a private leaderboard.</div>';}
+function renderIncomingRequests() {
+  const section = el('incomingRequests');
+  const list = state.online.incoming || [];
+  section.classList.toggle('hidden', list.length === 0);
+  el('incomingRequestsList').innerHTML = list.length
+    ? list.map((request) => `<div class="leaderboard-row"><div class="leaderboard-person"><strong>@${escapeHtml(request.username)}</strong><span>wants to add you</span></div><button class="secondary-button" data-accept-id="${escapeHtml(request.user_id)}">Accept</button></div>`).join('')
+    : '';
+}
 async function refreshFriends() {
   if (!state.online.client || !state.online.session || !state.online.remoteProfile) return;
   const me = state.online.session.user.id;
@@ -627,6 +635,7 @@ async function refreshFriends() {
   state.online.leaderboard = people.sort((a, b) => (b.total_points || 0) - (a.total_points || 0));
   state.online.incoming = incoming.map((row) => ({ ...row, username: requestProfiles.find((profile) => profile.id === row.user_id)?.username || 'Friend' }));
   renderLeaderboard();
+  renderIncomingRequests();
 }
 async function findFriend(event) {
   event.preventDefault();
@@ -646,6 +655,47 @@ async function sendFriendRequest() {
   const { error } = await state.online.client.from('friendships').insert({ user_id: state.online.session.user.id, friend_id: candidate.id, status: 'pending' });
   if (error) { toast(error.code === '23505' ? 'A request already exists for this friend.' : error.message); return; }
   state.online.candidate = null; el('friendSearchResult').classList.add('hidden'); toast(`Friend request sent to @${candidate.username}.`);
+}
+function openAccountSettings() {
+  el('accountUsernameInput').value = state.online.remoteProfile?.username || '';
+  el('accountPhoneInput').value = state.online.remoteProfile?.phone || '';
+  el('accountEmailInput').value = state.online.session?.user?.email || '';
+  el('accountPasswordInput').value = '';
+  openSheet('accountSheet');
+}
+async function updateAccountUsername(event) {
+  event.preventDefault();
+  const username = el('accountUsernameInput').value.trim();
+  if (!username) { toast('Enter a username.'); return; }
+  const { data, error } = await state.online.client.from('profiles').update({ username, updated_at: new Date().toISOString() }).eq('id', state.online.session.user.id).select().single();
+  if (error) { toast(error.message.includes('unique') ? 'That username is already in use.' : error.message); return; }
+  state.online.remoteProfile = data;
+  renderProfile();
+  toast('Username updated.');
+}
+async function updateAccountPhone(event) {
+  event.preventDefault();
+  const phone = el('accountPhoneInput').value.trim();
+  const { data, error } = await state.online.client.from('profiles').update({ phone: phone || null, updated_at: new Date().toISOString() }).eq('id', state.online.session.user.id).select().single();
+  if (error) { toast(error.message); return; }
+  state.online.remoteProfile = data;
+  toast('Phone number updated.');
+}
+async function updateAccountEmail(event) {
+  event.preventDefault();
+  const email = el('accountEmailInput').value.trim();
+  const { error } = await state.online.client.auth.updateUser({ email });
+  if (error) { toast(error.message); return; }
+  toast('Check your new email inbox to confirm the change.');
+}
+async function updateAccountPassword(event) {
+  event.preventDefault();
+  const password = el('accountPasswordInput').value;
+  if (!password || password.length < 6) { toast('Password must be at least 6 characters.'); return; }
+  const { error } = await state.online.client.auth.updateUser({ password });
+  if (error) { toast(error.message); return; }
+  el('accountPasswordInput').value = '';
+  toast('Password updated.');
 }
 async function acceptFriend(friendId) {
   const { error } = await state.online.client.from('friendships').update({ status: 'accepted' }).eq('user_id', friendId).eq('friend_id', state.online.session.user.id);
@@ -712,6 +762,11 @@ el('signUpButton').addEventListener('click', signUp);
 el('usernameForm').addEventListener('submit', createOnlineProfile);
   el('syncNowButton').addEventListener('click', async () => { try { await syncProfile(); await renderOnline(); toast('Aggregate stats synced.'); } catch (error) { toast(error.message || 'Could not sync right now.'); } });
   el('refreshFriendsButton').addEventListener('click', refreshFriends); el('friendSearchForm').addEventListener('submit', findFriend);
+el('accountSettingsButton').addEventListener('click', openAccountSettings);
+el('accountUsernameForm').addEventListener('submit', updateAccountUsername);
+el('accountPhoneForm').addEventListener('submit', updateAccountPhone);
+el('accountEmailForm').addEventListener('submit', updateAccountEmail);
+el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
   el('incomingRequestsList').addEventListener('click', (event) => { const button = event.target.closest('[data-accept-id]'); if (button) acceptFriend(button.dataset.acceptId); });
   document.querySelectorAll('.nav-item').forEach((button) => button.addEventListener('click', () => {
     document.querySelectorAll('.nav-item').forEach((item) => item.classList.toggle('active', item === button));
