@@ -37,7 +37,14 @@ import {
   saveHistoryMoment,
   saveObservation,
   saveJournal,
-  renderArchive,
+  renderArchive, 
+  exportJournal,
+  importJournal,
+  openWalkDetail,
+  init
+} from './js/data.js';
+
+import {
   setupOnline,
   loadRemoteProfile,
   syncProfile,
@@ -50,12 +57,7 @@ import {
   updateAccountPhone,
   updateAccountEmail,
   updateAccountPassword,
-  acceptFriend,
-  exportJournal,
-  importJournal,
-  openWalkDetail,
-  init
-} from './js/data.js';
-
+  acceptFriend
+} from './js/online.js';
 
 init();

@@ -216,6 +216,7 @@ export function showView(view) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
+export function openProfile() { showView('profile'); }
 export function initMap() {
   const active = city();
   state.map = L.map('map', { zoomControl: false, attributionControl: true }).setView([active.center.lat, active.center.lng], active.zoom);
@@ -411,13 +412,6 @@ export function renderProfile() {
   el('onlineTeaserTitle').textContent = onlineName ? `Online as @${onlineName}` : 'Stay local by default';
   el('onlineTeaserText').textContent = onlineName ? `Last aggregate sync: ${state.settings.lastSyncedAt ? shortDate(state.settings.lastSyncedAt) : 'not yet'}. Routes, observations, photos, and notes remain local.` : 'Optional online mode shares only aggregate points and miles with friends—never routes, observations, photos, or notes.';
 }
-export function openProfile() { showView('profile'); }
-
-export function onlineConfig() { return window.WALK_WILDLIFE_SUPABASE || {}; }
-export function onlineConfigured() {
-  const config = onlineConfig();
-  return Boolean(config.url && config.anonKey && window.supabase?.createClient);
-}
 export function renderLeaderboard() {
   const rows = state.online.leaderboard || [];
   el('leaderboardList').innerHTML = rows.length ? rows.map((person, index) => {
@@ -433,49 +427,7 @@ export function renderIncomingRequests() {
     ? list.map((request) => `<div class="leaderboard-row"><div class="leaderboard-person"><strong>@${escapeHtml(request.username)}</strong><span>wants to add you</span></div><button class="secondary-button" data-accept-id="${escapeHtml(request.user_id)}">Accept</button></div>`).join('')
     : '';
 }
-async function refreshFriends() {
-  if (!state.online.client || !state.online.session || !state.online.remoteProfile) return;
-  const me = state.online.session.user.id;
-  const { data: friendships, error } = await state.online.client.from('friendships').select('user_id,friend_id,status').or(`user_id.eq.${me},friend_id.eq.${me}`);
-  if (error) { console.warn('Could not refresh friendships:', error.message); return; }
-  const rows = friendships || [];
-  const incoming = rows.filter((row) => row.friend_id === me && row.status === 'pending');
-  const acceptedIds = rows.filter((row) => row.status === 'accepted').map((row) => row.user_id === me ? row.friend_id : row.user_id);
-  let people = [state.online.remoteProfile];
-  if (acceptedIds.length) {
-    const { data: friends, error: friendsError } = await state.online.client.from('profiles').select('id,username,phone,last_seen_at,total_points,miles_total,sites_discovered,updated_at').in('id', acceptedIds);
-    if (!friendsError) people = [...people, ...(friends || [])];
-  }
-  const incomingIds = incoming.map((row) => row.user_id);
-  let requestProfiles = [];
-  if (incomingIds.length) {
-    const { data } = await state.online.client.from('profiles').select('id,username').in('id', incomingIds);
-    requestProfiles = data || [];
-  }
-  state.online.leaderboard = people.sort((a, b) => (b.total_points || 0) - (a.total_points || 0));
-  state.online.incoming = incoming.map((row) => ({ ...row, username: requestProfiles.find((profile) => profile.id === row.user_id)?.username || 'Friend' }));
-  renderLeaderboard();
-  renderIncomingRequests();
-}
-async function findFriend(event) {
-  event.preventDefault();
-  const username = el('friendUsernameInput').value.trim();
-  const { data, error } = await state.online.client.rpc('find_profile_by_username', { query_username: username });
-  if (error) { toast(error.message); return; }
-  const candidate = data?.[0];
-  if (!candidate) { el('friendSearchResult').classList.add('hidden'); toast('No user found with that username.'); return; }
-  if (candidate.id === state.online.session.user.id) { toast('That is your own profile.'); return; }
-  state.online.candidate = candidate;
-  el('friendSearchResult').innerHTML = `<div><strong>@${escapeHtml(candidate.username)}</strong><span>Send a private friend request</span></div><button class="secondary-button" id="sendFriendRequestButton">Add</button>`;
-  el('friendSearchResult').classList.remove('hidden');
-  el('sendFriendRequestButton').addEventListener('click', sendFriendRequest, { once: true });
-}
-async function sendFriendRequest() {
-  const candidate = state.online.candidate; if (!candidate) return;
-  const { error } = await state.online.client.from('friendships').insert({ user_id: state.online.session.user.id, friend_id: candidate.id, status: 'pending' });
-  if (error) { toast(error.code === '23505' ? 'A request already exists for this friend.' : error.message); return; }
-  state.online.candidate = null; el('friendSearchResult').classList.add('hidden'); toast(`Friend request sent to @${candidate.username}.`);
-}
+
 export function openAccountSettings() {
   el('accountUsernameInput').value = state.online.remoteProfile?.username || '';
   el('accountPhoneInput').value = state.online.remoteProfile?.phone || '';
@@ -483,90 +435,5 @@ export function openAccountSettings() {
   el('accountPasswordInput').value = '';
   openSheet('accountSheet');
 }
-export function initBackupControls() {
-  const panel = document.createElement('div'); panel.className = 'backup-controls';
-  panel.innerHTML = '<p class="sheet-kicker">YOUR BACKUP</p><p>Download a private copy of this device journal, or restore a backup. Restoring replaces this device\'s current journal.</p><div class="backup-actions"><button class="secondary-button" id="exportDataButton" type="button">Export journal</button><label class="secondary-button import-label">Import journal<input id="importDataInput" type="file" accept="application/json,.json" /></label></div>';
-  el('clearDataButton').before(panel);
-  el('exportDataButton').addEventListener('click', exportJournal);
-  el('importDataInput').addEventListener('change', importJournal);
-}
-export function initEvents() {
-  initBackupControls();
-  el('archiveList').addEventListener('click', (event) => { const card = event.target.closest('[data-walk-id]'); if (card) openWalkDetail(card.dataset.walkId); });
-  el('archiveList').addEventListener('keydown', (event) => { const card = event.target.closest('[data-walk-id]'); if (card && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); openWalkDetail(card.dataset.walkId); } });
-  el('locateButton').addEventListener('click', getCurrentLocation);
-  el('walkButton').addEventListener('click', () => state.activeWalk ? stopWalk() : startWalk());
-  el('addObservationButton').addEventListener('click', () => openObservation());
-  el('journalButton').addEventListener('click', () => openJournal());
-  el('demoButton').addEventListener('click', () => { const site = citySites()[0]; state.map.flyTo([site.lat, site.lng], Math.max(city().zoom + 2, 16)); setTimeout(() => showHistory(site, 28), 350); });
-  el('settingsButton').addEventListener('click', () => openSheet('infoSheet'));
-  el('profileJournalButton').addEventListener('click', () => openJournal());
-  el('filtersButton').addEventListener('click', openFiltersSheet);
-  el('dismissHistoryButton').addEventListener('click', closeSheets); el('saveHistoryMomentButton').addEventListener('click', saveHistoryMoment);
-  el('observationForm').addEventListener('submit', saveObservation); el('journalForm').addEventListener('submit', saveJournal);
-  el('photoInput').addEventListener('change', (event) => { el('photoName').textContent = event.target.files[0]?.name || 'Optional, stored only on this device'; });
-  document.querySelectorAll('[data-close-sheet]').forEach((button) => button.addEventListener('click', closeSheets));
-  el('modalBackdrop').addEventListener('click', closeSheets);
-  document.querySelectorAll('.archive-filter .filter-button').forEach((button) => button.addEventListener('click', () => setArchiveFilter(button.dataset.filter)));
-  el('citySelect').addEventListener('change', (event) => switchCity(event.target.value));
-  el('goOnlineButton').addEventListener('click', openOnline);
-  el('signInButton').addEventListener('click', signIn);
-el('signUpButton').addEventListener('click', signUp);
-el('usernameForm').addEventListener('submit', createOnlineProfile);
-  el('syncNowButton').addEventListener('click', async () => { try { await syncProfile(); await renderOnline(); toast('Aggregate stats synced.'); } catch (error) { toast(error.message || 'Could not sync right now.'); } });
-  el('refreshFriendsButton').addEventListener('click', refreshFriends); el('friendSearchForm').addEventListener('submit', findFriend);
-el('accountSettingsButton').addEventListener('click', openAccountSettings);
-el('accountUsernameForm').addEventListener('submit', updateAccountUsername);
-el('accountPhoneForm').addEventListener('submit', updateAccountPhone);
-el('accountEmailForm').addEventListener('submit', updateAccountEmail);
-el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
-  el('incomingRequestsList').addEventListener('click', (event) => { const button = event.target.closest('[data-accept-id]'); if (button) acceptFriend(button.dataset.acceptId); });
-  document.querySelectorAll('.nav-item').forEach((button) => button.addEventListener('click', () => {
-    closeSheets();
-    if (button.dataset.view === 'profile') openProfile();
-    else showView('map');
-  }));
-  el('clearDataButton').addEventListener('click', async () => {
-    if (!confirm("Clear every locally saved walk, reflection, observation, and profile score on this device? This can't be undone.")) return;
-    await db.clearAll();
-    state.profile = normalizeProfile(DEFAULT_PROFILE); state.settings = { ...DEFAULT_SETTINGS }; state.activeCity = 'vienna';
-    await Promise.all([db.put('profile', state.profile), db.put('settings', state.settings)]);
-    closeSheets(); await refreshCityMap(true); renderArchive(); toast('Local journal data and points cleared.');
-  });
-  el('poiTagFilters').addEventListener('click', (event) => {
-    const button = event.target.closest('[data-poi-tag]'); if (!button) return;
-    const id = button.dataset.poiTag;
-    state.poiTags.has(id) ? state.poiTags.delete(id) : state.poiTags.add(id);
-    renderPoiTagFilters();
-  });
-  el('clearPoiFiltersButton').addEventListener('click', () => { state.poiTags.clear(); renderPoiTagFilters(); renderCityPois(); });
-  el('applyFiltersButton').addEventListener('click', () => { renderCityPois(); closeSheets(); });
-  el('trailFeatureButton').addEventListener('click', () => {
-    const bounds = state.trailLayer.getBounds();
-    if (bounds.isValid()) state.map.fitBounds(bounds, { padding: [28, 28] });
-  });
-  if (el('geofenceToggle')) {
-    el('geofenceToggle').addEventListener('change', async (event) => {
-      state.settings.enableGeofencing = event.target.checked;
-      await db.put('settings', state.settings);
-      renderProfile();
-    });
-  }
-  if (el('geofenceRadiusSelect')) {
-    el('geofenceRadiusSelect').addEventListener('change', async (event) => {
-      state.settings.defaultGeofenceRadiusMeters = Number(event.target.value) || 50;
-      await db.put('settings', state.settings);
-    });
-  }
-  if (el('geofenceCategoryChips')) {
-    el('geofenceCategoryChips').addEventListener('click', async (event) => {
-      const button = event.target.closest('[data-geofence-category]'); if (!button) return;
-      const id = button.dataset.geofenceCategory;
-      const categories = new Set(state.settings.geofenceCategories || GEOFENCE_CATEGORIES.map(([c]) => c));
-      categories.has(id) ? categories.delete(id) : categories.add(id);
-      state.settings.geofenceCategories = [...categories];
-      await db.put('settings', state.settings);
-      renderGeofenceCategoryChips();
-    });
-  }
-}
+
+
