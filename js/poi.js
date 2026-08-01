@@ -3,6 +3,7 @@ import { CITIES, GEOFENCE_CATEGORIES, HISTORY_SUBTYPES, POI_ICONS, POI_TAGS, POI
 import { el, escapeHtml } from './utils.js';
 import { distanceMeters } from './geo.js';
 import { openSheet } from './ui.js';
+import db from './storage.js';
 
 export function renderPoiTagFilters() {
   const pois = state.cityPois[state.activeCity] || [];
@@ -146,7 +147,7 @@ export function withinRenderBounds(poi) {
   if (!state.map) return true;
   try { return state.map.getBounds().pad(0.6).contains([poi.lat, poi.lng]); } catch { return true; }
 }
-export function showHistory(site, distance) {
+export async function showHistory(site, distance) {
   state.currentSite = site; state.prompted.add(`${state.activeCity}:${site.id}`);
   el('historyTitle').textContent = site.name;
   el('historyDescription').textContent = site.description;
@@ -154,5 +155,36 @@ export function showHistory(site, distance) {
   el('historySource').classList.toggle('hidden', !site.source);
   el('historyWarning').classList.toggle('hidden', !site.unverified);
   el('historyDistance').textContent = Number.isFinite(distance) ? `${Math.round(distance)} m from your location` : 'Within your walking radius';
+
+  const memory = await getPlaceMemory(site.id);
+  el('historyReturnBanner').classList.toggle('hidden', !memory);
+  if (memory) {
+    el('historyReturnBanner').textContent = `You've been here ${memory.visitCount} time${memory.visitCount > 1 ? 's' : ''}. Last note: "${memory.lastNote || 'none yet'}"`;
+  }
+  el('historyNoteInput').value = '';
+
   openSheet('historySheet');
+}
+export async function getPlaceMemory(poiId) {
+  return (await db.get('poi_metadata', poiId)) || null;
+}
+
+export async function savePlaceMemory(poiId, note = '') {
+  const existing = await getPlaceMemory(poiId);
+  const record = {
+    id: poiId,
+    firstVisitDate: existing?.firstVisitDate || new Date().toISOString(),
+    visitCount: (existing?.visitCount || 0) + 1,
+    lastNote: note || existing?.lastNote || '',
+    lastVisitDate: new Date().toISOString()
+  };
+  await db.put('poi_metadata', record);
+  return record;
+}
+
+export function searchPois(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const pois = state.cityPois[state.activeCity] || [];
+  return pois.filter((poi) => poi.name.toLowerCase().includes(q)).slice(0, 20);
 }

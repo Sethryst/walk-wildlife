@@ -103,3 +103,9 @@ form { display: grid; gap: 14px; }form label, fieldset legend { color: var(--pin
 }
 .cluster-badge.history-cluster { background: rgba(45, 114, 89, .92); }
 .cluster-badge.poi-cluster { background: rgba(23, 60, 53, .85); }
+.return-banner { background: #edf3df; border-left: 3px solid var(--moss); border-radius: 6px; color: var(--pine) !important; font-size: 12px !important; font-weight: 700; padding: 8px 10px; margin: 0 0 12px; }
+.poi-search { position: absolute; top: 12px; right: 13px; z-index: 500; width: min(200px, 45%); }
+.poi-search input { width: 100%; border-radius: 99px; border: 1px solid var(--line); padding: 8px 12px; font-size: 12px; box-shadow: 0 3px 12px rgba(23,60,53,.12); }
+.poi-search-results { background: var(--paper); border-radius: 10px; box-shadow: var(--shadow); margin-top: 6px; max-height: 200px; overflow-y: auto; }
+.poi-search-results button { display: block; width: 100%; text-align: left; padding: 9px 12px; border: 0; background: none; font-size: 12px; border-bottom: 1px solid var(--line); }
+.poi-search-results button:last-child { border-bottom: 0; }

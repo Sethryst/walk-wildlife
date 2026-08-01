@@ -6,7 +6,7 @@ import { openWalkDetail, saveHistoryMoment, saveJournal, renderArchive } from '.
 import { getCurrentLocation, startWalk, stopWalk } from './walk.js';
 import { openObservation, saveObservation } from './observation.js';
 import { openJournal, closeSheets, openSheet, openAccountSettings, openFiltersSheet, openProfile, renderGeofenceCategoryChips, setArchiveFilter, showView, toast } from './ui.js';
-import { city, citySites, renderPoiTagFilters, renderCityPois, showHistory } from './poi.js';
+import { city, citySites, renderPoiTagFilters, renderCityPois, showHistory, savePlaceMemory, searchPois } from './poi.js';
 import { syncProfile, renderOnline, openOnline, signIn, signUp, createOnlineProfile, updateAccountUsername, updateAccountPhone, updateAccountEmail, updateAccountPassword, acceptFriend, refreshFriends, findFriend } from './online.js';
 import { refreshCityMap, switchCity } from './city.js';
 import { renderProfile } from './profile.js';
@@ -25,6 +25,25 @@ export function initEvents() {
   el('profileJournalButton').addEventListener('click', () => openJournal());
   el('filtersButton').addEventListener('click', openFiltersSheet);
   el('dismissHistoryButton').addEventListener('click', closeSheets); el('saveHistoryMomentButton').addEventListener('click', saveHistoryMoment);
+  el('saveHistoryMomentButton').addEventListener('click', () => {
+  if (state.currentSite) savePlaceMemory(state.currentSite.id, el('historyNoteInput').value.trim());
+});
+
+el('poiSearchInput').addEventListener('input', (event) => {
+  const results = searchPois(event.target.value);
+  const list = el('poiSearchResults');
+  list.classList.toggle('hidden', results.length === 0);
+  list.innerHTML = results.map((poi) => `<button type="button" data-poi-id="${poi.id}">${poi.name}</button>`).join('');
+});
+el('poiSearchResults').addEventListener('click', (event) => {
+  const button = event.target.closest('[data-poi-id]'); if (!button) return;
+  const poi = (state.cityPois[state.activeCity] || []).find((p) => p.id === button.dataset.poiId);
+  if (!poi) return;
+  state.map.flyTo([poi.lat, poi.lng], Math.max(city().zoom + 2, 16));
+  if ((poi.tags || []).includes('history')) setTimeout(() => showHistory(poi, 0), 350);
+  el('poiSearchResults').classList.add('hidden');
+  el('poiSearchInput').value = '';
+});
   el('observationForm').addEventListener('submit', saveObservation); el('journalForm').addEventListener('submit', saveJournal);
   el('photoInput').addEventListener('change', (event) => { el('photoName').textContent = event.target.files[0]?.name || 'Optional, stored only on this device'; });
   document.querySelectorAll('[data-close-sheet]').forEach((button) => button.addEventListener('click', closeSheets));

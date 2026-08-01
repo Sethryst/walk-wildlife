@@ -30,6 +30,10 @@
             <span class="status-dot"></span>
             <span id="mapStatusText">Ready for a Vienna walk</span>
           </div>
+          <div class="poi-search" id="poiSearch">
+  <input id="poiSearchInput" type="text" placeholder="Search places..." autocomplete="off" />
+  <div class="poi-search-results hidden" id="poiSearchResults"></div>
+</div>
           <button class="filters-button" id="filtersButton" aria-label="Filter places on map" title="Filter places">
             <span aria-hidden="true">☰</span> Filters<span class="filters-badge hidden" id="filtersBadge"></span>
           </button>
@@ -147,18 +151,20 @@
 
     <div class="modal-backdrop hidden" id="modalBackdrop" role="presentation"></div>
     <section class="sheet hidden" id="historySheet" role="dialog" aria-modal="true" aria-labelledby="historyTitle">
-      <button class="close-sheet" data-close-sheet aria-label="Close">×</button>
-      <span class="sheet-kicker">YOU'RE NEAR</span>
-      <h2 id="historyTitle">A historic place</h2>
-      <p class="distance-pill" id="historyDistance">Within your walking radius</p>
-      <p class="verification-warning hidden" id="historyWarning">Prototype stop — its location and story still need verification before public use.</p>
-      <p id="historyDescription"></p>
-      <a class="source-link" id="historySource" href="https://www.viennava.gov/About/History" target="_blank" rel="noreferrer">Read the local history ↗</a>
-      <div class="sheet-actions">
-        <button class="secondary-button" id="dismissHistoryButton">Not now</button>
-        <button class="primary-button" id="saveHistoryMomentButton">Save this moment</button>
-      </div>
-    </section>
+  <button class="close-sheet" data-close-sheet aria-label="Close">×</button>
+  <span class="sheet-kicker">YOU'RE NEAR</span>
+  <h2 id="historyTitle">A historic place</h2>
+  <p class="distance-pill" id="historyDistance">Within your walking radius</p>
+  <p class="return-banner hidden" id="historyReturnBanner"></p>
+  <p class="verification-warning hidden" id="historyWarning">Prototype stop — its location and story still need verification before public use.</p>
+  <p id="historyDescription"></p>
+  <a class="source-link" id="historySource" href="https://www.viennava.gov/About/History" target="_blank" rel="noreferrer">Read the local history ↗</a>
+  <label>A note for next time (optional) <textarea id="historyNoteInput" rows="2" maxlength="300" placeholder="What did this place feel like today?"></textarea></label>
+  <div class="sheet-actions">
+    <button class="secondary-button" id="dismissHistoryButton">Not now</button>
+    <button class="primary-button" id="saveHistoryMomentButton">Save this moment</button>
+  </div>
+</section>
 
     <section class="sheet hidden" id="observationSheet" role="dialog" aria-modal="true" aria-labelledby="observationTitle">
       <button class="close-sheet" data-close-sheet aria-label="Close">×</button>
