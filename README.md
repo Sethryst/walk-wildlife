@@ -88,6 +88,7 @@ Keep a clear boundary between this personal journal and any future partner netwo
 2. Add a reviewed content model: `place`, `story`, `partner`, `visit guidance`, `source`, `review status`, and `last verified`.
 3. Use opt-in small groups (3–5 people) and an encrypted/signed sync queue before introducing shared observations. Supabase can support the small free-tier proof of concept.
 4. Never use real-time public location as a reputation or safety score. Present partner-provided visit guidance with timestamps and sources; give people agency to choose their route and avoid sending vulnerable users toward locations based on unverified claims.
+Data added in JSON for 4 cities
 5. A native wrapper (Capacitor/React Native) is required for reliable background geofencing and background GPS. This web MVP detects proximity only while the app is open.
 
 ## Suggested next build increment
