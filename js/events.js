@@ -6,7 +6,7 @@ import { openWalkDetail, saveHistoryMoment, saveJournal, renderArchive } from '.
 import { getCurrentLocation, startWalk, stopWalk } from './walk.js';
 import { openObservation, saveObservation } from './observation.js';
 import { openJournal, closeSheets, openSheet, openAccountSettings, openFiltersSheet, openProfile, renderGeofenceCategoryChips, setArchiveFilter, showView, toast } from './ui.js';
-import { city, citySites, renderPoiTagFilters, renderCityPois, showHistory, savePlaceMemory, searchPois } from './poi.js';
+import { city, citySites, renderPoiTagFilters, renderCityPois, showHistory, savePlaceMemory, searchPois, searchOsm } from './poi.js';
 import { syncProfile, renderOnline, openOnline, signIn, signUp, createOnlineProfile, updateAccountUsername, updateAccountPhone, updateAccountEmail, updateAccountPassword, acceptFriend, refreshFriends, findFriend } from './online.js';
 import { refreshCityMap, switchCity } from './city.js';
 import { renderProfile } from './profile.js';
@@ -29,18 +29,55 @@ export function initEvents() {
   if (state.currentSite) savePlaceMemory(state.currentSite.id, el('historyNoteInput').value.trim());
 });
 
+let osmSearchTimer = null;
 el('poiSearchInput').addEventListener('input', (event) => {
-  const results = searchPois(event.target.value);
+  const query = event.target.value;
+  clearTimeout(osmSearchTimer);
+  const localResults = searchPois(query);
   const list = el('poiSearchResults');
-  list.classList.toggle('hidden', results.length === 0);
-  list.innerHTML = results.map((poi) => `<button type="button" data-poi-id="${poi.id}">${poi.name}</button>`).join('');
+
+  if (localResults.length) {
+    list.classList.remove('hidden');
+    list.innerHTML = localResults.map((poi) => `<button type="button" data-poi-id="${poi.id}">${poi.name}</button>`).join('');
+    return;
+  }
+
+  if (!query.trim()) { list.classList.add('hidden'); list.innerHTML = ''; return; }
+
+  list.classList.remove('hidden');
+  list.innerHTML = '<div class="search-loading">Searching map…</div>';
+  osmSearchTimer = setTimeout(async () => {
+    const osmResults = await searchOsm(query);
+    if (el('poiSearchInput').value !== query) return; // stale response, user kept typing
+    list.innerHTML = osmResults.length
+      ? osmResults.map((poi) => `<button type="button" data-osm-lat="${poi.lat}" data-osm-lng="${poi.lng}">${poi.name} <small>via OpenStreetMap</small></button>`).join('')
+      : '<div class="search-loading">No results</div>';
+  }, 400);
+});
+
+el('poiSearchResults').addEventListener('click', (event) => {
+  const button = event.target.closest('button'); if (!button) return;
+  if (button.dataset.poiId) {
+    const poi = (state.cityPois[state.activeCity] || []).find((p) => p.id === button.dataset.poiId);
+    if (!poi) return;
+    state.map.flyTo([poi.lat, poi.lng], Math.max(city().zoom + 2, 16));
+    if ((poi.tags || []).includes('history')) setTimeout(() => showHistory(poi, 0), 350);
+  } else if (button.dataset.osmLat) {
+    state.map.flyTo([parseFloat(button.dataset.osmLat), parseFloat(button.dataset.osmLng)], 17);
+  }
+  el('poiSearchResults').classList.add('hidden');
+  el('poiSearchInput').value = '';
 });
 el('poiSearchResults').addEventListener('click', (event) => {
-  const button = event.target.closest('[data-poi-id]'); if (!button) return;
-  const poi = (state.cityPois[state.activeCity] || []).find((p) => p.id === button.dataset.poiId);
-  if (!poi) return;
-  state.map.flyTo([poi.lat, poi.lng], Math.max(city().zoom + 2, 16));
-  if ((poi.tags || []).includes('history')) setTimeout(() => showHistory(poi, 0), 350);
+  const button = event.target.closest('button'); if (!button) return;
+  if (button.dataset.poiId) {
+    const poi = (state.cityPois[state.activeCity] || []).find((p) => p.id === button.dataset.poiId);
+    if (!poi) return;
+    state.map.flyTo([poi.lat, poi.lng], Math.max(city().zoom + 2, 16));
+    if ((poi.tags || []).includes('history')) setTimeout(() => showHistory(poi, 0), 350);
+  } else if (button.dataset.osmLat) {
+    state.map.flyTo([parseFloat(button.dataset.osmLat), parseFloat(button.dataset.osmLng)], 17);
+  }
   el('poiSearchResults').classList.add('hidden');
   el('poiSearchInput').value = '';
 });
