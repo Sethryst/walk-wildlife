@@ -188,3 +188,19 @@ export function searchPois(query) {
   const pois = state.cityPois[state.activeCity] || [];
   return pois.filter((poi) => poi.name.toLowerCase().includes(q)).slice(0, 20);
 }
+export async function searchOsm(query) {
+  const q = encodeURIComponent(query.trim());
+  if (!q) return [];
+  const active = city();
+  const viewbox = active ? `&viewbox=${active.center.lng - 0.15},${active.center.lat + 0.15},${active.center.lng + 0.15},${active.center.lat - 0.15}&bounded=1` : '';
+  try {
+    const res = await fetch(`https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=8${viewbox}`, {
+      headers: { 'Accept-Language': 'en' }
+    });
+    if (!res.ok) return [];
+    const results = await res.json();
+    return results.map((r) => ({ id: `osm:${r.place_id}`, name: r.display_name.split(',')[0], lat: parseFloat(r.lat), lng: parseFloat(r.lon), fromOsm: true }));
+  } catch {
+    return [];
+  }
+}
