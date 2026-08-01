@@ -1,14 +1,21 @@
 import {
-  toast,
   el,
+  escapeHtml,
   shortDate,
-  totalSitesDiscovered,
-  renderProfile
+  totalSitesDiscovered
 } from './utils.js';
 
 import { state } from './state.js';
 
 import db from './storage.js';
+import {
+  openSheet,
+  renderIncomingRequests,
+  renderLeaderboard,
+  toast
+} from './ui.js';
+import { renderProfile } from './profile.js';
+
 export async function setupOnline() {
   if (!onlineConfigured() || state.online.client) return;
   const config = onlineConfig();

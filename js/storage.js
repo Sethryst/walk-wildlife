@@ -1,4 +1,4 @@
-const db = (() => {
+export const db = (() => {
   let database;
   function open() {
     return new Promise((resolve, reject) => {
