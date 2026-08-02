@@ -10,7 +10,7 @@
   --coral: #dd765c;
   --sun: #f1c76e;
   --line: #e3e3d9;
-  --shadow: 0 12px 36px rgba(32, 49, 43, .13);
+  --shadow: 0 12px 36px rgba(4, 86, 57, 0.13);
 }
 
 * { box-sizing: border-box; }

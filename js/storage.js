@@ -12,6 +12,9 @@ export const db = (() => {
         if (!database.objectStoreNames.contains('settings')) database.createObjectStore('settings', { keyPath: 'id' });
         if (!database.objectStoreNames.contains('points_of_interest')) database.createObjectStore('points_of_interest', { keyPath: 'id' });
         if (!database.objectStoreNames.contains('poi_metadata')) database.createObjectStore('poi_metadata', { keyPath: 'id' });
+        if (!database.objectStoreNames.contains('regions')) database.createObjectStore('regions', { keyPath: 'id' });
+        if (!database.objectStoreNames.contains('region_pois')) database.createObjectStore('region_pois', { keyPath: 'id' });
+        if (!database.objectStoreNames.contains('region_buckets')) database.createObjectStore('region_buckets', { keyPath: 'id' });
       };
       request.onsuccess = () => { database = request.result; resolve(); };
       request.onerror = () => reject(request.error);

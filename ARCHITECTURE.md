@@ -659,3 +659,753 @@ The automation infrastructure that will eventually allow MSJ to onboard any supp
 Start with the Region Manager and RegionBuilder. Everything else plugs in.
 
 When in doubt, refer back to the constraints: Do not refactor unrelated code. Add capability, don't replace logic.
+
+Phase 2
+Critical Constraints
+
+This is an additive feature expansion.
+
+DO NOT:
+
+Replace the existing map system.
+Remove the current journal/visit experience.
+Rewrite unrelated application logic.
+Convert the entire app into offline-only mode.
+Hardcode additional cities or regions.
+Assume all users want offline capability.
+Break existing online browsing.
+
+The existing online experience remains the default.
+
+Offline is an opt-in, regional capability.
+
+What Phase 2 Delivers
+
+After this phase, a developer should be able to:
+
+Create a new region configuration file
+Provide data sources (URLs, local files, APIs)
+Run one command: npm run build:region norfolk-va
+Get a complete, tested region package
+Drop it in, and the app uses it
+
+No application code changes required.
+
+Target User Experience
+Scenario 1: Online User (No Change)
+User opens MSJ
+User browses the world (online OSM tiles, as usual)
+User zooms to Norfolk
+Everything works exactly as before
+Scenario 2: User Wants Offline
+User opens MSJ
+User zooms to Norfolk
+UI appears: "Make Norfolk available offline?"
+User taps "Download"
+
+Region Manager checks:
+  - Is Norfolk already installed?
+    - If yes: "Norfolk is ready offline" (instant)
+    - If no: Start build → show progress
+
+Build happens (desktop or backend, user doesn't know):
+  - Extract map data
+  - Consolidate POIs
+  - Generate buckets
+  - Validate package
+
+User sees: "Norfolk is now available offline"
+
+Next time user opens Norfolk:
+  - If online: Use online (default)
+  - If offline: Use local pmtiles + local POIs
+  - If user toggled offline mode: Use local regardless
+Scenario 3: User Selects Different Region
+User zooms to Washington DC
+If DC is already installed offline: Use local data
+If DC is not installed: Online mode (can request download)
+
+User zooms back to Norfolk
+If Norfolk is installed: Use local data
+If not: Online mode
+
+User can have multiple regions installed.
+Each region has its own artifact package.
+App loads whichever region is active.
+Configuration-Driven Design
+The Core Problem Phase 2 Solves
+
+Before Phase 2:
+
+Hardcoded Vienna
+  ↓
+To add Norfolk, write code
+  ↓
+To add DC, write more code
+  ↓
+To add 50 cities, rewrite everything
+
+After Phase 2:
+
+Configuration files define regions
+  ↓
+Region Builder reads config
+  ↓
+Builders execute the same pipeline
+  ↓
+App loads any region the same way
+  ↓
+To add 50 cities, create 50 config files
+Region Configuration Schema
+
+Each region is defined by a single JSON file.
+
+Location:
+
+regions/
+  vienna/
+    region.json
+    raw/
+      (input data files)
+  norfolk/
+    region.json
+    raw/
+      water-features.json
+      coffee-shops.json
+      parks.json
+      historical-sites.json
+  hampton_roads/
+    region.json
+    raw/
+      hampton-roads-consolidated.json
+  dc/
+    region.json
+    raw/
+      ...
+Complete Region Configuration
+json
+{
+  "id": "norfolk-va",
+  "name": "Norfolk",
+  "displayName": "Norfolk, Virginia",
+  "country": "USA",
+  "state": "Virginia",
+  "type": "city",
+  "description": "Port city on the Virginia coast with history, waterfront, and urban parks.",
+  
+  "geographic": {
+    "center": {
+      "lat": 36.8507,
+      "lng": -76.2859
+    },
+    "bounds": {
+      "north": 36.95,
+      "south": 36.75,
+      "east": -76.2,
+      "west": -76.35
+    },
+    "radius_km": 15
+  },
+  
+  "osm": {
+    "enabled": true,
+    "tool": "osmium",
+    "pbfSource": "planet",
+    "extractionBounds": {
+      "north": 36.95,
+      "south": 36.75,
+      "east": -76.2,
+      "west": -76.35
+    },
+    "extraTags": [
+      "name",
+      "amenity",
+      "tourism",
+      "historic",
+      "sport",
+      "leisure",
+      "shop"
+    ]
+  },
+  
+  "poiSources": [
+    {
+      "id": "water-features",
+      "enabled": true,
+      "type": "geojson",
+      "format": "FeatureCollection",
+      "path": "regions/norfolk/raw/water-features.json",
+      "category": "water",
+      "required": false,
+      "normalizationRules": {
+        "name": "properties.name",
+        "lat": "geometry.coordinates[1]",
+        "lng": "geometry.coordinates[0]",
+        "category": "water",
+        "source": "Norfolk Open Data"
+      }
+    },
+    {
+      "id": "coffee-shops",
+      "enabled": true,
+      "type": "geojson",
+      "format": "FeatureCollection",
+      "path": "regions/norfolk/raw/coffee-shops.json",
+      "category": "coffee",
+      "required": false,
+      "normalizationRules": {
+        "name": "properties.name",
+        "lat": "geometry.coordinates[1]",
+        "lng": "geometry.coordinates[0]",
+        "category": "coffee",
+        "address": "properties.address",
+        "phone": "properties.phone",
+        "source": "Norfolk Open Data"
+      }
+    },
+    {
+      "id": "parks",
+      "enabled": true,
+      "type": "geojson",
+      "path": "regions/norfolk/raw/parks.json",
+      "category": "park",
+      "required": false
+    },
+    {
+      "id": "historical-sites",
+      "enabled": true,
+      "type": "geojson",
+      "path": "regions/norfolk/raw/historical-sites.json",
+      "category": "history",
+      "required": false
+    }
+  ],
+  
+  "categoryTaxonomy": {
+    "universal": [
+      "coffee",
+      "food",
+      "park",
+      "water",
+      "history",
+      "art",
+      "recreation",
+      "wildlife",
+      "public_facility",
+      "transportation",
+      "safety",
+      "weather_resource",
+      "nightlife",
+      "business",
+      "event"
+    ],
+    "overrides": {
+      "historic": "history",
+      "amenity:cafe": "coffee",
+      "amenity:restaurant": "food",
+      "leisure:park": "park",
+      "tourism:attraction": "art"
+    },
+    "exclude": {
+      "categories": ["parking", "bench", "waste_basket"],
+      "tags": ["temporary=yes", "abandoned=yes"]
+    }
+  },
+  
+  "featuredBuckets": [
+    {
+      "id": "elizabeth-river-trail",
+      "name": "Elizabeth River Trail",
+      "description": "Key segments and access points of the Elizabeth River Trail",
+      "icon": "🚶",
+      "poiFilter": {
+        "nearWater": true,
+        "trailAdjacent": true,
+        "categories": ["water", "park", "recreation"]
+      },
+      "autoPopulate": false
+    },
+    {
+      "id": "waterfront",
+      "name": "Waterfront District",
+      "description": "Downtown waterfront attractions, restaurants, and entertainment",
+      "icon": "⛵",
+      "poiFilter": {
+        "lat_min": 36.84,
+        "lat_max": 36.86,
+        "lng_min": -76.29,
+        "lng_max": -76.27,
+        "categories": ["food", "coffee", "art", "history"]
+      },
+      "autoPopulate": true
+    }
+  ],
+  
+  "deduplication": {
+    "enabled": true,
+    "distanceThresholdMeters": 50,
+    "nameSimilarityThreshold": 0.85,
+    "addressMatching": true
+  },
+  
+  "validation": {
+    "requireCoordinates": true,
+    "requireName": true,
+    "requireCategory": true,
+    "allowPartialData": true,
+    "flagThresholds": {
+      "missingCoordinates": 5,
+      "duplicateLocations": 10,
+      "invalidCategories": 5
+    }
+  },
+  
+  "metadata": {
+    "attribution": "Norfolk Open Data + OpenStreetMap Contributors",
+    "dataVersion": "2024-08-01",
+    "maintainer": "Grant (Legato Strategies)",
+    "contact": "email@example.com",
+    "updateFrequency": "monthly",
+    "license": "ODbL"
+  },
+  
+  "build": {
+    "enabled": true,
+    "skipIfExists": false,
+    "validateAfter": true,
+    "generateReport": true,
+    "timeout_minutes": 30
+  }
+}
+Multi-Region Example: Hampton Roads
+json
+{
+  "id": "hampton-roads-va",
+  "name": "Hampton Roads",
+  "displayName": "Hampton Roads Metropolitan Area, Virginia",
+  "country": "USA",
+  "state": "Virginia",
+  "type": "metro",
+  "cities": ["Norfolk", "Virginia Beach", "Newport News", "Hampton", "Chesapeake"],
+  "description": "Seven-city metropolitan area including naval base, waterfront, and historic colonial sites.",
+  
+  "geographic": {
+    "center": {
+      "lat": 36.85,
+      "lng": -76.35
+    },
+    "bounds": {
+      "north": 37.2,
+      "south": 36.6,
+      "east": -76.0,
+      "west": -76.8
+    },
+    "radius_km": 40
+  },
+  
+  "osm": {
+    "enabled": true,
+    "extractionBounds": {
+      "north": 37.2,
+      "south": 36.6,
+      "east": -76.0,
+      "west": -76.8
+    }
+  },
+  
+  "poiSources": [
+    {
+      "id": "hampton-roads-consolidated",
+      "type": "geojson",
+      "path": "regions/hampton_roads/raw/hampton-roads-all.json",
+      "category": "mixed",
+      "required": true
+    }
+  ],
+  
+  "featuredBuckets": [
+    {
+      "id": "waterfront-trail",
+      "name": "Regional Waterfront Trail",
+      "description": "Connected waterfront attractions across all seven cities"
+    },
+    {
+      "id": "colonial-sites",
+      "name": "Historic Colonial Virginia",
+      "description": "Colonial-era historic sites and museums"
+    },
+    {
+      "id": "naval-history",
+      "name": "Naval Station Norfolk & Maritime History",
+      "description": "Naval heritage sites and maritime attractions"
+    }
+  ],
+  
+  "metadata": {
+    "attribution": "Hampton Roads Regional Authority + OSM Contributors"
+  }
+}
+Region Build Pipeline (Complete Flow)
+Step 0: Region Configuration Validation
+Input: regions/norfolk/region.json
+
+Validation:
+  1. File exists and is valid JSON
+  2. All required fields present
+  3. Geographic bounds are valid (north > south, east > west)
+  4. All referenced data sources are accessible
+  5. Category taxonomy is consistent
+  6. Feature bucket definitions are valid
+
+Output: 
+  - Valid region config loaded
+  - Or detailed error explaining what's missing
+Step 1: Region Builder (Map Tiles)
+Input:
+  - region.json with OSM settings
+  - Extraction bounds
+
+Process:
+  1. Check if norfolk.pmtiles already exists (skip if not forced)
+  2. Download OSM planet PBF (or use cached copy)
+  3. Extract region using Osmium
+  4. Generate PMTiles using Planetiler
+  5. Validate output (file size, tile count, coverage)
+  6. Store in: regions/norfolk/norfolk.pmtiles
+
+Output:
+  - norfolk.pmtiles (vector tiles, offline-ready)
+  - Build log with statistics
+  - Validation report
+Step 2: POI Builder (Data Consolidation)
+Input:
+  - region.json with poiSources list
+  - All referenced data files
+
+Process:
+  1. Load each POI source from region.json
+  2. For each source:
+     a. Parse format (GeoJSON, CSV, etc.)
+     b. Apply normalization rules from region.json
+     c. Map source fields to universal schema
+     d. Validate required fields
+  3. Merge all sources into single dataset
+  4. Deduplicate:
+     a. Remove POIs at same coordinates (within 50m)
+     b. Remove similar names at same location
+     c. Keep best data from duplicates
+  5. Validate output (required fields, valid categories)
+  6. Store in: regions/norfolk/norfolk-poi.json
+
+Output:
+  - norfolk-poi.json (consolidated, deduplicated POIs)
+  - Deduplication report (how many removed, why)
+  - Validation errors/warnings
+Step 3: Taxonomy Engine (Category Analysis)
+Input:
+  - norfolk-poi.json (consolidated POIs)
+  - region.json with categoryTaxonomy and featuredBuckets
+
+Process:
+  1. Scan all POIs, count by category
+  2. Generate universal buckets:
+     a. For each universal category in region.json:
+        - Count POIs in that category
+        - If count > 0, set enabled: true
+        - If count = 0, set enabled: false
+  3. Generate featured buckets:
+     a. For each featured bucket in region.json:
+        - If autoPopulate: true, find POIs matching criteria
+        - If autoPopulate: false, use specified POI list
+        - Count matching POIs
+        - Set enabled if count > 0
+  4. Identify outliers (categories with unusual counts)
+  5. Store in: regions/norfolk/norfolk-buckets.json
+
+Output:
+  - norfolk-buckets.json (all universal + featured buckets)
+  - Bucket statistics (POI counts per category)
+  - Anomaly report (if any)
+Step 4: Region Validation & Packaging
+Input:
+  - norfolk.pmtiles
+  - norfolk-poi.json
+  - norfolk-buckets.json
+
+Process:
+  1. Verify all three files exist and are valid
+  2. Check file sizes (warn if tiles too large)
+  3. Validate JSON schemas
+  4. Cross-check: Do all POI categories exist in buckets?
+  5. Generate manifest file
+
+Output:
+  - regions/norfolk/manifest.json containing:
+    - File hashes (for integrity checks)
+    - File sizes
+    - POI count
+    - Bucket count
+    - Build timestamp
+    - Validation status (pass/fail)
+  - Installation report
+Step 5: Region Installation
+Process:
+  1. Move validated artifacts to final location
+  2. Update regions manifest (list of installed regions)
+  3. Mark region as "ready"
+
+Application can now use:
+  - regions/norfolk/norfolk.pmtiles (maps)
+  - regions/norfolk/norfolk-poi.json (POI data)
+  - regions/norfolk/norfolk-buckets.json (categories)
+Region Manager Architecture
+
+The Region Manager is the only interface the application uses.
+
+Region Manager API
+javascript
+// Load a region by ID
+const region = await regionManager.load("norfolk-va");
+
+// Returns region object:
+// {
+//   id: "norfolk-va",
+//   name: "Norfolk",
+//   status: "ready" | "building" | "error",
+//   mapSource: { type: "local" | "remote", path: "..." },
+//   pois: [...],
+//   buckets: {...},
+//   metadata: {...}
+// }
+
+// Check if region is installed
+const isInstalled = await regionManager.isInstalled("norfolk-va");
+
+// Get list of all available regions
+const available = await regionManager.listAvailable();
+
+// Build a region from config
+await regionManager.build("norfolk-va", { force: false });
+
+// Monitor build progress
+regionManager.on("buildProgress", (region, percent) => {
+  console.log(`${region}: ${percent}%`);
+});
+Region Manager Decision Logic
+regionManager.load("norfolk-va")
+  ↓
+Step 1: Check installation status
+  - Is norfolk-va in the installed regions list?
+  - Do all required files exist?
+  ↓
+  If complete → Return region object (ready: true)
+  If partial/missing → Go to Step 2
+  ↓
+Step 2: Check if build is in progress
+  - Is another process building norfolk-va?
+  ↓
+  If yes → Wait for completion
+  If no → Go to Step 3
+  ↓
+Step 3: Auto-build or prompt
+  - Check region.json: "build.enabled": true?
+  ↓
+  If yes → Start build pipeline automatically
+  If no → Return (ready: false, waiting for user action)
+  ↓
+Step 4: Execute build
+  - RegionBuilder → PMTiles
+  - POIBuilder → POI data
+  - TaxonomyEngine → Buckets
+  - Validation → Manifest
+  ↓
+Step 5: Return region object
+  - (ready: true, with all artifacts loaded)
+Offline Behavior
+Installation Storage
+regions/
+  vienna/
+    region.json (config)
+    vienna.pmtiles (map tiles)
+    vienna-poi.json (POI data)
+    vienna-buckets.json (taxonomy)
+    manifest.json (validation report)
+  
+  norfolk/
+    region.json (config)
+    norfolk.pmtiles (map tiles)
+    norfolk-poi.json (POI data)
+    norfolk-buckets.json (taxonomy)
+    manifest.json (validation report)
+  
+  hampton_roads/
+    ...
+Offline Mode Behavior
+User toggles "Offline Mode" (optional):
+  - If on: App uses local files ONLY
+  - If off: App prefers online, falls back to offline
+
+User browses to a region:
+  - If region is installed locally:
+    * Load local PMTiles
+    * Load local POI data
+    * Load local buckets
+  - If region is NOT installed:
+    * If online: Use OSM tiles + online data
+    * If offline mode: Show "Region not available"
+
+User can have multiple regions installed.
+App loads whichever is active.
+Building Regions (CLI)
+Single Region
+bash
+npm run build:region norfolk-va
+Multiple Regions
+bash
+npm run build:region norfolk-va dc-va hampton-roads-va vienna
+Build Report
+
+Output after each build:
+
+[Region Build Report: norfolk-va]
+
+Configuration: Valid
+  - Geographic bounds: 36.75°N to 36.95°N, -76.35°W to -76.20°W
+  - POI sources: 4 configured
+  - Categories: 15 universal + 2 featured
+
+Maps:
+  - PMTiles: ✓ Generated (156 MB)
+  - Tiles: 2.1M tiles at zoom 0-14
+  - Coverage: 100% of region
+
+POIs:
+  - Loaded: 847 total
+  - Deduplicated: -127 duplicates removed
+  - Final: 720 unique POIs
+  - Categories: coffee (47), park (120), water (89), history (200), art (156), other (108)
+
+Taxonomy:
+  - Universal buckets: 12/15 enabled (3 empty)
+  - Featured buckets: 2 enabled
+  - Outliers detected: None
+
+Validation: ✓ PASS
+  - All files present
+  - Schema valid
+  - Cross-checks pass
+
+Installation: ✓ Complete
+  - Location: regions/norfolk-va/
+  - Size: 234 MB total
+  - Ready for use
+
+Build time: 8 minutes 23 seconds
+Future Backend Compatibility
+
+The architecture should NOT assume desktop.
+
+Desktop Implementation
+npm run build:region norfolk-va
+
+LocalBuilder class:
+  - Calls RegionBuilder (local Osmium + Planetiler)
+  - Calls POIBuilder (local file I/O)
+  - Calls TaxonomyEngine (local processing)
+  - Stores artifacts in local filesystem
+Backend Implementation (Future)
+POST /api/build-region
+{
+  "regionId": "dc-va",
+  "force": false
+}
+
+BackendBuilder class:
+  - Same build logic
+  - Calls cloud Osmium service
+  - Processes POI data in cloud
+  - Stores artifacts in cloud storage (S3, GCS, etc.)
+  - Returns signed URLs for download
+Application Usage (Same in Both)
+javascript
+// App doesn't care where region comes from
+const region = await regionManager.load("dc-va");
+
+// Works identically whether:
+// - Desktop: Files loaded from local filesystem
+// - Backend: Files downloaded from cloud storage
+Success Criteria
+
+After Phase 2:
+
+1. Configuration-Driven Regions
+bash
+npm run build:region norfolk-va
+npm run build:region hampton-roads-va
+npm run build:region dc-va
+npm run build:region vienna
+
+Each command produces a complete region package.
+
+No application code changes.
+
+2. Extensibility
+
+Adding a new city should require:
+
+Create regions/[city-id]/region.json
+Provide data sources (or reference OSM only)
+Run npm run build:region [city-id]
+
+Done.
+
+3. App Integration
+
+The application:
+
+Calls regionManager.load(regionId)
+Receives region object
+Uses region.mapSource (online or offline)
+Uses region.pois and region.buckets
+Never touches build logic
+4. Offline Transparency
+
+User experience:
+
+"I selected Norfolk"
+  ↓
+"Do you want offline access?"
+  ↓
+(App handles everything silently)
+  ↓
+"Norfolk is ready"
+
+No complexity exposed.
+
+Implementation Priorities
+Must Have
+Region Configuration System
+Config schema validation
+Config loading and parsing
+Config documentation
+POI Builder Enhancement
+Configurable normalization rules (not hardcoded)
+Flexible deduplication
+Better validation reporting
+Taxonomy Engine Implementation
+Bucket generation from config
+Featured bucket support
+Automatic enable/disable based on data
+Region Manager Enhancement
+Multi-region support
+Build orchestration
+Progress reporting
+Nice to Have
+CLI Build Tool
+Batch region building
+Build reports
+Artifact validation
+Region Discovery
+List available regions
+List installed regions
+Region metadata display

@@ -25,6 +25,21 @@ export function initMap() {
   // after panning/zooming settles. Stands in for server-side bbox filtering
   // until the backend described in the recommendations exists.
   state.map.on('moveend zoomend', debounce(() => renderCityPois(), 200));
+
+  const refreshMapSize = () => {
+    if (!state.map) return;
+    state.map.invalidateSize({ pan: false });
+  };
+
+  state.map.whenReady(() => {
+    requestAnimationFrame(refreshMapSize);
+    window.setTimeout(refreshMapSize, 150);
+  });
+
+  window.addEventListener('resize', debounce(refreshMapSize, 120));
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') refreshMapSize();
+  });
 }
 export function renderUserLocation(point, pan = false) {
   state.currentPosition = point;

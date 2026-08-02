@@ -1,0 +1,14 @@
+{
+  "regionId": "vienna-va",
+  "name": "Vienna, Virginia",
+  "created": "2026-08-02T07:06:15.812Z",
+  "artifacts": {
+    "pmtiles": "regions\\vienna-va\\vienna-va.pmtiles",
+    "poi": "regions\\vienna-va\\vienna-va-poi.json",
+    "buckets": "regions\\vienna-va\\vienna-va-buckets.json"
+  },
+  "stats": {
+    "poiCount": 3,
+    "bucketCount": 5
+  }
+}

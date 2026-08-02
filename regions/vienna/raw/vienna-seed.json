@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Freeman Store & Museum",
+        "category": "history"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.2650446, 38.9033616] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vienna Train Depot & Caboose",
+        "category": "history"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.26411, 38.90244] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vienna Community Center",
+        "category": "recreation"
+      },
+      "geometry": { "type": "Point", "coordinates": [-77.2637, 38.9008] }
+    }
+  ]
+}

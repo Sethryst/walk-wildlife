@@ -7,7 +7,8 @@
   "devDependencies": {},
   "scripts": {
     "audit:imports": "node tools/audit-imports.mjs",
-    "audit:poi": "node tools/audit-poi-tags.mjs"
+    "audit:poi": "node tools/audit-poi-tags.mjs",
+    "build:region": "node tools/build-region.mjs"
   },
   "repository": {
     "type": "git",

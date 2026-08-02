@@ -1,11 +1,13 @@
-const APP_CACHE = 'walk-wildlife-shell-v4'; // bumped — forces old caches to be replaced
+const APP_CACHE = 'walk-wildlife-shell-v5'; // bump when shell assets change
 const TILE_CACHE = 'walk-wildlife-osm-viewed-tiles-v1';
-const LIBRARY_CACHE = 'walk-wildlife-library-v1';
+const LIBRARY_CACHE = 'walk-wildlife-library-v2';
 const shell = ['./', './index.html', './styles.css', './app.js', './manifest.webmanifest', './supabase-config.js', './data/norfolk-poi.json'];
 const libraryAssets = [
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
-  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
+  './css/MarkerCluster.css',
+  './css/MarkerCluster.Default.css'
 ];
+
 
 self.addEventListener('install', (event) => event.waitUntil(Promise.all([
   caches.open(APP_CACHE).then((cache) => cache.addAll(shell)),

@@ -1,0 +1,15 @@
+{
+"id": "vienna",
+"name": "Vienna",
+"version": "1.0.0",
+"created": "2026-08-02T00:00:00Z",
+"artifacts": {
+"pmtiles": "vienna.pmtiles",
+"poi": "vienna-poi.json",
+"buckets": "vienna-buckets.json"
+},
+"stats": {
+"poiCount": 0,
+"bucketCount": 0
+}
+}

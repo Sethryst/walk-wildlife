@@ -8,6 +8,7 @@ import { loadAllCityData, refreshCityMap } from './city.js';
 import { initEvents } from './events.js';
 import { renderArchive } from './archive.js';
 import { setupOnline, openOnline } from './online.js';
+import { initRegionAutomation } from './region-ui.js';
 
 export async function init() {
   try {
@@ -30,6 +31,12 @@ export async function init() {
 
   await refreshCityMap(false);
   await renderArchive();
+
+  try {
+    await initRegionAutomation();
+  } catch (error) {
+    console.warn('Region automation bootstrap skipped:', error.message);
+  }
 
   try {
     await setupOnline();

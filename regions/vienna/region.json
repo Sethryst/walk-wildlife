@@ -1,0 +1,77 @@
+{
+  "id": "vienna-va",
+  "name": "Vienna",
+  "displayName": "Vienna, Virginia",
+  "country": "USA",
+  "state": "Virginia",
+  "type": "city",
+  "description": "Town of Vienna with parks, history, and walkable civic sites.",
+  "geographic": {
+    "center": { "lat": 38.9013, "lng": -77.2652 },
+    "bounds": { "north": 38.92, "south": 38.88, "east": -77.24, "west": -77.29 },
+    "radius_km": 6
+  },
+  "osm": {
+    "enabled": true,
+    "tool": "osmium",
+    "pbfSource": "planet",
+    "extractionBounds": { "north": 38.92, "south": 38.88, "east": -77.24, "west": -77.29 },
+    "extraTags": ["name", "amenity", "tourism", "historic", "sport", "leisure"]
+  },
+  "poiSources": [
+    {
+      "id": "vienna-seed",
+      "enabled": true,
+      "type": "geojson",
+      "path": "regions/vienna/raw/vienna-seed.json",
+      "category": "history",
+      "required": false,
+      "normalizationRules": {
+        "name": "name",
+        "lat": "lat",
+        "lng": "lng",
+        "category": "category"
+      }
+    }
+  ],
+  "categoryTaxonomy": {
+    "universal": ["history", "park", "water", "recreation", "art"],
+    "overrides": { "historic": "history" },
+    "exclude": { "categories": ["parking"], "tags": [] }
+  },
+  "featuredBuckets": [
+    {
+      "id": "historic-core",
+      "name": "Historic Core",
+      "description": "Historic civic and cultural places in the center of Vienna",
+      "icon": "✦",
+      "autoPopulate": true
+    }
+  ],
+  "deduplication": {
+    "enabled": true,
+    "distanceThresholdMeters": 50,
+    "nameSimilarityThreshold": 0.85,
+    "addressMatching": true
+  },
+  "validation": {
+    "requireCoordinates": true,
+    "requireName": true,
+    "requireCategory": true,
+    "allowPartialData": true,
+    "flagThresholds": { "missingCoordinates": 5, "duplicateLocations": 10, "invalidCategories": 5 }
+  },
+  "metadata": {
+    "attribution": "Town of Vienna, VA",
+    "dataVersion": "2026-08-02",
+    "maintainer": "MSJ Automation",
+    "license": "ODbL"
+  },
+  "build": {
+    "enabled": true,
+    "skipIfExists": false,
+    "validateAfter": true,
+    "generateReport": true,
+    "timeout_minutes": 30
+  }
+}

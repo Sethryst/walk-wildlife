@@ -36,6 +36,9 @@ export const state = {
     remoteProfile: null
   },
 
+  // region automation
+  regionAutomation: null,
+
   // extra maps
   walkDetailMap: null
 };
