@@ -11,6 +11,13 @@ create table if not exists public.profiles (
   updated_at timestamptz not null default now()
 );
 
+-- Upgrades are needed because CREATE TABLE IF NOT EXISTS never adds columns.
+alter table public.profiles add column if not exists total_points integer default 0;
+alter table public.profiles add column if not exists miles_total numeric default 0;
+alter table public.profiles add column if not exists sites_discovered integer default 0;
+alter table public.profiles add column if not exists updated_at timestamptz default now();
+update public.profiles set total_points = coalesce(total_points, 0), miles_total = coalesce(miles_total, 0), sites_discovered = coalesce(sites_discovered, 0), updated_at = coalesce(updated_at, now());
+
 create table if not exists public.friendships (
   user_id uuid not null references public.profiles(id) on delete cascade,
   friend_id uuid not null references public.profiles(id) on delete cascade,

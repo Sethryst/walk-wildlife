@@ -1,0 +1,13 @@
+{
+  "id": "norfolk",
+  "name": "Norfolk, Virginia",
+  "boundary": { "source": "cache-file", "file": "regions/norfolk/norfolk-boundary.geojson" },
+  "osm": { "pbfUrl": "https://download.geofabrik.de/north-america/us/virginia-latest.osm.pbf" },
+  "imports": {
+    "poi": "data/norfolk-poi.json",
+    "buildTimePoiSource": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\norfolk\\pois.json",
+    "producerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\norfolk\\producer-manifest.json",
+    "buckets": null,
+    "supplemental": []
+  }
+}

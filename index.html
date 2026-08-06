@@ -14,23 +14,23 @@
   </head>
   <body>
     <main class="app-shell">
+      <aside class="walking-topbar hidden" id="walkingTopbar" aria-live="polite">
+        <img src="./assets/walk-companion.gif" alt="Animated walking companion" />
+        <span><strong>Walk in progress</strong><small id="walkingTopbarStatus">Recording your route</small></span>
+        <span class="walking-topbar-dot" aria-hidden="true"></span>
+      </aside>
       <header class="app-header">
         <div>
-          <p class="eyebrow">LOCAL-FIRST WALKING JOURNAL</p>
-          <h1>Walk &amp; Wildlife</h1>
-          <p class="place-label"><span id="activeCityLabel">Vienna, VA</span> <span aria-hidden="true">•</span> History layer</p>
-          <p class="place-label" id="regionAutomationStatus">Region automation pending</p>
+          <p class="eyebrow">YOUR WALK, YOUR WAY</p>
+          <button class="city-badge" id="homeCityButton" type="button"><span id="activeCityLabel">Vienna, VA</span> <span aria-hidden="true">⌄</span></button>
         </div>
         <button class="icon-button" id="settingsButton" aria-label="Open privacy and offline information" title="Privacy and offline information">i</button>
       </header>
 
       <div id="mapView" class="app-view">
+        <section class="discovery-headline" aria-live="polite"><p class="eyebrow">TODAY’S INSPIRATION</p><h1>Walk</h1><p id="discoveryHeadline">History</p><p id="discoveryHeadlineDetail">A meaningful stop is waiting on your map.</p></section>
         <section class="map-panel" aria-label="Walking map">
           <div id="map" role="application" aria-label="Map of historical places"></div>
-          <div class="map-status" id="mapStatus" aria-live="polite">
-            <span class="status-dot"></span>
-            <span id="mapStatusText">Ready for a Vienna walk</span>
-          </div>
           <div class="poi-search" id="poiSearch">
   <input id="poiSearchInput" type="text" placeholder="Search places..." autocomplete="off" />
   <div class="poi-search-results hidden" id="poiSearchResults"></div>
@@ -41,6 +41,8 @@
           <button class="locate-button" id="locateButton" aria-label="Use my location" title="Use my location">⌖</button>
           <div class="map-key" aria-label="Map legend"><span class="key-history">✦</span> History stop <span class="key-wildlife">●</span> Your observation</div>
         </section>
+
+        <button class="active-route-fab hidden" id="activeRouteButton" type="button" aria-label="Open active walk details"><span>●</span><strong id="activeRouteSummary">0.00 mi · 00:00</strong></button>
 
         <button class="trail-feature hidden" id="trailFeatureButton" type="button">🥾 <span><strong>Elizabeth River Trail</strong><small>Explore the featured route</small></span></button>
 
@@ -70,6 +72,31 @@
         </section>
       </div>
 
+      <div id="exploreView" class="app-view hidden" aria-label="Explore walks and places">
+        <p class="eyebrow">DISCOVER NEARBY</p>
+        <h2 class="explore-heading">Find your next walk</h2>
+        <label class="explore-search"><span aria-hidden="true">⌕</span><input id="exploreSearchInput" type="search" placeholder="Search routes, places, events" autocomplete="off" /></label>
+        <div class="explore-tabs" role="tablist" aria-label="Explore categories">
+          <button class="explore-tab active" type="button" role="tab" aria-selected="true" data-explore-tab="routes">Routes</button>
+          <button class="explore-tab" type="button" role="tab" aria-selected="false" data-explore-tab="places">Places</button>
+          <button class="explore-tab" type="button" role="tab" aria-selected="false" data-explore-tab="events">Events</button>
+        </div>
+        <section id="exploreRoutes" class="explore-panel" role="tabpanel">
+          <button class="time-walk-card" id="planWalkButton" type="button"><span class="time-walk-icon">◷</span><span><strong>Create a walk that fits my schedule</strong><small>Choose time and interests — we’ll shape a starting plan.</small></span><b>→</b></button>
+          <div class="section-heading"><div><p class="eyebrow">START HERE</p><h2>Curated walks</h2></div></div>
+          <div class="route-list" id="curatedRoutesList"></div>
+        </section>
+        <section id="explorePlaces" class="explore-panel hidden" role="tabpanel">
+          <div class="poi-chips explore-place-filters" id="explorePlaceFilters" aria-label="Place categories"></div>
+          <div class="explore-list" id="explorePlacesList"></div>
+          <button class="secondary-button wide-button" id="showPlacesOnMapButton" type="button">Show filtered places on map</button>
+        </section>
+        <section id="exploreEvents" class="explore-panel hidden" role="tabpanel">
+          <div class="date-pills" role="group" aria-label="Event date"><button class="filter-button active" type="button">Today</button><button class="filter-button" type="button">This week</button><button class="filter-button" type="button">This month</button></div>
+          <div class="empty-state explore-empty"><span>✦</span><strong>No events coming up</strong><p>Local events will appear here when available.</p></div>
+        </section>
+      </div>
+
       <div id="profileView" class="app-view hidden" aria-label="Profile">
         <p class="eyebrow">YOUR TRAIL PROFILE</p>
         <h2 class="profile-heading">Keep moving, gently.</h2>
@@ -82,6 +109,12 @@
           <small id="profileNextMilestone">Your first walk earns a milestone.</small>
         </section>
         <div class="profile-stats" id="profileStats" aria-live="polite"></div>
+        <section class="favorite-categories">
+          <p class="sheet-kicker">WALKING PREFERENCES</p><h2>What draws you out?</h2>
+          <p class="profile-section-intro">Choose a few interests to personalize your map inspiration.</p>
+          <div class="poi-chips" id="favoriteCategoryChips" role="group" aria-label="Favorite place categories"></div>
+          <small class="save-indicator" id="preferenceSaveStatus">Saved on this device</small>
+        </section>
         <section class="badges-section">
           <p class="sheet-kicker">MILESTONES</p>
           <div class="badge-list" id="badgeList"></div>
@@ -146,7 +179,8 @@
     </main>
 
     <nav class="bottom-nav" aria-label="Primary navigation">
-      <button class="nav-item active" data-view="map"><span>⌖</span>Map</button>
+      <button class="nav-item active" data-view="map" title="Home"><span>⌖</span>Home</button>
+      <button class="nav-item" data-view="explore" title="Explore"><span>⌕</span>Explore</button>
       <button class="nav-item" data-view="profile"><span>◉</span>Profile</button>
     </nav>
 
@@ -210,6 +244,24 @@
       <button class="primary-button wide-button" id="applyFiltersButton" type="button">Apply filters</button>
     </section>
 
+    <section class="sheet hidden" id="routeSheet" role="dialog" aria-modal="true" aria-labelledby="routeSheetTitle">
+      <button class="close-sheet" data-close-sheet aria-label="Close">×</button><span class="sheet-kicker">ACTIVE WALK</span><h2 id="routeSheetTitle">Your walk is underway</h2>
+      <div class="route-progress"><strong id="routeSheetDistance">0.00 mi</strong><span id="routeSheetDuration">00:00 elapsed</span></div>
+      <p class="sheet-intro">Keep the app open to record your route. Nearby places will appear as you explore.</p>
+      <div class="sheet-actions"><button class="secondary-button" id="routePauseButton" type="button">Pause</button><button class="primary-button" id="routeEndButton" type="button">End walk</button></div>
+    </section>
+
+    <section class="sheet tall-sheet hidden" id="planWalkSheet" role="dialog" aria-modal="true" aria-labelledby="planWalkTitle">
+      <button class="close-sheet" data-close-sheet aria-label="Close">×</button><span class="sheet-kicker">TIME-BASED WALK</span><h2 id="planWalkTitle">Plan your walk</h2>
+      <fieldset class="planner-options"><legend>1. How much time do you have?</legend><div class="planner-choice-row"><label><input type="radio" name="walkTime" value="15" checked />15 min</label><label><input type="radio" name="walkTime" value="30" />30 min</label><label><input type="radio" name="walkTime" value="45" />45 min</label><label><input type="radio" name="walkTime" value="60" />60+ min</label></div></fieldset>
+      <fieldset class="planner-options"><legend>2. Route shape</legend><div class="planner-choice-row"><label><input type="radio" name="routeMode" value="round-trip" checked />Round trip</label><label><input type="radio" name="routeMode" value="point-to-point" />Point to point</label></div></fieldset>
+      <div class="planner-choice-row"><button class="secondary-button" id="choosePlanStartButton" type="button">Choose start on map</button><button class="secondary-button" id="choosePlanEndButton" type="button">Choose end on map</button></div>
+      <fieldset class="planner-options"><legend>3. What sounds good?</legend><div class="poi-chips"><button type="button" class="poi-chip planner-chip" data-planner-tag="park">Parks</button><button type="button" class="poi-chip planner-chip" data-planner-tag="trail">Nature trails</button><button type="button" class="poi-chip planner-chip" data-planner-tag="history">History</button><button type="button" class="poi-chip planner-chip" data-planner-tag="quiet">Quiet routes</button></div></fieldset>
+      <div class="plan-preview"><span>YOUR STARTING PLAN</span><strong id="planDistance">~0.75 miles</strong><p id="planSummary">A gentle loop with nearby discoveries.</p></div>
+      <ol class="plan-stops" id="planStops" aria-label="Planned stops"></ol>
+      <div class="sheet-actions"><button class="secondary-button" type="button" data-close-sheet>Cancel</button><button class="primary-button" id="startPlannedWalkButton" type="button">Start walk</button></div>
+    </section>
+
     <section class="sheet hidden" id="infoSheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
       <button class="close-sheet" data-close-sheet aria-label="Close">×</button>
       <span class="sheet-kicker">DESIGNED FOR YOUR DEVICE</span>
@@ -254,7 +306,6 @@
       <form id="usernameForm" class="online-panel hidden">
   <p>Choose the public name friends will search for. It is the only identity shown on the leaderboard.</p>
   <label>Username <input id="usernameInput" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" required placeholder="e.g., trailfriend" /></label>
-  <label>Phone (optional, visible only to accepted friends) <input id="phoneInput" type="tel" placeholder="e.g., 5551234567" /></label>
   <button class="primary-button wide-button" type="submit">Create online profile</button>
 </form>
       <section id="onlineDashboard" class="online-panel hidden">
@@ -276,10 +327,6 @@
       <form id="accountUsernameForm" class="online-panel">
         <label>Username <input id="accountUsernameInput" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" required /></label>
         <button class="secondary-button" type="submit">Update username</button>
-      </form>
-      <form id="accountPhoneForm" class="online-panel">
-        <label>Phone <input id="accountPhoneInput" type="tel" placeholder="e.g., 5551234567" /></label>
-        <button class="secondary-button" type="submit">Update phone</button>
       </form>
       <form id="accountEmailForm" class="online-panel">
         <label>Email <input id="accountEmailInput" type="email" required /></label>

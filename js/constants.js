@@ -48,13 +48,13 @@
 };
                   export const GEOFENCE_CATEGORIES = [
   ['library', '📚 Libraries'], ['park', '🌳 Parks'], ['public_art', '🎨 Public Art'],
-  ['recreation_center', '🏢 Recreation Centers'], ['water_access', '🌊 Water Access'],
+  ['recreation_center', '🏢 Rec centers'], ['water_access', '🌊 Water access'],
   ['community_garden', '🌱 Community Gardens'], ['history', '✦ History Sites'],
   ['wifi', '📶 Free Wi-Fi']
 ];
                   export const DEFAULT_SETTINGS = {
   id: 'app-settings', activeCity: 'vienna', lastSyncedAt: null,
-  enableGeofencing: true, geofenceCategories: ['library', 'park', 'public_art', 'recreation_center', 'water_access', 'history', 'community_garden', 'wifi'], defaultGeofenceRadiusMeters: 50
+  enableGeofencing: true, geofenceCategories: ['library', 'park', 'public_art', 'recreation_center', 'water_access', 'history', 'community_garden', 'wifi'], favoriteCategories: [], defaultGeofenceRadiusMeters: 50
 };
 
                   export const state = {
@@ -70,7 +70,7 @@
 
 
                   export const POI_TAGS = [
-  ['park', '🌳 Parks'], ['public_art', '🎨 Public Art'], ['recreation_center', '🏢 Recreation Centers'],
+  ['park', '🌳 Parks'], ['public_art', '🎨 Public Art'], ['recreation_center', '🏢 Rec centers'],
   ['water_access', '🌊 Water Access'], ['trail', '🥾 Trails'], ['library', '📚 Libraries'],
   ['community_garden', '🌱 Community Gardens'], ['history', '🏛 History Sites'],
   ['history_landmark', '🏛 Landmarks'], ['history_monument', '🗿 Monuments'], ['history_museum', '🖼 Museums'],
@@ -81,7 +81,7 @@
 ];
                   export const TAG_LABELS = Object.fromEntries(POI_TAGS);
                   export const POI_TAG_PRIORITY = ['history', 'park', 'public_art', 'recreation_center', 'water_access', 'trail', 'library', 'community_garden', 'wifi'];
-                  export const POI_ICONS = { park: '🌳', public_art: '🎨', recreation_center: '🏢', water_access: '🌊', trail: '🥾', library: '📚', community_garden: '🌱', history: '🏛', wifi: '📶' };
+export const POI_ICONS = { park: 'tree', public_art: 'star', recreation_center: 'activity', water_access: 'anchor', trail: 'walk', library: 'book-open', community_garden: 'tree', history: 'bookmark', wifi: 'navigation' };
 // History sites are split into subtypes so the filter sheet isn't one catch-all
 // "History" bucket — each gets its own chip and its own pin glyph.
                 export const HISTORY_SUBTYPES = {

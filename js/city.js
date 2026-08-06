@@ -43,6 +43,8 @@ export async function switchCity(nextCity, recenter = true) {
   if (!CITIES[nextCity]) return;
   if (state.activeWalk) { el('citySelect').value = state.activeCity; toast('Finish the current walk before switching cities.'); return; }
   state.activeCity = nextCity; state.settings.activeCity = nextCity;
+  state.curatedRouteLine?.remove(); state.curatedRouteLine = null;
+  state.plannedRouteLine?.remove(); state.plannedRouteLine = null; state.plannedRoute = null;
   state.poiTags.clear();
   await db.put('settings', state.settings);
   await refreshCityMap(recenter);

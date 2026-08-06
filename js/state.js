@@ -14,6 +14,9 @@ export const state = {
 
   // map objects
   map: null,
+  curatedRouteLine: null,
+  plannedRouteLine: null,
+  plannedRoute: null,
   observationLayer: null,
   poiLayer: null,
 

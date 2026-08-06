@@ -8,7 +8,11 @@
   "scripts": {
     "audit:imports": "node tools/audit-imports.mjs",
     "audit:poi": "node tools/audit-poi-tags.mjs",
-    "build:region": "node tools/build-region.mjs"
+    "build:region": "node tools/region-build.mjs",
+    "build:region:legacy": "node tools/build-region.mjs",
+    "build:regions": "npm run build:region norfolk && npm run build:region new-york-city",
+    "test:regions": "node tests/boundary-resolver.test.mjs && node tests/region-runtime.test.mjs",
+    "test:region-packages": "node tests/region-package-output.test.mjs norfolk new-york-city"
   },
   "repository": {
     "type": "git",

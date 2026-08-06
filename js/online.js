@@ -27,11 +27,7 @@ export async function setupOnline() {
     state.online.session = session;
     setTimeout(() => { if (session) void loadRemoteProfile(); else { state.online.remoteProfile = null; renderProfile(); } }, 0);
   });
-setInterval(async () => {
-    if (state.online.client && state.online.session) {
-      await state.online.client.from('profiles').update({ last_seen_at: new Date().toISOString() }).eq('id', state.online.session.user.id);
-    }
-  }, 90000);}
+}
   export async function openOnline() {
   await setupOnline();
   openSheet('onlineSheet');
@@ -39,8 +35,11 @@ setInterval(async () => {
 }
 export async function loadRemoteProfile() {
   if (!state.online.client || !state.online.session) return null;
-  const { data, error } = await state.online.client.from('profiles').select('id,username,phone,last_seen_at,total_points,miles_total,sites_discovered,updated_at').eq('id', state.online.session.user.id).maybeSingle();
-  if (error) throw error;
+  const { data, error } = await state.online.client.from('profiles').select('id,username,total_points,miles_total,sites_discovered,updated_at').eq('id', state.online.session.user.id).maybeSingle();
+  if (error) {
+    if (/total_points|miles_total|sites_discovered|updated_at/.test(error.message || '')) throw new Error('Online profile schema needs migration: run supabase-migration-profiles.sql in the Supabase SQL Editor.');
+    throw error;
+  }
   state.online.remoteProfile = data || null;
   renderProfile();
   return data;
@@ -101,12 +100,9 @@ export async function createOnlineProfile(event) {
   if (!onlineConfigured()) return;
   const username = el('usernameInput').value.trim();
   if (!username) { toast('Enter a username.'); return; }
-  const phone = el('phoneInput').value.trim();
   const payload = {
     id: state.online.session.user.id,
     username,
-    phone: phone || null,
-    last_seen_at: new Date().toISOString(),
     total_points: Math.round(state.profile.totalPoints),
     miles_total: Number(state.profile.milesTotal.toFixed(3)),
     sites_discovered: totalSitesDiscovered(state.profile),
@@ -133,11 +129,7 @@ export async function updateAccountUsername(event) {
 }
 export async function updateAccountPhone(event) {
   event.preventDefault();
-  const phone = el('accountPhoneInput').value.trim();
-  const { data, error } = await state.online.client.from('profiles').update({ phone: phone || null, updated_at: new Date().toISOString() }).eq('id', state.online.session.user.id).select().single();
-  if (error) { toast(error.message); return; }
-  state.online.remoteProfile = data;
-  toast('Phone number updated.');
+  toast('Phone numbers are not stored by this app.');
 }
 export async function updateAccountEmail(event) {
   event.preventDefault();
@@ -170,7 +162,7 @@ export async function refreshFriends() {
   const acceptedIds = rows.filter((row) => row.status === 'accepted').map((row) => row.user_id === me ? row.friend_id : row.user_id);
   let people = [state.online.remoteProfile];
   if (acceptedIds.length) {
-    const { data: friends, error: friendsError } = await state.online.client.from('profiles').select('id,username,phone,last_seen_at,total_points,miles_total,sites_discovered,updated_at').in('id', acceptedIds);
+    const { data: friends, error: friendsError } = await state.online.client.from('profiles').select('id,username,total_points,miles_total,sites_discovered,updated_at').in('id', acceptedIds);
     if (!friendsError) people = [...people, ...(friends || [])];
   }
   const incomingIds = incoming.map((row) => row.user_id);

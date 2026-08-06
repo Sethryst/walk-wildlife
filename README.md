@@ -67,6 +67,14 @@ Norfolk contains four clearly marked **unverified prototype stops**. They have g
 
 Regenerate after replacing a raw export with `python scripts/normalize_norfolk_pois.py`. Elizabeth River Trail is supported as a featured line layer when an `Elizabeth_River_Trail*.geojson` export is placed in `data/norfolk-raw/`; it was not included in this source bundle.
 
+## Offline region build workflow
+
+Docker Desktop must be running. Build a complete offline package with `npm run build:region norfolk` or `npm run build:region new-york-city`; `npm run build:regions` runs both. The build downloads and caches the configured OSM PBF, resolves the region boundary, clips OSM with `osmium extract --polygon`, generates a real PMTiles archive, imports POIs and buckets, copies supplemental assets, writes `manifest.json`, and validates every artifact before atomically publishing `regions/<id>/`.
+
+Every `region.json` requires `boundary.source`; bbox-only regions are rejected. Supported sources are `authoritative-geojson` (`url` plus `cacheFile`), `cache-file` (`file`), and `explicit` (`geometry`). Each resolves to a validated GeoJSON Polygon/MultiPolygon. Its derived bbox is passed to tilemaker only as metadata/optimization; it never defines the clip area. Run `npm run test:regions` and `npm run test:region-packages` after building to verify the existing runtime package contract.
+
+Norfolk can consume Gremlin Lab's release artifact as a build-time input only. `regions/norfolk/region.json` points to the local `pois.json` and `producer-manifest.json`; the packager verifies the producer SHA-256 then copies the POIs into this app's generated package. The app has no Gremlin Lab runtime import, URL, API, or database dependency.
+
 ## Optional Supabase friends mode
 
 The app is fully usable with `supabase-config.js` left blank. To enable the optional friends leaderboard:

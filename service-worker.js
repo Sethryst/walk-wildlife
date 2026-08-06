@@ -1,7 +1,7 @@
-const APP_CACHE = 'walk-wildlife-shell-v5'; // bump when shell assets change
+const APP_CACHE = 'walk-wildlife-shell-v7'; // bump when shell assets change
 const TILE_CACHE = 'walk-wildlife-osm-viewed-tiles-v1';
 const LIBRARY_CACHE = 'walk-wildlife-library-v2';
-const shell = ['./', './index.html', './styles.css', './app.js', './manifest.webmanifest', './supabase-config.js', './data/norfolk-poi.json'];
+const shell = ['./', './index.html', './styles.css', './app.js', './manifest.webmanifest', './supabase-config.js', './data/norfolk-poi.json', './assets/walk-companion.gif'];
 const libraryAssets = [
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   './css/MarkerCluster.css',

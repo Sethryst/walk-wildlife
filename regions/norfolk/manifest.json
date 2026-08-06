@@ -1,0 +1,93 @@
+{
+  "id": "norfolk",
+  "name": "Norfolk, Virginia",
+  "version": 1,
+  "generatedAt": "2026-08-05T20:24:40.571Z",
+  "boundary": {
+    "source": "cache-file",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -76.337,
+            36.913
+          ],
+          [
+            -76.329,
+            36.896
+          ],
+          [
+            -76.322,
+            36.878
+          ],
+          [
+            -76.303,
+            36.85
+          ],
+          [
+            -76.28,
+            36.845
+          ],
+          [
+            -76.246,
+            36.842
+          ],
+          [
+            -76.209,
+            36.846
+          ],
+          [
+            -76.194,
+            36.866
+          ],
+          [
+            -76.197,
+            36.886
+          ],
+          [
+            -76.219,
+            36.906
+          ],
+          [
+            -76.256,
+            36.93
+          ],
+          [
+            -76.302,
+            36.942
+          ],
+          [
+            -76.328,
+            36.934
+          ],
+          [
+            -76.337,
+            36.913
+          ]
+        ]
+      ]
+    },
+    "bbox": {
+      "west": -76.337,
+      "south": 36.842,
+      "east": -76.194,
+      "north": 36.942
+    }
+  },
+  "source": {
+    "provider": "OpenStreetMap",
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/virginia-latest.osm.pbf"
+  },
+  "artifacts": {
+    "pmtiles": "norfolk.pmtiles",
+    "poi": "norfolk-poi.json",
+    "buckets": "norfolk-buckets.json",
+    "supplemental": [
+      "norfolk-boundary.geojson"
+    ]
+  },
+  "stats": {
+    "poiCount": 444
+  }
+}

@@ -3,7 +3,7 @@ import { DEFAULT_PROFILE, DEFAULT_SETTINGS, GEOFENCE_CATEGORIES } from './consta
 import { el, normalizeProfile } from './utils.js';
 import { initBackupControls } from './backup.js';
 import { openWalkDetail, saveHistoryMoment, saveJournal, renderArchive } from './archive.js';
-import { getCurrentLocation, startWalk, stopWalk } from './walk.js';
+import { getCurrentLocation, startWalk, stopWalk, togglePauseWalk, updateWalkDisplay } from './walk.js';
 import { openObservation, saveObservation } from './observation.js';
 import { openJournal, closeSheets, openSheet, openAccountSettings, openFiltersSheet, openProfile, renderGeofenceCategoryChips, setArchiveFilter, showView, toast } from './ui.js';
 import { city, citySites, renderPoiTagFilters, renderCityPois, showHistory, savePlaceMemory, searchPois, searchOsm } from './poi.js';
@@ -11,13 +11,39 @@ import { syncProfile, renderOnline, openOnline, signIn, signUp, createOnlineProf
 import { refreshCityMap, switchCity } from './city.js';
 import { renderProfile } from './profile.js';
 import db from './storage.js';
+import { renderExplorePlaces, setExploreTab } from './explore.js';
+import { renderDiscoveryHeadline } from './discovery.js';
+import { showCuratedRoute } from './routes.js';
+import { generateTimeBasedPlan, previewTimeBasedPlan } from './planner.js';
 
 export function initEvents() {
   initBackupControls();
   el('archiveList').addEventListener('click', (event) => { const card = event.target.closest('[data-walk-id]'); if (card) openWalkDetail(card.dataset.walkId); });
   el('archiveList').addEventListener('keydown', (event) => { const card = event.target.closest('[data-walk-id]'); if (card && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); openWalkDetail(card.dataset.walkId); } });
   el('locateButton').addEventListener('click', getCurrentLocation);
+  el('homeCityButton').addEventListener('click', () => openProfile());
   el('walkButton').addEventListener('click', () => state.activeWalk ? stopWalk() : startWalk());
+  el('activeRouteButton').addEventListener('click', () => { updateWalkDisplay(); openSheet('routeSheet'); });
+  el('routePauseButton').addEventListener('click', togglePauseWalk);
+  el('routeEndButton').addEventListener('click', () => { closeSheets(); stopWalk(); });
+  el('planWalkButton').addEventListener('click', async () => { openSheet('planWalkSheet'); await generateTimeBasedPlan(); });
+  el('choosePlanStartButton').addEventListener('click', () => { state.plannerSelecting = 'Start'; toast('Tap your starting point on the map.'); closeSheets(); showView('map'); });
+  el('choosePlanEndButton').addEventListener('click', () => { state.plannerSelecting = 'End'; toast('Tap your destination on the map.'); closeSheets(); showView('map'); });
+  window.addEventListener('planner-point-selected', async () => { openSheet('planWalkSheet'); await generateTimeBasedPlan(); });
+  el('startPlannedWalkButton').addEventListener('click', async () => { const plan = await generateTimeBasedPlan(); if (!previewTimeBasedPlan()) { toast('A walkable road route could not be found.'); return; } closeSheets(); showView('map'); startWalk(); });
+  el('curatedRoutesList').addEventListener('click', (event) => {
+    const button = event.target.closest('[data-curated-route]'); if (!button) return;
+    const route = showCuratedRoute(button.dataset.curatedRoute);
+    if (!route) return;
+    showView('map');
+    toast(`${route.title} previewed. Check the official route page before you go.`);
+  });
+  el('showPlacesOnMapButton').addEventListener('click', () => { showView('map'); renderCityPois(); });
+  el('explorePlacesList').addEventListener('click', (event) => {
+    const item = event.target.closest('[data-place-id]'); if (!item) return;
+    const poi = (state.cityPois[state.activeCity] || []).find((place) => place.id === item.dataset.placeId);
+    if (!poi) return; showView('map'); state.map.flyTo([poi.lat, poi.lng], Math.max(city().zoom + 2, 16));
+  });
   el('addObservationButton').addEventListener('click', () => openObservation());
   el('journalButton').addEventListener('click', () => openJournal());
   el('demoButton').addEventListener('click', () => { const site = citySites()[0]; state.map.flyTo([site.lat, site.lng], Math.max(city().zoom + 2, 16)); setTimeout(() => showHistory(site, 28), 350); });
@@ -95,13 +121,13 @@ el('usernameForm').addEventListener('submit', createOnlineProfile);
   el('refreshFriendsButton').addEventListener('click', refreshFriends); el('friendSearchForm').addEventListener('submit', findFriend);
 el('accountSettingsButton').addEventListener('click', openAccountSettings);
 el('accountUsernameForm').addEventListener('submit', updateAccountUsername);
-el('accountPhoneForm').addEventListener('submit', updateAccountPhone);
 el('accountEmailForm').addEventListener('submit', updateAccountEmail);
 el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
   el('incomingRequestsList').addEventListener('click', (event) => { const button = event.target.closest('[data-accept-id]'); if (button) acceptFriend(button.dataset.acceptId); });
   document.querySelectorAll('.nav-item').forEach((button) => button.addEventListener('click', () => {
     closeSheets();
     if (button.dataset.view === 'profile') openProfile();
+    else if (button.dataset.view === 'explore') { showView('explore'); setExploreTab('routes'); renderExplorePlaces(); }
     else showView('map');
   }));
   el('clearDataButton').addEventListener('click', async () => {
@@ -147,4 +173,15 @@ el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
       renderGeofenceCategoryChips();
     });
   }
+  el('favoriteCategoryChips').addEventListener('click', async (event) => {
+    const button = event.target.closest('[data-favorite-category]'); if (!button) return;
+    const favorites = new Set(state.settings.favoriteCategories || []);
+    const id = button.dataset.favoriteCategory;
+    favorites.has(id) ? favorites.delete(id) : favorites.add(id);
+    state.settings.favoriteCategories = [...favorites];
+    await db.put('settings', state.settings);
+    el('preferenceSaveStatus').textContent = 'Saved on this device';
+    renderProfile();
+    renderDiscoveryHeadline();
+  });
 }

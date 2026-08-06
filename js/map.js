@@ -14,13 +14,22 @@ export function initMap() {
     chunkedLoading: true, // progressive loading: adds markers in batches off the main thread
     maxClusterRadius: 55,
     disableClusteringAtZoom: 17, // split back into individual pins once zoomed in
-    iconCreatefunction: (cluster) => L.divIcon({ className: '', html: `<div class="cluster-badge ${badgeClass}">${cluster.getChildCount()}</div>`, iconSize: [36, 36] })
+    iconCreateFunction: (cluster) => L.divIcon({ className: '', html: `<div class="cluster-badge ${badgeClass}">${cluster.getChildCount()}</div>`, iconSize: [36, 36] })
   });
   state.historyLayer = (typeof L.markerClusterGroup === 'function' ? L.markerClusterGroup(clusterOptions('history-cluster')) : L.layerGroup()).addTo(state.map);
   state.observationLayer = L.layerGroup().addTo(state.map);
   state.poiLayer = (typeof L.markerClusterGroup === 'function' ? L.markerClusterGroup(clusterOptions('poi-cluster')) : L.layerGroup()).addTo(state.map);
   state.trailLayer = L.featureGroup().addTo(state.map);
-  state.map.on('click', (event) => openObservation({ lat: event.latlng.lat, lng: event.latlng.lng }));
+  state.map.on('click', (event) => {
+    if (state.plannerSelecting) {
+      state[`planner${state.plannerSelecting}`] = { lat: event.latlng.lat, lng: event.latlng.lng };
+      const selected = state.plannerSelecting;
+      state.plannerSelecting = null;
+      window.dispatchEvent(new CustomEvent('planner-point-selected', { detail: selected }));
+      return;
+    }
+    openObservation({ lat: event.latlng.lat, lng: event.latlng.lng });
+  });
   // Viewport windowing: only build markers for what's on/near screen, recomputed
   // after panning/zooming settles. Stands in for server-side bbox filtering
   // until the backend described in the recommendations exists.
@@ -43,7 +52,7 @@ export function initMap() {
 }
 export function renderUserLocation(point, pan = false) {
   state.currentPosition = point;
-  const icon = L.divIcon({ className: '', html: '<div class="user-marker"></div>', iconSize: [18, 18], iconAnchor: [9, 9] });
+  const icon = L.divIcon({ className: '', html: '<div class="user-marker" role="img" aria-label="Your location"></div>', iconSize: [18, 18], iconAnchor: [9, 9] });
   if (!state.userMarker) state.userMarker = L.marker([point.lat, point.lng], { icon, zIndexOffset: 1000, title: 'Your location' }).addTo(state.map);
   else state.userMarker.setLatLng([point.lat, point.lng]);
   if (pan) state.map.panTo([point.lat, point.lng]);

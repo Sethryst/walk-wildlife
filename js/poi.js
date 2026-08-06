@@ -35,7 +35,7 @@ export function renderCityPois() {
     .filter(withinRenderBounds)
     .map((poi) => {
       const markerTag = primaryPoiTag(poi);
-      const icon = L.divIcon({ className: '', html: `<div class="poi-marker ${markerTag}">${POI_ICONS[markerTag] || '•'}</div>`, iconSize: [27, 27], iconAnchor: [13, 13] });
+      const icon = L.divIcon({ className: '', html: `<div class="poi-marker ${markerTag}"><img src="./icons/${POI_ICONS[markerTag] || 'map-pin'}.svg" alt="" /></div>`, iconSize: [27, 27], iconAnchor: [13, 13] });
       const tagLabels = poiTags(poi).map((tag) => TAG_LABELS[tag] || tag.replaceAll('_', ' ')).join(', ');
       const details = [poi.description, poi.address, tagLabels ? `Tags: ${tagLabels}` : null].filter(Boolean).map(escapeHtml).join('<br>');
       const link = poi.link ? `<br><a href="${escapeHtml(poi.link)}" target="_blank" rel="noreferrer">Learn more ↗</a>` : '';
@@ -53,7 +53,7 @@ export function renderHistorySites() {
   state.historyLayer.clearLayers();
   if (state.historyRadiusLayer) state.historyRadiusLayer.clearLayers();
   const active = city();
-  const sites = citySites().filter(poiMatchesFilters).filter(withinRenderBounds);
+  const sites = citySites().filter(isWalkablePoi).filter(poiMatchesFilters).filter(withinRenderBounds);
   const markers = sites.map((site) => {
     const subtype = inferHistorySubtype(site);
     const glyph = HISTORY_SUBTYPES[subtype]?.icon || '🏛';
@@ -203,4 +203,7 @@ export async function searchOsm(query) {
   } catch {
     return [];
   }
+}
+export function isWalkablePoi(poi) {
+  return Number.isFinite(poi?.lat) && Number.isFinite(poi?.lng) && poi.geometry !== 'polygon' && !poi.nonWalkable && !poi.excludeFromWalks && !String(poi.id || '').startsWith('nyc-sign-');
 }

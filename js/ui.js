@@ -13,7 +13,6 @@ export function setArchiveFilter(filter = 'all') {
 
 export function openAccountSettings() {
   el('accountUsernameInput').value = state.online.remoteProfile?.username || '';
-  el('accountPhoneInput').value = state.online.remoteProfile?.phone || '';
   el('accountEmailInput').value = state.online.session?.user?.email || '';
   el('accountPasswordInput').value = '';
   openSheet('accountSheet');
@@ -33,12 +32,13 @@ export function openProfile() { showView('profile'); }
 export function showView(view) {
   state.activeView = view;
   el('mapView').classList.toggle('hidden', view !== 'map');
+  el('exploreView').classList.toggle('hidden', view !== 'explore');
   el('profileView').classList.toggle('hidden', view !== 'profile');
   document.querySelectorAll('.nav-item').forEach((item) => item.classList.toggle('active', item.dataset.view === view));
   if (view === 'profile') {
     renderProfile();
     renderArchive();
-  } else if (state.map) {
+  } else if (view === 'map' && state.map) {
     state.map.invalidateSize();
     window.scrollTo({ top: 0, behavior: 'smooth' });
  }
@@ -46,9 +46,7 @@ export function showView(view) {
 export function renderLeaderboard() {
   const rows = state.online.leaderboard || [];
   el('leaderboardList').innerHTML = rows.length ? rows.map((person, index) => {
-  const isOnline = person.last_seen_at && (Date.now() - new Date(person.last_seen_at).getTime()) < 5 * 60 * 1000;
-  const callLink = person.phone ? `<a class="call-link" href="tel:${escapeHtml(person.phone)}" aria-label="Call ${escapeHtml(person.username)}">📞</a>` : '';
-  return `<div class="leaderboard-row"><span class="leaderboard-rank">${index + 1}</span><div class="leaderboard-person"><strong>${isOnline ? '🟢 ' : ''}${escapeHtml(person.username)}${person.id === state.online.session?.user.id ? ' (you)' : ''}</strong><span>${Number(person.miles_total || 0).toFixed(1)} miles · ${person.sites_discovered || 0} sites</span></div>${callLink}<span class="leaderboard-points">${person.total_points || 0}</span></div>`;
+  return `<div class="leaderboard-row"><span class="leaderboard-rank">${index + 1}</span><div class="leaderboard-person"><strong>${escapeHtml(person.username)}${person.id === state.online.session?.user.id ? ' (you)' : ''}</strong><span>${Number(person.miles_total || 0).toFixed(1)} miles · ${person.sites_discovered || 0} sites</span></div><span class="leaderboard-points">${person.total_points || 0}</span></div>`;
 }).join('') : '<div class="empty-state">Add a friend by username to begin a private leaderboard.</div>';}
 export function renderIncomingRequests() {
   const section = el('incomingRequests');
@@ -59,7 +57,7 @@ export function renderIncomingRequests() {
     : '';
 }
 export function toast(message) { const node = el('toast'); node.textContent = message; node.classList.remove('hidden'); clearTimeout(toast.timeout); toast.timeout = setTimeout(() => node.classList.add('hidden'), 3200); }
-export function setStatus(text, locating = false) { el('mapStatusText').textContent = text; el('mapStatus').classList.toggle('locating', locating); }
+export function setStatus() { /* Map status copy is intentionally omitted. */ }
 export function openJournal(walkId = null) { el('journalForm').reset(); el('journalForm').dataset.walkId = walkId || ''; openSheet('journalSheet'); }
 export function momentCard(item) {
   const kind = item.type === 'observation' ? 'observation' : item.type === 'history' ? 'history' : item.type === 'walk' ? 'walk' : 'journal';

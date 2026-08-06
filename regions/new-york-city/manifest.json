@@ -1,0 +1,81 @@
+{
+  "id": "new-york-city",
+  "name": "New York City, New York",
+  "version": 1,
+  "generatedAt": "2026-08-05T20:26:20.056Z",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.259,
+            40.496
+          ],
+          [
+            -74.244,
+            40.59
+          ],
+          [
+            -74.171,
+            40.647
+          ],
+          [
+            -74.113,
+            40.7
+          ],
+          [
+            -74.04,
+            40.7
+          ],
+          [
+            -73.907,
+            40.733
+          ],
+          [
+            -73.7,
+            40.576
+          ],
+          [
+            -73.729,
+            40.496
+          ],
+          [
+            -73.9,
+            40.477
+          ],
+          [
+            -74.04,
+            40.49
+          ],
+          [
+            -74.259,
+            40.496
+          ]
+        ]
+      ]
+    },
+    "bbox": {
+      "west": -74.259,
+      "south": 40.477,
+      "east": -73.7,
+      "north": 40.733
+    }
+  },
+  "source": {
+    "provider": "OpenStreetMap",
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/new-york-latest.osm.pbf"
+  },
+  "artifacts": {
+    "pmtiles": "new-york-city.pmtiles",
+    "poi": "new-york-city-poi.json",
+    "buckets": "new-york-city-buckets.json",
+    "supplemental": [
+      "new-york-city-boundary.geojson"
+    ]
+  },
+  "stats": {
+    "poiCount": 2266
+  }
+}

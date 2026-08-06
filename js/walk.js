@@ -37,12 +37,21 @@ export function addWalkPoint(point) {
 }
 export function updateWalkDisplay() {
   const walk = state.activeWalk;
-  if (!walk) { el('walkDuration').textContent = '00:00'; el('walkDistance').textContent = '0.00'; el('walkPoints').textContent = '0'; return; }
+  if (!walk) { el('walkDuration').textContent = '00:00'; el('walkDistance').textContent = '0.00'; el('walkPoints').textContent = '0'; el('activeRouteButton').classList.add('hidden'); el('walkingTopbar').classList.add('hidden'); return; }
   const pausedNow = walk.pausedAt ? Date.now() - new Date(walk.pausedAt).getTime() : 0;
   walk.durationSeconds = Math.max(0, Math.floor((Date.now() - new Date(walk.startedAt).getTime() - (walk.pausedMilliseconds || 0) - pausedNow) / 1000));
   el('walkDuration').textContent = formatDuration(walk.durationSeconds);
   el('walkDistance').textContent = formatDistance(walk.distanceMeters);
   el('walkPoints').textContent = calculateWalkAward(walk).total;
+  const distance = formatDistance(walk.distanceMeters);
+  const duration = formatDuration(walk.durationSeconds);
+  el('activeRouteButton').classList.remove('hidden');
+  el('activeRouteSummary').textContent = `${distance} mi · ${duration}`;
+  el('routeSheetDistance').textContent = `${distance} mi`;
+  el('routeSheetDuration').textContent = `${duration} elapsed`;
+  el('routePauseButton').textContent = walk.paused ? 'Resume' : 'Pause';
+  el('walkingTopbar').classList.remove('hidden');
+  el('walkingTopbarStatus').textContent = walk.paused ? 'Walk paused — your route is saved' : `Recording · ${distance} mi · ${duration}`;
 }
 export function handlePosition(position, shouldPan = false) {
   const point = { lat: position.coords.latitude, lng: position.coords.longitude, accuracy: position.coords.accuracy };
@@ -64,13 +73,14 @@ export function ensurePauseButton() {
   button.classList.remove('hidden'); button.textContent = 'Pause';
 }
 export function pauseWalk() { const walk = state.activeWalk; if (!walk) return; walk.paused = true; walk.pausedAt = new Date().toISOString(); el('pauseWalkButton').textContent = 'Resume'; setStatus('Walk paused'); updateWalkDisplay(); }
-export function resumeWalk() { const walk = state.activeWalk; if (!walk || !walk.paused) return; walk.pausedMilliseconds += Date.now() - new Date(walk.pausedAt).getTime(); walk.paused = false; walk.pausedAt = null; walk.lastRawPoint = null; el('pauseWalkButton').textContent = 'Pause'; setStatus('Recording your walk', true); }
+export function resumeWalk() { const walk = state.activeWalk; if (!walk || !walk.paused) return; walk.pausedMilliseconds += Date.now() - new Date(walk.pausedAt).getTime(); walk.paused = false; walk.pausedAt = null; walk.lastRawPoint = null; el('pauseWalkButton').textContent = 'Pause'; setStatus('Recording your walk', true); updateWalkDisplay(); }
 export function togglePauseWalk() { if (state.activeWalk?.paused) resumeWalk(); else pauseWalk(); }
 export function startWalk() {
   if (!navigator.geolocation) { toast('Location is not supported in this browser.'); return; }
   state.activeWalk = { id: uid('walk'), city: state.activeCity, startedAt: new Date().toISOString(), endedAt: null, durationSeconds: 0, distanceMeters: 0, points: [], journal: null, paused: false, pausedAt: null, pausedMilliseconds: 0, lastRawPoint: null };
   ensurePauseButton(); state.routeLine?.remove(); state.routeLine = L.polyline([], { color: '#245448', weight: 5, opacity: .85 }).addTo(state.map);
   el('walkButton').textContent = 'End walk'; el('walkButton').classList.add('walking'); setStatus('Recording your walk', true);
+  updateWalkDisplay();
   state.timerId = setInterval(updateWalkDisplay, 1000);
   state.watchId = navigator.geolocation.watchPosition((position) => handlePosition(position, state.activeWalk.points.length === 0), () => { setStatus('Location connection paused'); toast('Location connection paused - your current route is still saved.'); }, { enableHighAccuracy: true, maximumAge: 5000, timeout: 15000 });
   getCurrentLocation();
@@ -90,7 +100,7 @@ export async function stopWalk() {
   state.watchId = null; clearInterval(state.timerId); state.timerId = null; updateWalkDisplay();
   const finished = { ...state.activeWalk, endedAt: new Date().toISOString(), points: [...state.activeWalk.points] };
   const award = await updateProfile((profile) => { const score = calculateWalkAward(finished, profile); profile.totalPoints += score.total; profile.walksCompleted += 1; profile.milesTotal += score.miles; if (score.firstWalkToday) { profile.streakDays = score.nextStreak; profile.lastWalkDate = score.date; } return score; });
-  finished.pointsAwarded = award.total; await db.put('walks', finished); state.activeWalk = null;
+  finished.pointsAwarded = award.total; await db.put('walks', finished); state.activeWalk = null; updateWalkDisplay();
   el('walkButton').textContent = 'Start walk'; el('walkButton').classList.remove('walking'); const pauseButton = el('pauseWalkButton'); if (pauseButton) pauseButton.classList.add('hidden');
   setStatus('Walk saved locally'); toast(`Walk saved - +${award.total} points.`); renderArchive(); openJournal(finished.id);
 }

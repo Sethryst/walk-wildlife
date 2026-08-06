@@ -1,5 +1,5 @@
 import { state } from './state.js';
-import { CITIES } from './constants.js';
+import { CITIES, GEOFENCE_CATEGORIES } from './constants.js';
 import { el, sitesForProfile, cityLabel, escapeHtml, shortDate, normalizeProfile } from './utils.js';
 import { syncProfile } from './online.js';
 import { cityDiscoverableSites } from './poi.js';
@@ -34,6 +34,8 @@ export function renderProfile() {
   if (el('geofenceToggle')) el('geofenceToggle').checked = state.settings.enableGeofencing !== false;
   if (el('geofenceOptionsContainer')) el('geofenceOptionsContainer').classList.toggle('hidden', state.settings.enableGeofencing === false);
   if (el('geofenceRadiusSelect')) el('geofenceRadiusSelect').value = String(state.settings.defaultGeofenceRadiusMeters || 50);
+  const favorites = new Set(state.settings.favoriteCategories || []);
+  el('favoriteCategoryChips').innerHTML = GEOFENCE_CATEGORIES.map(([id, label]) => `<button type="button" class="poi-chip ${favorites.has(id) ? 'active' : ''}" data-favorite-category="${id}">${label}</button>`).join('');
   renderGeofenceCategoryChips();
   const onlineName = state.online.remoteProfile?.username;
   el('onlineTeaserTitle').textContent = onlineName ? `Online as @${onlineName}` : 'Stay local by default';

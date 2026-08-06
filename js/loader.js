@@ -8,7 +8,8 @@ import { loadAllCityData, refreshCityMap } from './city.js';
 import { initEvents } from './events.js';
 import { renderArchive } from './archive.js';
 import { setupOnline, openOnline } from './online.js';
-import { initRegionAutomation } from './region-ui.js';
+import { initExplore } from './explore.js';
+import { chooseClosestCityIfPermitted, startDiscoveryHeadline } from './discovery.js';
 
 export async function init() {
   try {
@@ -22,6 +23,7 @@ export async function init() {
   }
 
   initMap();
+  initExplore();
 
   try {
     initEvents();
@@ -30,13 +32,9 @@ export async function init() {
   }
 
   await refreshCityMap(false);
+  startDiscoveryHeadline();
+  void chooseClosestCityIfPermitted();
   await renderArchive();
-
-  try {
-    await initRegionAutomation();
-  } catch (error) {
-    console.warn('Region automation bootstrap skipped:', error.message);
-  }
 
   try {
     await setupOnline();
