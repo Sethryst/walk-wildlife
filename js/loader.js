@@ -2,7 +2,7 @@ import db from './storage.js';
 import { state } from './state.js';
 import { DEFAULT_SETTINGS, CITIES, POINTS_PER_MILE, POINTS_PER_OBSERVATION, POINTS_PER_NEW_HISTORY_SITE } from './constants.js';
 import { normalizeProfile, sitesForProfile } from './utils.js';
-import { toast } from './ui.js';
+import { toast, openSheet } from './ui.js';
 import { initMap } from './map.js';
 import { loadAllCityData, refreshCityMap } from './city.js';
 import { initEvents } from './events.js';
@@ -10,6 +10,7 @@ import { renderArchive } from './archive.js';
 import { setupOnline, openOnline } from './online.js';
 import { initExplore } from './explore.js';
 import { chooseClosestCityIfPermitted, startDiscoveryHeadline } from './discovery.js';
+import { normalizedEntitlements } from './entitlements.js';
 
 export async function init() {
   try {
@@ -35,6 +36,9 @@ export async function init() {
   startDiscoveryHeadline();
   void chooseClosestCityIfPermitted();
   await renderArchive();
+  if (!state.settings.onboardingCompleted) {
+    setTimeout(() => openSheet('onboardingSheet'), 250);
+  }
 
   try {
     await setupOnline();
@@ -74,6 +78,7 @@ export async function loadLocalState() {
   const [savedProfile, savedSettings] = await Promise.all([db.get('profile', 'local-user'), db.get('settings', 'app-settings')]);
   state.profile = savedProfile ? normalizeProfile(savedProfile) : await createMigratedProfile();
   state.settings = { ...DEFAULT_SETTINGS, ...(savedSettings || {}) };
+  state.settings.entitlements = normalizedEntitlements(state.settings.entitlements);
   if (!CITIES[state.settings.activeCity]) state.settings.activeCity = 'vienna';
   state.activeCity = state.settings.activeCity;
   await Promise.all([db.put('profile', state.profile), db.put('settings', state.settings)]);

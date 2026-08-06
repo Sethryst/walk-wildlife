@@ -115,6 +115,11 @@
           <div class="poi-chips" id="favoriteCategoryChips" role="group" aria-label="Favorite place categories"></div>
           <small class="save-indicator" id="preferenceSaveStatus">Saved on this device</small>
         </section>
+        <section class="field-edition-section">
+          <p class="sheet-kicker">FIELD EDITIONS</p><h2>Bring a region with you.</h2>
+          <p class="profile-section-intro">Offline map packages, curated local stories, and seasonal guides live separately from your personal journal.</p>
+          <div class="field-edition-card"><span id="fieldEditionStatus">Free edition</span><strong id="fieldEditionDetail">Your walks and reflections are always yours.</strong><button class="secondary-button" id="fieldEditionButton" type="button">View Field Editions</button><button class="text-button" id="partnerAccessButton" type="button">I have partner access</button></div>
+        </section>
         <section class="badges-section">
           <p class="sheet-kicker">MILESTONES</p>
           <div class="badge-list" id="badgeList"></div>
@@ -207,7 +212,9 @@
       <h2 id="observationTitle">What did you notice?</h2>
       <p class="sheet-intro" id="observationLocation">Pin a moment to the map.</p>
       <form id="observationForm">
-        <label>Species or subject <input id="speciesInput" required maxlength="80" placeholder="e.g., Eastern tiger swallowtail" /></label>
+        <label>What did you notice? <input id="speciesInput" required maxlength="80" placeholder="e.g., a bright yellow butterfly by the bridge" /></label>
+        <label>Personal tags <input id="observationTags" maxlength="120" placeholder="e.g., birdsong, sketch spot (optional)" /></label>
+        <fieldset class="observation-icon-set"><legend>Marker icon</legend><div class="observation-icon-picker" id="observationIconPicker" role="group" aria-label="Choose a marker icon"><button type="button" class="observation-icon-choice active" data-observation-icon="camera" aria-label="Camera"><img src="./icons/camera.svg" alt="" /></button><button type="button" class="observation-icon-choice" data-observation-icon="tree" aria-label="Tree"><img src="./icons/tree.svg" alt="" /></button><button type="button" class="observation-icon-choice" data-observation-icon="star" aria-label="Star"><img src="./icons/star.svg" alt="" /></button><button type="button" class="observation-icon-choice" data-observation-icon="heart" aria-label="Heart"><img src="./icons/heart.svg" alt="" /></button><button type="button" class="observation-icon-choice" data-observation-icon="coffee" aria-label="Coffee"><img src="./icons/coffee.svg" alt="" /></button><button type="button" class="observation-icon-choice" data-observation-icon="book-open" aria-label="Book"><img src="./icons/book-open.svg" alt="" /></button><button type="button" class="observation-icon-choice" data-observation-icon="music" aria-label="Music"><img src="./icons/music.svg" alt="" /></button><button type="button" class="observation-icon-choice" data-observation-icon="wind" aria-label="Wind"><img src="./icons/wind.svg" alt="" /></button></div></fieldset>
         <label>Note <textarea id="observationNote" rows="3" maxlength="500" placeholder="Color, behavior, weather, or a small detail…"></textarea></label>
         <label class="photo-field">Photo <input id="photoInput" type="file" accept="image/*" capture="environment" /><span id="photoName">Optional, stored only on this device</span></label>
         <button class="primary-button wide-button" type="submit">Save observation</button>
@@ -218,6 +225,7 @@
       <button class="close-sheet" data-close-sheet aria-label="Close">×</button>
       <span class="sheet-kicker">WALK REFLECTION</span>
       <h2 id="journalTitle">Hold onto this feeling.</h2>
+      <p class="sheet-intro" id="journalPrompt">A private note for your own return.</p>
       <form id="journalForm">
         <fieldset class="mood-set"><legend>How did this walk feel?</legend>
           <div class="mood-options">
@@ -244,6 +252,20 @@
       <button class="primary-button wide-button" id="applyFiltersButton" type="button">Apply filters</button>
     </section>
 
+    <section class="sheet hidden" id="onboardingSheet" role="dialog" aria-modal="true" aria-labelledby="onboardingTitle">
+      <span class="sheet-kicker">WELCOME TO WALK &amp; WILDLIFE</span><h2 id="onboardingTitle">What would you like to notice?</h2>
+      <p class="sheet-intro">Choose any interests to make nearby discoveries more relevant. You can change these at any time in Profile.</p>
+      <div class="poi-chips" id="onboardingInterestChips" role="group" aria-label="Initial interests"><button class="poi-chip" type="button" data-onboarding-interest="park">Green space</button><button class="poi-chip" type="button" data-onboarding-interest="trail">Wildlife</button><button class="poi-chip" type="button" data-onboarding-interest="history">Local history</button><button class="poi-chip" type="button" data-onboarding-interest="water_access">Water</button><button class="poi-chip" type="button" data-onboarding-interest="public_art">Public art</button></div>
+      <div class="sheet-actions onboarding-actions"><button class="secondary-button" id="skipOnboardingButton" type="button">Skip for now</button><button class="primary-button" id="saveOnboardingButton" type="button">Save interests</button></div>
+    </section>
+
+    <section class="sheet hidden" id="fieldEditionSheet" role="dialog" aria-modal="true" aria-labelledby="fieldEditionTitle">
+      <button class="close-sheet" data-close-sheet aria-label="Close">×</button><span class="sheet-kicker">FIELD EDITIONS</span><h2 id="fieldEditionTitle">Offline, with care.</h2>
+      <p class="sheet-intro">Field Editions fund durable regional map packages and local editorial work. They never restrict your personal journal, privacy controls, exports, or data deletion.</p>
+      <div class="field-edition-benefits"><span>Offline map regions</span><span>Curated local stories</span><span>Seasonal field guides</span></div>
+      <p class="privacy-boundary">Payment and partner verification are not connected in this prototype. A production release needs server-verified purchase and institutional grants.</p>
+    </section>
+
     <section class="sheet hidden" id="routeSheet" role="dialog" aria-modal="true" aria-labelledby="routeSheetTitle">
       <button class="close-sheet" data-close-sheet aria-label="Close">×</button><span class="sheet-kicker">ACTIVE WALK</span><h2 id="routeSheetTitle">Your walk is underway</h2>
       <div class="route-progress"><strong id="routeSheetDistance">0.00 mi</strong><span id="routeSheetDuration">00:00 elapsed</span></div>
@@ -256,9 +278,10 @@
       <fieldset class="planner-options"><legend>1. How much time do you have?</legend><div class="planner-choice-row"><label><input type="radio" name="walkTime" value="15" checked />15 min</label><label><input type="radio" name="walkTime" value="30" />30 min</label><label><input type="radio" name="walkTime" value="45" />45 min</label><label><input type="radio" name="walkTime" value="60" />60+ min</label></div></fieldset>
       <fieldset class="planner-options"><legend>2. Route shape</legend><div class="planner-choice-row"><label><input type="radio" name="routeMode" value="round-trip" checked />Round trip</label><label><input type="radio" name="routeMode" value="point-to-point" />Point to point</label></div></fieldset>
       <div class="planner-choice-row"><button class="secondary-button" id="choosePlanStartButton" type="button">Choose start on map</button><button class="secondary-button" id="choosePlanEndButton" type="button">Choose end on map</button></div>
-      <fieldset class="planner-options"><legend>3. What sounds good?</legend><div class="poi-chips"><button type="button" class="poi-chip planner-chip" data-planner-tag="park">Parks</button><button type="button" class="poi-chip planner-chip" data-planner-tag="trail">Nature trails</button><button type="button" class="poi-chip planner-chip" data-planner-tag="history">History</button><button type="button" class="poi-chip planner-chip" data-planner-tag="quiet">Quiet routes</button></div></fieldset>
+      <fieldset class="planner-options"><legend>3. What would feel good today?</legend><div class="poi-chips"><button type="button" class="poi-chip planner-chip" data-planner-tag="park">Green space</button><button type="button" class="poi-chip planner-chip" data-planner-tag="trail">Wildlife</button><button type="button" class="poi-chip planner-chip" data-planner-tag="history">Learn something local</button><button type="button" class="poi-chip planner-chip" data-planner-tag="quiet">Move gently</button></div></fieldset>
       <div class="plan-preview"><span>YOUR STARTING PLAN</span><strong id="planDistance">~0.75 miles</strong><p id="planSummary">A gentle loop with nearby discoveries.</p></div>
-      <ol class="plan-stops" id="planStops" aria-label="Planned stops"></ol>
+      <div class="route-options" id="planOptions" aria-label="Suggested routes"></div>
+      <ol class="plan-stops" id="planStops" aria-label="Two discoveries along this walk"></ol>
       <div class="sheet-actions"><button class="secondary-button" type="button" data-close-sheet>Cancel</button><button class="primary-button" id="startPlannedWalkButton" type="button">Start walk</button></div>
     </section>
 

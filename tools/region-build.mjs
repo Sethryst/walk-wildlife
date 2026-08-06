@@ -97,7 +97,33 @@ async function importedPois(imports) {
   const imported = JSON.parse(bytes);
   const pois = imported.pois || imported.pointsOfInterest;
   if (!Array.isArray(pois)) throw new Error(`POI import ${source} must contain a pois or pointsOfInterest array`);
-  return { pois, source };
+  const supplementalPois = [];
+  for (const supplement of imports.buildTimeSupplements || []) {
+    const bundle = JSON.parse(await readFile(inputPath(supplement.path), 'utf8'));
+    const category = supplement.filter?.category;
+    const coffeeStops = (bundle.pois || []).filter((poi) => !category || poi.category === category);
+    for (const poi of coffeeStops) {
+      if (!poi?.id || !Number.isFinite(poi.lat) || !Number.isFinite(poi.lng)) continue;
+      supplementalPois.push({
+        id: poi.id,
+        name: poi.name || 'Coffee stop',
+        lat: poi.lat,
+        lng: poi.lng,
+        category: poi.category,
+        tags: [poi.category],
+        source: supplement.attribution || supplement.id,
+        sourceType: 'build-time-supplement',
+        walkRelevanceScore: Number(poi.walkRelevanceScore) || 0,
+        walkRelevanceReasons: Array.isArray(poi.walkRelevanceReasons) ? poi.walkRelevanceReasons : [],
+        historicalContext: poi.historicalContext || null,
+        hours: poi.hours || null,
+        outdoorSeating: poi.outdoorSeating || null,
+        accessibility: poi.accessibility || null
+      });
+    }
+  }
+  const ids = new Set(pois.map((poi) => poi.id));
+  return { pois: [...pois, ...supplementalPois.filter((poi) => !ids.has(poi.id))], source };
 }
 
 console.log(`Region build: ${regionId}${dryRun ? ' (dry run)' : ''}`);

@@ -37,9 +37,10 @@ export function renderCityPois() {
       const markerTag = primaryPoiTag(poi);
       const icon = L.divIcon({ className: '', html: `<div class="poi-marker ${markerTag}"><img src="./icons/${POI_ICONS[markerTag] || 'map-pin'}.svg" alt="" /></div>`, iconSize: [27, 27], iconAnchor: [13, 13] });
       const tagLabels = poiTags(poi).map((tag) => TAG_LABELS[tag] || tag.replaceAll('_', ' ')).join(', ');
-      const details = [poi.description, poi.address, tagLabels ? `Tags: ${tagLabels}` : null].filter(Boolean).map(escapeHtml).join('<br>');
+      const relevance = poi.walkRelevanceReasons?.length ? `Good walking stop: ${poi.walkRelevanceReasons.join(', ').replaceAll('_', ' ')}` : null;
+      const details = [poi.description, poi.historicalContext, poi.address, relevance, tagLabels ? `Tags: ${tagLabels}` : null].filter(Boolean).map(escapeHtml).join('<br>');
       const link = poi.link ? `<br><a href="${escapeHtml(poi.link)}" target="_blank" rel="noreferrer">Learn more ↗</a>` : '';
-      return L.marker([poi.lat, poi.lng], { icon, title: poi.name }).bindPopup(`<strong>${escapeHtml(poi.name)}</strong>${details ? `<br><span>${details}</span>` : ''}${link}`);
+      return L.marker([poi.lat, poi.lng], { icon, title: poi.name, interactive: !state.planningMode }).bindPopup(`<strong>${escapeHtml(poi.name)}</strong>${details ? `<br><span>${details}</span>` : ''}${link}`);
     });
   if (state.poiLayer.addLayers) state.poiLayer.addLayers(markers); else markers.forEach((marker) => marker.addTo(state.poiLayer));
   const segments = state.trailSegments[state.activeCity] || [];
@@ -62,10 +63,10 @@ export function renderHistorySites() {
       html: `<div class="historic-pin${site.unverified ? ' unverified' : ''}"><span class="pin-body"><span class="pin-icon">${glyph}</span></span></div>`,
       iconSize: [32, 40], iconAnchor: [16, 38]
     });
-    const marker = L.marker([site.lat, site.lng], { icon: historyIcon, title: site.name });
+    const marker = L.marker([site.lat, site.lng], { icon: historyIcon, title: site.name, interactive: !state.planningMode });
     const subtypeLabel = HISTORY_SUBTYPES[subtype]?.label;
     marker.bindTooltip(site.unverified ? `${site.name} — unverified` : `${site.name}${subtypeLabel ? ` · ${subtypeLabel}` : ''}`, { direction: 'top', offset: [0, -32] });
-    marker.on('click', () => showHistory(site, distanceMeters(state.currentPosition || active.center, site)));
+    marker.on('click', () => { if (!state.planningMode) showHistory(site, distanceMeters(state.currentPosition || active.center, site)); });
     if (state.historyRadiusLayer) {
       L.circle([site.lat, site.lng], { radius: site.radius, stroke: true, weight: 1, color: site.unverified ? '#d4932f' : '#2d7259', opacity: .38, fillColor: site.unverified ? '#d4932f' : '#2d7259', fillOpacity: .06, interactive: false }).addTo(state.historyRadiusLayer);
     }

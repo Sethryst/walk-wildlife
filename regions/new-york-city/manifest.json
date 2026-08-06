@@ -2,7 +2,7 @@
   "id": "new-york-city",
   "name": "New York City, New York",
   "version": 1,
-  "generatedAt": "2026-08-05T20:26:20.056Z",
+  "generatedAt": "2026-08-06T03:22:21.626Z",
   "boundary": {
     "source": "explicit",
     "geometry": {
@@ -76,6 +76,6 @@
     ]
   },
   "stats": {
-    "poiCount": 2266
+    "poiCount": 5112
   }
 }

@@ -4,6 +4,7 @@ import db from './storage.js';
 import { RegionInstaller } from './region-installer.js';
 import { RegionAPI } from './region-api.js';
 import { RegionPackage } from './region-package.js';
+import { canUseOfflineRegion } from './entitlements.js';
 
 export const regionInstaller = new RegionInstaller({ db });
 
@@ -65,6 +66,15 @@ export function createRegionRuntimeApi() {
 }
 
 export const regionApi = createRegionRuntimeApi();
+
+// PMTiles packages are a Field Edition delivery concern. The ordinary map,
+// personal journal, and curated online experience remain outside this gate.
+export async function installFieldEditionRegion(regionId) {
+  if (!canUseOfflineRegion(regionId)) {
+    throw new Error('This offline region needs a Field Edition purchase or partner grant.');
+  }
+  return regionApi.installRegion(regionId);
+}
 
 export async function initRegionAutomation() {
   const chip = el('regionAutomationStatus');

@@ -77,7 +77,7 @@ export function resumeWalk() { const walk = state.activeWalk; if (!walk || !walk
 export function togglePauseWalk() { if (state.activeWalk?.paused) resumeWalk(); else pauseWalk(); }
 export function startWalk() {
   if (!navigator.geolocation) { toast('Location is not supported in this browser.'); return; }
-  state.activeWalk = { id: uid('walk'), city: state.activeCity, startedAt: new Date().toISOString(), endedAt: null, durationSeconds: 0, distanceMeters: 0, points: [], journal: null, paused: false, pausedAt: null, pausedMilliseconds: 0, lastRawPoint: null };
+  state.activeWalk = { id: uid('walk'), city: state.activeCity, startedAt: new Date().toISOString(), endedAt: null, durationSeconds: 0, distanceMeters: 0, points: [], journal: null, paused: false, pausedAt: null, pausedMilliseconds: 0, lastRawPoint: null, discoveryCount: 0 };
   ensurePauseButton(); state.routeLine?.remove(); state.routeLine = L.polyline([], { color: '#245448', weight: 5, opacity: .85 }).addTo(state.map);
   el('walkButton').textContent = 'End walk'; el('walkButton').classList.add('walking'); setStatus('Recording your walk', true);
   updateWalkDisplay();

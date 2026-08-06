@@ -14,14 +14,30 @@ export async function loadCityData(cityId) {
   const response = await fetch(config.dataFile);
   if (!response.ok) throw new Error(`${cityLabel(cityId)} places data could not be loaded.`);
   const seed = await response.json();
+  let supplements = [];
+  if (config.supplementalPoiFile) {
+    try {
+      const supplementResponse = await fetch(config.supplementalPoiFile);
+      if (supplementResponse.ok) supplements = (await supplementResponse.json()).pois?.filter((poi) => poi.category === 'coffee') || [];
+    } catch { /* base city data remains usable without the supplement */ }
+  }
+  const mergeSupplements = (pois) => {
+    const byId = new Map(pois.map((poi) => [poi.id, poi]));
+    supplements.forEach((poi) => byId.set(poi.id, poi));
+    return [...byId.values()];
+  };
   if (!metadata || metadata.version !== seed.metadata.version || !saved.length) {
-    const newPois = seed.pointsOfInterest.map((poi) => migratePoi(poi, cityId));
+    const newPois = mergeSupplements(seed.pointsOfInterest).map((poi) => migratePoi(poi, cityId));
     await Promise.all(newPois.map((item) => db.put('points_of_interest', item)));
     await db.put('poi_metadata', { id: `${cityId}-seed`, version: seed.metadata.version, attribution: seed.metadata.attribution, trailSegments: seed.trailSegments || [] });
     state.cityPois[cityId] = newPois;
     state.trailSegments[cityId] = seed.trailSegments || [];
   } else {
-    state.cityPois[cityId] = saved.map((poi) => migratePoi(poi, cityId));
+    const merged = mergeSupplements(saved).map((poi) => migratePoi(poi, cityId));
+    const existing = new Set(saved.map((poi) => poi.id));
+    const additions = merged.filter((poi) => !existing.has(poi.id));
+    if (additions.length) await Promise.all(additions.map((poi) => db.put('points_of_interest', poi)));
+    state.cityPois[cityId] = merged;
     state.trailSegments[cityId] = metadata.trailSegments || [];
   }
 }

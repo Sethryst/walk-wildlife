@@ -28,6 +28,7 @@ export function initMap() {
       window.dispatchEvent(new CustomEvent('planner-point-selected', { detail: selected }));
       return;
     }
+    if (state.planningMode) return;
     openObservation({ lat: event.latlng.lat, lng: event.latlng.lng });
   });
   // Viewport windowing: only build markers for what's on/near screen, recomputed

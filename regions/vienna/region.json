@@ -1,6 +1,8 @@
 {
-  "id": "vienna-va",
+  "id": "vienna",
   "name": "Vienna",
+  "boundary": { "source": "explicit", "geometry": { "type": "Polygon", "coordinates": [[[-77.29,38.88],[-77.24,38.88],[-77.24,38.92],[-77.29,38.92],[-77.29,38.88]]] } },
+  "imports": { "poi": "data/vienna-poi.json", "buckets": null, "supplemental": [] },
   "displayName": "Vienna, Virginia",
   "country": "USA",
   "state": "Virginia",
@@ -12,6 +14,7 @@
     "radius_km": 6
   },
   "osm": {
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/virginia-latest.osm.pbf",
     "enabled": true,
     "tool": "osmium",
     "pbfSource": "planet",

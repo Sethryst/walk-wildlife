@@ -58,7 +58,21 @@ export function renderIncomingRequests() {
 }
 export function toast(message) { const node = el('toast'); node.textContent = message; node.classList.remove('hidden'); clearTimeout(toast.timeout); toast.timeout = setTimeout(() => node.classList.add('hidden'), 3200); }
 export function setStatus() { /* Map status copy is intentionally omitted. */ }
-export function openJournal(walkId = null) { el('journalForm').reset(); el('journalForm').dataset.walkId = walkId || ''; openSheet('journalSheet'); }
+export function openJournal(walkId = null) {
+  const prompts = [
+    'What did you notice today that surprised you?',
+    'Describe one place you will remember.',
+    'What changed between the beginning and end of this walk?',
+    'What did your attention return to?'
+  ];
+  const index = walkId ? [...walkId].reduce((sum, character) => sum + character.charCodeAt(0), 0) % prompts.length : 0;
+  el('journalForm').reset();
+  el('journalForm').dataset.walkId = walkId || '';
+  el('journalTitle').textContent = walkId ? 'Tell it back, in your own words.' : 'Hold onto this feeling.';
+  el('journalPrompt').textContent = walkId ? prompts[index] : 'A private note for your own return.';
+  el('journalNote').placeholder = walkId ? 'Optional—your words stay on this device…' : 'A few words about where your feet and attention took you…';
+  openSheet('journalSheet');
+}
 export function momentCard(item) {
   const kind = item.type === 'observation' ? 'observation' : item.type === 'history' ? 'history' : item.type === 'walk' ? 'walk' : 'journal';
   const icons = { observation: '⌁', history: '✦', walk: '↝', journal: '✎' };

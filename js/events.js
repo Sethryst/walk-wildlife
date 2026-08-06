@@ -4,7 +4,7 @@ import { el, normalizeProfile } from './utils.js';
 import { initBackupControls } from './backup.js';
 import { openWalkDetail, saveHistoryMoment, saveJournal, renderArchive } from './archive.js';
 import { getCurrentLocation, startWalk, stopWalk, togglePauseWalk, updateWalkDisplay } from './walk.js';
-import { openObservation, saveObservation } from './observation.js';
+import { openObservation, saveObservation, setDraftObservationIcon } from './observation.js';
 import { openJournal, closeSheets, openSheet, openAccountSettings, openFiltersSheet, openProfile, renderGeofenceCategoryChips, setArchiveFilter, showView, toast } from './ui.js';
 import { city, citySites, renderPoiTagFilters, renderCityPois, showHistory, savePlaceMemory, searchPois, searchOsm } from './poi.js';
 import { syncProfile, renderOnline, openOnline, signIn, signUp, createOnlineProfile, updateAccountUsername, updateAccountPhone, updateAccountEmail, updateAccountPassword, acceptFriend, refreshFriends, findFriend } from './online.js';
@@ -14,7 +14,7 @@ import db from './storage.js';
 import { renderExplorePlaces, setExploreTab } from './explore.js';
 import { renderDiscoveryHeadline } from './discovery.js';
 import { showCuratedRoute } from './routes.js';
-import { generateTimeBasedPlan, previewTimeBasedPlan } from './planner.js';
+import { generateTimeBasedPlan, previewTimeBasedPlan, choosePlan, setPlanningMode } from './planner.js';
 
 export function initEvents() {
   initBackupControls();
@@ -26,11 +26,12 @@ export function initEvents() {
   el('activeRouteButton').addEventListener('click', () => { updateWalkDisplay(); openSheet('routeSheet'); });
   el('routePauseButton').addEventListener('click', togglePauseWalk);
   el('routeEndButton').addEventListener('click', () => { closeSheets(); stopWalk(); });
-  el('planWalkButton').addEventListener('click', async () => { openSheet('planWalkSheet'); await generateTimeBasedPlan(); });
-  el('choosePlanStartButton').addEventListener('click', () => { state.plannerSelecting = 'Start'; toast('Tap your starting point on the map.'); closeSheets(); showView('map'); });
-  el('choosePlanEndButton').addEventListener('click', () => { state.plannerSelecting = 'End'; toast('Tap your destination on the map.'); closeSheets(); showView('map'); });
+  el('planWalkButton').addEventListener('click', async () => { setPlanningMode(true); openSheet('planWalkSheet'); await generateTimeBasedPlan(); });
+  el('choosePlanStartButton').addEventListener('click', () => { state.plannerSelecting = 'Start'; toast('Planning mode: tap a starting point.'); closeSheets(); showView('map'); });
+  el('choosePlanEndButton').addEventListener('click', () => { state.plannerSelecting = 'End'; toast('Planning mode: tap a destination.'); closeSheets(); showView('map'); });
   window.addEventListener('planner-point-selected', async () => { openSheet('planWalkSheet'); await generateTimeBasedPlan(); });
-  el('startPlannedWalkButton').addEventListener('click', async () => { const plan = await generateTimeBasedPlan(); if (!previewTimeBasedPlan()) { toast('A walkable road route could not be found.'); return; } closeSheets(); showView('map'); startWalk(); });
+  el('planOptions').addEventListener('click', (event) => { const option = event.target.closest('[data-plan-option]'); if (option) choosePlan(option.dataset.planOption); });
+  el('startPlannedWalkButton').addEventListener('click', async () => { if (!state.plannedRoute) await generateTimeBasedPlan(); if (!previewTimeBasedPlan()) { toast('A walkable road route could not be found.'); return; } setPlanningMode(false); closeSheets(); showView('map'); startWalk(); });
   el('curatedRoutesList').addEventListener('click', (event) => {
     const button = event.target.closest('[data-curated-route]'); if (!button) return;
     const route = showCuratedRoute(button.dataset.curatedRoute);
@@ -48,6 +49,8 @@ export function initEvents() {
   el('journalButton').addEventListener('click', () => openJournal());
   el('demoButton').addEventListener('click', () => { const site = citySites()[0]; state.map.flyTo([site.lat, site.lng], Math.max(city().zoom + 2, 16)); setTimeout(() => showHistory(site, 28), 350); });
   el('settingsButton').addEventListener('click', () => openSheet('infoSheet'));
+  el('fieldEditionButton').addEventListener('click', () => openSheet('fieldEditionSheet'));
+  el('partnerAccessButton').addEventListener('click', () => { openSheet('fieldEditionSheet'); toast('Partner access will be verified by your institution in a production release.'); });
   el('profileJournalButton').addEventListener('click', () => openJournal());
   el('filtersButton').addEventListener('click', openFiltersSheet);
   el('dismissHistoryButton').addEventListener('click', closeSheets); el('saveHistoryMomentButton').addEventListener('click', saveHistoryMoment);
@@ -108,8 +111,13 @@ el('poiSearchResults').addEventListener('click', (event) => {
   el('poiSearchInput').value = '';
 });
   el('observationForm').addEventListener('submit', saveObservation); el('journalForm').addEventListener('submit', saveJournal);
+  el('observationIconPicker').addEventListener('click', (event) => { const button = event.target.closest('[data-observation-icon]'); if (button) setDraftObservationIcon(button.dataset.observationIcon); });
   el('photoInput').addEventListener('change', (event) => { el('photoName').textContent = event.target.files[0]?.name || 'Optional, stored only on this device'; });
-  document.querySelectorAll('[data-close-sheet]').forEach((button) => button.addEventListener('click', closeSheets));
+  const finishOnboarding = async () => { state.settings.onboardingCompleted = true; await db.put('settings', state.settings); closeSheets(); renderProfile(); };
+  el('onboardingInterestChips').addEventListener('click', (event) => { const button = event.target.closest('[data-onboarding-interest]'); if (!button) return; const interests = new Set(state.settings.favoriteCategories || []); const id = button.dataset.onboardingInterest; interests.has(id) ? interests.delete(id) : interests.add(id); state.settings.favoriteCategories = [...interests]; button.classList.toggle('active', interests.has(id)); });
+  el('skipOnboardingButton').addEventListener('click', finishOnboarding);
+  el('saveOnboardingButton').addEventListener('click', finishOnboarding);
+  document.querySelectorAll('[data-close-sheet]').forEach((button) => button.addEventListener('click', () => { const wasPlanner = button.closest('#planWalkSheet'); closeSheets(); if (wasPlanner) setPlanningMode(false); }));
   el('modalBackdrop').addEventListener('click', closeSheets);
   document.querySelectorAll('.archive-filter .filter-button').forEach((button) => button.addEventListener('click', () => setArchiveFilter(button.dataset.filter)));
   el('citySelect').addEventListener('change', (event) => switchCity(event.target.value));

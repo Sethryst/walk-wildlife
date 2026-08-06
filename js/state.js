@@ -28,9 +28,15 @@ export const state = {
   // UI / prompts
   currentSite: null,
   draftObservationLocation: null,
+  draftObservationIcon: 'camera',
   prompted: new Set(),
   poiTags: new Set(),
   archiveFilter: 'all',
+  planningMode: false,
+  plannerStart: null,
+  plannerEnd: null,
+  planOptions: [],
+  quietFallbackPlaces: [],
 
   // online
   online: {
