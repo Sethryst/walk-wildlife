@@ -1,6 +1,6 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T00:57:37.211478Z",
+    "generatedAt": "2026-08-07T01:23:32.285990Z",
     "items": [
       {
         "date": "2026-11-03",
@@ -13,20 +13,45 @@
           "reviewStatus": "verified",
           "url": "https://www.elections.virginia.gov/casting-a-ballot/calendars-schedules/upcoming-elections.html"
         },
-        "summary": "Virginia's general and special elections include federal, local, and proposed constitutional-amendment contests. Check your voter record and polling place through Virginia's official election tools.",
-        "title": "Virginia General and Special Elections",
-        "type": "general_election"
+        "summary": "Vote in Virginia's general election. Use Virginia's official election calendar for registration, polling place, and ballot information.",
+        "title": "Virginia General Election"
       }
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "8ab4576"
+    },
+    "regionId": "wolf-trap-va",
+    "schemaVersion": 1
+  },
+  "events": {
+    "generatedAt": "2026-08-07T01:23:32.285990Z",
+    "items": [
+      {
+        "date": "2026-08-07",
+        "expiresAt": "2026-08-08T04:00:00Z",
+        "id": "wolf-trap-junior-ranger-day-2026-08-07",
+        "locationLabel": "Wolf Trap National Park for the Performing Arts",
+        "officialUrl": "https://www.nps.gov/wotr/planyourvisit/calendar.htm",
+        "source": {
+          "authorityTier": "federal_government",
+          "name": "National Park Service",
+          "reviewStatus": "verified",
+          "url": "https://www.nps.gov/wotr/planyourvisit/calendar.htm"
+        },
+        "summary": "Listed by the National Park Service for Wolf Trap on August 7.",
+        "title": "Junior Ranger Day"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "8ab4576"
     },
     "regionId": "wolf-trap-va",
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T00:57:37.211478Z",
+    "generatedAt": "2026-08-07T01:23:32.285990Z",
     "items": [
       {
         "id": "wolf-trap-va:eventSources",
@@ -42,13 +67,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "8ab4576"
     },
     "regionId": "wolf-trap-va",
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T00:57:37.211478Z",
+    "generatedAt": "2026-08-07T01:23:32.285990Z",
     "items": [
       {
         "id": "wolf-trap-va:volunteerSources",
@@ -64,7 +89,7 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "8ab4576"
     },
     "regionId": "wolf-trap-va",
     "schemaVersion": 1
