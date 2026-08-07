@@ -20,8 +20,7 @@ export function el(id) {
 export function cityLabel(cityId) {
   const config = CITIES[cityId];
   if (!config) return '';
-  const suffix = cityId === 'norfolk' ? ' (prototype)' : '';
-  return `${config.name}, ${config.state}${suffix}`;
+  return `${config.name}, ${config.state}`;
 }
 export function debounce(fn, wait) { let timer; return (...args) => { clearTimeout(timer); timer = setTimeout(() => fn(...args), wait); }; }
 export function uid(prefix) { return `${prefix}-${Date.now()}-${Math.random().toString(16).slice(2)}`; }
