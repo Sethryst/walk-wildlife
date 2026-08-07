@@ -1,22 +1,129 @@
 {
   "vote": {
-    "schemaVersion": 1,
-    "regionId": "philadelphia",
-    "generatedAt": "2026-08-06T11:39:08.675198Z",
-    "producer": {
-      "name": "Gremlin Lab",
-      "version": "local"
-    },
+    "generatedAt": "2026-08-07T00:57:36.589176Z",
     "items": [
       {
-        "id": "phila-2026-general-election",
-        "title": "General Election",
         "date": "2026-11-03",
-        "type": "general_election",
-        "summary": "Vote in Philadelphia's general election. Polls are open from 7:00 AM to 8:00 PM.",
+        "expiresAt": "2026-11-04T05:00:00Z",
+        "id": "phila-2026-general-election",
         "officialUrl": "https://vote.phila.gov/",
-        "expiresAt": "2026-11-04T05:00:00Z"
+        "source": {
+          "authorityTier": "election_authority",
+          "name": "Philadelphia City Commissioners",
+          "reviewStatus": "verified",
+          "url": "https://vote.phila.gov/"
+        },
+        "summary": "Vote in Philadelphia's general election. Polls are open from 7:00 AM to 8:00 PM.",
+        "title": "General Election",
+        "type": "general_election"
       }
-    ]
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "philadelphia",
+    "schemaVersion": 1
+  },
+  "volunteer": {
+    "generatedAt": "2026-08-07T00:57:36.589176Z",
+    "items": [
+      {
+        "expiresAt": "2026-09-05T00:00:00Z",
+        "id": "phl-parks-individual-volunteer",
+        "officialUrl": "https://www.phila.gov/departments/philadelphia-parks-recreation/get-involved/business-and-individual-volunteer-opportunities/",
+        "organizer": {
+          "id": "phl-parks-recreation",
+          "name": "Philadelphia Parks & Recreation"
+        },
+        "participation": {
+          "riskClarity": "Outdoor service projects may have physical requirements; the organizer provides project-specific details.",
+          "timeCommitment": "Project-based; confirm the event schedule before committing.",
+          "whatYouWillDo": "Join an individual or group public-space project through the official Parks & Recreation program."
+        },
+        "source": {
+          "authorityTier": "local_government",
+          "name": "Philadelphia Parks & Recreation",
+          "reviewStatus": "verified",
+          "url": "https://www.phila.gov/departments/philadelphia-parks-recreation/get-involved/business-and-individual-volunteer-opportunities/"
+        },
+        "summary": "Help improve Philadelphia public spaces through Parks & Recreation volunteer opportunities and Park Friends service days.",
+        "timeCommitment": "Project-based",
+        "title": "Philadelphia Parks & Recreation volunteer projects"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "philadelphia",
+    "schemaVersion": 1
+  },
+  "organizers": {
+    "generatedAt": "2026-08-07T00:57:36.589176Z",
+    "items": [
+      {
+        "id": "phl-parks-recreation",
+        "name": "Philadelphia Parks & Recreation",
+        "officialUrl": "https://www.phila.gov/departments/philadelphia-parks-recreation/get-involved/business-and-individual-volunteer-opportunities/",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "Philadelphia Parks & Recreation",
+          "reviewStatus": "verified",
+          "url": "https://www.phila.gov/departments/philadelphia-parks-recreation/get-involved/business-and-individual-volunteer-opportunities/"
+        },
+        "summary": "City department offering public-space volunteer opportunities."
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "philadelphia",
+    "schemaVersion": 1
+  },
+  "event-sources": {
+    "generatedAt": "2026-08-07T00:57:36.589176Z",
+    "items": [
+      {
+        "id": "philadelphia:eventSources",
+        "officialUrl": "https://www.phila.gov/parks/",
+        "source": {
+          "name": "Gremlin Lab reviewed source link",
+          "reviewStatus": "source_link",
+          "url": "https://www.phila.gov/parks/"
+        },
+        "summary": "Browse the linked event calendar for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "title": "Event calendar"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "philadelphia",
+    "schemaVersion": 1
+  },
+  "volunteer-sources": {
+    "generatedAt": "2026-08-07T00:57:36.589176Z",
+    "items": [
+      {
+        "id": "philadelphia:volunteerSources",
+        "officialUrl": "https://friendsoftheparks.org/volunteer",
+        "source": {
+          "name": "Gremlin Lab reviewed source link",
+          "reviewStatus": "source_link",
+          "url": "https://friendsoftheparks.org/volunteer"
+        },
+        "summary": "Browse the linked volunteer opportunities for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "title": "Volunteer opportunities"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "philadelphia",
+    "schemaVersion": 1
   }
 }

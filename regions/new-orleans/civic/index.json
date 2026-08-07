@@ -1,20 +1,20 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T00:57:37.211478Z",
+    "generatedAt": "2026-08-07T00:57:36.410029Z",
     "items": [
       {
         "date": "2026-11-03",
-        "expiresAt": "2026-11-04T05:00:00Z",
-        "id": "va-wolf-trap-2026-general-election",
-        "officialUrl": "https://www.elections.virginia.gov/casting-a-ballot/calendars-schedules/upcoming-elections.html",
+        "expiresAt": "2026-11-04T06:00:00Z",
+        "id": "la-new-orleans-2026-november-election",
+        "officialUrl": "https://www.sos.la.gov/elections-voting/election-dates",
         "source": {
           "authorityTier": "election_authority",
-          "name": "Virginia Department of Elections",
+          "name": "Louisiana Secretary of State",
           "reviewStatus": "verified",
-          "url": "https://www.elections.virginia.gov/casting-a-ballot/calendars-schedules/upcoming-elections.html"
+          "url": "https://www.sos.la.gov/elections-voting/election-dates"
         },
-        "summary": "Virginia's general and special elections include federal, local, and proposed constitutional-amendment contests. Check your voter record and polling place through Virginia's official election tools.",
-        "title": "Virginia General and Special Elections",
+        "summary": "Louisiana's November election includes the U.S. Senate general election and open U.S. Representative primary. Polls are open from 6:00 AM to 8:00 PM.",
+        "title": "Louisiana November Election",
         "type": "general_election"
       }
     ],
@@ -22,19 +22,19 @@
       "name": "Gremlin Lab",
       "version": "c585009"
     },
-    "regionId": "wolf-trap-va",
+    "regionId": "new-orleans",
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T00:57:37.211478Z",
+    "generatedAt": "2026-08-07T00:57:36.410029Z",
     "items": [
       {
-        "id": "wolf-trap-va:eventSources",
-        "officialUrl": "https://www.nps.gov/wotr/planyourvisit/calendar.htm",
+        "id": "new-orleans:eventSources",
+        "officialUrl": "https://www.neworleans.com/events/",
         "source": {
           "name": "Gremlin Lab reviewed source link",
           "reviewStatus": "source_link",
-          "url": "https://www.nps.gov/wotr/planyourvisit/calendar.htm"
+          "url": "https://www.neworleans.com/events/"
         },
         "summary": "Browse the linked event calendar for current listings. This is a source link, not a claim about a specific scheduled item.",
         "title": "Event calendar"
@@ -44,19 +44,19 @@
       "name": "Gremlin Lab",
       "version": "c585009"
     },
-    "regionId": "wolf-trap-va",
+    "regionId": "new-orleans",
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T00:57:37.211478Z",
+    "generatedAt": "2026-08-07T00:57:36.410029Z",
     "items": [
       {
-        "id": "wolf-trap-va:volunteerSources",
-        "officialUrl": "https://www.nps.gov/wotr/getinvolved/volunteer.htm",
+        "id": "new-orleans:volunteerSources",
+        "officialUrl": "https://www.nola.gov/parks-and-parkways/special-events/",
         "source": {
           "name": "Gremlin Lab reviewed source link",
           "reviewStatus": "source_link",
-          "url": "https://www.nps.gov/wotr/getinvolved/volunteer.htm"
+          "url": "https://www.nola.gov/parks-and-parkways/special-events/"
         },
         "summary": "Browse the linked volunteer opportunities for current listings. This is a source link, not a claim about a specific scheduled item.",
         "title": "Volunteer opportunities"
@@ -66,7 +66,7 @@
       "name": "Gremlin Lab",
       "version": "c585009"
     },
-    "regionId": "wolf-trap-va",
+    "regionId": "new-orleans",
     "schemaVersion": 1
   }
 }

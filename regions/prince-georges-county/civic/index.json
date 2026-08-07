@@ -1,53 +1,187 @@
 {
   "vote": {
-    "schemaVersion": 1,
-    "regionId": "prince-georges-county-md",
-    "generatedAt": "2026-08-06T20:49:40.650203Z",
-    "producer": {
-      "name": "Gremlin Lab",
-      "version": "local"
-    },
+    "generatedAt": "2026-08-07T00:57:36.764329Z",
     "items": [
       {
-        "id": "md-prince-georges-2026-general-election",
-        "title": "Maryland Gubernatorial General Election",
         "date": "2026-11-03",
-        "type": "general_election",
-        "summary": "Maryland's general election includes state, federal, and local offices. Election-day polling places are open from 7:00 AM to 8:00 PM.",
+        "expiresAt": "2026-11-04T05:00:00Z",
+        "id": "md-prince-georges-2026-general-election",
         "officialUrl": "https://www.elections.maryland.gov/elections/2026/index.html",
-        "expiresAt": "2026-11-04T05:00:00Z"
+        "source": {
+          "authorityTier": "election_authority",
+          "name": "Maryland State Board of Elections",
+          "reviewStatus": "verified",
+          "url": "https://www.elections.maryland.gov/elections/2026/index.html"
+        },
+        "summary": "Maryland's general election includes state, federal, and local offices. Election-day polling places are open from 7:00 AM to 8:00 PM.",
+        "title": "Maryland Gubernatorial General Election",
+        "type": "general_election"
       }
-    ]
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "prince-georges-county-md",
+    "schemaVersion": 1
   },
   "volunteer": {
-    "schemaVersion": 1,
-    "regionId": "prince-georges-county-md",
-    "generatedAt": "2026-08-06T20:49:40.650203Z",
+    "generatedAt": "2026-08-07T00:57:36.764329Z",
+    "items": [
+      {
+        "expiresAt": "2026-09-05T00:00:00Z",
+        "id": "pgcounty-elevate-360-service-corps",
+        "officialUrl": "https://www.princegeorgescountymd.gov/departments-offices/community-relations/ocr-elevate-360-volunteer-program",
+        "organizer": {
+          "id": "pgcounty-office-community-relations",
+          "name": "Prince George's County Office of Community Relations"
+        },
+        "participation": {
+          "riskClarity": "Open to residents age 15+ who are comfortable interacting with residents and county staff.",
+          "timeCommitment": "Varies by event; confirm availability with the program.",
+          "whatYouWillDo": "Support outreach and engagement events, including registration, logistics, and distribution of county information."
+        },
+        "source": {
+          "authorityTier": "local_government",
+          "name": "Prince George's County Office of Community Relations",
+          "reviewStatus": "verified",
+          "url": "https://www.princegeorgescountymd.gov/departments-offices/community-relations/ocr-elevate-360-volunteer-program"
+        },
+        "summary": "Assist county outreach events with setup, registration, logistics, and sharing public information.",
+        "timeCommitment": "Varies by event",
+        "title": "Elevate 360 County Service Corps"
+      },
+      {
+        "expiresAt": "2026-09-05T00:00:00Z",
+        "id": "pgparks-general-volunteer",
+        "officialUrl": "https://www.pgparks.com/get-involved/volunteer-opportunities",
+        "organizer": {
+          "id": "mncppc-pg-parks",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County"
+        },
+        "participation": {
+          "riskClarity": "Some roles may require an application or background check depending on duties and duration.",
+          "timeCommitment": "Varies by project; confirm before signing up.",
+          "whatYouWillDo": "Support a park or recreation project selected through the official volunteer program."
+        },
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/get-involved/volunteer-opportunities"
+        },
+        "summary": "Help with a one-day or ongoing project in Prince George's County parks and recreation programs.",
+        "timeCommitment": "Varies by project",
+        "title": "Prince George's Parks volunteer"
+      },
+      {
+        "expiresAt": "2026-09-05T00:00:00Z",
+        "id": "pgparks-weed-warriors",
+        "officialUrl": "https://www.pgparks.com/get-involved/volunteer-opportunities",
+        "organizer": {
+          "id": "mncppc-pg-parks",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County"
+        },
+        "participation": {
+          "riskClarity": "Public events are for ages 16+; certification is for ages 18+ and work is outdoors.",
+          "timeCommitment": "Public group events vary; Level 1 certification includes online courses, two events, and in-person training.",
+          "whatYouWillDo": "Learn to identify and remove invasive plants with tools and training provided at supervised events."
+        },
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/get-involved/volunteer-opportunities"
+        },
+        "summary": "Join supervised invasive-plant removal events in county parkland, or work toward volunteer certification for independent stewardship.",
+        "timeCommitment": "Event-based; certification requires training and supervised events",
+        "title": "Weed Warriors invasive-plant stewardship"
+      }
+    ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "local"
+      "version": "c585009"
     },
-    "items": []
+    "regionId": "prince-georges-county-md",
+    "schemaVersion": 1
   },
   "organizers": {
-    "schemaVersion": 1,
-    "regionId": "prince-georges-county-md",
-    "generatedAt": "2026-08-06T20:49:40.650203Z",
-    "producer": {
-      "name": "Gremlin Lab",
-      "version": "local"
-    },
+    "generatedAt": "2026-08-07T00:57:36.764329Z",
     "items": [
       {
         "id": "mncppc-pg-parks",
         "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
-        "officialUrl": "https://www.pgparks.com/get-involved/volunteer-opportunities"
+        "officialUrl": "https://www.pgparks.com/get-involved/volunteer-opportunities",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/get-involved/volunteer-opportunities"
+        },
+        "summary": "The county parks and recreation department, which operates volunteer programs for parks and recreation facilities."
       },
       {
         "id": "pgcounty-office-community-relations",
         "name": "Prince George's County Office of Community Relations",
-        "officialUrl": "https://www.princegeorgescountymd.gov/departments-offices/community-relations/ocr-elevate-360-volunteer-program"
+        "officialUrl": "https://www.princegeorgescountymd.gov/departments-offices/community-relations/ocr-elevate-360-volunteer-program",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "Prince George's County Office of Community Relations",
+          "reviewStatus": "verified",
+          "url": "https://www.princegeorgescountymd.gov/departments-offices/community-relations/ocr-elevate-360-volunteer-program"
+        },
+        "summary": "A county office that runs the Elevate 360 County Service Corps outreach-volunteer program."
       }
-    ]
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "prince-georges-county-md",
+    "schemaVersion": 1
+  },
+  "event-sources": {
+    "generatedAt": "2026-08-07T00:57:36.764329Z",
+    "items": [
+      {
+        "id": "prince-georges-county-md:eventSources",
+        "officialUrl": "https://pgparks.com/activities-events-events/category/free",
+        "source": {
+          "name": "Gremlin Lab reviewed source link",
+          "reviewStatus": "source_link",
+          "url": "https://pgparks.com/activities-events-events/category/free"
+        },
+        "summary": "Browse the linked event calendar for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "title": "Event calendar"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "prince-georges-county-md",
+    "schemaVersion": 1
+  },
+  "volunteer-sources": {
+    "generatedAt": "2026-08-07T00:57:36.764329Z",
+    "items": [
+      {
+        "id": "prince-georges-county-md:volunteerSources",
+        "officialUrl": "https://www.pgparks.com/get-involved/volunteer-opportunities",
+        "source": {
+          "name": "Gremlin Lab reviewed source link",
+          "reviewStatus": "source_link",
+          "url": "https://www.pgparks.com/get-involved/volunteer-opportunities"
+        },
+        "summary": "Browse the linked volunteer opportunities for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "title": "Volunteer opportunities"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "prince-georges-county-md",
+    "schemaVersion": 1
   }
 }

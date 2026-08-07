@@ -1,22 +1,72 @@
 {
   "vote": {
-    "schemaVersion": 1,
-    "regionId": "richmond",
-    "generatedAt": "2026-08-06T11:41:38.231581Z",
-    "producer": {
-      "name": "Gremlin Lab",
-      "version": "local"
-    },
+    "generatedAt": "2026-08-07T00:57:36.822757Z",
     "items": [
       {
-        "id": "va-richmond-2026-general-election",
-        "title": "Virginia General and Special Elections",
         "date": "2026-11-03",
-        "type": "general_election",
-        "summary": "Virginia's general and special elections include federal, local, and proposed constitutional-amendment contests. Check your voter record and polling place through Virginia's official election tools.",
+        "expiresAt": "2026-11-04T05:00:00Z",
+        "id": "va-richmond-2026-general-election",
         "officialUrl": "https://www.elections.virginia.gov/casting-a-ballot/calendars-schedules/upcoming-elections.html",
-        "expiresAt": "2026-11-04T05:00:00Z"
+        "source": {
+          "authorityTier": "election_authority",
+          "name": "Virginia Department of Elections",
+          "reviewStatus": "verified",
+          "url": "https://www.elections.virginia.gov/casting-a-ballot/calendars-schedules/upcoming-elections.html"
+        },
+        "summary": "Virginia's general and special elections include federal, local, and proposed constitutional-amendment contests. Check your voter record and polling place through Virginia's official election tools.",
+        "title": "Virginia General and Special Elections",
+        "type": "general_election"
       }
-    ]
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "richmond",
+    "schemaVersion": 1
+  },
+  "event-sources": {
+    "generatedAt": "2026-08-07T00:57:36.822757Z",
+    "items": [
+      {
+        "id": "richmond:eventSources",
+        "officialUrl": "https://www.visitrichmondva.com/events/",
+        "source": {
+          "name": "Gremlin Lab reviewed source link",
+          "reviewStatus": "source_link",
+          "url": "https://www.visitrichmondva.com/events/"
+        },
+        "summary": "Browse the linked event calendar for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "title": "Event calendar"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "richmond",
+    "schemaVersion": 1
+  },
+  "volunteer-sources": {
+    "generatedAt": "2026-08-07T00:57:36.822757Z",
+    "items": [
+      {
+        "id": "richmond:volunteerSources",
+        "officialUrl": "https://www.jrps.org/volunteer",
+        "source": {
+          "name": "Gremlin Lab reviewed source link",
+          "reviewStatus": "source_link",
+          "url": "https://www.jrps.org/volunteer"
+        },
+        "summary": "Browse the linked volunteer opportunities for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "title": "Volunteer opportunities"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "richmond",
+    "schemaVersion": 1
   }
 }

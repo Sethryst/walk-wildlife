@@ -1,20 +1,20 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T00:57:37.211478Z",
+    "generatedAt": "2026-08-07T00:57:37.001601Z",
     "items": [
       {
         "date": "2026-11-03",
-        "expiresAt": "2026-11-04T05:00:00Z",
-        "id": "va-wolf-trap-2026-general-election",
-        "officialUrl": "https://www.elections.virginia.gov/casting-a-ballot/calendars-schedules/upcoming-elections.html",
+        "expiresAt": "2026-11-04T07:00:00Z",
+        "id": "wa-seattle-2026-general-election",
+        "officialUrl": "https://www.sos.wa.gov/elections/elections-calendar/dates-and-deadlines",
         "source": {
           "authorityTier": "election_authority",
-          "name": "Virginia Department of Elections",
+          "name": "Washington Secretary of State",
           "reviewStatus": "verified",
-          "url": "https://www.elections.virginia.gov/casting-a-ballot/calendars-schedules/upcoming-elections.html"
+          "url": "https://www.sos.wa.gov/elections/elections-calendar/dates-and-deadlines"
         },
-        "summary": "Virginia's general and special elections include federal, local, and proposed constitutional-amendment contests. Check your voter record and polling place through Virginia's official election tools.",
-        "title": "Virginia General and Special Elections",
+        "summary": "Washington's general election is November 3, 2026. Ballots may be deposited in an official drop box by 8:00 PM on Election Day.",
+        "title": "Washington General Election",
         "type": "general_election"
       }
     ],
@@ -22,19 +22,19 @@
       "name": "Gremlin Lab",
       "version": "c585009"
     },
-    "regionId": "wolf-trap-va",
+    "regionId": "seattle",
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T00:57:37.211478Z",
+    "generatedAt": "2026-08-07T00:57:37.001601Z",
     "items": [
       {
-        "id": "wolf-trap-va:eventSources",
-        "officialUrl": "https://www.nps.gov/wotr/planyourvisit/calendar.htm",
+        "id": "seattle:eventSources",
+        "officialUrl": "https://www.seattle.gov/event-calendar",
         "source": {
           "name": "Gremlin Lab reviewed source link",
           "reviewStatus": "source_link",
-          "url": "https://www.nps.gov/wotr/planyourvisit/calendar.htm"
+          "url": "https://www.seattle.gov/event-calendar"
         },
         "summary": "Browse the linked event calendar for current listings. This is a source link, not a claim about a specific scheduled item.",
         "title": "Event calendar"
@@ -44,19 +44,19 @@
       "name": "Gremlin Lab",
       "version": "c585009"
     },
-    "regionId": "wolf-trap-va",
+    "regionId": "seattle",
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T00:57:37.211478Z",
+    "generatedAt": "2026-08-07T00:57:37.001601Z",
     "items": [
       {
-        "id": "wolf-trap-va:volunteerSources",
-        "officialUrl": "https://www.nps.gov/wotr/getinvolved/volunteer.htm",
+        "id": "seattle:volunteerSources",
+        "officialUrl": "https://www.seattle.gov/parks/volunteer-and-ways-to-give",
         "source": {
           "name": "Gremlin Lab reviewed source link",
           "reviewStatus": "source_link",
-          "url": "https://www.nps.gov/wotr/getinvolved/volunteer.htm"
+          "url": "https://www.seattle.gov/parks/volunteer-and-ways-to-give"
         },
         "summary": "Browse the linked volunteer opportunities for current listings. This is a source link, not a claim about a specific scheduled item.",
         "title": "Volunteer opportunities"
@@ -66,7 +66,7 @@
       "name": "Gremlin Lab",
       "version": "c585009"
     },
-    "regionId": "wolf-trap-va",
+    "regionId": "seattle",
     "schemaVersion": 1
   }
 }

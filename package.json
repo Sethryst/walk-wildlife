@@ -8,6 +8,7 @@
   "scripts": {
     "audit:imports": "node tools/audit-imports.mjs",
     "verify:gremlin": "node tools/verify-gremlin-inventory.mjs",
+    "build:civic-packages": "node tools/build-civic-packages.mjs",
     "audit:poi": "node tools/audit-poi-tags.mjs",
     "build:region": "node tools/region-build.mjs",
     "build:region:legacy": "node tools/build-region.mjs",

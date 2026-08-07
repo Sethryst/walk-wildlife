@@ -1,19 +1,72 @@
 {
   "vote": {
-    "schemaVersion": 1,
-    "regionId": "keystone-colorado",
-    "generatedAt": "2026-08-06T20:45:53.764253Z",
-    "producer": { "name": "Gremlin Lab", "version": "local" },
+    "generatedAt": "2026-08-07T00:57:36.352640Z",
     "items": [
       {
-        "id": "co-keystone-2026-general-election",
-        "title": "Colorado General Election",
         "date": "2026-11-03",
-        "type": "general_election",
-        "summary": "Colorado's general election is November 3, 2026. Use the Secretary of State's election calendar for official deadlines and ballot information.",
+        "expiresAt": "2026-11-04T07:00:00Z",
+        "id": "co-keystone-2026-general-election",
         "officialUrl": "https://www.sos.state.co.us/pubs/elections/calendars/2026ElectionCalendar.pdf",
-        "expiresAt": "2026-11-04T07:00:00Z"
+        "source": {
+          "authorityTier": "election_authority",
+          "name": "Colorado Secretary of State",
+          "reviewStatus": "verified",
+          "url": "https://www.sos.state.co.us/pubs/elections/calendars/2026ElectionCalendar.pdf"
+        },
+        "summary": "Colorado's general election is November 3, 2026. Use the Secretary of State's election calendar for official deadlines and ballot information.",
+        "title": "Colorado General Election",
+        "type": "general_election"
       }
-    ]
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "keystone-colorado",
+    "schemaVersion": 1
+  },
+  "event-sources": {
+    "generatedAt": "2026-08-07T00:57:36.352640Z",
+    "items": [
+      {
+        "id": "keystone-colorado:eventSources",
+        "officialUrl": "https://www.town.keystone.co.us/events",
+        "source": {
+          "name": "Gremlin Lab reviewed source link",
+          "reviewStatus": "source_link",
+          "url": "https://www.town.keystone.co.us/events"
+        },
+        "summary": "Browse the linked event calendar for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "title": "Event calendar"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "keystone-colorado",
+    "schemaVersion": 1
+  },
+  "volunteer-sources": {
+    "generatedAt": "2026-08-07T00:57:36.352640Z",
+    "items": [
+      {
+        "id": "keystone-colorado:volunteerSources",
+        "officialUrl": "https://www.volunteermatch.org/",
+        "source": {
+          "name": "Gremlin Lab reviewed source link",
+          "reviewStatus": "source_link",
+          "url": "https://www.volunteermatch.org/"
+        },
+        "summary": "Browse the linked volunteer opportunities for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "title": "Volunteer opportunities"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "regionId": "keystone-colorado",
+    "schemaVersion": 1
   }
 }
