@@ -1,0 +1,6 @@
+{
+  "id": "richmond", "name": "Richmond, Virginia",
+  "boundary": { "source": "explicit", "geometry": { "type": "Polygon", "coordinates": [[[-77.600,37.430],[-77.600,37.640],[-77.300,37.640],[-77.300,37.430],[-77.600,37.430]]] } },
+  "osm": { "pbfUrl": "https://download.geofabrik.de/north-america/us/virginia-latest.osm.pbf" },
+  "imports": { "poi": "data/richmond-poi.json", "buildTimePoiSource": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\richmond\\pois.json", "producerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\richmond\\producer-manifest.json", "producerCategories": ["coffee", "nature", "water", "community", "art", "wildlife"], "buckets": null, "supplemental": [] }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "philadelphia",
+  "name": "Philadelphia, Pennsylvania",
+  "boundary": { "source": "explicit", "geometry": { "type": "Polygon", "coordinates": [[[-75.280,39.865],[-75.280,40.137],[-74.955,40.137],[-74.955,39.865],[-75.280,39.865]]] } },
+  "osm": { "pbfUrl": "https://download.geofabrik.de/north-america/us/pennsylvania-latest.osm.pbf" },
+  "imports": {
+    "poi": "data/philadelphia-poi.json",
+    "buildTimePoiSource": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\philadelphia\\pois.json",
+    "producerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\philadelphia\\producer-manifest.json",
+    "producerCategories": ["coffee", "pantry", "nature", "water", "community", "art", "wildlife"],
+    "civicReleaseRoot": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\philadelphia\\civic",
+    "civicProducerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\philadelphia\\producer-manifest.json",
+    "buckets": null,
+    "supplemental": []
+  }
+}

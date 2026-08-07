@@ -36,7 +36,11 @@ Stop walk → walk record in IndexedDB → profile update → archive refresh
 
 ## Optional online flow
 
-`supabase-config.js` exposes a public URL/key config → `online.setupOnline()` creates a Supabase client → sign-in/session/profile functions run. Only aggregate profile fields are designed to sync; walks, GPS traces, notes, and images stay local.
+`supabase-config.js` exposes a public URL/key config → `online.setupOnline()` creates a Supabase client → sign-in/session/profile functions run. Only aggregate profile fields are designed to sync; walks, GPS traces, notes, and images stay local. Civic participation logging (`voted`, `attended_meeting`, `volunteered`) is stored only in this device's IndexedDB. These records never sync to Supabase—even anonymized—are never exported or analyzed, and are never disclosed to cohorts or organizers. Supabase holds only a cohort's explicit issue priorities and cohort-level responses to organizer requests; it has no individual participation mapping.
+
+For cohort pilots, a person selects a curated neighborhood-list entry or supplies a self-described label. The app must never infer or update that choice from GPS, routes, observations, map interactions, or downloaded region data.
+
+A pilot may instead let a person create a self-described neighborhood label through `create_member_neighborhood(name, region_id)`. That creates a private, member-defined label; it is not an address, map pin, or inferred location. The returned ID is then passed to `create_cohort(...)`. A cohort may separately opt into organizer discovery.
 
 ## Backup flow
 

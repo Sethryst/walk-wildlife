@@ -1,0 +1,42 @@
+{
+  "id": "keystone-colorado",
+  "name": "Keystone & Summit County, Colorado",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -106.15,
+            39.4
+          ],
+          [
+            -106.15,
+            39.76
+          ],
+          [
+            -105.7,
+            39.76
+          ],
+          [
+            -105.7,
+            39.4
+          ],
+          [
+            -106.15,
+            39.4
+          ]
+        ]
+      ]
+    }
+  },
+  "osm": {
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/colorado-latest.osm.pbf"
+  },
+  "imports": {
+    "poi": "keystone-colorado-poi.json",
+    "buckets": null,
+    "supplemental": []
+  }
+}

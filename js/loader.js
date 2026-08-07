@@ -9,13 +9,20 @@ import { initEvents } from './events.js';
 import { renderArchive } from './archive.js';
 import { setupOnline, openOnline } from './online.js';
 import { initExplore } from './explore.js';
-import { chooseClosestCityIfPermitted, startDiscoveryHeadline } from './discovery.js';
+import { nearestCityFromCurrentLocation, startDiscoveryHeadline } from './discovery.js';
 import { normalizedEntitlements } from './entitlements.js';
 
 export async function init() {
   try {
     await db.open();
     await loadLocalState();
+    const closest = await nearestCityFromCurrentLocation();
+    if (closest) {
+      state.activeCity = closest.id;
+      state.settings.activeCity = closest.id;
+      state.currentPosition = closest.point;
+      await db.put('settings', state.settings);
+    }
     await loadAllCityData();
   } catch (error) {
     console.error(error);
@@ -34,7 +41,6 @@ export async function init() {
 
   await refreshCityMap(false);
   startDiscoveryHeadline();
-  void chooseClosestCityIfPermitted();
   await renderArchive();
   if (!state.settings.onboardingCompleted) {
     setTimeout(() => openSheet('onboardingSheet'), 250);
@@ -55,6 +61,9 @@ export async function init() {
     navigator.serviceWorker.register('./service-worker.js').catch(() => {});
   }
 }
+
+// Kept local to boot so an older cached discovery module cannot prevent the
+// whole application from starting during a service-worker rollout.
 export async function createMigratedProfile() {
   const [walks, observations, moments] = await Promise.all([db.all('walks'), db.all('observations'), db.all('moments')]);
   const profile = normalizeProfile({

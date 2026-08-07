@@ -1,0 +1,58 @@
+{
+  "id": "philadelphia",
+  "name": "Philadelphia, Pennsylvania",
+  "version": 1,
+  "generatedAt": "2026-08-06T11:40:26.366Z",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -75.28,
+            39.865
+          ],
+          [
+            -75.28,
+            40.137
+          ],
+          [
+            -74.955,
+            40.137
+          ],
+          [
+            -74.955,
+            39.865
+          ],
+          [
+            -75.28,
+            39.865
+          ]
+        ]
+      ]
+    },
+    "bbox": {
+      "west": -75.28,
+      "south": 39.865,
+      "east": -74.955,
+      "north": 40.137
+    }
+  },
+  "source": {
+    "provider": "OpenStreetMap",
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/pennsylvania-latest.osm.pbf"
+  },
+  "artifacts": {
+    "pmtiles": "philadelphia.pmtiles",
+    "poi": "philadelphia-poi.json",
+    "buckets": "philadelphia-buckets.json",
+    "supplemental": [
+      "philadelphia-boundary.geojson",
+      "civic/index.json"
+    ]
+  },
+  "stats": {
+    "poiCount": 1689
+  }
+}

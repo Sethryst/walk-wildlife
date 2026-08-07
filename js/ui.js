@@ -4,6 +4,7 @@ import { el, escapeHtml, formatDistance, formatDuration, shortDate } from './uti
 import { renderArchive } from './archive.js';
 import { renderProfile } from './profile.js';
 import { renderPoiTagFilters } from './poi.js';
+import { renderCivic } from './civic.js';
 
 export function setArchiveFilter(filter = 'all') {
   state.archiveFilter = filter;
@@ -34,10 +35,14 @@ export function showView(view) {
   el('mapView').classList.toggle('hidden', view !== 'map');
   el('exploreView').classList.toggle('hidden', view !== 'explore');
   el('profileView').classList.toggle('hidden', view !== 'profile');
+  el('voteView').classList.toggle('hidden', view !== 'vote');
+  el('volunteerView').classList.toggle('hidden', view !== 'volunteer');
   document.querySelectorAll('.nav-item').forEach((item) => item.classList.toggle('active', item.dataset.view === view));
   if (view === 'profile') {
     renderProfile();
     renderArchive();
+  } else if (view === 'vote' || view === 'volunteer') {
+    renderCivic(view);
   } else if (view === 'map' && state.map) {
     state.map.invalidateSize();
     window.scrollTo({ top: 0, behavior: 'smooth' });

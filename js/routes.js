@@ -20,20 +20,6 @@ export const CURATED_ROUTES = [
     geometryStatus: 'needs_official_geometry', coordinates: []
   },
   {
-    id: 'dc-anacostia-riverwalk', city: 'dc', title: 'Anacostia Riverwalk Long Trail',
-    distanceMiles: 10.9, durationMinutes: 220, difficulty: 'Moderate',
-    description: 'A long river corridor from the Tidal Basin and Navy Yard toward Anacostia Park and Kenilworth.',
-    sourceName: 'DDOT Anacostia Riverwalk Trail', sourceUrl: 'https://ddot.dc.gov/page/anacostia-riverwalk-trail',
-    geometryStatus: 'needs_official_geometry', coordinates: []
-  },
-  {
-    id: 'dc-riverwalk-district-loop', city: 'dc', title: 'Riverwalk & Capitol Loop',
-    distanceMiles: 7.2, durationMinutes: 145, difficulty: 'Moderate',
-    description: 'A long downtown loop combining the Anacostia waterfront, Yards Park, Capitol views, and the Mall edge.',
-    sourceName: 'DDOT Anacostia Riverwalk Trail', sourceUrl: 'https://ddot.dc.gov/page/anacostia-riverwalk-trail',
-    geometryStatus: 'needs_official_geometry', coordinates: []
-  },
-  {
     id: 'dc-anacostia-riverwalk-south-capitol-section', city: 'dc', title: 'Anacostia Riverwalk: South Capitol section',
     distanceMiles: 0.6, durationMinutes: 12, difficulty: 'Easy', category: 'waterfront',
     description: 'A verified short section of the Anacostia Riverwalk Trail; suitable as a building block, not a claimed full-trail route.',
@@ -59,8 +45,8 @@ export function routeById(routeId) { return CURATED_ROUTES.find((route) => route
 export function renderCuratedRoutes() {
   const container = document.getElementById('curatedRoutesList');
   if (!container) return;
-  const routes = CURATED_ROUTES.filter((route) => route.city === state.activeCity);
-  container.innerHTML = routes.length ? routes.map((route) => { const audit = validateRoute(route); return `<article class="route-card ${audit.valid ? '' : 'route-card-pending'}"><div class="route-preview route-preview-${route.city}">↝</div><div><strong>${escapeHtml(route.title)}</strong><p>${route.distanceMiles} mi · about ${Math.round(route.durationMinutes / 60)} hr ${route.durationMinutes % 60 ? `${route.durationMinutes % 60} min` : ''}</p><span class="difficulty ${route.difficulty.toLowerCase()}">${escapeHtml(route.difficulty)}</span>${audit.valid ? '' : '<small class="route-audit-note">Official geometry review pending</small>'}</div>${audit.valid ? `<button class="primary-button" type="button" data-curated-route="${route.id}">View route</button>` : '<a class="text-button" href="' + escapeHtml(route.sourceUrl) + '" target="_blank" rel="noreferrer">Source</a>'}</article>`; }).join('') : '<div class="empty-state">Curated walks are being added for this city. Explore local places on the map in the meantime.</div>';
+  const routes = routesForCity(state.activeCity);
+  container.innerHTML = routes.length ? routes.map((route) => `<article class="route-card"><div class="route-preview route-preview-${route.city}">↝</div><div><strong>${escapeHtml(route.title)}</strong><p>${route.distanceMiles} mi · about ${Math.round(route.durationMinutes / 60)} hr ${route.durationMinutes % 60 ? `${route.durationMinutes % 60} min` : ''}</p><span class="difficulty ${route.difficulty.toLowerCase()}">${escapeHtml(route.difficulty)}</span><small class="route-audit-note">Curated walk · official geometry</small></div><button class="primary-button" type="button" data-curated-route="${route.id}">View route</button></article>`).join('') : '<div class="empty-state">Curated walks are being added for this city. Explore local places on the map in the meantime.</div>';
 }
 
 export function showCuratedRoute(routeId) {

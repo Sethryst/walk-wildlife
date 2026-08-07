@@ -7,13 +7,19 @@
   "devDependencies": {},
   "scripts": {
     "audit:imports": "node tools/audit-imports.mjs",
+    "verify:gremlin": "node tools/verify-gremlin-inventory.mjs",
     "audit:poi": "node tools/audit-poi-tags.mjs",
     "build:region": "node tools/region-build.mjs",
     "build:region:legacy": "node tools/build-region.mjs",
-    "build:regions": "npm run build:region norfolk && npm run build:region new-york-city && npm run build:region vienna",
-    "build:field-editions": "npm run build:regions",
+    "build:regions": "npm run build:region norfolk && npm run build:region new-york-city && npm run build:region philadelphia && npm run build:region richmond && npm run build:region washington-dc && npm run build:region keystone-colorado && npm run build:region prince-georges-county && npm run build:region wolf-trap-va && npm run build:region sedona-arizona && npm run build:region boise-meridian-idaho && npm run build:region vienna",
+    "build:field-editions": "node tools/field-edition-build.mjs meadowlark-gardens",
+    "build:field-edition": "node tools/field-edition-build.mjs",
+    "test:field-editions": "node tests/field-edition.test.mjs",
+    "test:seasonal-awareness": "node tests/seasonal-awareness.test.mjs",
+    "test:producer-poi-display": "node tests/producer-poi-display.test.mjs",
+    "test:regional-filters": "node tests/regional-poi-filtering.test.mjs",
     "test:regions": "node tests/boundary-resolver.test.mjs && node tests/region-runtime.test.mjs",
-    "test:region-packages": "node tests/region-package-output.test.mjs norfolk new-york-city"
+    "test:region-packages": "node tests/region-package-output.test.mjs norfolk new-york-city philadelphia richmond washington-dc keystone-colorado prince-georges-county wolf-trap-va"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,14 @@
+{
+  "id": "wolf-trap-va",
+  "name": "Wolf Trap, Virginia",
+  "boundary": { "source": "explicit", "geometry": { "type": "Polygon", "coordinates": [[[-77.285,38.920],[-77.285,38.955],[-77.240,38.955],[-77.240,38.920],[-77.285,38.920]]] } },
+  "osm": { "pbfUrl": "https://download.geofabrik.de/north-america/us/virginia-latest.osm.pbf" },
+  "imports": {
+    "poi": "data/wolf-trap-va-poi.json",
+    "buildTimePoiSource": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\wolf-trap-va\\pois.json",
+    "producerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\wolf-trap-va\\producer-manifest.json",
+    "producerCategories": ["event", "water", "wildlife"],
+    "buckets": null,
+    "supplemental": []
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "prince-georges-county",
+  "name": "Prince George's County, Maryland",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -77.15,
+            38.52
+          ],
+          [
+            -77.15,
+            39.18
+          ],
+          [
+            -76.68,
+            39.18
+          ],
+          [
+            -76.68,
+            38.52
+          ],
+          [
+            -77.15,
+            38.52
+          ]
+        ]
+      ]
+    }
+  },
+  "osm": {
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/maryland-latest.osm.pbf"
+  },
+  "imports": {
+    "poi": "prince-georges-county-poi.json",
+    "civicReleaseRoot": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\prince-georges-county-md\\civic",
+    "civicProducerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\prince-georges-county-md\\producer-manifest.json",
+    "buckets": null,
+    "supplemental": []
+  }
+}

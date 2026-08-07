@@ -3,6 +3,7 @@ import { el, escapeHtml } from './utils.js';
 import { poiTags } from './poi.js';
 import { renderCuratedRoutes } from './routes.js';
 import { generateTimeBasedPlan } from './planner.js';
+import { renderCivicEvents } from './civic.js';
 
 let activeTab = 'routes';
 
@@ -32,6 +33,7 @@ export function setExploreTab(tab) {
   ['routes', 'places', 'events'].forEach((name) => el(`explore${name[0].toUpperCase()}${name.slice(1)}`).classList.toggle('hidden', name !== tab));
   if (tab === 'places') renderExplorePlaces();
   if (tab === 'routes') renderCuratedRoutes();
+  if (tab === 'events') void renderCivicEvents();
 }
 
 export function renderExplorePlaces() {

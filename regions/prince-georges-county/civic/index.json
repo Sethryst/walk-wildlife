@@ -1,0 +1,53 @@
+{
+  "vote": {
+    "schemaVersion": 1,
+    "regionId": "prince-georges-county-md",
+    "generatedAt": "2026-08-06T20:49:40.650203Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "local"
+    },
+    "items": [
+      {
+        "id": "md-prince-georges-2026-general-election",
+        "title": "Maryland Gubernatorial General Election",
+        "date": "2026-11-03",
+        "type": "general_election",
+        "summary": "Maryland's general election includes state, federal, and local offices. Election-day polling places are open from 7:00 AM to 8:00 PM.",
+        "officialUrl": "https://www.elections.maryland.gov/elections/2026/index.html",
+        "expiresAt": "2026-11-04T05:00:00Z"
+      }
+    ]
+  },
+  "volunteer": {
+    "schemaVersion": 1,
+    "regionId": "prince-georges-county-md",
+    "generatedAt": "2026-08-06T20:49:40.650203Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "local"
+    },
+    "items": []
+  },
+  "organizers": {
+    "schemaVersion": 1,
+    "regionId": "prince-georges-county-md",
+    "generatedAt": "2026-08-06T20:49:40.650203Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "local"
+    },
+    "items": [
+      {
+        "id": "mncppc-pg-parks",
+        "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+        "officialUrl": "https://www.pgparks.com/get-involved/volunteer-opportunities"
+      },
+      {
+        "id": "pgcounty-office-community-relations",
+        "name": "Prince George's County Office of Community Relations",
+        "officialUrl": "https://www.princegeorgescountymd.gov/departments-offices/community-relations/ocr-elevate-360-volunteer-program"
+      }
+    ]
+  }
+}

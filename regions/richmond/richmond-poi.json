@@ -1,0 +1,3392 @@
+{
+  "pois": [
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:10162688920",
+      "lat": 37.5343995,
+      "lng": -77.4441685,
+      "name": "The Mill",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "10162688920",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:10966377707",
+      "lat": 37.5468707,
+      "lng": -77.4542206,
+      "name": "Soft",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "10966377707",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:10969244925",
+      "lat": 37.6179009,
+      "lng": -77.4961284,
+      "name": "See Richmond By Rail",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "10969244925",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:11082221505",
+      "lat": 37.5366896,
+      "lng": -77.4495481,
+      "name": "Park Guardian II",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "11082221505",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:11089269438",
+      "lat": 37.5417133,
+      "lng": -77.4494391,
+      "name": "Park Guardian I",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "11089269438",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:11229751280",
+      "lat": 37.5611503,
+      "lng": -77.4668121,
+      "name": "Cosmic Perception",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "11229751280",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1197168808",
+      "lat": 37.5394561,
+      "lng": -77.4344725,
+      "name": "Virginia Women's Monument",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1197168808",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13585970444",
+      "lat": 37.5506562,
+      "lng": -77.4519922,
+      "name": "Crash Dummies",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13585970444",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13585979417",
+      "lat": 37.5510627,
+      "lng": -77.453637,
+      "name": "Moonshine",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13585979417",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13585988894",
+      "lat": 37.5505028,
+      "lng": -77.4527317,
+      "name": "Plaza Art",
+      "review": {
+        "dedupGroupId": "dedup:e585a50965e8108e",
+        "flags": [
+          "duplicate_candidate"
+        ],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13585988894",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13585998968",
+      "lat": 37.5516008,
+      "lng": -77.4528069,
+      "name": "La Comunidad II",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13585998968",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13586024167",
+      "lat": 37.5516102,
+      "lng": -77.4483764,
+      "name": "Dan (Janus)",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13586024167",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13599643336",
+      "lat": 37.5575966,
+      "lng": -77.4625641,
+      "name": "A Pearl of Wisdom",
+      "review": {
+        "dedupGroupId": "dedup:1bbc14071750e276",
+        "flags": [
+          "duplicate_candidate"
+        ],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13599643336",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13646021692",
+      "lat": 37.5442748,
+      "lng": -77.4526098,
+      "name": "Icarus Fallen",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13646021692",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13658855185",
+      "lat": 37.5486283,
+      "lng": -77.4637094,
+      "name": "Silence Isn't Golden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13658855185",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13658880381",
+      "lat": 37.5604514,
+      "lng": -77.4760402,
+      "name": "The Roots of Richmond",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13658880381",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13658881408",
+      "lat": 37.5443521,
+      "lng": -77.4387386,
+      "name": "Together We Rise",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13658881408",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13658908095",
+      "lat": 37.5713961,
+      "lng": -77.4338032,
+      "name": "I Can Because I Said So",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13658908095",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13658908505",
+      "lat": 37.5717524,
+      "lng": -77.4356421,
+      "name": "Happy Children",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13658908505",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13658910260",
+      "lat": 37.5717588,
+      "lng": -77.4349737,
+      "name": "Brookland Park Blvd at Ninja Kombucha",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13658910260",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13658911353",
+      "lat": 37.5715408,
+      "lng": -77.4323922,
+      "name": "Hope",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13658911353",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13666091333",
+      "lat": 37.5482297,
+      "lng": -77.4708183,
+      "name": "Cardinal Points",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13666091333",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13682257168",
+      "lat": 37.5628946,
+      "lng": -77.466169,
+      "name": "Kugel",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13682257168",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13978497119",
+      "lat": 37.5368446,
+      "lng": -77.4367679,
+      "name": "Corporate Presence",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13978497119",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13978497121",
+      "lat": 37.5365941,
+      "lng": -77.4361061,
+      "name": "Boatman's Tower",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13978497121",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:13993023412",
+      "lat": 37.557734,
+      "lng": -77.4742845,
+      "name": "The War Horse",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13993023412",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1481952846",
+      "lat": 37.5443138,
+      "lng": -77.4527511,
+      "name": "Black and White Man Boxing",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1481952846",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1481952849",
+      "lat": 37.5484501,
+      "lng": -77.4492858,
+      "name": "Visual Symphony",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1481952849",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1481952850",
+      "lat": 37.5514699,
+      "lng": -77.4474949,
+      "name": "Peppermint Butler",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1481952850",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1481969851",
+      "lat": 37.5481098,
+      "lng": -77.4612883,
+      "name": "Ships in the Night",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1481969851",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1481981173",
+      "lat": 37.5669865,
+      "lng": -77.4763855,
+      "name": "Say Their Names",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1481981173",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1481983457",
+      "lat": 37.5669912,
+      "lng": -77.4756241,
+      "name": "Bernie",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1481983457",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1481985613",
+      "lat": 37.5396712,
+      "lng": -77.4238551,
+      "name": "GRIZZLY",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1481985613",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1481986496",
+      "lat": 37.5483959,
+      "lng": -77.4603025,
+      "name": "Within",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1481986496",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1482075379",
+      "lat": 37.5479418,
+      "lng": -77.4604858,
+      "name": "Happy Puppy (FETCH-A-CURE)",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1482075379",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1482254159",
+      "lat": 37.5325865,
+      "lng": -77.4252257,
+      "name": "I Can't Breathe",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1482254159",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1482260262",
+      "lat": 37.5314459,
+      "lng": -77.4188345,
+      "name": "Uneeda Biscuit ghost sign",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1482260262",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1482292129",
+      "lat": 37.5606162,
+      "lng": -77.4755388,
+      "name": "Girl with phone",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1482292129",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1482311468",
+      "lat": 37.5505869,
+      "lng": -77.4533268,
+      "name": "Chris",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1482311468",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1482324290",
+      "lat": 37.552786,
+      "lng": -77.4773225,
+      "name": "Bricks",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1482324290",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1482362873",
+      "lat": 37.5418389,
+      "lng": -77.4135065,
+      "name": "Think",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1482362873",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1483080205",
+      "lat": 37.5505082,
+      "lng": -77.4527265,
+      "name": "Plaza Art",
+      "review": {
+        "dedupGroupId": "dedup:e585a50965e8108e",
+        "flags": [
+          "duplicate_candidate"
+        ],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1483080205",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1483082737",
+      "lat": 37.5576006,
+      "lng": -77.4625604,
+      "name": "A Pearl of Wisdom",
+      "review": {
+        "dedupGroupId": "dedup:1bbc14071750e276",
+        "flags": [
+          "duplicate_candidate"
+        ],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1483082737",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1483876387",
+      "lat": 37.5636564,
+      "lng": -77.4547816,
+      "name": "Sports Are Life",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1483876387",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1483876388",
+      "lat": 37.5505327,
+      "lng": -77.4692514,
+      "name": "Michael Ramey Tribute",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1483876388",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1483877196",
+      "lat": 37.5693311,
+      "lng": -77.4547611,
+      "name": "Welcoming Your Teddy Bears and Other Contributions",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1483877196",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1484770948",
+      "lat": 37.5345433,
+      "lng": -77.4272478,
+      "name": "Fruits and Veggies",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1484770948",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1484771673",
+      "lat": 37.548799,
+      "lng": -77.4644189,
+      "name": "Brown Ballerinas for Change",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1484771673",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1484771674",
+      "lat": 37.6146378,
+      "lng": -77.4697814,
+      "name": "Lakeside",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1484771674",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1487363788",
+      "lat": 37.5472295,
+      "lng": -77.4638143,
+      "name": "Nate's Bagels",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1487363788",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:1489939983",
+      "lat": 37.5455007,
+      "lng": -77.4403961,
+      "name": "Jackson Ward Legacies",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1489939983",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:3731204224",
+      "lat": 37.5564755,
+      "lng": -77.4753511,
+      "name": "La Riviere",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "3731204224",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:3731204225",
+      "lat": 37.5566575,
+      "lng": -77.4754063,
+      "name": "Reclining Figure",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "3731204225",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:3731204226",
+      "lat": 37.5567234,
+      "lng": -77.4758896,
+      "name": "Untitled Totem",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "3731204226",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:3732461331",
+      "lat": 37.5607589,
+      "lng": -77.4661544,
+      "name": "Grand Kugel",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "3732461331",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:3741870436",
+      "lat": 37.5367001,
+      "lng": -77.4341453,
+      "name": "Future",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "3741870436",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:4261144427",
+      "lat": 37.5389419,
+      "lng": -77.4326162,
+      "name": "Civil Rights Memorial",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "4261144427",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:4261144428",
+      "lat": 37.5391046,
+      "lng": -77.4328712,
+      "name": "Dr. Hunter Holmes McGuire",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "4261144428",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "historicalContext": {
+        "inception": "1874-00-00",
+        "sourceUrl": "https://www.wikidata.org/wiki/Q136388584",
+        "wikidataId": "Q136388584"
+      },
+      "id": "art:osm-walk-art:4261144429",
+      "lat": 37.5392577,
+      "lng": -77.4331302,
+      "name": "Thomas J. \"Stonewall\" Jackson",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "4261144429",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:4261144430",
+      "lat": 37.5394207,
+      "lng": -77.4333828,
+      "name": "Governor William Smith",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "4261144430",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:4590239369",
+      "lat": 37.5345524,
+      "lng": -77.4429652,
+      "name": "The Headman",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "4590239369",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:4590239374",
+      "lat": 37.5345679,
+      "lng": -77.4432961,
+      "name": "Emancipation and Freedom Monument",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "4590239374",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "historicalContext": {
+        "inception": "1996-00-00",
+        "sourceUrl": "https://www.wikidata.org/wiki/Q97166627",
+        "wikidataId": "Q97166627"
+      },
+      "id": "art:osm-walk-art:5209437090",
+      "lat": 37.5651676,
+      "lng": -77.4790606,
+      "name": "Arthur Ashe Statue",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "5209437090",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:5417333240",
+      "lat": 37.5575792,
+      "lng": -77.4531841,
+      "name": "Maggie Lena Walker",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "5417333240",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:5420002328",
+      "lat": 37.540013,
+      "lng": -77.4343066,
+      "name": "Edgar Allen Poe",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "5420002328",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:5775290150",
+      "lat": 37.5344228,
+      "lng": -77.473865,
+      "name": "Dooley sundial",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "5775290150",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:6375121336",
+      "lat": 37.5357797,
+      "lng": -77.4214398,
+      "name": "Mr. Smedley Statue",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "6375121336",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:6568119689",
+      "lat": 37.5455061,
+      "lng": -77.4408004,
+      "name": "Change the Narrative",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "6568119689",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "historicalContext": {
+        "heritageDesignationId": "Q19558910",
+        "inception": "1849-00-00",
+        "sourceUrl": "https://www.wikidata.org/wiki/Q7934655",
+        "wikidataId": "Q7934655"
+      },
+      "id": "art:osm-walk-art:658621480",
+      "lat": 37.5395159,
+      "lng": -77.4339714,
+      "name": "Virginia Washington Monument",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "658621480",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:7095866277",
+      "lat": 37.5568281,
+      "lng": -77.4749972,
+      "name": "Little Lady of the Sea",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7095866277",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:7095866278",
+      "lat": 37.5566867,
+      "lng": -77.4752574,
+      "name": "Red Reeds",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7095866278",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:7095866279",
+      "lat": 37.5574399,
+      "lng": -77.4751695,
+      "name": "Oracle",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7095866279",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "historicalContext": {
+        "inception": "2016-00-00",
+        "sourceUrl": "https://www.wikidata.org/wiki/Q127820194",
+        "wikidataId": "Q127820194"
+      },
+      "id": "art:osm-walk-art:7095866280",
+      "lat": 37.5569758,
+      "lng": -77.4753224,
+      "name": "Chloe",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7095866280",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:7095866281",
+      "lat": 37.5571295,
+      "lng": -77.4748282,
+      "name": "Man and Vegetation",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7095866281",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "historicalContext": {
+        "inception": "2004-00-00",
+        "sourceUrl": "https://www.wikidata.org/wiki/Q127833546",
+        "wikidataId": "Q127833546"
+      },
+      "id": "art:osm-walk-art:7095866282",
+      "lat": 37.5569392,
+      "lng": -77.4749362,
+      "name": "Neptune Virginia Beach Maquette",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7095866282",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:7095879702",
+      "lat": 37.5565957,
+      "lng": -77.4739861,
+      "name": "Rumors of War",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7095879702",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:761043823",
+      "lat": 37.47461,
+      "lng": -77.4301385,
+      "name": "The Giant Cigarette",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "761043823",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:7678867202",
+      "lat": 37.5462573,
+      "lng": -77.4425529,
+      "name": "Maggie Lena Walker Statue",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7678867202",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "art",
+      "id": "art:osm-walk-art:7682158122",
+      "lat": 37.5370514,
+      "lng": -77.4370716,
+      "name": "Wind's Up",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7682158122",
+          "name": "OpenStreetMap public art",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "public_art"
+    },
+    {
+      "category": "community",
+      "historicalContext": {
+        "inception": "1823-01-01",
+        "sourceUrl": "https://www.wikidata.org/wiki/Q6542699",
+        "wikidataId": "Q6542699"
+      },
+      "hours": "Mo-Sa 08:30-17:00",
+      "id": "community:osm-walk-community:13460941957",
+      "lat": 37.5415411,
+      "lng": -77.4338944,
+      "name": "Library of Virginia",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13460941957",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "hours": "Mon-Fri 9:30am-12pm 1-4:30pm",
+      "id": "community:osm-walk-community:13596932140",
+      "lat": 37.5771179,
+      "lng": -77.537931,
+      "name": "Virginia Baptist Historical Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13596932140",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:224510147",
+      "lat": 37.5412494,
+      "lng": -77.4289177,
+      "name": "Tompkins-McCaw Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "224510147",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:235996972",
+      "lat": 37.4534063,
+      "lng": -77.5599967,
+      "name": "LaPrade Branch Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "235996972",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "hours": "Mo 10:00-20:00; Tu 10:00-18:00; We 10:00-20:00; Th-Fr 10:00-18:00; Sa 10:00-17:00; Su off",
+      "id": "community:osm-walk-community:236144762",
+      "lat": 37.5543777,
+      "lng": -77.4796539,
+      "name": "Richmond Public Library - Belmont Branch",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "236144762",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:253247582",
+      "lat": 37.4377162,
+      "lng": -77.4746588,
+      "name": "Meadowdale Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "253247582",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:253544775",
+      "lat": 37.559949,
+      "lng": -77.4518358,
+      "name": "L Douglas Wilder Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "253544775",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:264346071",
+      "lat": 37.5771517,
+      "lng": -77.5385112,
+      "name": "Boatwright Memorial Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "264346071",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:264652121",
+      "lat": 37.4828433,
+      "lng": -77.4791928,
+      "name": "Broad Rock Branch Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "264652121",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "hours": "Mo,We,Fr 09:00-18:00; Tu,Th 09:00-20:00; Sa 09:00-17:00; PH off",
+      "id": "community:osm-walk-community:264659459",
+      "lat": 37.5397543,
+      "lng": -77.4114201,
+      "name": "East End Branch Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "264659459",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:264659460",
+      "lat": 37.597095,
+      "lng": -77.4541141,
+      "name": "Ginter Park Branch Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "264659460",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:264659465",
+      "lat": 37.5195477,
+      "lng": -77.4457041,
+      "name": "Hull Street Branch Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "264659465",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "historicalContext": {
+        "inception": "1924-00-00",
+        "sourceUrl": "https://www.wikidata.org/wiki/Q23137558",
+        "wikidataId": "Q23137558"
+      },
+      "hours": "Mo-Th 09:00-20:00; Fr 09:00-18:00; Sa 09:00-17:00; Su 13:00-17:00",
+      "id": "community:osm-walk-community:264659468",
+      "lat": 37.5427782,
+      "lng": -77.4424694,
+      "name": "Richmond Public Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "264659468",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "hours": "Mo,We 10:00-20:00; Tu,Th,Fr 10:00-18:00; Sa 10:00-17:00; PH off",
+      "id": "community:osm-walk-community:264659472",
+      "lat": 37.5701479,
+      "lng": -77.4325484,
+      "name": "North Avenue Branch Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "264659472",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "hours": "Mo-Th 09:00-21:00; Fr-Sa 09:00-18:00; Su off",
+      "id": "community:osm-walk-community:300879513",
+      "lat": 37.6101036,
+      "lng": -77.5668008,
+      "name": "Tuckahoe Area Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "300879513",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:502776122",
+      "lat": 37.5782912,
+      "lng": -77.5203122,
+      "name": "Wilton Middle School Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "502776122",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "hours": "Mo-Th 09:00-21:00; Fr,Sa 09:00-18:00",
+      "id": "community:osm-walk-community:549068092",
+      "lat": 37.4589977,
+      "lng": -77.3804194,
+      "name": "Varina Area Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "549068092",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:561115757",
+      "lat": 37.5902391,
+      "lng": -77.4965399,
+      "name": "Libbie Mill Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "561115757",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "hours": "Mo-Fr 10:00-17:00; PH off",
+      "id": "community:osm-walk-community:5695245518",
+      "lat": 37.5563175,
+      "lng": -77.47458,
+      "name": "Margaret R. and Robert M. Freeman Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "5695245518",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "historicalContext": {
+        "inception": "1970-00-00",
+        "sourceUrl": "https://www.wikidata.org/wiki/Q67179857",
+        "wikidataId": "Q67179857"
+      },
+      "id": "community:osm-walk-community:60826456",
+      "lat": 37.5477933,
+      "lng": -77.4535609,
+      "name": "James Branch Cabell Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "60826456",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:7093722586",
+      "lat": 37.5573065,
+      "lng": -77.4738343,
+      "name": "Helen Wapole Brewer Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7093722586",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:718142042",
+      "lat": 37.5313135,
+      "lng": -77.5656778,
+      "name": "Bon Air Branch Chesterfield County Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "718142042",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:745232946",
+      "lat": 37.5219884,
+      "lng": -77.488513,
+      "name": "Richmond Public Library - Westover Hills Branch",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "745232946",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:749273781",
+      "lat": 37.5776171,
+      "lng": -77.5112071,
+      "name": "Richmond Public Library - West End Branch",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "749273781",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "id": "community:osm-walk-community:751094003",
+      "lat": 37.5788981,
+      "lng": -77.4471343,
+      "name": "William Smith Morton Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "751094003",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "community",
+      "hours": "Mo-Th 09:00-21:00; Fr-Sa 09:00-18:00; Su 13:00-17:00; PH closed",
+      "id": "community:osm-walk-community:790777395",
+      "lat": 37.5653047,
+      "lng": -77.3767677,
+      "name": "Fairfield Library",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "790777395",
+          "name": "OpenStreetMap libraries",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1027071396",
+      "lat": 37.51011,
+      "lng": -77.4928943,
+      "name": "Sankofa Community Orchard",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1027071396",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1037193429",
+      "lat": 37.5149497,
+      "lng": -77.4837588,
+      "name": "Owl Orchard Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1037193429",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1037196944",
+      "lat": 37.515264,
+      "lng": -77.4678158,
+      "name": "McDonough Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1037196944",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1066468266",
+      "lat": 37.5165773,
+      "lng": -77.4589345,
+      "name": "Fonticello Food Forest",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1066468266",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1123139284",
+      "lat": 37.5630062,
+      "lng": -77.4844526,
+      "name": "Humphrey Calder Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1123139284",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1132020640",
+      "lat": 37.5233012,
+      "lng": -77.4482342,
+      "name": "Alice Fitz Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1132020640",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1144831266",
+      "lat": 37.5139494,
+      "lng": -77.3979506,
+      "name": "Garber Street Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1144831266",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1144831267",
+      "lat": 37.5157251,
+      "lng": -77.4063486,
+      "name": "Powhatan Hill Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1144831267",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1204969844",
+      "lat": 37.5624694,
+      "lng": -77.4305686,
+      "name": "Barton Mansion Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1204969844",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1210324296",
+      "lat": 37.5543755,
+      "lng": -77.4377386,
+      "name": "Charles S. Gilpin Community Farm",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1210324296",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1210472679",
+      "lat": 37.5445962,
+      "lng": -77.4017623,
+      "name": "Roots of Woodville Neighborhood Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1210472679",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1210570716",
+      "lat": 37.5062594,
+      "lng": -77.4631983,
+      "name": "Broad Rock Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1210570716",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1210570717",
+      "lat": 37.5012499,
+      "lng": -77.4703551,
+      "name": "Stockton Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1210570717",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1210574642",
+      "lat": 37.5444025,
+      "lng": -77.4292282,
+      "name": "MCV Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1210574642",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1210574643",
+      "lat": 37.5441799,
+      "lng": -77.457444,
+      "name": "Monroe Park Learning Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1210574643",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1215070801",
+      "lat": 37.532009,
+      "lng": -77.4688145,
+      "name": "Maymont Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1215070801",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1228546971",
+      "lat": 37.5236203,
+      "lng": -77.411571,
+      "name": "Chimborazo Native Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1228546971",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1242677353",
+      "lat": 37.5065016,
+      "lng": -77.4439244,
+      "name": "Oak Grove Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1242677353",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1266567346",
+      "lat": 37.554888,
+      "lng": -77.4722858,
+      "name": "Rick's Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1266567346",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1300716641",
+      "lat": 37.5616842,
+      "lng": -77.4814489,
+      "name": "Albert Hill Native Plant Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1300716641",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:13040060833",
+      "lat": 37.5508885,
+      "lng": -77.4399752,
+      "name": "HJWA Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13040060833",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:13040159994",
+      "lat": 37.5441291,
+      "lng": -77.4625331,
+      "name": "Randolph Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13040159994",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1318972448",
+      "lat": 37.5352459,
+      "lng": -77.4172527,
+      "name": "Jefferson Avenue Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1318972448",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1378116840",
+      "lat": 37.5734193,
+      "lng": -77.5368658,
+      "name": "Abby's Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1378116840",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1431231469",
+      "lat": 37.5694666,
+      "lng": -77.4291695,
+      "name": "Brookland Park Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1431231469",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1482016840",
+      "lat": 37.5739971,
+      "lng": -77.5407635,
+      "name": "Westhampton College Deanery Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1482016840",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:1510538026",
+      "lat": 37.5117364,
+      "lng": -77.4758972,
+      "name": "Swansboro Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1510538026",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:18754353",
+      "lat": 37.5488663,
+      "lng": -77.4405684,
+      "name": "Fuchsia Freedom Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "18754353",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:236150754",
+      "lat": 37.5337064,
+      "lng": -77.4766266,
+      "name": "Italian Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "236150754",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:275860177",
+      "lat": 37.6215823,
+      "lng": -77.4727805,
+      "name": "Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "275860177",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:275860178",
+      "lat": 37.6212592,
+      "lng": -77.4741175,
+      "name": "Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "275860178",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247594",
+      "lat": 37.6216502,
+      "lng": -77.4707525,
+      "name": "Rose Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247594",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247716",
+      "lat": 37.6223145,
+      "lng": -77.4699974,
+      "name": "Children's Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247716",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247798",
+      "lat": 37.6205497,
+      "lng": -77.4712064,
+      "name": "Four Seasons Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247798",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247799",
+      "lat": 37.6207571,
+      "lng": -77.4712249,
+      "name": "Healing Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247799",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247800",
+      "lat": 37.6209328,
+      "lng": -77.4715052,
+      "name": "Sunken Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247800",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247801",
+      "lat": 37.6210771,
+      "lng": -77.4708725,
+      "name": "Asian Valley",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247801",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247802",
+      "lat": 37.6213438,
+      "lng": -77.4700056,
+      "name": "West Island Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247802",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247803",
+      "lat": 37.6211985,
+      "lng": -77.4694687,
+      "name": "Flagler Perennial Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247803",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247821",
+      "lat": 37.6222264,
+      "lng": -77.469365,
+      "name": "Grace Arents Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247821",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247822",
+      "lat": 37.6218546,
+      "lng": -77.4682493,
+      "name": "Lace House Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247822",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247823",
+      "lat": 37.6229027,
+      "lng": -77.4718511,
+      "name": "Lucy Payne Minor Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247823",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247824",
+      "lat": 37.6224958,
+      "lng": -77.4716643,
+      "name": "Margaret Streb Conifer Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247824",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:2805247825",
+      "lat": 37.6213825,
+      "lng": -77.4711553,
+      "name": "Vienna Cobb Anderson Meadow",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2805247825",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:298032396",
+      "lat": 37.5325745,
+      "lng": -77.4762765,
+      "name": "Japanese Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "298032396",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "historicalContext": {
+        "inception": "1984-00-00",
+        "sourceUrl": "https://www.wikidata.org/wiki/Q9010902",
+        "wikidataId": "Q9010902"
+      },
+      "id": "nature:osm-walk-gardens:346339011",
+      "lat": 37.6206291,
+      "lng": -77.4718127,
+      "name": "Lewis Ginter Botanical Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "346339011",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:5411281241",
+      "lat": 37.5911517,
+      "lng": -77.4971482,
+      "name": "Lake View Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "5411281241",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:562040599",
+      "lat": 37.5450021,
+      "lng": -77.4747006,
+      "name": "Trees of Hope",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "562040599",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:601385964",
+      "lat": 37.5341274,
+      "lng": -77.4753481,
+      "name": "Herb Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "601385964",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:603129634",
+      "lat": 37.5467694,
+      "lng": -77.4699787,
+      "name": "Byrd Park Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "603129634",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:697524178",
+      "lat": 37.6316523,
+      "lng": -77.4620039,
+      "name": "Learning & Therapy Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "697524178",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:700377908",
+      "lat": 37.53665,
+      "lng": -77.4794395,
+      "name": "Butterfly Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "700377908",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:700377915",
+      "lat": 37.5335273,
+      "lng": -77.4805063,
+      "name": "Fragrance Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "700377915",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:822722113",
+      "lat": 37.5277671,
+      "lng": -77.4142335,
+      "name": "Chimborazo Playground Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "822722113",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "nature",
+      "id": "nature:osm-walk-gardens:823714647",
+      "lat": 37.5482198,
+      "lng": -77.4699423,
+      "name": "Uptown Community Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "823714647",
+          "name": "OpenStreetMap public gardens",
+          "url": "https://overpass-api.de/api/interpreter"
+        }
+      ],
+      "type": "garden"
+    },
+    {
+      "category": "wildlife",
+      "id": "wildlife:ebird-walk-recent:L1323723",
+      "lat": 37.5367508,
+      "lng": -77.477957,
+      "name": "Maymont Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "seasonalSignals": [
+        {
+          "expiresAt": "2026-08-13T06:36:47.207857Z",
+          "observedAt": "2026-08-04 09:35",
+          "species": [
+            "House Sparrow",
+            "Ruby-throated Hummingbird"
+          ],
+          "type": "recent_bird_observations"
+        }
+      ],
+      "source": [
+        {
+          "id": "L1323723",
+          "name": "eBird recent hotspot observations",
+          "url": "https://api.ebird.org/v2/data/obs/geo/recent"
+        }
+      ],
+      "type": "birding_hotspot"
+    },
+    {
+      "category": "wildlife",
+      "id": "wildlife:ebird-walk-recent:L303334",
+      "lat": 37.594345,
+      "lng": -77.4712497,
+      "name": "Bryan Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "seasonalSignals": [
+        {
+          "expiresAt": "2026-08-13T06:36:47.207881Z",
+          "observedAt": "2026-08-02 09:05",
+          "species": [
+            "Barn Swallow",
+            "Northern Flicker",
+            "Northern House Wren",
+            "Northern Yellow Warbler"
+          ],
+          "type": "recent_bird_observations"
+        }
+      ],
+      "source": [
+        {
+          "id": "L303334",
+          "name": "eBird recent hotspot observations",
+          "url": "https://api.ebird.org/v2/data/obs/geo/recent"
+        }
+      ],
+      "type": "birding_hotspot"
+    },
+    {
+      "category": "wildlife",
+      "id": "wildlife:ebird-walk-recent:L525710",
+      "lat": 37.5466699,
+      "lng": -77.5098753,
+      "name": "James River Park--The Wetlands",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "seasonalSignals": [
+        {
+          "expiresAt": "2026-08-13T06:36:47.207886Z",
+          "observedAt": "2026-07-30 20:07",
+          "species": [
+            "Great Horned Owl"
+          ],
+          "type": "recent_bird_observations"
+        }
+      ],
+      "source": [
+        {
+          "id": "L525710",
+          "name": "eBird recent hotspot observations",
+          "url": "https://api.ebird.org/v2/data/obs/geo/recent"
+        }
+      ],
+      "type": "birding_hotspot"
+    },
+    {
+      "category": "wildlife",
+      "id": "wildlife:ebird-walk-recent:L5793235",
+      "lat": 37.535165,
+      "lng": -77.438306,
+      "name": "Riverfront Plaza",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "seasonalSignals": [
+        {
+          "expiresAt": "2026-08-13T06:36:47.207803Z",
+          "observedAt": "2026-08-05 08:50",
+          "species": [
+            "Peregrine Falcon"
+          ],
+          "type": "recent_bird_observations"
+        }
+      ],
+      "source": [
+        {
+          "id": "L5793235",
+          "name": "eBird recent hotspot observations",
+          "url": "https://api.ebird.org/v2/data/obs/geo/recent"
+        }
+      ],
+      "type": "birding_hotspot"
+    }
+  ]
+}

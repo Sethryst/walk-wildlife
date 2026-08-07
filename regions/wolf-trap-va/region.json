@@ -1,0 +1,42 @@
+{
+  "id": "wolf-trap-va",
+  "name": "Wolf Trap, Virginia",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -77.285,
+            38.92
+          ],
+          [
+            -77.285,
+            38.955
+          ],
+          [
+            -77.24,
+            38.955
+          ],
+          [
+            -77.24,
+            38.92
+          ],
+          [
+            -77.285,
+            38.92
+          ]
+        ]
+      ]
+    }
+  },
+  "osm": {
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/virginia-latest.osm.pbf"
+  },
+  "imports": {
+    "poi": "wolf-trap-va-poi.json",
+    "buckets": null,
+    "supplemental": []
+  }
+}

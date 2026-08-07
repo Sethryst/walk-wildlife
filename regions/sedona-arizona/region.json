@@ -1,0 +1,46 @@
+{
+  "id": "sedona-arizona",
+  "name": "Sedona, Arizona",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -111.903,
+            34.774
+          ],
+          [
+            -111.903,
+            34.968
+          ],
+          [
+            -111.678,
+            34.968
+          ],
+          [
+            -111.678,
+            34.774
+          ],
+          [
+            -111.903,
+            34.774
+          ]
+        ]
+      ]
+    }
+  },
+  "osm": {
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/arizona-latest.osm.pbf"
+  },
+  "imports": {
+    "poi": "sedona-arizona-poi.json",
+    "civicReleaseRoot": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\sedona-arizona\\civic",
+    "civicProducerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\sedona-arizona\\producer-manifest.json",
+    "weatherReleaseFile": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\sedona-arizona\\supplemental\\weather.json",
+    "weatherProducerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\sedona-arizona\\producer-manifest.json",
+    "buckets": null,
+    "supplemental": []
+  }
+}

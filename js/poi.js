@@ -7,11 +7,20 @@ import db from './storage.js';
 
 export function renderPoiTagFilters() {
   const pois = state.cityPois[state.activeCity] || [];
-  const availableTags = new Set(pois.flatMap((poi) => poiTags(poi)));
-  el('poiTagFilters').innerHTML = POI_TAGS
-    .filter(([id]) => availableTags.has(id))
-    .map(([id, label]) => `<button type="button" class="poi-chip ${state.poiTags.has(id) ? 'active' : ''}" data-poi-tag="${id}">${label}</button>`)
+  const availableTags = availablePoiTags(pois);
+  const filters = el('poiTagFilters');
+  const status = el('poiFilterStatus');
+  if (!availableTags.length) {
+    filters.innerHTML = '';
+    status.textContent = 'No imported POI categories are available for this region yet.';
+    updateFiltersBadge();
+    return;
+  }
+  filters.innerHTML = availableTags
+    .map(([id, label]) => `<button type="button" class="poi-chip ${state.poiTags.has(id) ? 'active' : ''}" aria-pressed="${state.poiTags.has(id)}" data-poi-tag="${id}">${label}</button>`)
     .join('');
+  const visible = pois.filter(isVisiblePoi).filter(poiMatchesFilters);
+  status.textContent = visible.length ? `${visible.length} imported place${visible.length === 1 ? '' : 's'} match${state.poiTags.size ? ' these filters' : ''}.` : 'No imported places match these filters. Change or clear a category to see other places.';
   updateFiltersBadge();
 }
 export function updateFiltersBadge() {
@@ -21,9 +30,25 @@ export function updateFiltersBadge() {
   badge.classList.toggle('hidden', !state.poiTags.size);
 }
 export function poiMatchesFilters(poi) {
-  if (!state.poiTags.size) return true;
+  return poiMatchesSelectedTags(poi, state.poiTags);
+}
+// Filter choices come from the imported POI set, never the currently visible
+// result set. That keeps a selected category reversible even when it produces
+// zero markers, and makes an intentionally empty regional release stable.
+export function availablePoiTags(pois = []) {
+  const known = new Map(POI_TAGS);
+  const present = new Set((pois || []).flatMap((poi) => poiTags(poi)));
+  const ordered = POI_TAGS.filter(([id]) => present.has(id));
+  const extras = [...present]
+    .filter((id) => !known.has(id))
+    .sort((a, b) => a.localeCompare(b))
+    .map((id) => [id, id.replace(/[_-]+/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase())]);
+  return [...ordered, ...extras];
+}
+export function poiMatchesSelectedTags(poi, selectedTags = new Set()) {
+  if (!selectedTags.size) return true;
   const tags = poiTags(poi);
-  return [...state.poiTags].some((tag) => tags.includes(tag));
+  return [...selectedTags].some((tag) => tags.includes(tag));
 }
 export function renderCityPois() {
   if (!state.poiLayer) return;
@@ -31,16 +56,21 @@ export function renderCityPois() {
   const pois = state.cityPois[state.activeCity] || [];
   const markers = pois
     .filter((poi) => !poiTags(poi).includes('history'))
+    .filter(isVisiblePoi)
     .filter(poiMatchesFilters)
     .filter(withinRenderBounds)
     .map((poi) => {
       const markerTag = primaryPoiTag(poi);
-      const icon = L.divIcon({ className: '', html: `<div class="poi-marker ${markerTag}"><img src="./icons/${POI_ICONS[markerTag] || 'map-pin'}.svg" alt="" /></div>`, iconSize: [27, 27], iconAnchor: [13, 13] });
+      const icon = L.divIcon({ className: '', html: `<div class="poi-marker ${markerTag}${poi.review?.flags?.length ? ' review-flagged' : ''}"><img src="./icons/${POI_ICONS[markerTag] || 'map-pin'}.svg" alt="" /></div>`, iconSize: [27, 27], iconAnchor: [13, 13] });
       const tagLabels = poiTags(poi).map((tag) => TAG_LABELS[tag] || tag.replaceAll('_', ' ')).join(', ');
       const relevance = poi.walkRelevanceReasons?.length ? `Good walking stop: ${poi.walkRelevanceReasons.join(', ').replaceAll('_', ' ')}` : null;
-      const details = [poi.description, poi.historicalContext, poi.address, relevance, tagLabels ? `Tags: ${tagLabels}` : null].filter(Boolean).map(escapeHtml).join('<br>');
-      const link = poi.link ? `<br><a href="${escapeHtml(poi.link)}" target="_blank" rel="noreferrer">Learn more ↗</a>` : '';
-      return L.marker([poi.lat, poi.lng], { icon, title: poi.name, interactive: !state.planningMode }).bindPopup(`<strong>${escapeHtml(poi.name)}</strong>${details ? `<br><span>${details}</span>` : ''}${link}`);
+      const seasonal = activeSeasonalSignals(poi).map((signal) => `Current ${signal.type?.replaceAll('_', ' ') || 'seasonal signal'} through ${new Date(signal.expiresAt).toLocaleDateString()}`).join('<br>');
+      const hours = poi.hours ? `Hours: ${typeof poi.hours === 'string' ? poi.hours : JSON.stringify(poi.hours)}` : null;
+      const status = poi.status ? `Status: ${poi.status}` : null;
+      const eventTiming = poi.startsAt || poi.endsAt ? `Event: ${poi.startsAt || 'date TBA'}${poi.endsAt ? ` – ${poi.endsAt}` : ''}` : null;
+      const details = [poi.description, historyText(poi), poi.address, status, hours, eventTiming, relevance, seasonal, poi.review?.flags?.length ? 'Needs review' : null, tagLabels ? `Tags: ${tagLabels}` : null].filter(Boolean).map(escapeHtml).join('<br>');
+      const links = [poi.link, poi.website, sourceUrl(poi), historyUrl(poi)].filter(Boolean).filter((url, index, all) => all.indexOf(url) === index).map((url, index) => `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${index === 0 && (poi.link || poi.website) ? 'Website' : 'Source'} ↗</a>`).join(' · ');
+      return L.marker([poi.lat, poi.lng], { icon, title: poi.name, interactive: !state.planningMode, place: poi }).bindPopup(`<strong>${escapeHtml(poi.name)}</strong>${details ? `<br><span>${details}</span>` : ''}${links ? `<br>${links}` : ''}`);
     });
   if (state.poiLayer.addLayers) state.poiLayer.addLayers(markers); else markers.forEach((marker) => marker.addTo(state.poiLayer));
   const segments = state.trailSegments[state.activeCity] || [];
@@ -54,7 +84,15 @@ export function renderHistorySites() {
   state.historyLayer.clearLayers();
   if (state.historyRadiusLayer) state.historyRadiusLayer.clearLayers();
   const active = city();
-  const sites = citySites().filter(isWalkablePoi).filter(poiMatchesFilters).filter(withinRenderBounds);
+  const allSites = citySites();
+  // Build collision counts once. The former per-marker scan made rendering a
+  // large city quadratic, which made pan/zoom noticeably sluggish.
+  const coordinateCounts = new Map();
+  allSites.forEach((site) => {
+    const key = `${site.lat},${site.lng}`;
+    coordinateCounts.set(key, (coordinateCounts.get(key) || 0) + 1);
+  });
+  const sites = allSites.filter(isWalkablePoi).filter((site) => hasReliableMapCoordinate(site, coordinateCounts)).filter(poiMatchesFilters).filter(withinRenderBounds);
   const markers = sites.map((site) => {
     const subtype = inferHistorySubtype(site);
     const glyph = HISTORY_SUBTYPES[subtype]?.icon || '🏛';
@@ -63,7 +101,7 @@ export function renderHistorySites() {
       html: `<div class="historic-pin${site.unverified ? ' unverified' : ''}"><span class="pin-body"><span class="pin-icon">${glyph}</span></span></div>`,
       iconSize: [32, 40], iconAnchor: [16, 38]
     });
-    const marker = L.marker([site.lat, site.lng], { icon: historyIcon, title: site.name, interactive: !state.planningMode });
+    const marker = L.marker([site.lat, site.lng], { icon: historyIcon, title: site.name, interactive: !state.planningMode, place: site });
     const subtypeLabel = HISTORY_SUBTYPES[subtype]?.label;
     marker.bindTooltip(site.unverified ? `${site.name} — unverified` : `${site.name}${subtypeLabel ? ` · ${subtypeLabel}` : ''}`, { direction: 'top', offset: [0, -32] });
     marker.on('click', () => { if (!state.planningMode) showHistory(site, distanceMeters(state.currentPosition || active.center, site)); });
@@ -187,7 +225,7 @@ export function searchPois(query) {
   const q = query.trim().toLowerCase();
   if (!q) return [];
   const pois = state.cityPois[state.activeCity] || [];
-  return pois.filter((poi) => poi.name.toLowerCase().includes(q)).slice(0, 20);
+  return pois.filter(isVisiblePoi).filter((poi) => poi.name.toLowerCase().includes(q)).slice(0, 20);
 }
 export async function searchOsm(query) {
   const q = encodeURIComponent(query.trim());
@@ -206,5 +244,73 @@ export async function searchOsm(query) {
   }
 }
 export function isWalkablePoi(poi) {
-  return Number.isFinite(poi?.lat) && Number.isFinite(poi?.lng) && poi.geometry !== 'polygon' && !poi.nonWalkable && !poi.excludeFromWalks && !String(poi.id || '').startsWith('nyc-sign-');
+  return Number.isFinite(poi?.lat) && Number.isFinite(poi?.lng) && poi.geometry !== 'polygon' && !poi.nonWalkable && !poi.excludeFromWalks && !poi.routeCandidate && !String(poi.id || '').startsWith('nyc-sign-');
+}
+export function activeSeasonalSignals(poi, now = Date.now()) {
+  return (poi.seasonalSignals || []).filter((signal) => Number.isFinite(Date.parse(signal?.expiresAt)) && now < Date.parse(signal.expiresAt));
+}
+export function isVisiblePoi(poi, now = Date.now()) {
+  if (poi.review?.validationStatus === 'invalid') return false;
+  // Producer route candidates are segment inputs, never visitor-facing POIs
+  // or automatically curated / ranked walks.
+  if (poi.routeCandidate) return false;
+  // Wildlife is an expiring observation, never a permanent species/location claim.
+  if (poi.category === 'wildlife') return activeSeasonalSignals(poi, now).length > 0;
+  // Events are strict temporary context: producer records without an explicit
+  // freshness cutoff never surface, and an event disappears at that cutoff.
+  // `endsAt` is not a substitute because it is not the review/freshness gate.
+  if (poi.category === 'event') {
+    const expiry = Date.parse(poi.freshnessExpiresAt || '');
+    return Number.isFinite(expiry) && now < expiry;
+  }
+  return true;
+}
+function sourceUrl(poi) { const source = Array.isArray(poi.source) ? poi.source[0] : poi.source; return typeof source === 'object' ? source?.url : (typeof source === 'string' && /^https?:/i.test(source) ? source : null); }
+function historyText(poi) {
+  // Producer history is editorial context, not an unsourced assertion.
+  if (!historyUrl(poi) && !sourceUrl(poi)) return null;
+  return typeof poi.historicalContext === 'string' ? `History: ${poi.historicalContext}` : poi.historicalContext?.text ? `History: ${poi.historicalContext.text}` : null;
+}
+function historyUrl(poi) { return typeof poi.historicalContext === 'object' ? poi.historicalContext?.url || poi.historicalContext?.sourceUrl : null; }
+
+// A source-wide default coordinate is not a real place location. The NYC
+// import assigned many individual signs the same park/borough anchor; keep
+// those records out of the map until their individual coordinates are verified
+// instead of implying that they are all at one spot.
+export function hasReliableMapCoordinate(poi, coordinateCounts = null) {
+  if (!Number.isFinite(poi?.lat) || !Number.isFinite(poi?.lng)) return false;
+  const duplicates = coordinateCounts instanceof Map
+    ? coordinateCounts.get(`${poi.lat},${poi.lng}`)
+    : (state.cityPois[state.activeCity] || []).filter((candidate) => candidate.lat === poi.lat && candidate.lng === poi.lng).length;
+  return duplicates <= 8;
+}
+
+export function openPlaceCluster(cluster, latlng) {
+  const places = cluster.getAllChildMarkers().map((marker) => marker.options.place).filter(Boolean).sort((a, b) => a.name.localeCompare(b.name));
+  if (!places.length) return;
+  const container = document.createElement('section');
+  container.className = 'place-cluster-list';
+  const title = document.createElement('h3');
+  title.textContent = `${places.length} places here`;
+  container.append(title);
+  let shown = 0;
+  const appendNext = () => {
+    places.slice(shown, shown + 8).forEach((place) => {
+      const item = document.createElement('details');
+      const summary = document.createElement('summary');
+      summary.textContent = place.name;
+      const detail = document.createElement('p');
+      detail.textContent = place.description || place.historicalContext || place.address || 'Open this place while walking to add your own note.';
+      item.append(summary, detail); container.append(item);
+    });
+    shown = Math.min(shown + 8, places.length);
+    if (shown >= places.length) more.remove();
+  };
+  const more = document.createElement('button');
+  more.type = 'button';
+  more.textContent = 'Show more places';
+  more.addEventListener('click', appendNext);
+  container.append(more);
+  appendNext();
+  L.popup({ maxWidth: 340, className: 'place-cluster-popup' }).setLatLng(latlng).setContent(container).openOn(state.map);
 }

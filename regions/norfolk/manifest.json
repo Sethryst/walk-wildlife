@@ -2,7 +2,7 @@
   "id": "norfolk",
   "name": "Norfolk, Virginia",
   "version": 1,
-  "generatedAt": "2026-08-05T20:24:40.571Z",
+  "generatedAt": "2026-08-06T11:42:30.511Z",
   "boundary": {
     "source": "cache-file",
     "geometry": {
@@ -84,10 +84,11 @@
     "poi": "norfolk-poi.json",
     "buckets": "norfolk-buckets.json",
     "supplemental": [
-      "norfolk-boundary.geojson"
+      "norfolk-boundary.geojson",
+      "civic/index.json"
     ]
   },
   "stats": {
-    "poiCount": 444
+    "poiCount": 629
   }
 }

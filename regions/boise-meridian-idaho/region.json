@@ -1,0 +1,44 @@
+{
+  "id": "boise-meridian-idaho",
+  "name": "Boise–Meridian–Old Town, Idaho",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -116.41,
+            43.49
+          ],
+          [
+            -116.41,
+            43.708
+          ],
+          [
+            -116.105,
+            43.708
+          ],
+          [
+            -116.105,
+            43.49
+          ],
+          [
+            -116.41,
+            43.49
+          ]
+        ]
+      ]
+    }
+  },
+  "osm": {
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/idaho-latest.osm.pbf"
+  },
+  "imports": {
+    "poi": "boise-meridian-idaho-poi.json",
+    "civicReleaseRoot": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\boise-meridian-idaho\\civic",
+    "civicProducerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\boise-meridian-idaho\\producer-manifest.json",
+    "buckets": null,
+    "supplemental": []
+  }
+}

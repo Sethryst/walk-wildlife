@@ -1,0 +1,42 @@
+{
+  "id": "washington-dc",
+  "name": "Washington, DC",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -77.12,
+            38.79
+          ],
+          [
+            -77.12,
+            39
+          ],
+          [
+            -76.9,
+            39
+          ],
+          [
+            -76.9,
+            38.79
+          ],
+          [
+            -77.12,
+            38.79
+          ]
+        ]
+      ]
+    }
+  },
+  "osm": {
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/district-of-columbia-latest.osm.pbf"
+  },
+  "imports": {
+    "poi": "washington-dc-poi.json",
+    "buckets": null,
+    "supplemental": []
+  }
+}

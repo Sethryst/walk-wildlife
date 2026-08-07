@@ -1,0 +1,92 @@
+{
+  "vote": {
+    "schemaVersion": 1,
+    "regionId": "boise-meridian-idaho",
+    "generatedAt": "2026-08-07T00:57:36.059963Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": [
+      {
+        "id": "id-boise-meridian-2026-general-election",
+        "title": "Idaho General Election",
+        "date": "2026-11-03",
+        "type": "general_election",
+        "summary": "Idaho's general election is November 3, 2026. Check the Secretary of State for official registration and voting details.",
+        "officialUrl": "https://sos.idaho.gov/elections/",
+        "expiresAt": "2026-11-04T07:00:00Z"
+      }
+    ]
+  },
+  "volunteer": {
+    "schemaVersion": 1,
+    "regionId": "boise-meridian-idaho",
+    "generatedAt": "2026-08-07T00:57:36.059963Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": []
+  },
+  "organizers": {
+    "schemaVersion": 1,
+    "regionId": "boise-meridian-idaho",
+    "generatedAt": "2026-08-07T00:57:36.059963Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": [
+      {
+        "id": "city-boise-watershed",
+        "name": "City of Boise WaterShed",
+        "officialUrl": "https://www.boisewatershed.org/about/volunteer/"
+      }
+    ]
+  },
+  "events": {
+    "schemaVersion": 1,
+    "regionId": "boise-meridian-idaho",
+    "generatedAt": "2026-08-07T00:57:36.059963Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": []
+  },
+  "event-sources": {
+    "schemaVersion": 1,
+    "regionId": "boise-meridian-idaho",
+    "generatedAt": "2026-08-07T00:57:36.059963Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": [
+      {
+        "id": "boise-meridian-idaho:eventSources",
+        "title": "Event calendar",
+        "summary": "Browse the linked event calendar for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "officialUrl": "https://www.meridiancity.org/cityevents"
+      }
+    ]
+  },
+  "volunteer-sources": {
+    "schemaVersion": 1,
+    "regionId": "boise-meridian-idaho",
+    "generatedAt": "2026-08-07T00:57:36.059963Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": [
+      {
+        "id": "boise-meridian-idaho:volunteerSources",
+        "title": "Volunteer opportunities",
+        "summary": "Browse the linked volunteer opportunities for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "officialUrl": "https://www.boisewatershed.org/about/volunteer/"
+      }
+    ]
+  }
+}

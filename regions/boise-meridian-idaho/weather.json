@@ -1,0 +1,93 @@
+{
+  "activeAlerts": [
+    {
+      "effective": "2026-08-06T13:59:00-06:00",
+      "event": "Heat Advisory",
+      "expires": "2026-08-07T06:00:00-06:00",
+      "headline": "Heat Advisory issued August 6 at 1:59PM MDT until August 8 at 9:00PM MDT by NWS Boise ID",
+      "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.362d1749e0f4154253701029a1ee98d9a843a6bd.001.1",
+      "severity": "Moderate",
+      "web": "http://www.weather.gov"
+    },
+    {
+      "effective": "2026-08-06T12:00:00-06:00",
+      "event": "Air Quality Alert",
+      "expires": "2026-08-07T13:00:00-06:00",
+      "headline": "Air Quality Alert issued August 6 at 12:00PM MDT by NWS Boise ID",
+      "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.877d0238ea1b4a75c97856ad31297b49029a596b.001.1",
+      "severity": "Unknown",
+      "web": "http://www.weather.gov"
+    }
+  ],
+  "forecast": [
+    {
+      "detailedForecast": "Areas of smoke. Mostly clear. Low around 66, with temperatures rising to around 70 overnight. South southwest wind 2 to 7 mph.",
+      "endTime": "2026-08-07T06:00:00-06:00",
+      "name": "Tonight",
+      "probabilityOfPrecipitation": {
+        "unitCode": "wmoUnit:percent",
+        "value": 0
+      },
+      "shortForecast": "Areas Of Smoke",
+      "startTime": "2026-08-06T18:00:00-06:00",
+      "temperature": 66,
+      "temperatureUnit": "F",
+      "windDirection": "SSW",
+      "windSpeed": "2 to 7 mph"
+    },
+    {
+      "detailedForecast": "Areas of smoke. Sunny, with a high near 102. South southwest wind 2 to 7 mph.",
+      "endTime": "2026-08-07T18:00:00-06:00",
+      "name": "Friday",
+      "probabilityOfPrecipitation": {
+        "unitCode": "wmoUnit:percent",
+        "value": 0
+      },
+      "shortForecast": "Areas Of Smoke",
+      "startTime": "2026-08-07T06:00:00-06:00",
+      "temperature": 102,
+      "temperatureUnit": "F",
+      "windDirection": "SSW",
+      "windSpeed": "2 to 7 mph"
+    },
+    {
+      "detailedForecast": "Areas of smoke. Mostly clear, with a low around 66. Southwest wind 1 to 7 mph.",
+      "endTime": "2026-08-08T06:00:00-06:00",
+      "name": "Friday Night",
+      "probabilityOfPrecipitation": {
+        "unitCode": "wmoUnit:percent",
+        "value": 0
+      },
+      "shortForecast": "Areas Of Smoke",
+      "startTime": "2026-08-07T18:00:00-06:00",
+      "temperature": 66,
+      "temperatureUnit": "F",
+      "windDirection": "SW",
+      "windSpeed": "1 to 7 mph"
+    },
+    {
+      "detailedForecast": "Areas of smoke. Sunny, with a high near 101. South wind 1 to 6 mph.",
+      "endTime": "2026-08-08T18:00:00-06:00",
+      "name": "Saturday",
+      "probabilityOfPrecipitation": {
+        "unitCode": "wmoUnit:percent",
+        "value": 2
+      },
+      "shortForecast": "Areas Of Smoke",
+      "startTime": "2026-08-08T06:00:00-06:00",
+      "temperature": 101,
+      "temperatureUnit": "F",
+      "windDirection": "S",
+      "windSpeed": "1 to 6 mph"
+    }
+  ],
+  "freshnessExpiresAt": "2026-08-07T12:47:45.408094Z",
+  "generatedAt": "2026-08-07T00:45:37.065164Z",
+  "regionId": "boise-meridian-idaho",
+  "schemaVersion": 1,
+  "source": {
+    "authorityTier": "federal_government",
+    "name": "National Weather Service",
+    "url": "https://www.weather.gov/documentation/services-web-api"
+  }
+}

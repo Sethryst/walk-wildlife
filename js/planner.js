@@ -46,6 +46,16 @@ function loopSeeds(origin, preferences) {
     return [first.poi, second?.poi].filter(Boolean);
   }).filter((stops, index, all) => stops.length && all.findIndex((other) => other[0].id === stops[0].id) === index);
 }
+function sparseAreaLoopSeeds(origin, minutes) {
+  // POI availability must never determine whether a person can take a walk.
+  // These are route waypoints only; they deliberately create no fake stops.
+  const radiusMeters = Math.max(140, Math.min(700, (minutes * MILES_PER_MINUTE * 1609.344) / 4));
+  const pointAt = (degrees) => {
+    const radians = degrees * Math.PI / 180;
+    return { lat: origin.lat + (Math.cos(radians) * radiusMeters) / 111320, lng: origin.lng + (Math.sin(radians) * radiusMeters) / (111320 * Math.cos(origin.lat * Math.PI / 180)) };
+  };
+  return [0, 120, 240].map((heading) => ({ stops: [], via: [pointAt(heading), pointAt(heading + 90)] }));
+}
 
 function interestScore(stops, preferences) {
   const tags = stops.flatMap(poiTags);
@@ -53,31 +63,44 @@ function interestScore(stops, preferences) {
 }
 
 export async function generateTimeBasedPlan() {
+  state.plannedRoute = null; state.planOptions = [];
+  el('planDistance').textContent = 'Finding routes…';
+  el('planSummary').textContent = 'Looking for walkable options that fit your choices.';
+  el('planStops').innerHTML = '';
+  el('planOptions').innerHTML = '<p class="empty-state">Finding walkable routes…</p>';
   const minutes = selectedMinutes(); const preferences = activePreferences(); const routeMode = selectedRouteMode(); const origin = originForPlan();
   // Vienna and newly added regions can have very little curated data at first.
   // Quiet OSM places are a private, cached planning fallback—not map clutter.
   if (candidateStops(origin, preferences).length < 6) state.quietFallbackPlaces = await quietPlacesNear(state.activeCity, origin);
-  const seeds = routeMode === 'round-trip' ? loopSeeds(origin, preferences) : [state.plannerEnd ? [state.plannerEnd] : loopSeeds(origin, preferences)[0] || []];
-  const results = await Promise.all(seeds.map(async (stops, index) => {
-    const points = routeMode === 'round-trip' ? [origin, ...stops, origin] : [origin, ...stops];
+  const poiSeeds = loopSeeds(origin, preferences);
+  const seeds = routeMode === 'round-trip'
+    ? (poiSeeds.length ? poiSeeds.map((stops) => ({ stops, via: stops })) : sparseAreaLoopSeeds(origin, minutes))
+    : [{ stops: state.plannerEnd ? [state.plannerEnd] : (poiSeeds[0] || []), via: state.plannerEnd ? [state.plannerEnd] : (poiSeeds[0] || []) }];
+  const results = await Promise.all(seeds.map(async (seed, index) => {
+    const points = routeMode === 'round-trip' ? [origin, ...seed.via, origin] : [origin, ...seed.via];
     const routed = await routeOnFoot(points).catch(() => null);
     if (!routed) return null;
     const miles = routed.distanceMeters / 1609.344;
     const timeFit = Math.max(0, 10 - Math.abs(minutes - routed.durationSeconds / 60) / 3);
-    return { id: `plan-${Date.now()}-${index}`, title: routeMode === 'round-trip' ? routeTitle(stops, preferences, index) : `${city().name} point-to-point walk`, city: state.activeCity, estimatedDurationMinutes: Math.round(routed.durationSeconds / 60), distanceMiles: Number(miles.toFixed(2)), routeMode, preferences, stops, coordinates: routed.coordinates, source: 'pedestrian-road-route', score: timeFit + interestScore(stops, preferences) - miles * .15 };
+    return { id: `plan-${Date.now()}-${index}`, title: routeMode === 'round-trip' ? routeTitle(seed.stops, preferences, index) : `${city().name} point-to-point walk`, city: state.activeCity, estimatedDurationMinutes: Math.round(routed.durationSeconds / 60), distanceMiles: Number(miles.toFixed(2)), routeMode, preferences, stops: seed.stops, coordinates: routed.coordinates, source: 'pedestrian-road-route', score: timeFit + interestScore(seed.stops, preferences) - miles * .15 };
   }));
   state.planOptions = results.filter(Boolean).sort((a, b) => b.score - a.score).slice(0, 5);
-  state.plannedRoute = state.planOptions[0] || null;
+  // A round trip has meaningful alternatives. Never silently choose one and
+  // move the map; people must explicitly pick the shape they want.
+  state.plannedRoute = state.planOptions.length === 1 ? state.planOptions[0] : null;
   renderPlanPreview();
   return state.plannedRoute;
 }
 
 export function choosePlan(id) { state.plannedRoute = state.planOptions.find((plan) => plan.id === id) || state.plannedRoute; renderPlanPreview(); previewTimeBasedPlan(); }
+export function changePlan() { state.plannedRoute = null; renderPlanPreview(); }
 
 export function renderPlanPreview() {
   const plan = state.plannedRoute;
-  el('planOptions').innerHTML = state.planOptions.length ? state.planOptions.map((option, index) => `<button class="route-option ${option.id === plan?.id ? 'active' : ''}" type="button" data-plan-option="${option.id}"><span><strong>${escapeHtml(option.title)}${index === 0 ? ' · best match' : ''}</strong><small>${option.estimatedDurationMinutes} min · ${option.distanceMiles} mi · ${option.stops.length} discoveries</small></span><b>${option.routeMode === 'round-trip' ? 'Loop ↻' : 'Route →'}</b></button>`).join('') : '<p class="empty-state">No walkable loop could be calculated here. Try a different start point or a shorter time.</p>';
-  if (!plan) { el('planDistance').textContent = 'No route yet'; el('planStops').innerHTML = ''; return; }
+  el('planOptions').innerHTML = plan
+    ? `<button class="text-button" type="button" data-change-plan>Choose a different route</button>`
+    : state.planOptions.length ? state.planOptions.map((option, index) => `<button class="route-option" type="button" data-plan-option="${option.id}"><span><strong>${escapeHtml(option.title)}${state.planOptions.length > 1 ? ` · option ${index + 1}` : ''}</strong><small>${option.estimatedDurationMinutes} min · ${option.distanceMiles} mi${option.stops.length ? ` · ${option.stops.length} discoveries` : ''}</small></span><b>${option.routeMode === 'round-trip' ? 'Loop ↻' : 'Route →'}</b></button>`).join('') : '<p class="empty-state">No walkable loop could be calculated here. Try a different start point or a shorter time.</p>';
+  if (!plan) { el('planDistance').textContent = state.planOptions.length ? 'Choose a route' : 'No route yet'; el('planSummary').textContent = state.planOptions.length ? 'Pick one of the routes below to preview it on the map.' : 'Adjust the time, route shape, or starting point and try again.'; el('planStops').innerHTML = ''; return; }
   el('planDistance').textContent = `${plan.distanceMiles} miles`;
   const discoveries = plan.stops.slice(0, 2).map((stop) => stop.name).join(' and ');
   el('planSummary').textContent = discoveries

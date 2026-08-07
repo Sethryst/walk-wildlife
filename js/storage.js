@@ -2,7 +2,7 @@ export const db = (() => {
   let database;
   function open() {
     return new Promise((resolve, reject) => {
-      const request = indexedDB.open('walk-wildlife-journal', 3);
+      const request = indexedDB.open('walk-wildlife-journal', 5);
       request.onupgradeneeded = () => {
         database = request.result;
         if (!database.objectStoreNames.contains('walks')) database.createObjectStore('walks', { keyPath: 'id' });
@@ -15,6 +15,12 @@ export const db = (() => {
         if (!database.objectStoreNames.contains('regions')) database.createObjectStore('regions', { keyPath: 'id' });
         if (!database.objectStoreNames.contains('region_pois')) database.createObjectStore('region_pois', { keyPath: 'id' });
         if (!database.objectStoreNames.contains('region_buckets')) database.createObjectStore('region_buckets', { keyPath: 'id' });
+        if (!database.objectStoreNames.contains('field_editions')) database.createObjectStore('field_editions', { keyPath: 'id' });
+        // Civic participation logging (voted, attended_meeting, volunteered)
+        // writes only to this browser's IndexedDB. These records never sync to
+        // Supabase, including in anonymized form; never enter exports,
+        // analytics, or cohort data; and are never visible to organizers.
+        if (!database.objectStoreNames.contains('civic_witnesses')) database.createObjectStore('civic_witnesses', { keyPath: 'id' });
       };
       request.onsuccess = () => { database = request.result; resolve(); };
       request.onerror = () => reject(request.error);

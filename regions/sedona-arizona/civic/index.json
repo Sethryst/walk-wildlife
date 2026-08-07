@@ -1,0 +1,82 @@
+{
+  "vote": {
+    "schemaVersion": 1,
+    "regionId": "sedona-arizona",
+    "generatedAt": "2026-08-07T00:57:37.063496Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": [
+      {
+        "id": "az-sedona-2026-general-election",
+        "title": "Arizona General Election",
+        "date": "2026-11-03",
+        "type": "general_election",
+        "summary": "Arizona's general election is November 3, 2026. Register by October 5; early voting begins October 7.",
+        "officialUrl": "https://azsos.gov/elections/election-information/2026-election-info",
+        "expiresAt": "2026-11-04T07:00:00Z"
+      }
+    ]
+  },
+  "volunteer": {
+    "schemaVersion": 1,
+    "regionId": "sedona-arizona",
+    "generatedAt": "2026-08-07T00:57:37.063496Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": []
+  },
+  "organizers": {
+    "schemaVersion": 1,
+    "regionId": "sedona-arizona",
+    "generatedAt": "2026-08-07T00:57:37.063496Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": [
+      {
+        "id": "city-sedona",
+        "name": "City of Sedona",
+        "officialUrl": "https://www.sedonaaz.gov/community/residents/volunteer"
+      }
+    ]
+  },
+  "event-sources": {
+    "schemaVersion": 1,
+    "regionId": "sedona-arizona",
+    "generatedAt": "2026-08-07T00:57:37.063496Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": [
+      {
+        "id": "sedona-arizona:eventSources",
+        "title": "Event calendar",
+        "summary": "Browse the linked event calendar for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "officialUrl": "https://www.sedonaaz.gov/your-government/departments-and-programs/parks-recreation/calendar"
+      }
+    ]
+  },
+  "volunteer-sources": {
+    "schemaVersion": 1,
+    "regionId": "sedona-arizona",
+    "generatedAt": "2026-08-07T00:57:37.063496Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "c585009"
+    },
+    "items": [
+      {
+        "id": "sedona-arizona:volunteerSources",
+        "title": "Volunteer opportunities",
+        "summary": "Browse the linked volunteer opportunities for current listings. This is a source link, not a claim about a specific scheduled item.",
+        "officialUrl": "https://www.sedonaaz.gov/community/residents/volunteer"
+      }
+    ]
+  }
+}

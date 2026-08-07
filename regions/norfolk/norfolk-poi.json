@@ -6772,6 +6772,3943 @@
       "source": "Boat_Ramps_-_City_of_Norfolk.geojson",
       "geometry": "point",
       "radius": 50
+    },
+    {
+      "address": "913 Pollard Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:1",
+      "lat": 36.866752685272495,
+      "lng": -76.27473173620928,
+      "name": "Pollard Street Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "5860 Townley Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:10",
+      "lat": 36.89125920514346,
+      "lng": -76.21262112755419,
+      "name": "Azalea Acres Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "10",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "543 E Olney Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:100",
+      "lat": 36.85609268375966,
+      "lng": -76.2829505451375,
+      "name": "PB Young Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "100",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "9500 4th View Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:101",
+      "lat": 36.958743628388596,
+      "lng": -76.26159391414494,
+      "name": "Willoughby Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [
+          "geometry"
+        ],
+        "validationStatus": "flagged"
+      },
+      "source": [
+        {
+          "id": "101",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1122 W Princess Anne Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:102",
+      "lat": 36.87000819854073,
+      "lng": -76.30423331891036,
+      "name": "WH Taylor Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "102",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1335 Longdale Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:103",
+      "lat": 36.90035860992443,
+      "lng": -76.23434952507412,
+      "name": "Tanners Creek Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "103",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1330 Branch Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:104",
+      "lat": 36.907257536852605,
+      "lng": -76.23471647288042,
+      "name": "Rosemont Middle School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "104",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "5523 Pebble Lane",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:105",
+      "lat": 36.845132218087876,
+      "lng": -76.21360014549563,
+      "name": "Poplar Hall Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "105",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "9501 Mason Creek Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:106",
+      "lat": 36.95594077668238,
+      "lng": -76.26294492701278,
+      "name": "Ocean View Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [
+          "geometry"
+        ],
+        "validationStatus": "flagged"
+      },
+      "source": [
+        {
+          "id": "106",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "600 Dudley Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:107",
+      "lat": 36.94232033786043,
+      "lng": -76.252479022224,
+      "name": "Oceanair Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "107",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "6501 Chesapeake Boulevard",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:108",
+      "lat": 36.90291528215068,
+      "lng": -76.2425992331593,
+      "name": "Norview High School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "108",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "6401 Chesapeake Boulevard",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:109",
+      "lat": 36.89789345579053,
+      "lng": -76.24174615183964,
+      "name": "Norview Elementary Norview Community Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "109",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "3400 Norway Place",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:11",
+      "lat": 36.88213108082647,
+      "lng": -76.26724677255997,
+      "name": "Winona Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "11",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "6325 Sewells Point Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:110",
+      "lat": 36.89449597583938,
+      "lng": -76.24353241892884,
+      "name": "Norview Middle School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "110",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "322 Shirley Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:111",
+      "lat": 36.86748587121702,
+      "lng": -76.29239793418664,
+      "name": "Maury High School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "111",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "3700 Bowdens Ferry Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:112",
+      "lat": 36.87816933282353,
+      "lng": -76.30251786814732,
+      "name": "Madison Career Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "112",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "7900 Tarpon Place",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:113",
+      "lat": 36.917956673149426,
+      "lng": -76.21028365386992,
+      "name": "Little Creek Elementary School and Primary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "113",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "2700 Ludlow Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:114",
+      "lat": 36.86956327728009,
+      "lng": -76.27049467682748,
+      "name": "Lindenwood Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "114",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "7600 Halprin Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:115",
+      "lat": 36.91348509736891,
+      "lng": -76.22144895837967,
+      "name": "Larrymore Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "115",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1380 Kempsville Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:116",
+      "lat": 36.87356839798577,
+      "lng": -76.1997990987681,
+      "name": "Lake Taylor Middle and High School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "116",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1300 Marshall Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:117",
+      "lat": 36.85754136832602,
+      "lng": -76.26489353790043,
+      "name": "Jacox Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "117",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "200 Shirley Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:118",
+      "lat": 36.86601254773698,
+      "lng": -76.28605068875497,
+      "name": "Ghent Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "118",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "6045 Curlew Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:119",
+      "lat": 36.84095587181174,
+      "lng": -76.19618461815278,
+      "name": "Easton PreSchool",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "119",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "5416 Ashby Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:12",
+      "lat": 36.87612798680262,
+      "lng": -76.21691550887945,
+      "name": "Ashby Street Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "12",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "2600 E Princess Anne Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:120",
+      "lat": 36.85638516061686,
+      "lng": -76.2585455850611,
+      "name": "Dreamkeepers Academy (Retired)",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "120",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1025 Widgeon Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:121",
+      "lat": 36.90231753566481,
+      "lng": -76.243791240523,
+      "name": "Coronado School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "121",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "2445 Palmyra Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:122",
+      "lat": 36.87090898282679,
+      "lng": -76.2410829547431,
+      "name": "Coleman Place Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "122",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "2861 E Princess Anne Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:123",
+      "lat": 36.85821518171686,
+      "lng": -76.25221113493727,
+      "name": "SECEP (formerly R Bowling ES)",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "123",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "730 Spotswood Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:124",
+      "lat": 36.86996382853527,
+      "lng": -76.29616402756879,
+      "name": "James Blair Middle School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "124",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1530 Cypress Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:125",
+      "lat": 36.82870841133286,
+      "lng": -76.2649754621532,
+      "name": "Berkley Campostella Early Childhood Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "125",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "2080 Tarrallton Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:126",
+      "lat": 36.92704387297386,
+      "lng": -76.22204615104101,
+      "name": "Tarrallton Elementary and Community Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "126",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "3035 Sherwood Forest Lane",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:127",
+      "lat": 36.87823991306106,
+      "lng": -76.23764250089408,
+      "name": "Sherwood Forest Elementary and Community Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "127",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "1167 Bolling Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:128",
+      "lat": 36.890506610153345,
+      "lng": -76.29861334143914,
+      "name": "Larchmont Elementary and Recreation Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "128",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "520 W 29th Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:129",
+      "lat": 36.876751016302165,
+      "lng": -76.292384873118,
+      "name": "James Monroe Elementary and Park Place Recreation",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "129",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "1936 Norview Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:13",
+      "lat": 36.89970129162615,
+      "lng": -76.2176226286043,
+      "name": "Airport Gateway Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "13",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "976 Ingleside Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:130",
+      "lat": 36.85436912553394,
+      "lng": -76.23942066627187,
+      "name": "Ingleside Elementary and Recreation Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "130",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "1132 Wade Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:131",
+      "lat": 36.85883578365596,
+      "lng": -76.19335223338561,
+      "name": "Fairlawn Elementary and Recreation Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "131",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "2915 Westminster Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:132",
+      "lat": 36.84480612298609,
+      "lng": -76.25176562536386,
+      "name": "Chesterfield Elementary and Community Pool",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "132",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "6700 E Tanners Creek Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:133",
+      "lat": 36.90139113491971,
+      "lng": -76.22958897462208,
+      "name": "Tanners Creek",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "133",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "3126 South Stone Bridge Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:134",
+      "lat": 36.84839965152504,
+      "lng": -76.24736712132238,
+      "name": "Stone Bridge Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "134",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "2724 Park Crescent",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:135",
+      "lat": 36.84955061642792,
+      "lng": -76.25542136578196,
+      "name": "Middletown Arch",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "135",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "404 E Plume Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:136",
+      "lat": 36.84752912913988,
+      "lng": -76.28892745226817,
+      "name": "MacArthur Memorial Plaza",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "136",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "1000 Botetourt Gardens",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:137",
+      "lat": 36.8615258100924,
+      "lng": -76.29332849287819,
+      "name": "Fred Huette Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "137",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "6107 Sewells Point Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:1377",
+      "lat": 36.89040295599267,
+      "lng": -76.2395696279527,
+      "name": "Five Points Park and Civic Plaza",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1377",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "501 Dumore Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:1378",
+      "lat": 36.8532998262959,
+      "lng": -76.2946975816464,
+      "name": "Freemason Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1378",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "2701 E Princess Anne Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:1379",
+      "lat": 36.85616238476925,
+      "lng": -76.25551133493991,
+      "name": "Broad Creek Legacy Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1379",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "3300 Colonial Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:138",
+      "lat": 36.877403255365685,
+      "lng": -76.2882875893268,
+      "name": "Colonial Avenue Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "138",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "249 W York Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:1380",
+      "lat": 36.85355823150003,
+      "lng": -76.29249104214718,
+      "name": "Farragut Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1380",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "500-700 Block Graydon Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:1381",
+      "lat": 36.86427696176116,
+      "lng": -76.29757645625992,
+      "name": "Graydon Avenue",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1381",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "MOUS"
+    },
+    {
+      "address": "255 College Cross",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:139",
+      "lat": 36.85101571414857,
+      "lng": -76.29401464915107,
+      "name": "Freemason Green",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "139",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "841 38th Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:14",
+      "lat": 36.879863181402214,
+      "lng": -76.29678796669856,
+      "name": "38th Street Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "14",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "3000 E Virginia Beach Boulevard",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:140",
+      "lat": 36.853134927187945,
+      "lng": -76.24978597767077,
+      "name": "Broad Creek Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "140",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "935 Redgate Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:141",
+      "lat": 36.86518233687673,
+      "lng": -76.30410166907863,
+      "name": "Redgate Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "141",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "9635 Mason Creek Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:142",
+      "lat": 36.95771074916522,
+      "lng": -76.25842481135867,
+      "name": "Monkey Bottom Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [
+          "geometry"
+        ],
+        "validationStatus": "flagged"
+      },
+      "source": [
+        {
+          "id": "142",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "3500 Granby Street",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:143",
+      "lat": 36.876360124243696,
+      "lng": -76.27909380340927,
+      "name": "Lafayette Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "143",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CP"
+    },
+    {
+      "address": "238 E Princess Anne Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:144",
+      "lat": 36.86267948785701,
+      "lng": -76.28462029953016,
+      "name": "West Point Cemetery",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "144",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CEM"
+    },
+    {
+      "address": "238 E Princess Anne Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:145",
+      "lat": 36.86270784344482,
+      "lng": -76.2846076086129,
+      "name": "Elmwood Cemetery",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "145",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CEM"
+    },
+    {
+      "address": "1200 Tidewater Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:146",
+      "lat": 36.85744733673288,
+      "lng": -76.2728794087849,
+      "name": "Hebrew Cemetery",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "146",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CEM"
+    },
+    {
+      "address": "1600 Saint Julian Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:147",
+      "lat": 36.860238984912044,
+      "lng": -76.26212764951526,
+      "name": "Calvary Cemetery",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "147",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CEM"
+    },
+    {
+      "address": "700 E Olney Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:148",
+      "lat": 36.855094651990335,
+      "lng": -76.27935249988822,
+      "name": "Vivian C Mason Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "148",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CCNPC"
+    },
+    {
+      "address": "1430 37th Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:15",
+      "lat": 36.8789646202618,
+      "lng": -76.30938105516499,
+      "name": "37th Street Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "15",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "239 E Princess Anne Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:150",
+      "lat": 36.859871870731475,
+      "lng": -76.28399392183017,
+      "name": "Cedar Grove Cemetery",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "150",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CEM"
+    },
+    {
+      "address": "1100, 1200 Botetourt Gardens",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:151",
+      "lat": 36.86431313466497,
+      "lng": -76.29038186338967,
+      "name": "Botetourt Gardens- North Blocks",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "151",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "MOUS"
+    },
+    {
+      "address": "600, 700, 800 Botetourt Gardens",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:152",
+      "lat": 36.86077702305025,
+      "lng": -76.2934027948703,
+      "name": "Botetourt Gardens- South Blocks",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "152",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "MOUS"
+    },
+    {
+      "address": "5400, 5500, 5600 Poplar Hall Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:153",
+      "lat": 36.848269992691726,
+      "lng": -76.21467075011275,
+      "name": "Poplar Halls Greenway",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "153",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "MOUS"
+    },
+    {
+      "address": "2080 Tarrallton Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:154",
+      "lat": 36.92931342433821,
+      "lng": -76.21969035885907,
+      "name": "Tarrallton Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "154",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CP"
+    },
+    {
+      "address": "5209 Bluestone Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:155",
+      "lat": 36.88998689028126,
+      "lng": -76.3063160238612,
+      "name": "Bluestone Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "155",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "352 San Antonio Boulevard",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:156",
+      "lat": 36.91617471490014,
+      "lng": -76.2637192068879,
+      "name": "Kaboom Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "156",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "500 Culpepper Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:157",
+      "lat": 36.8304696524978,
+      "lng": -76.27672087698477,
+      "name": "Berkley Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "157",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "3500 Granby Street",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:158",
+      "lat": 36.876360124243696,
+      "lng": -76.27909380340927,
+      "name": "Virginia Zoological Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "158",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "FBOS"
+    },
+    {
+      "address": "1235 Water Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:159",
+      "lat": 36.84192858203974,
+      "lng": -76.27647784649028,
+      "name": "Harbor Park Canoe/Kayak Launch",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "159",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "PBR"
+    },
+    {
+      "address": "930 Greenway Park",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:16",
+      "lat": 36.86563250023332,
+      "lng": -76.30378035846034,
+      "name": "Greenway Court Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "16",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "279 LaValette Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:160",
+      "lat": 36.88092834275202,
+      "lng": -76.27508195178258,
+      "name": "LaValette Kayak Launch and Fishing Pier",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "160",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "PBR"
+    },
+    {
+      "address": "1450 Kempsville Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:161",
+      "lat": 36.873387663663905,
+      "lng": -76.20741101715512,
+      "name": "Princess Anne Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "161",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "1251 W 42nd St",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:162",
+      "lat": 36.88155877012854,
+      "lng": -76.3038089022246,
+      "name": "Lamberts Point Community Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "162",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CCAPA"
+    },
+    {
+      "address": "1306 Corprew Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:163",
+      "lat": 36.85237970239185,
+      "lng": -76.27154486393502,
+      "name": "Brambleton Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "163",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "6125 Carroll Place",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:164",
+      "lat": 36.89710853652891,
+      "lng": -76.29768116518576,
+      "name": "Cambridge Crescent Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "164",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "6125 Carroll Place",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:165",
+      "lat": 36.89710853652891,
+      "lng": -76.29768116518576,
+      "name": "Cambridge Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "165",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "405 Delaware Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:166",
+      "lat": 36.88340864938272,
+      "lng": -76.28440385424798,
+      "name": "Colonial Greenway Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "166",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "3901 Llewellyn Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:167",
+      "lat": 36.88319405349245,
+      "lng": -76.28486897789415,
+      "name": "Colonial Greenway",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "167",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "700 W Brambleton Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:168",
+      "lat": 36.85818924832723,
+      "lng": -76.30168848465037,
+      "name": "Hague Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "168",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "501 C Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:169",
+      "lat": 36.92813362754107,
+      "lng": -76.29539670176871,
+      "name": "Camp Allen Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "169",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1400 Block Graydon Place",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:17",
+      "lat": 36.87192086644093,
+      "lng": -76.30836023094798,
+      "name": "Graydon Place",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "17",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "MOUS"
+    },
+    {
+      "address": "3rd-5th Bay Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:170",
+      "lat": 36.93505863508283,
+      "lng": -76.21326609906764,
+      "name": "Bay Oaks Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "170",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "62862 Northampton Boulevard",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:171",
+      "lat": 36.88032255309813,
+      "lng": -76.19501921099571,
+      "name": "Linear Park at Outlet Mall",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "171",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "FBOS"
+    },
+    {
+      "address": "416 Granby Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:172",
+      "lat": 36.85169726113677,
+      "lng": -76.28945905440412,
+      "name": "Downtown Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "172",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "176 Maple Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:173",
+      "lat": 36.9483345730079,
+      "lng": -76.25936353156564,
+      "name": "Maple Avenue Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "173",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "8809 Monitor Way",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:174",
+      "lat": 36.94212913891958,
+      "lng": -76.27249802636952,
+      "name": "Merrimack Landing Recreation Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "174",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CCAPA"
+    },
+    {
+      "address": "947 Sutton Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:175",
+      "lat": 36.864152438016184,
+      "lng": -76.27361020460894,
+      "name": "Sutton Street Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "175",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "4275 Heutte Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:176",
+      "lat": 36.91303587344151,
+      "lng": -76.190502791835,
+      "name": "Lake Whitehurst Boat Ramp",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "176",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "PBR"
+    },
+    {
+      "address": "4301 Powhatan Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:1778",
+      "lat": 36.883313580256605,
+      "lng": -76.31773662039532,
+      "name": "Lamberts Point Public Open Space",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1778",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "FBOS"
+    },
+    {
+      "address": "1913 Winn Lane",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:1779",
+      "lat": 36.911361804306324,
+      "lng": -76.2229300594612,
+      "name": "Larrymore Lawn Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1779",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "Landscape"
+    },
+    {
+      "address": "731 Sedgewick Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:1780",
+      "lat": 36.84503013413324,
+      "lng": -76.2627406085465,
+      "name": "Kimball Terrace Berm",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1780",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "Landscape"
+    },
+    {
+      "address": "2616 Marlboro Ave",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:1781",
+      "lat": 36.840454095368905,
+      "lng": -76.25476456265788,
+      "name": "Ohio Creek River Front",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "1781",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "Landscape"
+    },
+    {
+      "address": "1305 Maltby Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:18",
+      "lat": 36.85731961341053,
+      "lng": -76.26770397785127,
+      "name": "Goff and Maltby Mini Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "18",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "265 W Tazwell Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:19",
+      "lat": 36.85003674248079,
+      "lng": -76.29505277764726,
+      "name": "Friendship Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "19",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "1275 Bayville Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:2",
+      "lat": 36.96444370728074,
+      "lng": -76.28884172760941,
+      "name": "Willoughby Boat Ramp",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [
+          "geometry"
+        ],
+        "validationStatus": "flagged"
+      },
+      "source": [
+        {
+          "id": "2",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "PBR"
+    },
+    {
+      "address": "915 Orapax Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:20",
+      "lat": 36.86821234167157,
+      "lng": -76.30813294542097,
+      "name": "Fergis Reid Tennis Courts",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "20",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "1401 Melon Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:21",
+      "lat": 36.82827837399132,
+      "lng": -76.26191258822186,
+      "name": "Diggs Town Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "21",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "114 W Charlotte Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:2184",
+      "lat": 36.852953862679335,
+      "lng": -76.28980213868711,
+      "name": "Flatiron Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "2184",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "park"
+    },
+    {
+      "address": "435 Craig Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:22",
+      "lat": 36.8309406504664,
+      "lng": -76.27575720754486,
+      "name": "Craig Street Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "22",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "700 E Ocean View Avenue",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:23",
+      "lat": 36.951900890800964,
+      "lng": -76.24495414869513,
+      "name": "Community Beach",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [
+          "geometry"
+        ],
+        "validationStatus": "flagged"
+      },
+      "source": [
+        {
+          "id": "23",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "44th Street and Colley Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:24",
+      "lat": 36.88440280814561,
+      "lng": -76.29455412169277,
+      "name": "44th Street Kayak Launch",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "24",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "PBR"
+    },
+    {
+      "address": "2651 Bartin Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:25",
+      "lat": 36.87543025741592,
+      "lng": -76.2261971425732,
+      "name": "North Fox Hall Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "25",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "2608 Gosnold Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:26",
+      "lat": 36.87455763529431,
+      "lng": -76.29319426320528,
+      "name": "Munson Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "26",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "8075 West Glen Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:27",
+      "lat": 36.9236575827874,
+      "lng": -76.2617992180944,
+      "name": "Monticello Village Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "27",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "8230 Mona Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:28",
+      "lat": 36.920442716482185,
+      "lng": -76.21225319212516,
+      "name": "Mona Avenue Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "28",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "701 Church Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:29",
+      "lat": 36.85356976876454,
+      "lng": -76.28094172404612,
+      "name": "Martin Luther King Memorial Plaza",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "29",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "300 Delaware Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:3",
+      "lat": 36.884329244934456,
+      "lng": -76.28400804590237,
+      "name": "Haven Creek Boat Ramp",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "3",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "PBR"
+    },
+    {
+      "address": "1201 Daniel Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:30",
+      "lat": 36.91634626354306,
+      "lng": -76.30908706215573,
+      "name": "Gleneagles Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "30",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "1612 Willow Wood Drive",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:31",
+      "lat": 36.89040759781735,
+      "lng": -76.26659050524289,
+      "name": "Lakewood Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "31",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CP"
+    },
+    {
+      "address": "555 Austin Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:32",
+      "lat": 36.92996424802628,
+      "lng": -76.24820204726765,
+      "name": "Hyde Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "32",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "150 Park Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:33",
+      "lat": 36.842895875505775,
+      "lng": -76.28424655116115,
+      "name": "Harbor Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "33",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "FBOS"
+    },
+    {
+      "address": "2400 Shoop Avenue",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:34",
+      "lat": 36.872425867730804,
+      "lng": -76.2618154683616,
+      "name": "Shoop Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "34",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "6050 Newport Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:35",
+      "lat": 36.89849888769252,
+      "lng": -76.2848079048398,
+      "name": "Riverpoint Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "35",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "5392 Roslyn Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:36",
+      "lat": 36.86918888606662,
+      "lng": -76.21683252402653,
+      "name": "River Oaks Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "36",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "6125 Myrtle Park",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:37",
+      "lat": 36.897355537776484,
+      "lng": -76.30391381364213,
+      "name": "Myrtle Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "37",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "635 Raleigh Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:38",
+      "lat": 36.86197049910544,
+      "lng": -76.29916756172948,
+      "name": "Raleigh Avenue Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "38",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "101 N Military Highway",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:39",
+      "lat": 36.84389422848017,
+      "lng": -76.21692184810017,
+      "name": "Poplar Hall Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "39",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CP"
+    },
+    {
+      "address": "1130 Leake Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:4",
+      "lat": 36.83064532221711,
+      "lng": -76.26750406066832,
+      "name": "Campostella Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "4",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CCAPA"
+    },
+    {
+      "address": "435 E Plume Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:40",
+      "lat": 36.846508037536125,
+      "lng": -76.28851917510941,
+      "name": "Plume Fountain",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "40",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "1001 W Brambleton Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:41",
+      "lat": 36.86140404737363,
+      "lng": -76.30740577156062,
+      "name": "Plum Point Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "41",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "9520 20th Bay Street",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:42",
+      "lat": 36.92690282776278,
+      "lng": -76.1958689979601,
+      "name": "East Ocean View Community Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "42",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CCAPA"
+    },
+    {
+      "address": "3501 Oakmont Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:43",
+      "lat": 36.91160949477875,
+      "lng": -76.23876972520526,
+      "name": "Oakmont North Playgrounds",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "43",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "8401 Tidewater Drive",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:44",
+      "lat": 36.92491803110265,
+      "lng": -76.25261361800858,
+      "name": "Northside Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "44",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CP"
+    },
+    {
+      "address": "900 W Princess Anne Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:45",
+      "lat": 36.86673699154632,
+      "lng": -76.30055836996404,
+      "name": "Yellow Fever Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "45",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "235 Brooke Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:46",
+      "lat": 36.84768616376181,
+      "lng": -76.29418897241902,
+      "name": "Wisconsin Plaza",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "46",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "1424 Westover Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:47",
+      "lat": 36.87154714838318,
+      "lng": -76.3087278756783,
+      "name": "Westover Memorial Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "47",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "5801 Upper Brandon Place",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:48",
+      "lat": 36.895086373266196,
+      "lng": -76.30511806712563,
+      "name": "Virginia Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "48",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "MOUS"
+    },
+    {
+      "address": "7545 Diven Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:49",
+      "lat": 36.91541658746845,
+      "lng": -76.29400765669332,
+      "name": "Titustown Visual Arts Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "49",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CCAPA"
+    },
+    {
+      "address": "1220 Azalea Court",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:5",
+      "lat": 36.87450650218887,
+      "lng": -76.30553588612416,
+      "name": "Jeff Robertson Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "5",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "601 W Olney Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:50",
+      "lat": 36.859535291422304,
+      "lng": -76.29887965896475,
+      "name": "Stone Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "50",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "120 W Ocean View Avenue",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:51",
+      "lat": 36.9547476475799,
+      "lng": -76.24951301596391,
+      "name": "Ocean View Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [
+          "geometry"
+        ],
+        "validationStatus": "flagged"
+      },
+      "source": [
+        {
+          "id": "51",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "FP"
+    },
+    {
+      "address": "800 Little Bay Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:52",
+      "lat": 36.96386517737296,
+      "lng": -76.27472437078606,
+      "name": "Captain's Quarters Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [
+          "geometry"
+        ],
+        "validationStatus": "flagged"
+      },
+      "source": [
+        {
+          "id": "52",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CCAPA"
+    },
+    {
+      "address": "324 W Ocean View Avenue",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:53",
+      "lat": 36.95926963267059,
+      "lng": -76.25936102812112,
+      "name": "Sarah Constance Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [
+          "geometry"
+        ],
+        "validationStatus": "flagged"
+      },
+      "source": [
+        {
+          "id": "53",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "8100 Evergreen Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:54",
+      "lat": 36.927867198098596,
+      "lng": -76.30999489865935,
+      "name": "Glennwood Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "54",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "7928 Hampton Boulevard",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:55",
+      "lat": 36.92321632260679,
+      "lng": -76.3158270889533,
+      "name": "Sewells Point Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "55",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "7637 North Shore Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:56",
+      "lat": 36.91332785230556,
+      "lng": -76.31353331828242,
+      "name": "Hermitage Museum Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "56",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "7620 Shirland Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:57",
+      "lat": 36.915139553590436,
+      "lng": -76.30641389165615,
+      "name": "Meadowbrook Park / Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "57",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "2700 E Princess Anne Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:577",
+      "lat": 36.85542078475851,
+      "lng": -76.25761059876974,
+      "name": "Richard Bowling Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "577",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1058 North Shore Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:58",
+      "lat": 36.90753739880202,
+      "lng": -76.29300955647302,
+      "name": "Algonquin Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "58",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "451 North Shore Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:59",
+      "lat": 36.91360519526223,
+      "lng": -76.28302367622675,
+      "name": "North Shore Road Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "59",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "903 South Main Street",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:6",
+      "lat": 36.83233928959017,
+      "lng": -76.28526189613125,
+      "name": "St Helena Elementary Berkley Community Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "6",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "7300 Newport Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:60",
+      "lat": 36.913250969207645,
+      "lng": -76.2791307543909,
+      "name": "Norfolk Fitness and Wellness Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "60",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CCAPA"
+    },
+    {
+      "address": "7101 Newport Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:61",
+      "lat": 36.908656844352244,
+      "lng": -76.27990838650459,
+      "name": "Granby Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "61",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "7101 Granby Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:62",
+      "lat": 36.908981295961965,
+      "lng": -76.27949761795773,
+      "name": "Granby High School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "62",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "310 Thole Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:63",
+      "lat": 36.905380681394014,
+      "lng": -76.26706321599569,
+      "name": "Suburban Park Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "63",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "8100 Granby Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:64",
+      "lat": 36.928040649737234,
+      "lng": -76.26774900046698,
+      "name": "Forest Lawn Cemetery",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "64",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CEM"
+    },
+    {
+      "address": "598 Summers Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:65",
+      "lat": 36.900528949697986,
+      "lng": -76.26214047081561,
+      "name": "Roland Park Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "65",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "7920 Tidewater Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:66",
+      "lat": 36.91949030658524,
+      "lng": -76.25318754746952,
+      "name": "Crossroads Elementary School and Recreation Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "66",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "900 Ashbury Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:67",
+      "lat": 36.91049751534276,
+      "lng": -76.24999625097709,
+      "name": "Oakwood Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "67",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "180 E Evans Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:68",
+      "lat": 36.937275805048245,
+      "lng": -76.2625990810694,
+      "name": "Northside Middle Mary Calcott Elementary THRC",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "68",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "2300 Berkley Avenue Extended",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:69",
+      "lat": 36.82478135291255,
+      "lng": -76.25965871629093,
+      "name": "Southside Aquatic Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "69",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CCAPA"
+    },
+    {
+      "address": "350 Beechwood Place",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:7",
+      "lat": 36.857240169555176,
+      "lng": -76.29740884575946,
+      "name": "Beechwood Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "7",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "2400 Berkley Avenue Extended",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:70",
+      "lat": 36.821976263127446,
+      "lng": -76.25896999551149,
+      "name": "Campostella Landfill Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "70",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "KFPS"
+    },
+    {
+      "address": "324 South Main Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:71",
+      "lat": 36.83608847673284,
+      "lng": -76.28162684605977,
+      "name": "South Main Street Playground",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "71",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "706 Walker Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:72",
+      "lat": 36.828321824065775,
+      "lng": -76.27866216506649,
+      "name": "Berkley Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "72",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "500 Lancaster Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:73",
+      "lat": 36.83097897079867,
+      "lng": -76.27857165106654,
+      "name": "Magnolia Cemetery",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "73",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CEM"
+    },
+    {
+      "address": "1000 E Indian River Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:74",
+      "lat": 36.83289220287819,
+      "lng": -76.27051295651259,
+      "name": "Riverside Cemetery",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "74",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CEM"
+    },
+    {
+      "address": "1106 Campostella Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:75",
+      "lat": 36.830104602597174,
+      "lng": -76.2612026454452,
+      "name": "Southside STEM Academy at Campostella",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "75",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "201 Waterside Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:76",
+      "lat": 36.84505220570487,
+      "lng": -76.29221421789116,
+      "name": "Town Point Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "76",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "FP"
+    },
+    {
+      "address": "401 Reservoir Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:77",
+      "lat": 36.84632838622891,
+      "lng": -76.27436118084307,
+      "name": "Reservior Avenue Mini Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "77",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "610 May Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:78",
+      "lat": 36.84747539577133,
+      "lng": -76.27713148742615,
+      "name": "Ruffner Middle School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "78",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1045 E Brambleton Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:79",
+      "lat": 36.851388631644255,
+      "lng": -76.27780252708295,
+      "name": "Tidewater Park Elementary School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "79",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1136 Vista Street",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:8",
+      "lat": 36.86757347160388,
+      "lng": -76.26656696427186,
+      "name": "Barraud Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "8",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CP"
+    },
+    {
+      "address": "1511 Willow Wood Drive",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:80",
+      "lat": 36.88869392519218,
+      "lng": -76.2687968017747,
+      "name": "Willard Model School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "80",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1701 Alsace Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:81",
+      "lat": 36.883071544674,
+      "lng": -76.2642425001946,
+      "name": "Academy for Discovery at Lakewood",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "81",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "830 Goff Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:82",
+      "lat": 36.86039175557535,
+      "lng": -76.27322877140887,
+      "name": "Huntersville Community Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "82",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "CCAPA"
+    },
+    {
+      "address": "446 Virginia Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:83",
+      "lat": 36.88114259740398,
+      "lng": -76.2850278553806,
+      "name": "Stuart Early Childhood Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "83",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "1270 Lafayette Boulevard",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:84",
+      "lat": 36.87455962680077,
+      "lng": -76.27213945093752,
+      "name": "Lafayette Residence Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "84",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "1270 Lafayette Boulevard",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:85",
+      "lat": 36.87481347258798,
+      "lng": -76.27159244634454,
+      "name": "Lafayette Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "85",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "300, 400, 500 Blks Olney Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:86",
+      "lat": 36.85801417272757,
+      "lng": -76.29495507727748,
+      "name": "Olney Road Parks",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "86",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "9548 Norfolk Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:88",
+      "lat": 36.94943209118888,
+      "lng": -76.24694854666971,
+      "name": "Ocean View Golf Course",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "88",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "FBOS"
+    },
+    {
+      "address": "9510 Chesapeake Boulevard",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:89",
+      "lat": 36.946275867647955,
+      "lng": -76.24413836372426,
+      "name": "Lake Modoc",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "89",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "1147 Pineridge Road",
+      "amenities": [
+        "restrooms"
+      ],
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:9",
+      "lat": 36.86141779248309,
+      "lng": -76.2287358233102,
+      "name": "Azalea Little League Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "9",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "6700 Azalea Garden Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:90",
+      "lat": 36.90076967112567,
+      "lng": -76.20270379994192,
+      "name": "Norfolk Botanical Garden",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "90",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "FBOS"
+    },
+    {
+      "address": "1300 Stockley Gardens",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:91",
+      "lat": 36.86558909825146,
+      "lng": -76.29460285169048,
+      "name": "Stockley Garden Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "91",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "1200 1400 Stockley Gardens",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:92",
+      "lat": 36.864873728361694,
+      "lng": -76.29509545633199,
+      "name": "Stockley Garden- North Blocks",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "92",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "MOUS"
+    },
+    {
+      "address": "600 700 800 Stockley Gardens",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:93",
+      "lat": 36.86205551348744,
+      "lng": -76.29718542010146,
+      "name": "Stockley Garden- South Blocks",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "93",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NPP"
+    },
+    {
+      "address": "7721 Azalea Garden Road",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:94",
+      "lat": 36.9126113856292,
+      "lng": -76.21100551648037,
+      "name": "Azalea Garden Middle School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "94",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "3000 Danna Street",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:95",
+      "lat": 36.86380759970524,
+      "lng": -76.25317470242749,
+      "name": "Ballentine Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "95",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "NAP"
+    },
+    {
+      "address": "1434 E Bayview Boulevard",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:96",
+      "lat": 36.93655197238628,
+      "lng": -76.23670890511247,
+      "name": "Bayview Elementary and Recreation Center",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "96",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SCSSAPA"
+    },
+    {
+      "address": "1111 Park Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:97",
+      "lat": 36.85543441983584,
+      "lng": -76.27052552787117,
+      "name": "Booker T Washington High School",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "97",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "SSAPA"
+    },
+    {
+      "address": "2717 Tait Terrace",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:98",
+      "lat": 36.86623404052873,
+      "lng": -76.26063967181507,
+      "name": "Tait Terrace Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "98",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
+    },
+    {
+      "address": "176 Maple Avenue",
+      "category": "park",
+      "id": "parks:norfolk-rpos-parks:99",
+      "lat": 36.94859959718906,
+      "lng": -76.25944764073665,
+      "name": "Maple Avenue Dog Park",
+      "review": {
+        "dedupGroupId": null,
+        "flags": [],
+        "validationStatus": "valid"
+      },
+      "source": [
+        {
+          "id": "99",
+          "name": "City of Norfolk Parks",
+          "url": "https://gisshare.norfolk.gov/pubserver/rest/services/OpenData/RPOS/FeatureServer/1"
+        }
+      ],
+      "type": "DP"
     }
   ]
 }

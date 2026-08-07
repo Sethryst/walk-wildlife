@@ -1,19 +1,66 @@
 {
   "id": "new-york-city",
   "name": "New York City, New York",
-  "boundary": { "source": "explicit", "geometry": { "type": "Polygon", "coordinates": [[[-74.259,40.496],[-74.244,40.590],[-74.171,40.647],[-74.113,40.700],[-74.040,40.700],[-73.907,40.733],[-73.700,40.576],[-73.729,40.496],[-73.900,40.477],[-74.040,40.490],[-74.259,40.496]]] } },
-  "osm": { "pbfUrl": "https://download.geofabrik.de/north-america/us/new-york-latest.osm.pbf" },
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -74.259,
+            40.496
+          ],
+          [
+            -74.244,
+            40.59
+          ],
+          [
+            -74.171,
+            40.647
+          ],
+          [
+            -74.113,
+            40.7
+          ],
+          [
+            -74.04,
+            40.7
+          ],
+          [
+            -73.907,
+            40.733
+          ],
+          [
+            -73.7,
+            40.576
+          ],
+          [
+            -73.729,
+            40.496
+          ],
+          [
+            -73.9,
+            40.477
+          ],
+          [
+            -74.04,
+            40.49
+          ],
+          [
+            -74.259,
+            40.496
+          ]
+        ]
+      ]
+    }
+  },
+  "osm": {
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/new-york-latest.osm.pbf"
+  },
   "imports": {
-    "poi": "data/newyork-poi.json",
+    "poi": "new-york-city-poi.json",
     "buckets": null,
-    "supplemental": [],
-    "buildTimeSupplements": [
-      {
-        "id": "gremlin-nyc-coffee",
-        "path": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\nyc\\pois.json",
-        "filter": { "category": "coffee" },
-        "attribution": "OpenStreetMap data prepared by Gremlin Lab; imported at build time only"
-      }
-    ]
+    "supplemental": []
   }
 }

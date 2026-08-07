@@ -75,6 +75,10 @@ Every `region.json` requires `boundary.source`; bbox-only regions are rejected. 
 
 Norfolk can consume Gremlin Lab's release artifact as a build-time input only. `regions/norfolk/region.json` points to the local `pois.json` and `producer-manifest.json`; the packager verifies the producer SHA-256 then copies the POIs into this app's generated package. The app has no Gremlin Lab runtime import, URL, API, or database dependency.
 
+## Field Editions
+
+Field Editions are smaller, editorial place packages rather than city-region downloads. The first configuration is Meadowlark Botanical Gardens: run `node tools/field-edition-build.mjs meadowlark-gardens --dry-run` to inspect its bounded build, or run it with Docker Desktop running to create the ignored local package. See [FieldEditions.md](docs/FieldEditions.md) for the package and runtime contract.
+
 ## Optional Supabase friends mode
 
 The app is fully usable with `supabase-config.js` left blank. To enable the optional friends leaderboard:
@@ -87,6 +91,8 @@ The app is fully usable with `supabase-config.js` left blank. To enable the opti
 Online mode sends only these aggregate fields: public username, total points, total miles, number of sites discovered, and update timestamp. It **never** sends GPS routes, route points, exact location, journal reflections, observation notes, photos, or history-moment locations. Local data remains the source of truth and sync resumes after connectivity returns.
 
 The SQL schema enables Row Level Security, gives users control over their own aggregate profile, and limits leaderboard visibility to direct friendships. Username lookup returns only an ID and username so the app can create a friend request without exposing a public directory.
+
+For the cohort-led civic pilot, run [supabase-migration-cohorts.sql](./supabase-migration-cohorts.sql) after the base schema. It adds private neighborhood cohorts, shared issue priorities, organizer requests, and group-level responses. Organizers can use optional organization-domain verification, but cohorts—not an approval board—choose whether they are discoverable and whether to respond. It does not store addresses, routes, voter records, vote choices, individual civic preferences, or individual attendance.
 
 ## Path to the partner-enabled safety & wellness product
 

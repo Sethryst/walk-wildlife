@@ -1,0 +1,58 @@
+{
+  "id": "wolf-trap-va",
+  "name": "Wolf Trap, Virginia",
+  "version": 1,
+  "generatedAt": "2026-08-06T11:42:54.897Z",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -77.285,
+            38.92
+          ],
+          [
+            -77.285,
+            38.955
+          ],
+          [
+            -77.24,
+            38.955
+          ],
+          [
+            -77.24,
+            38.92
+          ],
+          [
+            -77.285,
+            38.92
+          ]
+        ]
+      ]
+    },
+    "bbox": {
+      "west": -77.285,
+      "south": 38.92,
+      "east": -77.24,
+      "north": 38.955
+    }
+  },
+  "source": {
+    "provider": "OpenStreetMap",
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/virginia-latest.osm.pbf"
+  },
+  "artifacts": {
+    "pmtiles": "wolf-trap-va.pmtiles",
+    "poi": "wolf-trap-va-poi.json",
+    "buckets": "wolf-trap-va-buckets.json",
+    "supplemental": [
+      "wolf-trap-va-boundary.geojson",
+      "civic/index.json"
+    ]
+  },
+  "stats": {
+    "poiCount": 18
+  }
+}

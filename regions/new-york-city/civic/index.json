@@ -1,0 +1,22 @@
+{
+  "vote": {
+    "schemaVersion": 1,
+    "regionId": "nyc",
+    "generatedAt": "2026-08-06T11:39:08.618287Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "local"
+    },
+    "items": [
+      {
+        "id": "nyc-boe-2026-general-election",
+        "title": "General Election",
+        "date": "2026-11-03",
+        "type": "general_election",
+        "summary": "Vote in New York City's general election. Polls are open from 6:00 AM to 9:00 PM.",
+        "officialUrl": "https://www.vote.nyc/elections",
+        "expiresAt": "2026-11-04T05:00:00Z"
+      }
+    ]
+  }
+}

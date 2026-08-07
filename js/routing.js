@@ -5,7 +5,12 @@ const FOOT_ROUTER = 'https://routing.openstreetmap.de/routed-foot/route/v1/drivi
 export async function routeOnFoot(points) {
   if (!Array.isArray(points) || points.length < 2) return null;
   const coordinates = points.map((point) => `${point.lng},${point.lat}`).join(';');
-  const response = await fetch(`${FOOT_ROUTER}${coordinates}?overview=full&geometries=geojson&steps=false`);
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+  let response;
+  try { response = await fetch(`${FOOT_ROUTER}${coordinates}?overview=full&geometries=geojson&steps=false`, { signal: controller.signal }); }
+  catch { return null; }
+  finally { clearTimeout(timeout); }
   if (!response.ok) return null;
   const payload = await response.json();
   const route = payload.routes?.[0];

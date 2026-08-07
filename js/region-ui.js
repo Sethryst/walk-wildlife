@@ -5,6 +5,7 @@ import { RegionInstaller } from './region-installer.js';
 import { RegionAPI } from './region-api.js';
 import { RegionPackage } from './region-package.js';
 import { canUseOfflineRegion } from './entitlements.js';
+import { FieldEditionLoader } from './field-edition-loader.js';
 
 export const regionInstaller = new RegionInstaller({ db });
 
@@ -66,6 +67,11 @@ export function createRegionRuntimeApi() {
 }
 
 export const regionApi = createRegionRuntimeApi();
+export const fieldEditionLoader = new FieldEditionLoader({ installer: regionInstaller });
+
+export async function loadFieldEdition(id) {
+  return fieldEditionLoader.loadEdition(id);
+}
 
 // PMTiles packages are a Field Edition delivery concern. The ordinary map,
 // personal journal, and curated online experience remain outside this gate.

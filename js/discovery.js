@@ -35,17 +35,24 @@ export function startDiscoveryHeadline() {
 }
 
 export async function chooseClosestCityIfPermitted() {
-  if (!navigator.permissions?.query || !navigator.geolocation) return;
-  try {
-    const status = await navigator.permissions.query({ name: 'geolocation' });
-    if (status.state !== 'granted') return;
-    navigator.geolocation.getCurrentPosition(async (position) => {
-      const point = { lat: position.coords.latitude, lng: position.coords.longitude };
-      const closest = Object.entries(CITIES).reduce((best, [id, config]) => {
-        const distance = distanceMeters(point, config.center);
-        return !best || distance < best.distance ? { id, distance } : best;
-      }, null);
-      if (closest && closest.id !== state.activeCity) await switchCity(closest.id, true);
-    }, () => {}, { maximumAge: 300000, timeout: 5000 });
-  } catch { /* Location remains opt-in; keep the saved city when unavailable. */ }
+  const closest = await nearestCityFromCurrentLocation();
+  if (closest && closest.id !== state.activeCity) await switchCity(closest.id, true);
+}
+
+export function nearestCityFor(point) {
+  return Object.entries(CITIES).reduce((best, [id, config]) => {
+    const distance = distanceMeters(point, config.center);
+    return !best || distance < best.distance ? { id, distance, point } : best;
+  }, null);
+}
+
+// This intentionally requests location during first launch. If declined or
+// unavailable, the saved/default city remains usable without any delay.
+export async function nearestCityFromCurrentLocation() {
+  if (!navigator.geolocation) return null;
+  return new Promise((resolve) => navigator.geolocation.getCurrentPosition(
+    (position) => resolve(nearestCityFor({ lat: position.coords.latitude, lng: position.coords.longitude })),
+    () => resolve(null),
+    { enableHighAccuracy: false, maximumAge: 300000, timeout: 5000 }
+  ));
 }

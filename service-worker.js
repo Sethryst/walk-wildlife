@@ -1,11 +1,29 @@
-const APP_CACHE = 'walk-wildlife-shell-v7'; // bump when shell assets change
+// Keep the whole module graph with the shell. Caching only app.js leaves an
+// offline (or briefly disconnected) reload with a blank app when any imported
+// module was not already in the runtime cache.
+const APP_CACHE = 'walk-wildlife-shell-v31'; // bump when shell assets change
 const TILE_CACHE = 'walk-wildlife-osm-viewed-tiles-v1';
 const LIBRARY_CACHE = 'walk-wildlife-library-v2';
-const shell = ['./', './index.html', './styles.css', './app.js', './manifest.webmanifest', './supabase-config.js', './data/norfolk-poi.json', './assets/walk-companion.gif'];
+const shell = [
+  './', './index.html', './styles.css', './app.js', './manifest.webmanifest', './supabase-config.js', './assets/walk-companion.gif',
+  './js/archive.js', './js/backup.js', './js/city.js', './js/civic.js', './js/constants.js', './js/discovery.js',
+  './js/entitlements.js', './js/events.js', './js/explore.js', './js/field-edition-loader.js', './js/geo.js', './js/geofence.js',
+  './js/loader.js', './js/map.js', './js/observation.js', './js/online.js', './js/planner.js', './js/poi.js', './js/profile.js',
+  './js/quiet-places.js', './js/region-api.js', './js/region-installer.js', './js/region-manager.js', './js/region-package.js',
+  './js/region-ui.js', './js/routes.js', './js/routing.js', './js/seasonal-awareness.js', './js/state.js', './js/storage.js',
+  './js/ui.js', './js/utils.js', './js/walk.js', './js/weather.js',
+  './data/boise-meridian-idaho-poi.json', './data/dc-poi.json', './data/keystone-colorado-poi.json', './data/newyork-poi.json', './data/norfolk-poi.json',
+  './data/pgcounty-poi.json', './data/philadelphia-poi.json', './data/richmond-poi.json', './data/sedona-arizona-poi.json', './data/vienna-poi.json', './data/wolf-trap-va-poi.json'
+];
 const libraryAssets = [
-  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
-  './css/MarkerCluster.css',
-  './css/MarkerCluster.Default.css'
+  './vendor/leaflet/leaflet.css',
+  './vendor/leaflet/leaflet.js',
+  './vendor/leaflet-markercluster/MarkerCluster.css',
+  './vendor/leaflet-markercluster/MarkerCluster.Default.css',
+  './vendor/leaflet-markercluster/leaflet.markercluster.js',
+  './vendor/maplibre-gl.css',
+  './vendor/maplibre-gl.js',
+  './vendor/pmtiles.js'
 ];
 
 
@@ -48,7 +66,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  if (url.hostname === 'unpkg.com' && url.pathname.includes('/leaflet@1.9.4/')) {
+  if (url.origin === self.location.origin && url.pathname.startsWith('/vendor/')) {
     event.respondWith(caches.open(LIBRARY_CACHE).then(async (cache) => {
       const saved = await cache.match(event.request);
       if (saved) return saved;

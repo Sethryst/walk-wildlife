@@ -31,6 +31,9 @@ export class RegionInstaller {
         regionId,
         buckets: regionPackage.bucketsData || {}
       });
+      if (regionPackage.fieldEditionData) {
+        await this.db.put('field_editions', { id: regionId, regionId, ...regionPackage.fieldEditionData });
+      }
       return {
         id: regionId,
         name: regionPackage.name,
@@ -55,6 +58,7 @@ export class RegionInstaller {
     const metadata = await this.db.get('regions', regionId);
     const poiEntry = await this.db.get('region_pois', regionId);
     const bucketEntry = await this.db.get('region_buckets', regionId);
+    const fieldEditionEntry = await this.db.get('field_editions', regionId);
     if (!metadata) return null;
 
     return {
@@ -64,6 +68,12 @@ export class RegionInstaller {
       mapSource: { type: 'opfs', path: `regions/${regionId}/${regionId}.pmtiles` },
       pois: poiEntry?.pois || [],
       buckets: bucketEntry?.buckets || {},
+      fieldEdition: fieldEditionEntry ? {
+        places: fieldEditionEntry.places || { places: poiEntry?.pois || [] },
+        routes: fieldEditionEntry.routes || { routes: [] },
+        stories: fieldEditionEntry.stories || { stories: [] },
+        sources: fieldEditionEntry.sources || { sources: [] }
+      } : null,
       ready: true
     };
   }

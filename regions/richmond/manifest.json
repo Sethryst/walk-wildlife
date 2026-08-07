@@ -1,0 +1,58 @@
+{
+  "id": "richmond",
+  "name": "Richmond, Virginia",
+  "version": 1,
+  "generatedAt": "2026-08-06T11:42:44.323Z",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -77.6,
+            37.43
+          ],
+          [
+            -77.6,
+            37.64
+          ],
+          [
+            -77.3,
+            37.64
+          ],
+          [
+            -77.3,
+            37.43
+          ],
+          [
+            -77.6,
+            37.43
+          ]
+        ]
+      ]
+    },
+    "bbox": {
+      "west": -77.6,
+      "south": 37.43,
+      "east": -77.3,
+      "north": 37.64
+    }
+  },
+  "source": {
+    "provider": "OpenStreetMap",
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/virginia-latest.osm.pbf"
+  },
+  "artifacts": {
+    "pmtiles": "richmond.pmtiles",
+    "poi": "richmond-poi.json",
+    "buckets": "richmond-buckets.json",
+    "supplemental": [
+      "richmond-boundary.geojson",
+      "civic/index.json"
+    ]
+  },
+  "stats": {
+    "poiCount": 164
+  }
+}

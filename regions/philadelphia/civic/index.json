@@ -1,0 +1,22 @@
+{
+  "vote": {
+    "schemaVersion": 1,
+    "regionId": "philadelphia",
+    "generatedAt": "2026-08-06T11:39:08.675198Z",
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "local"
+    },
+    "items": [
+      {
+        "id": "phila-2026-general-election",
+        "title": "General Election",
+        "date": "2026-11-03",
+        "type": "general_election",
+        "summary": "Vote in Philadelphia's general election. Polls are open from 7:00 AM to 8:00 PM.",
+        "officialUrl": "https://vote.phila.gov/",
+        "expiresAt": "2026-11-04T05:00:00Z"
+      }
+    ]
+  }
+}

@@ -14,11 +14,15 @@ export const state = {
 
   // map objects
   map: null,
+  currentPosition: null,
   curatedRouteLine: null,
   plannedRouteLine: null,
   plannedRoute: null,
   observationLayer: null,
   poiLayer: null,
+  fieldEditionEntryLayer: null,
+  fieldEditionMap: null,
+  fieldEditionProtocol: null,
 
   // walking session
   activeWalk: null,

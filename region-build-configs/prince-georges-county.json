@@ -1,0 +1,16 @@
+{
+  "id": "prince-georges-county",
+  "name": "Prince George's County, Maryland",
+  "boundary": { "source": "explicit", "geometry": { "type": "Polygon", "coordinates": [[[-77.150,38.520],[-77.150,39.180],[-76.680,39.180],[-76.680,38.520],[-77.150,38.520]]] } },
+  "osm": { "pbfUrl": "https://download.geofabrik.de/north-america/us/maryland-latest.osm.pbf" },
+  "imports": {
+    "poi": "data/pgcounty-poi.json",
+    "buildTimePoiSource": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\prince-georges-county-md\\pois.json",
+    "producerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\prince-georges-county-md\\producer-manifest.json",
+    "producerCategories": ["event", "wildlife"],
+    "civicReleaseRoot": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\prince-georges-county-md\\civic",
+    "civicProducerManifest": "C:\\Users\\igmro\\OneDrive\\Documents\\gremlin_lab\\releases\\prince-georges-county-md\\producer-manifest.json",
+    "buckets": null,
+    "supplemental": []
+  }
+}

@@ -2,7 +2,7 @@
   "id": "new-york-city",
   "name": "New York City, New York",
   "version": 1,
-  "generatedAt": "2026-08-06T03:22:21.626Z",
+  "generatedAt": "2026-08-06T11:40:11.000Z",
   "boundary": {
     "source": "explicit",
     "geometry": {
@@ -72,10 +72,11 @@
     "poi": "new-york-city-poi.json",
     "buckets": "new-york-city-buckets.json",
     "supplemental": [
-      "new-york-city-boundary.geojson"
+      "new-york-city-boundary.geojson",
+      "civic/index.json"
     ]
   },
   "stats": {
-    "poiCount": 5112
+    "poiCount": 6682
   }
 }

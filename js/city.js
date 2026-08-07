@@ -6,6 +6,7 @@ import { renderCityExplorer, renderCityPois, migratePoi, city as cityLookup } fr
 import { renderProfile } from './profile.js';
 import { setStatus, toast } from './ui.js';
 import { addObservationMarker } from './observation.js';
+import { renderWeatherBrief } from './weather.js';
 
 export async function loadCityData(cityId) {
   const config = CITIES[cityId];
@@ -18,7 +19,7 @@ export async function loadCityData(cityId) {
   if (config.supplementalPoiFile) {
     try {
       const supplementResponse = await fetch(config.supplementalPoiFile);
-      if (supplementResponse.ok) supplements = (await supplementResponse.json()).pois?.filter((poi) => poi.category === 'coffee') || [];
+      if (supplementResponse.ok) supplements = (await supplementResponse.json()).pois || [];
     } catch { /* base city data remains usable without the supplement */ }
   }
   const mergeSupplements = (pois) => {
@@ -42,7 +43,10 @@ export async function loadCityData(cityId) {
   }
 }
 export async function loadAllCityData() {
-  await Promise.all(Object.keys(CITIES).map((cityId) => loadCityData(cityId).catch((error) => console.error(error))));
+  // Loading every regional seed at boot made first paint especially expensive
+  // for the NYC historical-sign dataset. Load the active/nearest edition now;
+  // switchCity loads another city only when a person selects it.
+  await loadCityData(state.activeCity);
 }
 export async function refreshCityMap(recenter = false) {
   const active = cityLookup();
@@ -53,12 +57,14 @@ export async function refreshCityMap(recenter = false) {
   el('activeCityLabel').textContent = cityLabel(state.activeCity);
   el('map').setAttribute('aria-label', `Map of ${cityLabel(state.activeCity)} historical places`);
   renderCityExplorer(); renderCityPois();
+  void renderWeatherBrief();
   renderProfile();
 }
 export async function switchCity(nextCity, recenter = true) {
   if (!CITIES[nextCity]) return;
   if (state.activeWalk) { el('citySelect').value = state.activeCity; toast('Finish the current walk before switching cities.'); return; }
   state.activeCity = nextCity; state.settings.activeCity = nextCity;
+  if (!state.cityPois[nextCity]) await loadCityData(nextCity);
   state.curatedRouteLine?.remove(); state.curatedRouteLine = null;
   state.plannedRouteLine?.remove(); state.plannedRouteLine = null; state.plannedRoute = null;
   state.poiTags.clear();

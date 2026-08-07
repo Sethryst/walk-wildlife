@@ -1,0 +1,59 @@
+{
+  "id": "sedona-arizona",
+  "name": "Sedona, Arizona",
+  "version": 1,
+  "generatedAt": "2026-08-07T01:03:27.950Z",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -111.903,
+            34.774
+          ],
+          [
+            -111.903,
+            34.968
+          ],
+          [
+            -111.678,
+            34.968
+          ],
+          [
+            -111.678,
+            34.774
+          ],
+          [
+            -111.903,
+            34.774
+          ]
+        ]
+      ]
+    },
+    "bbox": {
+      "west": -111.903,
+      "south": 34.774,
+      "east": -111.678,
+      "north": 34.968
+    }
+  },
+  "source": {
+    "provider": "OpenStreetMap",
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/arizona-latest.osm.pbf"
+  },
+  "artifacts": {
+    "pmtiles": "sedona-arizona.pmtiles",
+    "poi": "sedona-arizona-poi.json",
+    "buckets": "sedona-arizona-buckets.json",
+    "supplemental": [
+      "sedona-arizona-boundary.geojson",
+      "civic/index.json",
+      "weather.json"
+    ]
+  },
+  "stats": {
+    "poiCount": 696
+  }
+}

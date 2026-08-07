@@ -1,0 +1,59 @@
+{
+  "id": "boise-meridian-idaho",
+  "name": "Boise–Meridian–Old Town, Idaho",
+  "version": 1,
+  "generatedAt": "2026-08-07T01:03:53.619Z",
+  "boundary": {
+    "source": "explicit",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -116.41,
+            43.49
+          ],
+          [
+            -116.41,
+            43.708
+          ],
+          [
+            -116.105,
+            43.708
+          ],
+          [
+            -116.105,
+            43.49
+          ],
+          [
+            -116.41,
+            43.49
+          ]
+        ]
+      ]
+    },
+    "bbox": {
+      "west": -116.41,
+      "south": 43.49,
+      "east": -116.105,
+      "north": 43.708
+    }
+  },
+  "source": {
+    "provider": "OpenStreetMap",
+    "pbfUrl": "https://download.geofabrik.de/north-america/us/idaho-latest.osm.pbf"
+  },
+  "artifacts": {
+    "pmtiles": "boise-meridian-idaho.pmtiles",
+    "poi": "boise-meridian-idaho-poi.json",
+    "buckets": "boise-meridian-idaho-buckets.json",
+    "supplemental": [
+      "boise-meridian-idaho-boundary.geojson",
+      "civic/index.json",
+      "weather.json"
+    ]
+  },
+  "stats": {
+    "poiCount": 677
+  }
+}

@@ -7,14 +7,14 @@ import { getCurrentLocation, startWalk, stopWalk, togglePauseWalk, updateWalkDis
 import { openObservation, saveObservation, setDraftObservationIcon } from './observation.js';
 import { openJournal, closeSheets, openSheet, openAccountSettings, openFiltersSheet, openProfile, renderGeofenceCategoryChips, setArchiveFilter, showView, toast } from './ui.js';
 import { city, citySites, renderPoiTagFilters, renderCityPois, showHistory, savePlaceMemory, searchPois, searchOsm } from './poi.js';
-import { syncProfile, renderOnline, openOnline, signIn, signUp, createOnlineProfile, updateAccountUsername, updateAccountPhone, updateAccountEmail, updateAccountPassword, acceptFriend, refreshFriends, findFriend } from './online.js';
+import { syncProfile, renderOnline, openOnline, signIn, signUp, createOnlineProfile, updateAccountUsername, updateAccountPhone, updateAccountEmail, updateAccountPassword, acceptFriend, refreshFriends, findFriend, createCohort, respondToOrganizerRequest, inviteFriendToCohort, respondToCohortInvite, saveOrganizerProfile, createOrganizerRequest, saveCohortSettings, sendCohortMessage } from './online.js';
 import { refreshCityMap, switchCity } from './city.js';
 import { renderProfile } from './profile.js';
 import db from './storage.js';
 import { renderExplorePlaces, setExploreTab } from './explore.js';
 import { renderDiscoveryHeadline } from './discovery.js';
 import { showCuratedRoute } from './routes.js';
-import { generateTimeBasedPlan, previewTimeBasedPlan, choosePlan, setPlanningMode } from './planner.js';
+import { generateTimeBasedPlan, previewTimeBasedPlan, choosePlan, changePlan, setPlanningMode } from './planner.js';
 
 export function initEvents() {
   initBackupControls();
@@ -30,8 +30,10 @@ export function initEvents() {
   el('choosePlanStartButton').addEventListener('click', () => { state.plannerSelecting = 'Start'; toast('Planning mode: tap a starting point.'); closeSheets(); showView('map'); });
   el('choosePlanEndButton').addEventListener('click', () => { state.plannerSelecting = 'End'; toast('Planning mode: tap a destination.'); closeSheets(); showView('map'); });
   window.addEventListener('planner-point-selected', async () => { openSheet('planWalkSheet'); await generateTimeBasedPlan(); });
-  el('planOptions').addEventListener('click', (event) => { const option = event.target.closest('[data-plan-option]'); if (option) choosePlan(option.dataset.planOption); });
-  el('startPlannedWalkButton').addEventListener('click', async () => { if (!state.plannedRoute) await generateTimeBasedPlan(); if (!previewTimeBasedPlan()) { toast('A walkable road route could not be found.'); return; } setPlanningMode(false); closeSheets(); showView('map'); startWalk(); });
+  el('planOptions').addEventListener('click', (event) => { const option = event.target.closest('[data-plan-option]'); if (option) choosePlan(option.dataset.planOption); if (event.target.closest('[data-change-plan]')) changePlan(); });
+  el('startPlannedWalkButton').addEventListener('click', async () => { if (!state.plannedRoute) { toast('Choose one route option before starting your walk.'); return; } if (!previewTimeBasedPlan()) { toast('A walkable road route could not be found.'); return; } setPlanningMode(false); closeSheets(); showView('map'); startWalk(); });
+  el('planWalkSheet').addEventListener('change', (event) => { if (event.target.matches('input[name="walkTime"], input[name="routeMode"]')) void generateTimeBasedPlan(); });
+  el('planWalkSheet').addEventListener('click', (event) => { const chip = event.target.closest('[data-planner-tag]'); if (!chip) return; chip.classList.toggle('active'); void generateTimeBasedPlan(); });
   el('curatedRoutesList').addEventListener('click', (event) => {
     const button = event.target.closest('[data-curated-route]'); if (!button) return;
     const route = showCuratedRoute(button.dataset.curatedRoute);
@@ -127,6 +129,14 @@ el('signUpButton').addEventListener('click', signUp);
 el('usernameForm').addEventListener('submit', createOnlineProfile);
   el('syncNowButton').addEventListener('click', async () => { try { await syncProfile(); await renderOnline(); toast('Aggregate stats synced.'); } catch (error) { toast(error.message || 'Could not sync right now.'); } });
   el('refreshFriendsButton').addEventListener('click', refreshFriends); el('friendSearchForm').addEventListener('submit', findFriend);
+  el('createCohortForm').addEventListener('submit', createCohort);
+  el('cohortList').addEventListener('click', (event) => { const button = event.target.closest('[data-cohort-response]'); if (button) respondToOrganizerRequest(button); });
+  el('cohortList').addEventListener('submit', (event) => { const form = event.target.closest('[data-cohort-invite-form]'); if (form) { event.preventDefault(); inviteFriendToCohort(form); } });
+  el('cohortList').addEventListener('submit', (event) => { const form = event.target.closest('[data-cohort-settings-form]'); if (form) { event.preventDefault(); saveCohortSettings(form); } });
+  el('cohortList').addEventListener('submit', (event) => { const form = event.target.closest('[data-cohort-chat-form]'); if (form) { event.preventDefault(); sendCohortMessage(form); } });
+  el('cohortInviteList').addEventListener('click', (event) => { const button = event.target.closest('[data-cohort-invite]'); if (button) respondToCohortInvite(button); });
+  el('organizerProfileForm').addEventListener('submit', saveOrganizerProfile);
+  el('organizerRequestForm').addEventListener('submit', createOrganizerRequest);
 el('accountSettingsButton').addEventListener('click', openAccountSettings);
 el('accountUsernameForm').addEventListener('submit', updateAccountUsername);
 el('accountEmailForm').addEventListener('submit', updateAccountEmail);
@@ -136,6 +146,7 @@ el('accountPasswordForm').addEventListener('submit', updateAccountPassword);
     closeSheets();
     if (button.dataset.view === 'profile') openProfile();
     else if (button.dataset.view === 'explore') { showView('explore'); setExploreTab('routes'); renderExplorePlaces(); }
+    else if (button.dataset.view === 'vote' || button.dataset.view === 'volunteer') showView(button.dataset.view);
     else showView('map');
   }));
   el('clearDataButton').addEventListener('click', async () => {
