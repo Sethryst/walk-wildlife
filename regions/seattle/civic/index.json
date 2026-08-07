@@ -1,10 +1,10 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T00:57:37.001601Z",
+    "generatedAt": "2026-08-07T01:27:24.809975Z",
     "items": [
       {
         "date": "2026-11-03",
-        "expiresAt": "2026-11-04T07:00:00Z",
+        "expiresAt": "2026-11-04T08:00:00Z",
         "id": "wa-seattle-2026-general-election",
         "officialUrl": "https://www.sos.wa.gov/elections/elections-calendar/dates-and-deadlines",
         "source": {
@@ -13,20 +13,60 @@
           "reviewStatus": "verified",
           "url": "https://www.sos.wa.gov/elections/elections-calendar/dates-and-deadlines"
         },
-        "summary": "Washington's general election is November 3, 2026. Ballots may be deposited in an official drop box by 8:00 PM on Election Day.",
-        "title": "Washington General Election",
-        "type": "general_election"
+        "summary": "Vote in Washington's general election. Use the Secretary of State's election calendar for official deadlines and ballot information.",
+        "title": "Washington General Election"
       }
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
+    },
+    "regionId": "seattle",
+    "schemaVersion": 1
+  },
+  "events": {
+    "generatedAt": "2026-08-07T01:27:24.809975Z",
+    "items": [
+      {
+        "date": "2026-08-07",
+        "expiresAt": "2026-08-08T04:00:00Z",
+        "id": "seattle-center-city-cinema-footloose-2026-08-07",
+        "locationLabel": "Freeway Park",
+        "officialUrl": "https://www.seattle.gov/parks/recreation/events-and-attractions/park-activation-events",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "Seattle Parks and Recreation",
+          "reviewStatus": "verified",
+          "url": "https://www.seattle.gov/parks/recreation/events-and-attractions/park-activation-events"
+        },
+        "summary": "A free outdoor Center City Cinema screening at Freeway Park, presented through Seattle Parks programming.",
+        "title": "Center City Cinema: Footloose"
+      },
+      {
+        "date": "2026-08-15",
+        "expiresAt": "2026-08-16T04:00:00Z",
+        "id": "seattle-big-day-of-play-2026-08-15",
+        "locationLabel": "Rainier Playfield and Mt. Baker Rowing and Sailing Center",
+        "officialUrl": "https://www.seattle.gov/parks/recreation/outdoor-activation-and-mobile-recreation/big-day-of-play",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "Seattle Parks and Recreation",
+          "reviewStatus": "verified",
+          "url": "https://www.seattle.gov/parks/recreation/outdoor-activation-and-mobile-recreation/big-day-of-play"
+        },
+        "summary": "Seattle Parks & Recreation's free citywide play and recreation celebration, with activities at Rainier Playfield and Mt. Baker Rowing and Sailing Center.",
+        "title": "Big Day of Play"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "development"
     },
     "regionId": "seattle",
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T00:57:37.001601Z",
+    "generatedAt": "2026-08-07T01:27:24.809975Z",
     "items": [
       {
         "id": "seattle:eventSources",
@@ -42,13 +82,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "seattle",
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T00:57:37.001601Z",
+    "generatedAt": "2026-08-07T01:27:24.809975Z",
     "items": [
       {
         "id": "seattle:volunteerSources",
@@ -64,7 +104,7 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "seattle",
     "schemaVersion": 1
