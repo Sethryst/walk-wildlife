@@ -1,6 +1,6 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T02:17:34.224111Z",
+    "generatedAt": "2026-08-07T02:31:11.627090Z",
     "items": [
       {
         "date": "2026-11-03",
@@ -26,7 +26,7 @@
     "schemaVersion": 1
   },
   "volunteer": {
-    "generatedAt": "2026-08-07T02:17:34.224111Z",
+    "generatedAt": "2026-08-07T02:31:11.627090Z",
     "items": [
       {
         "expiresAt": "2026-09-05T00:00:00Z",
@@ -106,7 +106,7 @@
     "schemaVersion": 1
   },
   "organizers": {
-    "generatedAt": "2026-08-07T02:17:34.224111Z",
+    "generatedAt": "2026-08-07T02:31:11.627090Z",
     "items": [
       {
         "id": "mncppc-pg-parks",
@@ -141,7 +141,7 @@
     "schemaVersion": 1
   },
   "events": {
-    "generatedAt": "2026-08-07T02:17:34.224111Z",
+    "generatedAt": "2026-08-07T02:31:11.627090Z",
     "items": [
       {
         "date": "2026-08-06",
@@ -160,6 +160,456 @@
         "summary": "A free exhibition presenting Dr. Joanne Braxton's photography from Ghana, Ivory Coast, and Senegal, on view at Montpelier Historic Site & Museum.",
         "title": "The African Odyssey Exhibition",
         "venueAddress": "9650 Muirkirk Road, Laurel, MD"
+      },
+      {
+        "date": "2026-08-07",
+        "endsAt": "2026-08-07T09:30:00+00:00",
+        "expiresAt": "2026-08-07T09:30:00Z",
+        "id": "pgparks:10004136:2026-08-07",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/balance-stretch/2026-08-07",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/balance-stretch/2026-08-07"
+        },
+        "startsAt": "2026-08-07T08:30:00+00:00",
+        "summary": "Improve your balance, mobility, and flexibility with this beginner-friendly workout.",
+        "title": "Balance & Stretch",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-07",
+        "endsAt": "2026-08-07T22:00:00+00:00",
+        "expiresAt": "2026-08-07T22:00:00Z",
+        "id": "pgparks:10004715:2026-08-07",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/community-center-teen-nights/2026-08-07",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/community-center-teen-nights/2026-08-07"
+        },
+        "startsAt": "2026-08-07T19:00:00+00:00",
+        "summary": "Teen nights are held at 25 participating community centers across Prince George's County. Find one near you!",
+        "title": "Community Center Teen Nights",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-07",
+        "endsAt": "2026-08-07T21:00:00+00:00",
+        "expiresAt": "2026-08-07T21:00:00Z",
+        "id": "pgparks:10005447:2026-08-07",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/srls-summer-movie-nights/2026-08-07",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/srls-summer-movie-nights/2026-08-07"
+        },
+        "startsAt": "2026-08-07T18:00:00+00:00",
+        "summary": "Enjoy a movie in the park under the stars! Bring your lawn chairs and blankets, get comfortable, and enjoy a relaxing evening with FREE popcorn for all attendees.",
+        "title": "Summer Movie Nights",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-08",
+        "endsAt": "2026-08-08T22:00:00+00:00",
+        "expiresAt": "2026-08-08T22:00:00Z",
+        "id": "pgparks:10004716:2026-08-08",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/community-center-teen-nights/2026-08-08",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/community-center-teen-nights/2026-08-08"
+        },
+        "startsAt": "2026-08-08T19:00:00+00:00",
+        "summary": "Teen nights are held at 25 participating community centers across Prince George's County. Find one near you!",
+        "title": "Community Center Teen Nights",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-08",
+        "endsAt": "2026-08-08T11:30:00+00:00",
+        "expiresAt": "2026-08-08T11:30:00Z",
+        "id": "pgparks:10004009:2026-08-08",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/fitness-in-the-parks-family-zumba/2026-08-08",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/fitness-in-the-parks-family-zumba/2026-08-08"
+        },
+        "startsAt": "2026-08-08T10:30:00+00:00",
+        "summary": "This class brings together all members of your family for fun and easy-to-follow dance moves to upbeat music.",
+        "title": "Fitness in the Parks - Family Zumba",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-08",
+        "endsAt": "2026-08-08T09:00:00+00:00",
+        "expiresAt": "2026-08-08T09:00:00Z",
+        "id": "pgparks:10003995:2026-08-08",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/fitness-in-the-parks-full-body-sculpt-strength-conditioning-2/2026-08-08",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/fitness-in-the-parks-full-body-sculpt-strength-conditioning-2/2026-08-08"
+        },
+        "startsAt": "2026-08-08T08:00:00+00:00",
+        "summary": "Join us for an energetic, outdoor fitness class that is designed to engage and strengthen every major muscle group.",
+        "title": "Fitness in the Parks - Full Body Sculpt: Strength & Conditioning",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-08",
+        "endsAt": "2026-08-08T22:00:00+00:00",
+        "expiresAt": "2026-08-08T22:00:00Z",
+        "id": "pgparks:1403317:2026-08-08",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/outtabounds-teen-fest-2026",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/outtabounds-teen-fest-2026"
+        },
+        "startsAt": "2026-08-08T17:00:00+00:00",
+        "summary": "Celebrate the end of the summer in a fun and unforgettable way! Enjoy a night packed with music, good vibes, live DJs, basketball, and special guests.",
+        "title": "Outtabounds Teen Fest 2026",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-08",
+        "endsAt": "2026-08-08T12:00:00+00:00",
+        "expiresAt": "2026-08-08T12:00:00Z",
+        "id": "pgparks:10003841:2026-08-08",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/unsung-heroes-who-shaped-america/2026-08-08",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/unsung-heroes-who-shaped-america/2026-08-08"
+        },
+        "startsAt": "2026-08-08T11:00:00+00:00",
+        "summary": "Some of the people who have made this country so awesome sometimes go unnoticed. To celebrate them and the incredible ways they have made this country better, each installment of this series pairs a storybook about overlooked American trailblazers with a fun craft activity.",
+        "title": "Unsung Heroes Who Shaped America",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-08",
+        "endsAt": "2026-08-08T14:00:00+00:00",
+        "expiresAt": "2026-08-08T14:00:00Z",
+        "id": "pgparks:10002717:2026-08-08",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/watkins-park-farmers-market/2026-08-08",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/watkins-park-farmers-market/2026-08-08"
+        },
+        "startsAt": "2026-08-08T10:00:00+00:00",
+        "summary": "Come support new growers, explore the fields, and take home something delicious at the Urban Farm Incubator at Watkins Regional Park.",
+        "title": "Watkins Park Farmers Market",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-08",
+        "endsAt": "2026-08-08T10:00:00+00:00",
+        "expiresAt": "2026-08-08T10:00:00Z",
+        "id": "pgparks:10004065:2026-08-08",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/yoga-in-the-parks-2/2026-08-08",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/yoga-in-the-parks-2/2026-08-08"
+        },
+        "startsAt": "2026-08-08T09:00:00+00:00",
+        "summary": "Join us for FREE classes in the beautiful outdoors throughout Prince George’s County! Learn basic moves to strengthen your body, increase flexibility, and free your mind.",
+        "title": "Yoga in the Parks",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-08",
+        "endsAt": "2026-08-08T10:30:00+00:00",
+        "expiresAt": "2026-08-08T10:30:00Z",
+        "id": "pgparks:10004079:2026-08-08",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/yoga-in-the-parks-4/2026-08-08",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/yoga-in-the-parks-4/2026-08-08"
+        },
+        "startsAt": "2026-08-08T09:30:00+00:00",
+        "summary": "Join us for FREE classes in the beautiful outdoors throughout Prince George’s County! Learn basic moves to strengthen your body, increase flexibility, and free your mind.",
+        "title": "Yoga in the Parks",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-08",
+        "endsAt": "2026-08-08T11:30:00+00:00",
+        "expiresAt": "2026-08-08T11:30:00Z",
+        "id": "pgparks:10006040:2026-08-08",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/youth-aviators-air-traffic-control/2026-08-08",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/youth-aviators-air-traffic-control/2026-08-08"
+        },
+        "startsAt": "2026-08-08T10:00:00+00:00",
+        "summary": "Step into the high stakes world of Air Traffic Control in this session of the Youth Aviators Program!",
+        "title": "Youth Aviators Air Traffic Control",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-09",
+        "endsAt": "2026-08-09T15:00:00+00:00",
+        "expiresAt": "2026-08-09T15:00:00Z",
+        "id": "pgparks:1405704:2026-08-09",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/kitchen-guild-cooking-demonstrations-cold-soups",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/kitchen-guild-cooking-demonstrations-cold-soups"
+        },
+        "startsAt": "2026-08-09T12:00:00+00:00",
+        "summary": "Join the Riversdale Kitchen Guild over the open hearth as they highlight cold soup recipes using 19th-century techniques.",
+        "title": "Kitchen Guild Cooking Demonstrations: Cold Soups",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-09",
+        "endsAt": "2026-08-09T22:00:00+00:00",
+        "expiresAt": "2026-08-09T22:00:00Z",
+        "id": "pgparks:1410198:2026-08-09",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/potomac-valley-dressage-association",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/potomac-valley-dressage-association"
+        },
+        "startsAt": "2026-08-09T07:30:00+00:00",
+        "summary": "Dressage Competition – Horse Show Contact Info: Julie Gross (Show Manager): 301-503-7709 juliefross@comcast.netCarolyn Del Grosso (Entry Secretary): 301-509-9566 mandcdelg@aol.com",
+        "title": "Potomac Valley Dressage Association Horse Show",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-10",
+        "endsAt": "2026-08-10T19:30:00+00:00",
+        "expiresAt": "2026-08-10T19:30:00Z",
+        "id": "pgparks:10003954:2026-08-10",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/fitness-in-the-parks-dance-fitness/2026-08-10",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/fitness-in-the-parks-dance-fitness/2026-08-10"
+        },
+        "startsAt": "2026-08-10T18:30:00+00:00",
+        "summary": "This is not your ordinary hip-hop dance class. Get moving and grooving to upbeat music while your fitness level improves",
+        "title": "Fitness in the Parks - Dance Fitness",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-10",
+        "endsAt": "2026-08-10T09:30:00+00:00",
+        "expiresAt": "2026-08-10T09:30:00Z",
+        "id": "pgparks:10003221:2026-08-10",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/fitness-in-the-parks-urban-line-dancing/2026-08-10",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/fitness-in-the-parks-urban-line-dancing/2026-08-10"
+        },
+        "startsAt": "2026-08-10T08:30:00+00:00",
+        "summary": "Let your creativity loose on the dance floor! Learn all the latest dances suitable for beginners and seasoned line dancers.",
+        "title": "Fitness in the Parks - Urban Line Dancing",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-10",
+        "endsAt": "2026-08-10T10:00:00+00:00",
+        "expiresAt": "2026-08-10T10:00:00Z",
+        "id": "pgparks:10004165:2026-08-10",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/tai-chi-4/2026-08-10",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/tai-chi-4/2026-08-10"
+        },
+        "startsAt": "2026-08-10T09:00:00+00:00",
+        "summary": "Tai Chi is a gentle way to reduce stress. Practiced for centuries and originally a form of self-defense, this is an ancient art of exercise for balance, stretching, muscle tone, and flexibility.",
+        "title": "Tai Chi",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-10",
+        "endsAt": "2026-08-10T19:00:00+00:00",
+        "expiresAt": "2026-08-10T19:00:00Z",
+        "id": "pgparks:10004109:2026-08-10",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/yoga-in-the-parks-6/2026-08-10",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/yoga-in-the-parks-6/2026-08-10"
+        },
+        "startsAt": "2026-08-10T18:00:00+00:00",
+        "summary": "Join us for FREE classes in the beautiful outdoors throughout Prince George’s County! Learn basic moves to strengthen your body, increase flexibility, and free your mind.",
+        "title": "Yoga in the Parks",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-11",
+        "endsAt": "2026-08-11T19:00:00+00:00",
+        "expiresAt": "2026-08-11T19:00:00Z",
+        "id": "pgparks:1404460:2026-08-11",
+        "locationLabel": "Chillum Park",
+        "officialUrl": "https://www.pgparks.com/event_list/come-out-and-play-chillum-park",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/come-out-and-play-chillum-park"
+        },
+        "startsAt": "2026-08-11T17:00:00+00:00",
+        "summary": "Enjoy FREE outdoor fun for all ages at Chillum Park.",
+        "title": "Come Out and Play @ Chillum Park",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-11",
+        "endsAt": "2026-08-11T19:30:00+00:00",
+        "expiresAt": "2026-08-11T19:30:00Z",
+        "id": "pgparks:10005249:2026-08-11",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/fit-strong/2026-08-11",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/fit-strong/2026-08-11"
+        },
+        "startsAt": "2026-08-11T18:00:00+00:00",
+        "summary": "Are you looking for a class to improve exercise frequency, increase strength, and help with goal setting to promote overall health? Join us for the Fit & Strong! program that combines aerobics, stretching, balance, strength, endurance exercises, and health education to promote healthy behavior changes.",
+        "title": "Fit & Strong (Tuesdays)",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-11",
+        "endsAt": "2026-08-11T19:00:00+00:00",
+        "expiresAt": "2026-08-11T19:00:00Z",
+        "id": "pgparks:10004123:2026-08-11",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/yoga-in-the-parks-pilates/2026-08-11",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/yoga-in-the-parks-pilates/2026-08-11"
+        },
+        "startsAt": "2026-08-11T18:00:00+00:00",
+        "summary": "Join us for an outdoor Pilates class designed to strengthen your core, improve flexibility, and enhance overall body alignment. All fitness levels are welcome!",
+        "title": "Yoga in the Parks: Pilates",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-11",
+        "endsAt": "2026-08-11T09:30:00+00:00",
+        "expiresAt": "2026-08-11T09:30:00Z",
+        "id": "pgparks:10004151:2026-08-11",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/yoga-with-meditation/2026-08-11",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/yoga-with-meditation/2026-08-11"
+        },
+        "startsAt": "2026-08-11T08:30:00+00:00",
+        "summary": "Join us for FREE classes in the beautiful outdoors throughout Prince George’s County! Learn basic moves to strengthen your body, increase flexibility, and free your mind.",
+        "title": "Yoga with Meditation",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-12",
+        "endsAt": "2026-08-12T09:00:00+00:00",
+        "expiresAt": "2026-08-12T09:00:00Z",
+        "id": "pgparks:10003968:2026-08-12",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/fitness-in-the-parks-am-sweatshop/2026-08-12",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/fitness-in-the-parks-am-sweatshop/2026-08-12"
+        },
+        "startsAt": "2026-08-12T08:00:00+00:00",
+        "summary": "Join us for this fun, effective cardio workout that combines several different workout methods including aerobics and bodyweight strength training.",
+        "title": "Fitness in the Parks - AM Sweatshop",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-12",
+        "endsAt": "2026-08-12T10:30:00+00:00",
+        "expiresAt": "2026-08-12T10:30:00Z",
+        "id": "pgparks:10002158:2026-08-12",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/yoga-2/2026-08-12",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/yoga-2/2026-08-12"
+        },
+        "startsAt": "2026-08-12T09:30:00+00:00",
+        "summary": "Stretch toward your fitness goals! Learn basic yoga to improve health and flexibility through deep breathing and controlled stretching.",
+        "title": "Yoga",
+        "venueAddress": null
+      },
+      {
+        "date": "2026-08-12",
+        "endsAt": "2026-08-12T10:30:00+00:00",
+        "expiresAt": "2026-08-12T10:30:00Z",
+        "id": "pgparks:10004024:2026-08-12",
+        "locationLabel": "Prince George's County — see official event page",
+        "officialUrl": "https://www.pgparks.com/event_list/yoga-in-the-parks-3/2026-08-12",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://www.pgparks.com/event_list/yoga-in-the-parks-3/2026-08-12"
+        },
+        "startsAt": "2026-08-12T09:30:00+00:00",
+        "summary": "Join us for FREE classes in the beautiful outdoors throughout Prince George’s County! Learn basic moves to strengthen your body, increase flexibility, and free your mind.",
+        "title": "Yoga in the Parks",
+        "venueAddress": null
       }
     ],
     "producer": {
@@ -170,7 +620,7 @@
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T02:17:34.224111Z",
+    "generatedAt": "2026-08-07T02:31:11.627090Z",
     "items": [
       {
         "id": "prince-georges-county-md:eventSources",
@@ -192,7 +642,7 @@
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T02:17:34.224111Z",
+    "generatedAt": "2026-08-07T02:31:11.627090Z",
     "items": [
       {
         "id": "prince-georges-county-md:volunteerSources",
