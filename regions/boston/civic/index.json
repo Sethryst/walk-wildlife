@@ -1,6 +1,6 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T00:57:36.118001Z",
+    "generatedAt": "2026-08-07T02:39:16.586379Z",
     "items": [
       {
         "date": "2026-11-03",
@@ -20,13 +20,78 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
+    },
+    "regionId": "boston",
+    "schemaVersion": 1
+  },
+  "events": {
+    "generatedAt": "2026-08-07T02:39:16.586379Z",
+    "items": [
+      {
+        "date": "2026-08-10",
+        "endsAt": "2026-08-10T11:30:00-04:00",
+        "expiresAt": "2026-08-11T04:00:00Z",
+        "id": "boston-hyde-park-coffee-hour-2026-08-10",
+        "locationLabel": "Ross Playground",
+        "officialUrl": "https://www.boston.gov/event-type/environment-and-green-living",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "City of Boston",
+          "reviewStatus": "verified",
+          "url": "https://www.boston.gov/event-type/environment-and-green-living"
+        },
+        "startsAt": "2026-08-10T10:30:00-04:00",
+        "summary": "A free opportunity to meet Mayor Wu and City staff, with community conversation, activities, and free plants while supplies last.",
+        "title": "Hyde Park Coffee Hour",
+        "venueAddress": "145 Westminster St, Boston, MA 02136"
+      },
+      {
+        "date": "2026-08-13",
+        "endsAt": "2026-08-13T20:00:00-04:00",
+        "expiresAt": "2026-08-14T04:00:00Z",
+        "id": "boston-h2o-sos-closing-panel-2026-08-13",
+        "locationLabel": "Civic Pavilion",
+        "officialUrl": "https://www.boston.gov/event-type/environment-and-green-living",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "City of Boston",
+          "reviewStatus": "verified",
+          "url": "https://www.boston.gov/event-type/environment-and-green-living"
+        },
+        "startsAt": "2026-08-13T18:00:00-04:00",
+        "summary": "A free City of Boston panel and closing celebration about art and climate change.",
+        "title": "H2O SOS: Water Warning — Closing Panel",
+        "venueAddress": "5 Congress Street, Boston, MA 02203"
+      },
+      {
+        "date": "2026-08-28",
+        "endsAt": "2026-08-28T21:00:00-04:00",
+        "expiresAt": "2026-08-29T04:00:00Z",
+        "id": "boston-donna-summer-disco-party-2026-08-28",
+        "locationLabel": "Boston City Hall Plaza",
+        "officialUrl": "https://www.boston.gov/calendar/donna-summer-disco-party",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "City of Boston",
+          "reviewStatus": "verified",
+          "url": "https://www.boston.gov/calendar/donna-summer-disco-party"
+        },
+        "startsAt": "2026-08-28T17:00:00-04:00",
+        "summary": "A free, family-friendly City of Boston outdoor music and skating event.",
+        "title": "Donna Summer Disco Party",
+        "venueAddress": "1 City Hall Square, Boston, MA 02201-2006"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "development"
     },
     "regionId": "boston",
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T00:57:36.118001Z",
+    "generatedAt": "2026-08-07T02:39:16.586379Z",
     "items": [
       {
         "id": "boston:eventSources",
@@ -42,13 +107,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "boston",
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T00:57:36.118001Z",
+    "generatedAt": "2026-08-07T02:39:16.586379Z",
     "items": [
       {
         "id": "boston:volunteerSources",
@@ -64,7 +129,7 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "boston",
     "schemaVersion": 1
