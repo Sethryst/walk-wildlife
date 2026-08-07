@@ -7,7 +7,7 @@ import db from './storage.js';
 
 export function renderPoiTagFilters() {
   const pois = state.cityPois[state.activeCity] || [];
-  const availableTags = availablePoiTags(pois);
+  const availableTags = availablePoiTags(pois.filter(isVisiblePoi));
   const filters = el('poiTagFilters');
   const status = el('poiFilterStatus');
   if (!availableTags.length) {
@@ -70,7 +70,7 @@ export function renderCityPois() {
       const eventTiming = poi.startsAt || poi.endsAt ? `Event: ${poi.startsAt || 'date TBA'}${poi.endsAt ? ` – ${poi.endsAt}` : ''}` : null;
       const details = [poi.description, historyText(poi), poi.address, status, hours, eventTiming, relevance, seasonal, poi.review?.flags?.length ? 'Needs review' : null, tagLabels ? `Tags: ${tagLabels}` : null].filter(Boolean).map(escapeHtml).join('<br>');
       const links = [poi.link, poi.website, sourceUrl(poi), historyUrl(poi)].filter(Boolean).filter((url, index, all) => all.indexOf(url) === index).map((url, index) => `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${index === 0 && (poi.link || poi.website) ? 'Website' : 'Source'} ↗</a>`).join(' · ');
-      return L.marker([poi.lat, poi.lng], { icon, title: poi.name, interactive: !state.planningMode, place: poi }).bindPopup(`<strong>${escapeHtml(poi.name)}</strong>${details ? `<br><span>${details}</span>` : ''}${links ? `<br>${links}` : ''}`);
+      return L.marker([poi.lat, poi.lng], { icon, title: displayPoiName(poi), interactive: !state.planningMode, place: poi }).bindPopup(`<strong>${escapeHtml(displayPoiName(poi))}</strong>${details ? `<br><span>${details}</span>` : ''}${links ? `<br>${links}` : ''}`);
     });
   if (state.poiLayer.addLayers) state.poiLayer.addLayers(markers); else markers.forEach((marker) => marker.addTo(state.poiLayer));
   const segments = state.trailSegments[state.activeCity] || [];
@@ -166,6 +166,17 @@ export function migratePoi(poi, cityId) {
   const config = CITIES[cityId];
   return { ...poi, city: cityId, tags: normalizePoiTags(poi), radius: poi.radius || config?.defaultGeofenceRadiusMeters || 50 };
 }
+export function displayPoiName(poi) {
+  // USGS monitoring names are sometimes legal-land descriptions such as
+  // "03N 02E 10BBCC1". They identify a station but are not useful human
+  // place names, so present the record's real purpose instead.
+  const isUsgsWater = isWaterMonitoringAnchor(poi);
+  if (!isUsgsWater) return poi?.name || 'Unnamed place';
+  return `USGS water monitoring location${poi.type ? ` · ${poi.type}` : ''}${poi.agency ? ` · ${poi.agency}` : ''}`;
+}
+export function isWaterMonitoringAnchor(poi) {
+  return poi?.category === 'water' && (poi.monitoringLocationId || (Array.isArray(poi.source) && poi.source.some((source) => /USGS water monitoring/i.test(source?.name || ''))));
+}
 export function city() { return CITIES[state.activeCity]; }
 // A "history site" is any POI actually tagged `history` — NOT any POI that
 // happens to have a geofence radius (every POI gets a default radius via
@@ -225,7 +236,7 @@ export function searchPois(query) {
   const q = query.trim().toLowerCase();
   if (!q) return [];
   const pois = state.cityPois[state.activeCity] || [];
-  return pois.filter(isVisiblePoi).filter((poi) => poi.name.toLowerCase().includes(q)).slice(0, 20);
+  return pois.filter(isVisiblePoi).filter((poi) => `${poi.name || ''} ${displayPoiName(poi)}`.toLowerCase().includes(q)).slice(0, 20);
 }
 export async function searchOsm(query) {
   const q = encodeURIComponent(query.trim());
@@ -254,6 +265,10 @@ export function isVisiblePoi(poi, now = Date.now()) {
   // Producer route candidates are segment inputs, never visitor-facing POIs
   // or automatically curated / ranked walks.
   if (poi.routeCandidate) return false;
+  // A static USGS station is a data anchor, not a walking destination or a
+  // current-condition claim. Keep it out of map/search/filter UI until a
+  // future verified, expiring water signal can describe why it matters today.
+  if (isWaterMonitoringAnchor(poi)) return false;
   // Wildlife is an expiring observation, never a permanent species/location claim.
   if (poi.category === 'wildlife') return activeSeasonalSignals(poi, now).length > 0;
   // Events are strict temporary context: producer records without an explicit

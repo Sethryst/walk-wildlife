@@ -1,6 +1,6 @@
 import { state } from './state.js';
 import { el, escapeHtml } from './utils.js';
-import { poiTags } from './poi.js';
+import { poiTags, displayPoiName } from './poi.js';
 import { renderCuratedRoutes } from './routes.js';
 import { generateTimeBasedPlan } from './planner.js';
 import { renderCivicEvents } from './civic.js';
@@ -40,10 +40,10 @@ export function renderExplorePlaces() {
   const all = state.cityPois[state.activeCity] || [];
   const query = el('exploreSearchInput').value.trim().toLowerCase();
   const tags = [...state.poiTags];
-  const places = all.filter((poi) => (!query || poi.name.toLowerCase().includes(query)) && (!tags.length || tags.some((tag) => poiTags(poi).includes(tag)))).slice(0, 50);
+  const places = all.filter((poi) => (!query || `${poi.name || ''} ${displayPoiName(poi)}`.toLowerCase().includes(query)) && (!tags.length || tags.some((tag) => poiTags(poi).includes(tag)))).slice(0, 50);
   const available = ['park', 'trail', 'history', 'library', 'public_art', 'water_access'].filter((tag) => all.some((poi) => poiTags(poi).includes(tag)));
   el('explorePlaceFilters').innerHTML = available.map((tag) => `<button type="button" class="poi-chip ${state.poiTags.has(tag) ? 'active' : ''}" data-explore-tag="${tag}">${tag.replace('_', ' ')}</button>`).join('');
-  el('explorePlacesList').innerHTML = places.length ? places.map((poi) => `<button type="button" class="place-result" data-place-id="${escapeHtml(poi.id)}"><span>${poiTags(poi).includes('history') ? '✦' : '●'}</span><span><strong>${escapeHtml(poi.name)}</strong><small>${escapeHtml(poiTags(poi).filter((tag) => !tag.startsWith('history_'))[0] || 'place')}</small></span><b>›</b></button>`).join('') : '<div class="empty-state">No places match these filters. Try clearing a category or search.</div>';
+  el('explorePlacesList').innerHTML = places.length ? places.map((poi) => `<button type="button" class="place-result" data-place-id="${escapeHtml(poi.id)}"><span>${poiTags(poi).includes('history') ? '✦' : '●'}</span><span><strong>${escapeHtml(displayPoiName(poi))}</strong><small>${escapeHtml(poiTags(poi).filter((tag) => !tag.startsWith('history_'))[0] || 'place')}</small></span><b>›</b></button>`).join('') : '<div class="empty-state">No places match these filters. Try clearing a category or search.</div>';
 }
 
 export function updatePlanPreview() {

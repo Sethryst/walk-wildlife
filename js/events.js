@@ -6,7 +6,7 @@ import { openWalkDetail, saveHistoryMoment, saveJournal, renderArchive } from '.
 import { getCurrentLocation, startWalk, stopWalk, togglePauseWalk, updateWalkDisplay } from './walk.js';
 import { openObservation, saveObservation, setDraftObservationIcon } from './observation.js';
 import { openJournal, closeSheets, openSheet, openAccountSettings, openFiltersSheet, openProfile, renderGeofenceCategoryChips, setArchiveFilter, showView, toast } from './ui.js';
-import { city, citySites, renderPoiTagFilters, renderCityPois, showHistory, savePlaceMemory, searchPois, searchOsm } from './poi.js';
+import { city, citySites, displayPoiName, renderPoiTagFilters, renderCityPois, showHistory, savePlaceMemory, searchPois, searchOsm } from './poi.js';
 import { syncProfile, renderOnline, openOnline, signIn, signUp, createOnlineProfile, updateAccountUsername, updateAccountPhone, updateAccountEmail, updateAccountPassword, acceptFriend, refreshFriends, findFriend, createCohort, respondToOrganizerRequest, inviteFriendToCohort, respondToCohortInvite, saveOrganizerProfile, createOrganizerRequest, saveCohortSettings, sendCohortMessage } from './online.js';
 import { refreshCityMap, switchCity } from './city.js';
 import { renderProfile } from './profile.js';
@@ -69,7 +69,7 @@ el('poiSearchInput').addEventListener('input', (event) => {
 
   if (localResults.length) {
     list.classList.remove('hidden');
-    list.innerHTML = localResults.map((poi) => `<button type="button" data-poi-id="${poi.id}">${poi.name}</button>`).join('');
+    list.innerHTML = localResults.map((poi) => `<button type="button" data-poi-id="${poi.id}">${displayPoiName(poi)}</button>`).join('');
     return;
   }
 
