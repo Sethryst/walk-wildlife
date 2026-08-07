@@ -47,6 +47,20 @@ h2 { font-family: Georgia, "Times New Roman", serif; font-size: 25px; letter-spa
 .profile-heading { font-family: Georgia, "Times New Roman", serif; font-size: 25px; letter-spacing: -.025em; margin: 0 0 14px; }
 .profile-journal-section, .profile-archive-section { border-top: 1px solid var(--line); margin-top: 22px; padding-top: 18px; }
 .profile-section-intro { color: var(--muted); font-size: 12px; line-height: 1.45; margin: 0 0 12px; }
+.civic-card-list { display: grid; gap: 14px; }
+.civic-group { display: grid; gap: 10px; margin-top: 20px; }
+.civic-group:first-child { margin-top: 0; }
+.civic-group-title { color: var(--pine); font-size: 14px; line-height: 1.25; margin: 0; }
+.civic-card { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.civic-card > * { margin: 0; }
+.civic-card .text-button { align-self: flex-start; margin-top: 2px; }
+.civic-event-card { gap: 9px; }
+.civic-card-title { display: block; font-size: 16px; line-height: 1.3; overflow-wrap: anywhere; }
+.civic-event-meta, .civic-source { color: var(--muted); font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; }
+.civic-source { font-weight: 700; }
+.civic-witness { align-self: start; margin-top: -5px; }
+.civic-past > summary { cursor: pointer; font-weight: 800; }
+.civic-past > .civic-card-list { margin-top: 12px; }
 .trail-feature { align-items: center; background: #e7f1e8; border: 1px solid #b9d0b5; border-radius: 12px; color: var(--pine); display: flex; gap: 9px; margin: 14px 0 0; padding: 10px; text-align: left; width: 100%; }
 .map-key { background: rgba(255, 253, 250, .9); border-radius: 6px; bottom: 13px; color: var(--muted); font-size: 10px; left: 13px; padding: 6px 8px; position: absolute; z-index: 500; }
 .key-history { color: var(--coral); font-size: 14px; }.key-wildlife { color: var(--moss); font-size: 14px; margin-left: 5px; }

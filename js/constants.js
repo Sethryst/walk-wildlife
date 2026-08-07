@@ -11,7 +11,8 @@
     state: 'VA',
     center: { lat: 38.9013, lng: -77.2652 },
     zoom: 15,
-    dataFile: './data/vienna-poi.json'
+    dataFile: './data/vienna-poi.json',
+    civicFile: './regions/wolf-trap-va/civic/index.json'
   },
   norfolk: {
     name: 'Norfolk',

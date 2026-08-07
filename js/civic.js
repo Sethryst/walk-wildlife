@@ -29,18 +29,18 @@ async function load() {
 }
 function civicCard(item, label = 'Upcoming') {
   const participation = item.participation?.whatYouWillDo || item.participation?.timeCommitment ? `<p>${escapeHtml([item.participation.whatYouWillDo, item.participation.timeCommitment].filter(Boolean).join(' · '))}</p>` : '';
-  return `<article class="route-card"><p class="eyebrow">${escapeHtml(item.jurisdiction || civicLabel(label))}</p><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.summary)}</p>${participation}${link(item.url)}</article>`;
+  return `<article class="route-card civic-card"><p class="eyebrow">${escapeHtml(item.jurisdiction || civicLabel(label))}</p><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.summary)}</p>${participation}${link(item.url)}</article>`;
 }
 function vote(data = {}) {
   const election = data.nextElection;
   const artifactItems = Array.isArray(data.items) ? data.items : [];
   const cards = [];
   const scope = data.jurisdiction || voteScope[state.activeCity];
-  if (election?.date && election?.type && fresh(election) && official(election.url)) cards.push(`<article class="route-card"><p class="eyebrow">NEXT ELECTION</p><strong>${escapeHtml(election.type)}</strong><p>${escapeHtml(election.date)}</p>${link(election.url)}</article>`);
-  if (official(data.pollingLookupUrl)) cards.push(`<article class="route-card"><strong>Where can I vote?</strong><p>Use the official lookup. Your address is not stored by this app.</p>${link(data.pollingLookupUrl, 'Find my polling place')}</article>`);
+  if (election?.date && election?.type && fresh(election) && official(election.url)) cards.push(`<article class="route-card civic-card"><p class="eyebrow">NEXT ELECTION</p><strong>${escapeHtml(election.type)}</strong><p>${escapeHtml(election.date)}</p>${link(election.url)}</article>`);
+  if (official(data.pollingLookupUrl)) cards.push(`<article class="route-card civic-card"><strong>Where can I vote?</strong><p>Use the official lookup. Your address is not stored by this app.</p>${link(data.pollingLookupUrl, 'Find my polling place')}</article>`);
   const activeItems = artifactItems.filter((item) => fresh({ freshnessExpiresAt: item.expiresAt }) && official(item.officialUrl));
   const pastItems = artifactItems.filter((item) => !fresh({ freshnessExpiresAt: item.expiresAt }) && official(item.officialUrl));
-  for (const item of activeItems.slice(0, 12)) cards.push(`${civicCard({ ...item, url: item.officialUrl, lifecycle: item.type }, item.type)}<button class="text-button" data-civic-witness="voted" data-civic-item="${escapeHtml(item.id)}">I voted — save locally</button>`);
+  if (activeItems.length) cards.push(`<section class="civic-group"><h3 class="civic-group-title">Upcoming</h3><div class="civic-card-list">${activeItems.slice(0, 12).map((item) => `${civicCard({ ...item, url: item.officialUrl, lifecycle: item.type }, item.type)}<button class="text-button civic-witness" data-civic-witness="voted" data-civic-item="${escapeHtml(item.id)}">I voted — save locally</button>`).join('')}</div></section>`);
   for (const item of (data.decisions || []).filter((item) => fresh(item) && official(item.url) && item.title && item.summary).slice(0, 12)) cards.push(civicCard(item, item.lifecycle || 'UPCOMING'));
   const meetings = (data.meetings || []).filter((item) => fresh(item) && official(item.url) && item.title && item.summary);
   const boroughs = state.activeCity === 'newyork' ? NYC_BOROUGHS.filter((borough) => meetings.some((item) => item.borough === borough)) : [];
@@ -50,7 +50,7 @@ function vote(data = {}) {
     const visible = selected === 'All' ? meetings : meetings.filter((item) => item.borough === selected);
     cards.push(...visible.slice(0, 16).map((item) => civicCard(item, item.lifecycle || 'PUBLIC INPUT')));
   }
-  if (pastItems.length) cards.push(`<details class="route-card civic-past"><summary>Past (${pastItems.length})</summary>${pastItems.map((item) => civicCard({ ...item, url: item.officialUrl, lifecycle: 'PAST' }, 'PAST')).join('')}</details>`);
+  if (pastItems.length) cards.push(`<details class="route-card civic-card civic-past"><summary>Past (${pastItems.length})</summary><div class="civic-card-list">${pastItems.map((item) => civicCard({ ...item, url: item.officialUrl, lifecycle: 'PAST' }, 'PAST')).join('')}</div></details>`);
   const content = cards.join('');
   return content ? `${scope ? `<p class="profile-section-intro">Voting jurisdiction: ${escapeHtml(scope)}.</p>` : ''}${content}` : empty('Official election and public-meeting information will appear when included in this region.');
 }
@@ -65,13 +65,28 @@ function volunteer(items = [], organizers = []) {
       const participation = item.participation || {};
       const commitment = participation.timeCommitment || item.timeCommitment;
       const expiry = Number.isFinite(Date.parse(item.expiresAt)) ? `Available through ${new Date(item.expiresAt).toLocaleDateString()}` : '';
-      return `<article class="route-card"><p class="eyebrow">${escapeHtml(item.type || 'Volunteer opportunity')}${commitment ? ` · ${escapeHtml(commitment)}` : ''}</p><strong>${escapeHtml(item.title)}</strong>${organizer?.name ? `<p>${escapeHtml(organizer.name)}</p>` : ''}<p>${escapeHtml(participation.whatYouWillDo || item.summary)}</p>${participation.riskClarity ? `<p class="sheet-intro">Before you sign up: ${escapeHtml(participation.riskClarity)}</p>` : ''}${expiry ? `<p class="sheet-intro">${escapeHtml(expiry)}</p>` : ''}${link(item.officialUrl, 'Learn more / Sign up')}</article>`;
+      return `<article class="route-card civic-card civic-volunteer-card"><p class="eyebrow">${escapeHtml(item.type || 'Volunteer opportunity')}${commitment ? ` · ${escapeHtml(commitment)}` : ''}</p><strong>${escapeHtml(item.title)}</strong>${organizer?.name ? `<p>${escapeHtml(organizer.name)}</p>` : ''}<p>${escapeHtml(participation.whatYouWillDo || item.summary)}</p>${participation.riskClarity ? `<p class="sheet-intro">Before you sign up: ${escapeHtml(participation.riskClarity)}</p>` : ''}${expiry ? `<p class="sheet-intro">${escapeHtml(expiry)}</p>` : ''}${link(item.officialUrl, 'Learn more / Sign up')}</article>`;
     });
-  return cards.join('') || empty('Verified volunteer opportunities will appear when included in this region.');
+  return cards.length ? `<section class="civic-group"><h3 class="civic-group-title">Verified opportunities</h3><div class="civic-card-list">${cards.join('')}</div></section>` : empty('Verified volunteer opportunities will appear when included in this region.');
 }
 function listingSources(items = []) {
   const source = (items?.items || items).find((item) => item?.title && item?.summary && official(item.officialUrl));
-  return source ? `<article class="route-card"><p class="eyebrow">Official source</p><strong>${escapeHtml(source.title)}</strong><p>${escapeHtml(source.summary)}</p>${link(source.officialUrl, 'Explore current listings')}</article>` : '';
+  return source ? `<section class="civic-group civic-source-group"><h3 class="civic-group-title">Explore more</h3><article class="route-card civic-card"><p class="eyebrow">Official source</p><strong>${escapeHtml(source.title)}</strong><p>${escapeHtml(source.summary)}</p>${link(source.officialUrl, 'Explore current listings')}</article></section>` : '';
+}
+
+export function eventFilterLabel(cityId = state.activeCity) {
+  const name = CITIES[cityId]?.name;
+  return name ? `All ${name} events` : 'All events';
+}
+
+export function humanSourceLabel(source) {
+  return typeof source?.name === 'string' && source.name.trim() ? source.name.trim() : '';
+}
+
+export function renderCivicEventCard(item) {
+  const venue = [item.locationLabel, item.venueAddress].filter(Boolean).join(' · ');
+  const source = humanSourceLabel(item.source);
+  return `<article class="route-card civic-card civic-event-card"><strong class="civic-card-title">${escapeHtml(item.title)}</strong><p class="civic-event-meta">${escapeHtml([venue, item.date].filter(Boolean).join(' · '))}</p><p>${escapeHtml(item.summary)}</p>${source ? `<p class="civic-source">${escapeHtml(source)}</p>` : ''}${link(item.officialUrl)}</article>`;
 }
 export async function renderCivic(view) {
   const target = el(view === 'vote' ? 'voteCivicContent' : 'volunteerCivicContent'); if (!target) return;
@@ -87,14 +102,15 @@ export async function renderCivic(view) {
 export async function renderCivicEvents() {
   const target = el('exploreEventsList'); if (!target) return;
   target.innerHTML = '<div class="empty-state">Loading verified local events…</div>';
-  const items = (await load())?.events?.items || [];
+  const data = await load();
+  const items = data?.events?.items || [];
   const active = items.filter((item) => item?.title && item?.date && item?.summary && official(item.officialUrl) && Number.isFinite(Date.parse(item.expiresAt)) && Date.now() < Date.parse(item.expiresAt));
   const locations = [...new Set(active.map((item) => item.locationLabel).filter(Boolean))].sort();
   if (eventLocation !== 'All' && !locations.includes(eventLocation)) eventLocation = 'All';
   const visible = eventLocation === 'All' ? active : active.filter((item) => item.locationLabel === eventLocation);
-  const filters = locations.length ? `<div class="poi-chips" role="group" aria-label="Event location"><button class="poi-chip ${eventLocation === 'All' ? 'active' : ''}" data-event-location="All">All NYC</button>${locations.map((location) => `<button class="poi-chip ${eventLocation === location ? 'active' : ''}" data-event-location="${escapeHtml(location)}">${escapeHtml(location)}</button>`).join('')}</div>` : '';
-  const verifiedCards = visible.length ? visible.map((item) => `<article class="route-card"><p class="eyebrow">${escapeHtml(item.locationLabel || 'New York City')} · ${escapeHtml(item.date)}</p><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.summary)}</p><p class="sheet-intro">${escapeHtml(item.source?.authorityTier || item.source?.name || 'Sourced civic listing')}</p>${link(item.officialUrl)}</article>`).join('') : empty('Verified civic events will appear here when included in this region.');
-  target.innerHTML = filters + verifiedCards + listingSources((await load())?.['event-sources']);
+  const filters = locations.length ? `<div class="poi-chips" role="group" aria-label="Event location"><button class="poi-chip ${eventLocation === 'All' ? 'active' : ''}" data-event-location="All">${escapeHtml(eventFilterLabel())}</button>${locations.map((location) => `<button class="poi-chip ${eventLocation === location ? 'active' : ''}" data-event-location="${escapeHtml(location)}">${escapeHtml(location)}</button>`).join('')}</div>` : '';
+  const verifiedCards = visible.length ? visible.map(renderCivicEventCard).join('') : empty('Verified civic events will appear here when included in this region.');
+  target.innerHTML = filters + verifiedCards + listingSources(data?.['event-sources']);
   target.querySelectorAll('[data-event-location]').forEach((button) => button.addEventListener('click', () => { eventLocation = button.dataset.eventLocation; void renderCivicEvents(); }));
 }
 function renderCivicBoroughControls(target) { target.querySelectorAll('[data-civic-borough]').forEach((button) => button.addEventListener('click', () => { currentVote.borough = button.dataset.civicBorough; target.innerHTML = vote(currentVote.data); renderCivicBoroughControls(target); })); target.querySelectorAll('[data-civic-witness]').forEach((button) => button.addEventListener('click', async () => { await db.put('civic_witnesses', { id: `${button.dataset.civicWitness}:${button.dataset.civicItem}`, type: button.dataset.civicWitness, itemId: button.dataset.civicItem, city: state.activeCity, createdAt: new Date().toISOString() }); button.textContent = 'Saved on this device'; button.disabled = true; })); }

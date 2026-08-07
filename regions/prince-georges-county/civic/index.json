@@ -1,6 +1,6 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T00:57:36.764329Z",
+    "generatedAt": "2026-08-07T02:17:34.224111Z",
     "items": [
       {
         "date": "2026-11-03",
@@ -20,13 +20,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "prince-georges-county-md",
     "schemaVersion": 1
   },
   "volunteer": {
-    "generatedAt": "2026-08-07T00:57:36.764329Z",
+    "generatedAt": "2026-08-07T02:17:34.224111Z",
     "items": [
       {
         "expiresAt": "2026-09-05T00:00:00Z",
@@ -100,13 +100,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "prince-georges-county-md",
     "schemaVersion": 1
   },
   "organizers": {
-    "generatedAt": "2026-08-07T00:57:36.764329Z",
+    "generatedAt": "2026-08-07T02:17:34.224111Z",
     "items": [
       {
         "id": "mncppc-pg-parks",
@@ -135,13 +135,42 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
+    },
+    "regionId": "prince-georges-county-md",
+    "schemaVersion": 1
+  },
+  "events": {
+    "generatedAt": "2026-08-07T02:17:34.224111Z",
+    "items": [
+      {
+        "date": "2026-08-06",
+        "endsAt": "2026-11-01T16:00:00-05:00",
+        "expiresAt": "2026-11-02T05:00:00Z",
+        "id": "pg-african-odyssey-exhibition-2026",
+        "locationLabel": "Montpelier Historic Site & Museum",
+        "officialUrl": "https://outdoors.pgparks.com/event_list/the-african-odyssey-exhibition",
+        "source": {
+          "authorityTier": "local_government",
+          "name": "M-NCPPC Department of Parks and Recreation, Prince George's County",
+          "reviewStatus": "verified",
+          "url": "https://outdoors.pgparks.com/event_list/the-african-odyssey-exhibition"
+        },
+        "startsAt": "2026-08-06T10:00:00-04:00",
+        "summary": "A free exhibition presenting Dr. Joanne Braxton's photography from Ghana, Ivory Coast, and Senegal, on view at Montpelier Historic Site & Museum.",
+        "title": "The African Odyssey Exhibition",
+        "venueAddress": "9650 Muirkirk Road, Laurel, MD"
+      }
+    ],
+    "producer": {
+      "name": "Gremlin Lab",
+      "version": "development"
     },
     "regionId": "prince-georges-county-md",
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T00:57:36.764329Z",
+    "generatedAt": "2026-08-07T02:17:34.224111Z",
     "items": [
       {
         "id": "prince-georges-county-md:eventSources",
@@ -157,13 +186,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "prince-georges-county-md",
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T00:57:36.764329Z",
+    "generatedAt": "2026-08-07T02:17:34.224111Z",
     "items": [
       {
         "id": "prince-georges-county-md:volunteerSources",
@@ -179,7 +208,7 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "prince-georges-county-md",
     "schemaVersion": 1
