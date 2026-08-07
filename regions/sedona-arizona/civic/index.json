@@ -1,6 +1,6 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T00:57:37.063496Z",
+    "generatedAt": "2026-08-07T03:15:54.133853Z",
     "items": [
       {
         "date": "2026-11-03",
@@ -20,13 +20,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "sedona-arizona",
     "schemaVersion": 1
   },
   "volunteer": {
-    "generatedAt": "2026-08-07T00:57:37.063496Z",
+    "generatedAt": "2026-08-07T03:15:54.133853Z",
     "items": [
       {
         "expiresAt": "2026-09-05T00:00:00Z",
@@ -54,13 +54,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "sedona-arizona",
     "schemaVersion": 1
   },
   "organizers": {
-    "generatedAt": "2026-08-07T00:57:37.063496Z",
+    "generatedAt": "2026-08-07T03:15:54.133853Z",
     "items": [
       {
         "id": "city-sedona",
@@ -77,13 +77,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "sedona-arizona",
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T00:57:37.063496Z",
+    "generatedAt": "2026-08-07T03:15:54.133853Z",
     "items": [
       {
         "id": "sedona-arizona:eventSources",
@@ -99,13 +99,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "sedona-arizona",
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T00:57:37.063496Z",
+    "generatedAt": "2026-08-07T03:15:54.133853Z",
     "items": [
       {
         "id": "sedona-arizona:volunteerSources",
@@ -121,7 +121,7 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "sedona-arizona",
     "schemaVersion": 1

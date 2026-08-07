@@ -1,6 +1,6 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T02:45:09.280040Z",
+    "generatedAt": "2026-08-07T03:14:24.975237Z",
     "items": [
       {
         "date": "2026-11-03",
@@ -26,7 +26,7 @@
     "schemaVersion": 1
   },
   "volunteer": {
-    "generatedAt": "2026-08-07T02:45:09.280040Z",
+    "generatedAt": "2026-08-07T03:14:24.975237Z",
     "items": [
       {
         "expiresAt": "2026-09-05T00:00:00Z",
@@ -60,7 +60,7 @@
     "schemaVersion": 1
   },
   "organizers": {
-    "generatedAt": "2026-08-07T02:45:09.280040Z",
+    "generatedAt": "2026-08-07T03:14:24.975237Z",
     "items": [
       {
         "id": "city-norfolk",
@@ -83,7 +83,7 @@
     "schemaVersion": 1
   },
   "events": {
-    "generatedAt": "2026-08-07T02:45:09.280040Z",
+    "generatedAt": "2026-08-07T03:14:24.975237Z",
     "items": [
       {
         "date": "2026-09-12",
@@ -112,7 +112,7 @@
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T02:45:09.280040Z",
+    "generatedAt": "2026-08-07T03:14:24.975237Z",
     "items": [
       {
         "id": "norfolk:eventSources",
@@ -134,7 +134,7 @@
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T02:45:09.280040Z",
+    "generatedAt": "2026-08-07T03:14:24.975237Z",
     "items": [
       {
         "id": "norfolk:volunteerSources",

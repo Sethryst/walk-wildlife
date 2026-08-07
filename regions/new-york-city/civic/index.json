@@ -1,6 +1,6 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T00:57:36.530547Z",
+    "generatedAt": "2026-08-07T03:14:25.057230Z",
     "items": [
       {
         "date": "2026-11-03",
@@ -20,13 +20,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "nyc",
     "schemaVersion": 1
   },
   "volunteer": {
-    "generatedAt": "2026-08-07T00:57:36.530547Z",
+    "generatedAt": "2026-08-07T03:14:25.057230Z",
     "items": [
       {
         "expiresAt": "2026-09-05T00:00:00Z",
@@ -54,13 +54,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "nyc",
     "schemaVersion": 1
   },
   "organizers": {
-    "generatedAt": "2026-08-07T00:57:36.530547Z",
+    "generatedAt": "2026-08-07T03:14:25.057230Z",
     "items": [
       {
         "id": "nyc-service",
@@ -77,13 +77,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "nyc",
     "schemaVersion": 1
   },
   "events": {
-    "generatedAt": "2026-08-07T00:57:36.530547Z",
+    "generatedAt": "2026-08-07T03:14:25.057230Z",
     "items": [
       {
         "date": "2026-08-06",
@@ -118,13 +118,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "nyc",
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T00:57:36.530547Z",
+    "generatedAt": "2026-08-07T03:14:25.057230Z",
     "items": [
       {
         "id": "nyc:eventSources",
@@ -140,13 +140,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "nyc",
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T00:57:36.530547Z",
+    "generatedAt": "2026-08-07T03:14:25.057230Z",
     "items": [
       {
         "id": "nyc:volunteerSources",
@@ -162,7 +162,7 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "nyc",
     "schemaVersion": 1

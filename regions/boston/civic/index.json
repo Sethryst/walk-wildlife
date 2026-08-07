@@ -1,6 +1,6 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T03:11:52.551073Z",
+    "generatedAt": "2026-08-07T03:14:19.249735Z",
     "items": [
       {
         "date": "2026-11-03",
@@ -26,7 +26,7 @@
     "schemaVersion": 1
   },
   "events": {
-    "generatedAt": "2026-08-07T03:11:52.551073Z",
+    "generatedAt": "2026-08-07T03:14:19.249735Z",
     "items": [
       {
         "date": "2026-08-07",
@@ -5563,7 +5563,7 @@
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T03:11:52.551073Z",
+    "generatedAt": "2026-08-07T03:14:19.249735Z",
     "items": [
       {
         "id": "boston:eventSources",
@@ -5585,7 +5585,7 @@
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T03:11:52.551073Z",
+    "generatedAt": "2026-08-07T03:14:19.249735Z",
     "items": [
       {
         "id": "boston:volunteerSources",

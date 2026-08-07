@@ -1,6 +1,6 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T00:57:36.236308Z",
+    "generatedAt": "2026-08-07T03:14:24.641342Z",
     "items": [
       {
         "date": "2026-11-03",
@@ -20,13 +20,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "chicago",
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T00:57:36.236308Z",
+    "generatedAt": "2026-08-07T03:14:24.641342Z",
     "items": [
       {
         "id": "chicago:eventSources",
@@ -42,13 +42,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "chicago",
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T00:57:36.236308Z",
+    "generatedAt": "2026-08-07T03:14:24.641342Z",
     "items": [
       {
         "id": "chicago:volunteerSources",
@@ -64,7 +64,7 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "chicago",
     "schemaVersion": 1

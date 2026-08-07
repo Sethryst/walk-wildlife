@@ -1,6 +1,6 @@
 {
   "vote": {
-    "generatedAt": "2026-08-07T00:57:36.883309Z",
+    "generatedAt": "2026-08-07T03:15:53.890871Z",
     "items": [
       {
         "date": "2026-11-03",
@@ -20,13 +20,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "san-francisco",
     "schemaVersion": 1
   },
   "event-sources": {
-    "generatedAt": "2026-08-07T00:57:36.883309Z",
+    "generatedAt": "2026-08-07T03:15:53.890871Z",
     "items": [
       {
         "id": "san-francisco:eventSources",
@@ -42,13 +42,13 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "san-francisco",
     "schemaVersion": 1
   },
   "volunteer-sources": {
-    "generatedAt": "2026-08-07T00:57:36.883309Z",
+    "generatedAt": "2026-08-07T03:15:53.890871Z",
     "items": [
       {
         "id": "san-francisco:volunteerSources",
@@ -64,7 +64,7 @@
     ],
     "producer": {
       "name": "Gremlin Lab",
-      "version": "c585009"
+      "version": "development"
     },
     "regionId": "san-francisco",
     "schemaVersion": 1
